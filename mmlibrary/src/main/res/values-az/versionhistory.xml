@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="whatsnew">Yeniliklər</string>
+    <string name="v2_1">Biz yeni \"Mənim borclarım\" menyusunu əlavə etdik. Bu imkanla siz öz borclarınızı əlavə edə bilərsiniz. Onlar sizin əməliyyatlara əlavə olunmayacaq. Siz həmçinin qaytarma tarixini əlavə edə bilərsiniz və \"Xatırlat\" imkanı ilə siz heç vaxt borcunuzun qaytama tarixini yaddan çıxarmazsınız.</string>
+    <string name="v2_2">-Biz yeni Dropbox Arxivləşmə/Bərpa imkanı əlavə etdik. İndi siz öz Dropboz hesabınızla məlumatlarınız arxivləşdirə və ya bərpa edə bilərsiniz və Dropboxda bu məlumatlara yalnız sizin baxış hüququnuz var. Əgər siz birdən artıq qurğuda bu proqramı illədirsinizsə və Dropboz vasitəsilə məlumatları sinxronlaşdırmaq istəyirsinizsə, dəyişiklik etdiyiniz halda proqramı bağlamazdan əvvəl Dropboxa arxişləşdirməlisiniz. Siz digər qurğuda proqramı açarkən ilk dəfə üçün əllə Dropboxdan bərpa verin, sonrakı dəfələrdə isə proqram açıldıqda məlumatların növbəti versiyanın varlığı barədə xəbərlıq mesajı alacaqsınız.
+				\n-Gizlədilmiş hesablara aid əməliyyatlar da artıq Bütün əməliyyatlar siyahısında görünür.
+				\n-Borclarda menyuya Qaytarıldı funksiyası əlavə edildi və Mənim borclarım siyahısında qaytarılmışların rəngi dəyişdirildi.</string>
+    <string name="v2_2_1">-Tətbiqetmənin ikonu dəyişdirildi.
+				\n-Hesab dəyişdirilməsindəki xəta aradan qaldırıldı.
+				\n-Heç bir hesab seçilmədiyi halda transferlər bütün əməliyyatların siyahısından çıxardıldı.</string>
+	<string name="v2_2_2">-Əgər sizin hesablarınızın valyutalarından əsas valyutadan fərqli olanı varsa, proqram avtomatik olaraq bu günlük məzənnələri internetdən götürəcək".
+				\n-Dropbox bərpaetmə/avxivləşdirmə təkmilləşdirildi
+				\n-Digər bir sıra təkmilləşdirmə və xətaların aradan qaldırılması</string>
+	<string name="v2_2_3">-Dizayn təkmilləşdirildi.
+				\n-Xətalar aradan qaldırıldı</string>
+	<string name="v2_2_4">-Valyuta kursları təkmilləşdirildi.</string>
+	<string name="v3_0">-Büdcə imkanları əlavə edildi (Əlavə məlumatı Parametrlər menyusunda Kömək pəncərəsindən ala bilərsiniz).
+	    		\n-Kateqoriyalar gəlir və xərc kateqoriyalarına ayrıldı.
+	    		\n-Digər bir sıra təkmilləşdirmə və xətaların aradan qaldırılması.</string>
+	<string name="v3_0_1">- Əsas ekran və əməliyyatlar siyahısı təkmilləşdirildi - dəyərlər arxa fonda yenilənir;
+				\n- Avtomatik məzənnə yenilənmələrini durdurmaq üçün Parametrlər ekranına opsiya əlavə edildi;
+				\n- Xəta aradan qaldırıldı.</string>
+	<string name="v3_1_0">-Parol mühafizəsi təkmilləşdirildi.
+				\n-Xətalar aradan qaldırıldı.</string>
+	<string name="v3_1_2">- Büdcə ekranı təkmilləşdirildi. İndi seçilmiş kateqoriyaya aid istifadə olunmuş, qalıq və s. büdcə dəyərlərini görmək üçün menyudan Status seçin.
+				\n- Kiçik xəta aradan qaldırıldı.</string>
+</resources>

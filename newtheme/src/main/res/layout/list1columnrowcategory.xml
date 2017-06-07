@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/White"
+    android:orientation="vertical">
+
+
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/White"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/bt_grp_edit_"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/grp_child_"
+            android:layout_alignTop="@id/grp_child_"
+            android:layout_gravity="center_vertical"
+            android:background="@color/transparent"
+            android:focusable="false"
+            android:onClick="myClickHandler"
+            android:src="@drawable/collapse_new"
+            android:textColor="@drawable/color_selector" />
+
+        <TextView
+            android:id="@+id/grp_child_"
+            style="@style/CombinedListLabelNew.Medium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:text="Esas kaeqoiriya"
+            android:textColor="@drawable/color_selector" />
+
+    </LinearLayout>-->
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/White">
+
+        <TextView
+            android:id="@+id/grp_child"
+            style="@style/CombinedListLabelNew.Medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/category_child_row_left_pad"
+            android:text="Sub kategoriya"
+            android:textColor="@drawable/color_selector" />
+
+        <ImageButton
+            android:id="@+id/bt_grp_edit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/grp_child"
+            android:layout_alignTop="@id/grp_child"
+            android:layout_gravity="center_vertical"
+            android:layout_alignParentRight="true"
+            android:background="@color/transparent"
+            android:focusable="false"
+            android:onClick="myClickHandler"
+            android:src="@drawable/edit_new"
+            android:textColor="@drawable/color_selector" />
+
+    </RelativeLayout>
+
+<!--</LinearLayout>-->

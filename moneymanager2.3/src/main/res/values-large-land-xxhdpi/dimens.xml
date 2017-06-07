@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="title_text_size">30sp</dimen>
+    <dimen name="main_circle_button_radius">70dp</dimen>
+    <dimen name="main_round_button_text_size">23sp</dimen>
+    <dimen name="main_round_button_top_margin">0dp</dimen>
+    <dimen name="main_round_button_left_right_margin">40dp</dimen>
+    <dimen name="main_round_button_middle_margin">15dp</dimen>
+    <dimen name="main_round_button_min_height">42dp</dimen>
+    <dimen name="main_balance_value_text_size">35sp</dimen>
+    <dimen name="main_balance_text_size">27sp</dimen>
+    <dimen name="main_circle_button_bottom_margin">2dp</dimen>
+    <dimen name="button_text_min_height">46dp</dimen>
+    <dimen name="label_text_size">22sp</dimen>
+    <dimen name="dialog_ok_text_size">15sp</dimen>
+
+    <dimen name="title_bar_height">45dp</dimen>
+    <dimen name="main_account_bar_height">45dp</dimen>
+    <dimen name="combined_list_label_right_margin">120dp</dimen>
+    <dimen name="combined_list_label_left_margin">100dp</dimen>
+    <dimen name="transfer_list_label_right_margin">80dp</dimen>
+    <dimen name="transfer_list_label_left_margin">100dp</dimen>
+    <dimen name="ok_button_min_width">130dp</dimen>
+    <dimen name="ok_button_min_width_wide">110dp</dimen>
+    <dimen name="ok_button_margin_side">80dp</dimen>
+
+    <dimen name="category_list_right_margin">80dp</dimen>
+    <dimen name="category_list_left_margin">80dp</dimen>
+
+    <dimen name="category_button_min_width">230dp</dimen>
+    <dimen name="category_button_left_margin">50dp</dimen>
+    <dimen name="category_button_right_margin">50dp</dimen>
+
+    <dimen name="calculator_console_text_size">47sp</dimen>
+    <dimen name="calculator_console_text_small_size">20sp</dimen>
+    <dimen name="calculator_button_text_size">25sp</dimen>
+    <dimen name="calculator_console_top_margin">0dp</dimen>
+
+    <dimen name="converter_result_button_text_size">28sp</dimen>
+
+    <dimen name="report_title_min_height">40dp</dimen>
+    <dimen name="report_left_dimen">13dp</dimen>
+    <dimen name="report_right_dimen">5dp</dimen>
+    <dimen name="report_layout_left_dimen">270dp</dimen>
+    <dimen name="report_layout_right_dimen">270dp</dimen>
+    <dimen name="report_bottom_dimen">95dp</dimen>
+    <dimen name="report_top_dimen">15dp</dimen>
+
+    <dimen name="label_text_margin_left">150dp</dimen>
+    <dimen name="button_text_main_margin">150dp</dimen>
+
+    <dimen name="password_button_margin_bottom">10dp</dimen>
+    <dimen name="password_title_margin_bottom">10dp</dimen>
+
+    <dimen name="status_list_side_margin">140dp</dimen>
+</resources>

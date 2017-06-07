@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="accounts">Hesablar</string>
+    <string name="currencies">Valyutalar</string>
+    <string name="categories">Kateqoriyalar</string>
+    <string name="transactions">\u018Fməliyyatlar</string>
+    <string name="transfer">Köçürmələr</string>
+    <string name="calculator">Kalkulyator</string>
+    <string name="convertor">Çevirici</string>
+    <string name="explorer">Bələdçi</string>
+    <string name="mydebts">Mənim borclarım</string>
+    <string name="browse">Bax</string>
+    
+    <string name="currencyrates">Məzənnələr</string>
+    <string name="rate">Məzənnə</string>
+    <string name="result">Nəticə</string>
+    <string name="name">Ad</string>
+    <string name="sign">Simvol</string>
+    <string name="initialBalance">İlkin balans</string>
+    <string name="up">Yuxarı</string>
+    <string name="description">Açıqlama</string>
+    <string name="isDefault">Susmaya görə</string>
+    <string name="status">Status</string>
+    <string name="addedDate">Əlavə olunma tarixi</string>
+    
+    <string name="notSet">Seçiməyib</string>
+    <string name="addCategory">Kateqoriya əlavə et</string>
+    <string name="addSubCategory">Alt kateqoriya əlavə et</string>
+    
+    <string name="account">Hesab</string>
+    <string name="category">Kateqoriya</string>
+    <string name="date">Tarix</string>
+    <string name="amount">Məbləğ</string>
+    <string name="addIncome">Gəlir</string>     
+    <string name="addExpence">Xərc</string>    
+    <string name="currency">Valyuta</string>    
+    <string name="value">Dəyər</string>
+    <string name="convert">Çevir</string>
+    
+    <string name="totalBalance">Cəm balans:</string>
+    <string name="total">Cəm:</string>
+    
+    <string name="from">Haradan</string>
+    <string name="to">Haraya</string>
+    <string name="repeatType">Təkrarlanma</string>
+    <string name="periodEnd">Dövrün sonu</string>
+    <string name="interval">İnterval</string>
+    <string name="days">gün</string>
+    <string name="first">Birinci</string>
+    <string name="next">Növbəti</string>
+    <string name="latest">Sonuncu</string>
+    
+    <string name="Yes">Bəli</string>
+    <string name="No">Xeyir</string>
+    <string name="Cancel">İmtina</string> 
+    <string name="Continue">"Davam et"</string>   
+    
+    <string name="type">Tip</string>
+    
+    <string name="filter">Filtr</string>
+    <string name="dateFrom">Tarix(-dən)</string>
+    <string name="dateTo">Tarix(-dək)</string>
+    <string name="amountFrom">Məbləğ(-dən)</string>
+    <string name="amountTo">Məbləğ(-dək)</string>
+    <string name="operation">Tip</string>
+    <string name="transaction">Əməliyyat</string>
+    
+    <string name="chooseFile">Faylı seçin</string>
+    
+    <string name="income">Gəlir</string>
+    <string name="expense">Xərc</string>
+    
+    <string name="Monday">Bazar ertəsi</string>
+    <string name="Tuesday">Çərşənbə axşamı</string>
+    <string name="Wednesday">Çərşənbə</string>
+    <string name="Thursday">Cümə axşamaı</string>
+    <string name="Friday">Cümə</string>
+    <string name="Saturday">Şənbə</string>
+    <string name="Sunday">Bazar</string>
+    <!-- Settings -->
+    <string name="settings">Parametrlər</string>
+    <string name="settingsSummary">Parametrləri təyin et</string>
+    <string name="generalOptions">Ümumi</string>
+    <string name="generalSummary">Ümumi parametrləri təyin et</string>
+    
+    <string name="setTransactionListDateFilter">Susmaya görə tarix filtri</string>
+    <string name="setTransactionListDFSummary">Əməliyyatlar siyahısı üçün susmaya görə tarix filtrini təyin et</string>
+    <string name="setTransactionListDFDialogTitle">Tarix filtrini seç</string>
+    
+    <string name="setStartupScreen">Başlanğıc ekran</string>
+    <string name="setStartupScreenSummary">Açılışda ilkin ekranı təyin et</string>
+    <string name="setStartupScreenDialogTitle">Başlanğıc ekran</string>
+    
+    <string name="backupOptions">SD/Telefon yaddaşına arxivləşmə/bərpa</string>
+    <string name="btBackupSummary">Arxiv faylın saxlanma yeri</string>
+    <string name="btRestoreSummary">Bazanı bərpa et</string>
+    <string name="folder">Qovluq</string>
+    <string name="addFolder">Qovluq əlavə et</string>
+    <string name="backupFolderSummary">Avtomat arxivlənmə üçün qovluğu seç</string>
+    <string name="exportOptions">İmport və Export</string>
+    <string name="btExportSummary">Əməliyyatlarl csv fayla export et</string>
+    <string name="btImportSummary">Əməliyyatları import et</string>
+    <string name="exportFolderSummary">Export üçün qovluğu təyin et</string>
+    <string name="backupMaxDateTitle">Arxivin alınması üçün maksimum gün sayı</string>
+    <string name="backupMaxDateSummary">Bu gün sayından sonra arxiv fayllar avtomatik olaraq silinəcək</string>
+    <string name="backupMaxSizeTitle">Arxiv fayllar üçün ümumi həcm</string>
+    <string name="backupMaxSizeSummary">Arxiv qovluğun MB-la maksimum həcmi</string>
+    <string name="autoBackupTitle">Avtomat arxivlənmə</string>
+    <string name="autoBackupSummary">Gündəlik arxiv faylları harada saxla </string>
+    <string name="backupToDataFolderTitle">Arxiv faylları /data qovluğuna al</string>
+    <string name="backupFolderTitle">Arxiv qovluq</string>
+    
+    <string name="security">Təhlükəsizlik</string>
+    <string name="setPassword">Şifrə təyin et</string>
+    <string name="changePassword">Şifrəni dəyişdir</string>
+    <string name="setEmail">Emaili təyin et</string>
+    <string name="changeEmail">Emaili dəyişdir</string>
+    <string name="emailSummary">Şifrənin bərpası üçün email ünvanı</string>
+    <string name="securityQuestionTitle">Gizli sual</string>
+    <string name="securityQuestionSummary">Şifrənin bərpası üçün gizli sualı təyin et</string>
+    <string name="forgetPasswordSummary">Yeni şifrəni al</string>
+    
+    
+    <string name="selectCategory">Kateqoriyanı seç</string>
+    <string name="selectAccount">Hesabı seç</string>
+    <string name="selectCurrency">Valyutanı seç</string>
+    <string name="selectFolder">Qovluğu seç</string>
+    
+    <string name="newPassword">Yeni şifrə</string>
+    <string name="oldPassword">Köhnə şifrə</string>
+    <string name="showPassword">Şifrəni göstər</string>
+    <string name="question">Sual</string>
+    <string name="answer">Cavab</string>
+    <string name="securityanswer">Təhlükəsizlik cavabı</string>
+    <string name="askpasswordtitle">Şifrə qoruması</string>
+    <string name="askpasswordsummary">Başlanğıcda şifrəni soruş</string>
+    <string name="enterpassword">Şifrəni daxil et</string>
+    <string name="forgetpassword"><u>Şifrəni unutdum</u></string>
+    <string name="yourNewPassword">Sizin yeni şifrə</string>
+    <string name="information">Məlumat</string>
+    
+    <string name="about">Haqqında</string>
+    <string name="help">Kömək</string>
+    <string name="sendEmailTitle">Email göndər</string>
+    <string name="sendEmailSummary">Proqramçıya email göndər</string>
+    <string name="helpSummary">İstifadəçi təlimatlarını aç</string>
+    <string name="removeAds">Reklam göstərmə</string>
+    <string name="adsRemoveSummaryRemoved">"Reklam göstərmə" açarı artıq əldə edilib</string>
+    <string name="adsRemoveSummaryBuy">"Reklam göstərmə" açarını əldə et</string>
+    
+    <string name="allow">İcazə ver</string>
+    <string name="dont_allow">İcazə vermə</string>
+    
+    <string name="month">Ay</string>
+    <string name="year">İl</string>
+    <string name="Sum">CƏM</string>
+    
+    <string name="open"><b>Aç</b></string>
+    <string name="boldedit"><b>DƏYİŞDİR</b></string>
+    <string name="boldfilter"><b>FİLTR</b></string>
+    
+    <string name="setLanguage">Dil</string>
+    <string name="setLanguageSummary">Dili təyin edin</string>
+    <string name="setLanguageDialogTitle">Seçin</string>
+
+    <string name="setHomeScreenVersion">Əsas pəncərənin tipi</string>
+        
+    <string name="report">Hesabat</string>
+    <string name="today">Bu gün</string>
+    <string name="thisMonth">Bu ay</string>
+    <string name="thisYear">Bu il</string>
+    <string name="balance2">Balans</string>
+    <string name="recurring">Təkrarlanan</string>
+    <string name="addRecurring">Təkrarlanan əlavə et</string>
+    
+    <string name="sortAtoZ">AZ Sırala</string>
+    <string name="addNew">Yeni əlavə et</string>
+    <string name="allTransactions">Bütün əməliyyatlar</string>
+    <string name="incomes">Gəlirlər</string>
+    <string name="expences">Xərclər</string>
+    <string name="editTransaction">Əməliyyatı dəyiş</string>
+    <string name="selectMainCategory">Əsas kateqiruyanı seç</string>    
+    <string name="deleteTransaction">Əməliyyatı sil</string>    
+    <string name="all">Hamısı</string>
+    <string name="cash">Nəğd</string>
+    <string name="bank">Bank</string>
+
+    <string name="transferShort">KÇ</string>
+    <string name="rpTransShort">TK</string>
+    
+    <string name="returnDate">Qaytarma</string>
+    <string name="addToTransaction">Əməliyyatlara artır"</string>
+    <string name="borrowed">Aldım</string>
+    <string name="lent">Verdim</string>
+        
+    <string name="backupDropbox">Dropbox Arxivləşmə/Bərpa</string>
+    <string name="btBackupDropboxSummary">Bazanı Dropboxa yüklə</string>
+    <string name="btRestoreDropboxSummary">Bazanı Dropboxdan yenilə</string>
+    <string name="uploading">Yüklənir</string>
+    <string name="downloading">Endirilir</string>
+    <string name="autentificateError">Bu tətbiqetmə normal qeydiyyatdan keçməyib</string>
+    <string name="fileBigError">Fayl yüklənmək üçün çox böyükdür</string>
+    <string name="emptyDirectory">Boş fayl və ya qovluq</string>
+    <string name="noBackup">Dropboxda arxiv fayl yoxdur</string>
+    <string name="couldntRestore">Bərpa üçün lokal fayl düzəltmək mümkün olmadı</string>
+    <string name="canceled">Dayandırıldı</string>
+    <string name="networkError">Şəbəkə xətası. Yenidən yoxlayın.</string>
+    <string name="dropboxError">Dropbox xətası. Yenidən yoxlayın.</string>
+    <string name="unknownError">Naməlum xəta. Yenidən yoxlayın.</string>
+    <string name="resetUserName">İstifadəçı adı və parol sıfırla</string>
+    <string name="btResetDropboxUserNameSummary">Tətbiqetməni cari Dropbox hesabınızdan ayırın</string>
+    <string name="dropboxUserAccess">Nəvbəti arxiv/bərpa prosesi zamanı Dropbox yenidən qoşulma icazəsi istəyəcək</string>
+    <string name="dropboxAutoSyncWiFiTitle">Yalnız WiFi olduqda yüklə</string>
+    <string name="dropboxAutoSyncWiFiSummary">Dropboxa yalnız WiFi bağlantı mövcud olduqda yüklə</string>
+    <!-- BUDGET -->
+    <string name="budget">Büdcə</string>
+    <string name="budgetMainGroup">Əsas kateqoriya üzrə büdcə</string>
+    <string name="selectAll">Hamısını seç</string>
+    <string name="lastMonth">Əvvəlki ay</string>
+    <string name="notBudgeted">Büdcəyə ayrılmayan</string>
+    <string name="budgeted">Büdcəyə ayrılan</string>
+    <string name="remaining">Qalıq</string>
+    <string name="remainingFromPrevMonth">Əvvəlki aydan qalıq</string>
+    <string name="remainingFromPrevMonthMain">Əsas kateqoriya üzrə əvvəlki aydan qalıq</string>
+    <string name="remainingFromPrevMonthTotal">Əvvəlki aydan cəmi qalıq</string>
+    <string name="remainingCurrent">Cari qalıq</string>
+    <string name="overspent">Artıq xərclənmə</string>
+    <string name="editBudget">Büdcəni dəyiş</string>
+    <string name="selectValue">Dəyəri seç</string>
+    <string name="moveBudget">Büdəcni digər kateqoriyaya köçür</string>
+    <string name="addBudget">Büdcə əlavə et</string>
+    <string name="remainingBudget">Qalıq büdcə:</string>
+    <string name="budgetTotal">Cəmi</string>
+    <string name="movedValueIsTooBig">Köçürülən məbləğ cari büdcədən böyük ola bilməz</string>    
+    <string name="incomeCategories">Gəlir kateqoriyaları</string>
+    <string name="expenseCategories">Xərc kateqoriyaları</string>
+    <string name="applyThis">Bunu təyin et</string>
+    <string name="change">Dəyiş</string>
+    <string name="neverAsk">Soruşma</string>
+    <string name="enableBudget">Büdcəni aç</string>
+    <string name="enableBudgetSummary">Bütün büdcə imkanlarını aç və ya bağla</string>
+    <string name="internetRatesSummary">Kursları avtomatik olaraq internetdən götür</string>
+    <string name="editRemainingBudget">Qalıq büdcəni azalt</string>
+        
+    <string name="usedShort">X</string>
+    <string name="used">Xərclənib</string>
+    <string name="budgetShort">B</string>
+    <string name="remainingShort">Q</string>
+    <string name="totalRemainingShort">CQ</string>
+    <string name="totalRemaining">Cəmi qalıq</string>
+    <string name="totalBudgetShort">CB</string>
+    <string name="totalBudget">Cəmi büdcə</string>
+    <string name="repBudgetAmount">Ayrılmış büdcə</string>
+    <string name="barChart">Düzbucaqlı diaqram</string>
+    <string name="cleared">Ödənilib</string>
+    <string name="lineChart">Xətti diaqram</string>
+    <string name="menuAddTransaction">Əməliyyat əlavə et</string>
+    <string name="msgCameraError">Kameranı açmaq istədikdə xəta baş verdi</string>
+    <string name="msgChangeName">Adını dəyiş</string>
+    <string name="msgChooseFromGallery">Qalereyadan seç</string>
+    <string name="msgDeleteCurrentPhoto">Mövcud şəkili sil</string>
+    <string name="msgFromDateIsLessThanTo">Başlanğıc tarix son tarixdən böyük ola bilməz</string>
+    <string name="msgPasswordReset">Şifrəniz silindi. Zəhmət olmasa yenidən şifrə təyin edin.</string>
+    <string name="msgPleaseSelect">Zəhmət olmasa, seçin</string>
+    <string name="msgTakeNew">Yeni şəkil çəkin</string>
+
+    <string name="repAccountBalanceReport">Hesab qalıqları</string>
+    <string name="repAccountReport">Hesablar üzrə hesabat</string>
+    <string name="repCategory">Kateqoriyalar üzrə hesabat</string>
+    <string name="repSubCategory">Alt kateqoriyalar üzrə hesabat</string>
+    <string name="repCategoryPieChart">Kateqoriyalar üzrə dairəvi diaqram</string>
+    <string name="repCategoryBarChart">Kateqoriyalar üzrə düzbucaqlı diaqram</string>
+    <string name="repBudgetGrowth">Büdcə artımı</string>
+    <string name="repBudgetGrowthCategories">Kateqoriyalar üzrə büdcə artımı</string>
+    <string name="repBudgetGrowthTotal">Cəmi büdcı artımı</string>
+    <string name="repBudgetedAmountCategories">Aylar üzrə kateqoriyalar üzrə büdcə</string>
+    <string name="repBudgetedAmountTotal">Aylar üzrə cəmi büdcə</string>
+    <string name="repBudgetCompare">Büdcə-Ötən aylarla müqayisə</string>
+    <string name="repBudgetPieChart">BÜdcə - Dairəvi diaqram</string>
+    <string name="transactionStatus">Əməliyyatın statusu</string>
+    <string name="uncleared">Ödənilməyib</string>
+    <string name="void_">Boş</string>
+    <string name="disable">Söndür</string>
+    <string name="later">Sonra</string>
+    <string name="setNow">Təyin et</string>
+
+    <string name="paymentMethod">Ödəmə növü</string>
+    <string name="paymentMethodN">Ödəmə \nnövü</string>
+    <string name="check">Çek</string>
+    <string name="checkNo">Çek No</string>
+    <string name="card">Kart</string>
+
+    <string name="version1">Mürəkkəb</string>
+    <string name="version2">Sadə</string>
+
+    <string name="last12Month">Son 12 ay</string>
+    <string name="custom">Xüsusi</string>
+    <string name="defaultt">Susmaya görə</string>
+    <string name="average">Orta</string>
+
+    <string name="onlyOnce">Bir dəfəlik</string>
+    <string name="daily">Gündəlik</string>
+    <string name="weekly">Həftəlik</string>
+    <string name="monthly">Aylıq</string>
+    <string name="quarterly">Rüblük</string>
+    <string name="yearly">İllik</string>
+    <string name="visible">Açıq</string>
+    <string name="invisible">Gizli</string>
+    <string name="thisWeek">Bu həftə</string>
+    <string name="last30Days">Son 30 gün</string>
+    <string name="never">Heç vaxt</string>
+    <string name="sameDay">Həmin gün</string>
+    <string name="dayBefore1">1 gün əvvəl</string>
+    <string name="dayBefore2">2 gün əvvəl</string>
+    <string name="dayBefore3">3 gün əvvəl</string>
+    <string name="dayBefore7">7 gün əvvəl</string>
+    <string name="day1">1 gün</string>
+    <string name="day3">3 gün</string>
+    <string name="week1">1 həftə</string>
+    <string name="week2">2 həftə</string>
+    <string name="month1">1 ay</string>
+    <string name="month2">2 ay</string>
+    <string name="january">Yanvar</string>
+    <string name="february">Fevral</string>
+    <string name="march">Mart</string>
+    <string name="april">Aprel</string>
+    <string name="may">May</string>
+    <string name="june">İyun</string>
+    <string name="july">İyul</string>
+    <string name="august">Avqust</string>
+    <string name="september">Sentyabr</string>
+    <string name="october">Oktyabr</string>
+    <string name="november">Noyabr</string>
+    <string name="december">Dekabr</string>
+
+    <string name="includeSubCategoriesBudget">Alt kateqoriyaların büdcəsini daxil et</string>
+    <string name="repeatBudget">Növbəti aylar üçün də bu büdcəni təyin et</string>
+
+    <string name="dropboxAutoSyncSummary">Dropbox ilə avtomatik sinxronlaşma. Bu opsiyadan eyni Dropbox hesabına birdən çox qurğudan qoşulduqda istifadə edin.</string>
+    <string name="dropboxAutoSyncTitle">Dropbox avto sinxronlaşma</string>
+    <string name="msgDropboxNotAutorised">Dropboxa loqin olmaq üçün əvvəlcə Dropboxdan arxiv və bərpa edin.</string>
+    <string name="msgDropboxSnycing">Dropboxla sinxronizasiya...</string>
+    <string name="repExpensesCompare">Aylar üzrə xərclərin müqayisəsi</string>
+    <string name="repExpensesCompareTitle">Aylıq müqayisə</string>
+
+    <string name="addGoal">Hədəf əlavə et</string>
+    <string name="editGoal">Hədəfi dəyişdir</string>
+    <string name="targetMonth">Hədəf ay</string>
+    <string name="targetAmount">Hədəf məbləğ</string>
+    <string name="monthlyMinimum">Aylıq minimum</string>
+    <string name="goals">Hədəflər</string>
+    <string name="min2Max10">Kateqoriya və məbləğ daxil edilmiş alt əməliyyatların minimum sayı 2, maksimum 10 olmalıdır</string>
+    <string name="split">Parçala</string>
+    <string name="splitTransaction">Əməliyyatı parçala</string>
+    <string name="addSubTransaction">Alt əməliyat artır</string>
+    <string name="msgAmountNotAllowedSplit">Parçalanmış əməliyyatlar üçün məbləğ avtomatik hesablanır</string>
+    <string name="msgCategoryNotAllowedSplit">Parçalanmış əməliyyatlar üçün vahid kateqoriya seçilə bilməz</string>
+    <string name="left">Sol</string>
+    <string name="msgChooseReceiptFolder">Əməliyyat uğursuzluqla nəticələndi. Zəhmət olmasa, parametrlərdən qəbzlər qovluğunu seçin</string>
+    <string name="msgViewCurrentPhoto">Cari şəkilə bax</string>
+    <string name="none">Heç biri</string>
+    <string name="receiptsFolderTitle">Qəbzlər qovluğu</string>
+    <string name="right">Sağ</string>
+    <string name="setCurSignPosition">Valyuta simvolu mövqeyi</string>
+    <string name="setDateFormat">Tarix formatı</string>
+    <string name="setDecimalDigitsCount">Onluq rəqəm sayı</string>
+    <string name="setDecimalDigitsCountCurrency">Valyuta məzənnələri üçün onluq rəqəm sayı</string>
+    <string name="setDecimalSymbol">Onluq simvol</string>
+    <string name="setDigitsGroupingSymbol">Minlik simvol</string>
+    <string name="setLanguageOptsSummary">Dil, valyuta və tarix formatlarını təyin et</string>
+    <string name="setResetLocalizationSummary">İlkin formatarı bərpa et</string>
+    <string name="setResetLocalizationTitle">Sıfırla</string>
+    <string name="setWeekFirstDay">Həftənin ilk günü</string>
+    <string name="setMonthFirstDate">Ayın ilk günü</string>
+</resources>

@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="balance" translatable="false">balance</string>
+
+    <string name="app_name" translatable="false">Money Manager</string>
+    <string name="app_service" translatable="false">Money Manager Service</string>
+    <string name="ok" translatable="false">OK</string>
+    <string name="ce" translatable="false">C</string>
+    <string name="zeroValue" translatable="false">0</string>
+    <string name="isFirstLaunch" translatable="false">isFirstLaunch</string>
+    <string name="setTransactionListDFKey" translatable="false">transaction_list_date_filter_key</string>
+    <string name="setTransactionListDFDefaultValue" translatable="false">2</string>
+    <string name="backupKey" translatable="false">backup</string>
+    <string name="dropboxBackupKey" translatable="false">dropboxbackup</string>
+    <string name="dropboxBackupRevisonKey" translatable="false">dropboxbackuprevison</string>
+    <string name="dropboxBackupLocalRevisonKey" translatable="false">dropboxbackuplocalrevison</string>
+    <string name="dropboxRestoreKey" translatable="false">dropboxrestore</string>
+    <string name="dropboxResetUserKey" translatable="false">dropboxresetuser</string>
+    <string name="dropboxAutoSyncKey" translatable="false">dropboxautosync</string>
+    <string name="dropboxAutoSyncWiFiKey" translatable="false">dropboxautosyncwifi</string>
+    <string name="restoreKey" translatable="false">restore</string>
+    <string name="backupMaxDateKey" translatable="false">backupmaxdate</string>
+    <string name="backupMaxDateDefValue" translatable="false">1</string>
+    <string name="backupMaxSizeKey" translatable="false">backupmaxsize</string>
+    <string name="backupMaxSizeDefValue" translatable="false">2</string>
+    <string name="autoBackupKey" translatable="false">autobackup</string>
+    <string name="backupToDataFolderKey" translatable="false">backuptodatafolder</string>
+    <string name="receiptFolderKey" translatable="false">receiptfolderkey</string>
+    <string name="backupFolderKey" translatable="false">backupfolderkey</string>
+    <string name="backupFolderDefaultValue" translatable="false">/mnt/sdcard/MoneyManager/Backup</string>
+    <string name="receiptFolderDefaultValue" translatable="false">/mnt/sdcard/MoneyManager/Receipts</string>
+    <string name="setPasswordKey" translatable="false">setpassword</string>
+    <string name="emailKey" translatable="false">email</string>
+    <string name="securityQuestionKey" translatable="false">securityquestion</string>
+    <string name="securityAnswerKey" translatable="false">securityanswer</string>
+    <string name="forgetPasswordKey" translatable="false">forgetpassword</string>
+    <string name="rateAppCurrentOpenCountKey" translatable="false">rateAppCurrentOpenCountKey</string>
+    <string name="rateAppDefaultOpenCountKey" translatable="false">rateAppDefaultOpenCountKey</string>
+    <string name="rateShouldControlKey" translatable="false">rateShouldControl</string>
+    <string name="oldversionkey" translatable="false">oldversionkey</string>
+    <string name="dropboxTokenKey" translatable="false">dropboxtoken</string>
+    <string name="budgetGrowthCategIDsKey" tranlatable="false" translatable="false">budgetGrowthCategIDsKey</string>
+    <string name="showBudgetRealValueKey" translatable="false">showBudgetRealValueKey</string>
+    <string name="includeSubCategoriesKey" translatable="false">includeSubCategoriesKey</string>
+
+    <string name="back" translatable="false">"\u21D0"</string>
+    <string name="u_sign" translatable="false">"\u00B1"</string>
+    <string name="plus" translatable="false">+</string>
+    <string name="delimiter" translatable="false">-</string>
+    <string name="semicolon" translatable="false">;</string>
+    <string name="twopoints" translatable="false">:</string>
+    <string name="colon" translatable="false">:</string>
+    <string name="reminderIcon" translatable="false">(R)</string>
+    <string name="askpasswordkey" translatable="false">askpassword</string>
+    <string name="aboutOptions" translatable="false">aboutoptions</string>
+    <string name="sendEmailKey" translatable="false">sendemail</string>
+    <string name="enablebudgetkey" translatable="false">enablebudgetkey</string>
+    <string name="internetRatesKey" translatable="false">internetrateskey</string>
+
+    <string name="setLanguageKey" translatable="false">language_key</string>
+    <string name="setLanguageDefaultValue" translatable="false">def</string>
+
+    <string name="setHomeScreenKey" translatable="false">home_screen_key</string>
+    <string name="setHomeScreenVersionDefValue" translatable="false">home2</string>
+    <string name="version1Key" translatable="false">Advanced</string>
+    <string name="version2Key" translatable="false">Simple</string>
+
+    <string name="pNotSet" translatable="false">NotSet</string>
+    <string name="pAbout" translatable="false">About</string>
+    <string name="pHelp" translatable="false">Help</string>
+    <string name="pAdsFree" translatable="false">AdsFree</string>
+
+    <string name="dropbox" translatable="false">Dropbox</string>
+
+    <string name="proInstalledKey" translatable="false">proinstalledkey</string>
+
+    <string name="setDateFormatKey" translatable="false">dateFormatKey</string>`
+    <string name="dfk_ddmmyyyy_slashKey" translatable="false">dd/MM/yyyy</string>
+    <string name="dfk_ddmmyy_slashKey" translatable="false">dd/MM/yyyy</string>
+    <string name="dfk_mmddyyyy_slashKey" translatable="false">MM/dd/yyyy</string>
+    <string name="dfk_mmddyy_slashKey" translatable="false">MM/dd/yy</string>
+    <string name="dfk_yyyymmdd_slashKey" translatable="false">yyyy/MM/dd</string>
+    <string name="dfk_yymmdd_slashKey" translatable="false">yy/MM/dd</string>
+    <string name="dfk_ddmmyyyy_pointKey" translatable="false">dd.MM.yyyy</string>
+    <string name="dfk_ddmmyy_pointKey" translatable="false">dd.MM.yy</string>
+    <string name="dfk_mmddyyyy_pointKey" translatable="false">MM.dd.yyyy</string>
+    <string name="dfk_mmddyy_pointKey" translatable="false">MM.dd.yy</string>
+    <string name="dfk_yyyymmdd_pointKey" translatable="false">yyyy.MM.dd</string>
+    <string name="dfk_yymmdd_pointKey" translatable="false">yy.MM.dd</string>
+    <string name="dfk_ddmmyyyy_hyphenKey" translatable="false">dd-MM-yyyy</string>
+    <string name="dfk_ddmmyy_hyphenKey" translatable="false">dd-MM-yy</string>
+    <string name="dfk_mmddyyyy_hyphenKey" translatable="false">MM-dd-yyyy</string>
+    <string name="dfk_mmddyy_hyphenKey" translatable="false">MM-dd-yy</string>
+    <string name="dfk_yyyymmdd_hyphenKey" translatable="false">yyyy-MM-dd</string>
+    <string name="dfk_yymmdd_hyphenKey" translatable="false">yy-MM-dd</string>
+
+    <string name="dfk_ddmmyyyy_slash" translatable="false">dd/mm/yyyy 31/01/2017"</string>
+    <string name="dfk_ddmmyy_slash" translatable="false">dd/mm/yy 31/01/17"</string>
+    <string name="dfk_mmddyyyy_slash" translatable="false">mm/dd/yyyy 01/31/2017"</string>
+    <string name="dfk_mmddyy_slash" translatable="false">mm/dd/yy 01/31/17"</string>
+    <string name="dfk_yyyymmdd_slash" translatable="false">yyyy/mm/dd 2017/01/31"</string>
+    <string name="dfk_yymmdd_slash" translatable="false">yy/mm/dd 2017/01/31"</string>
+    <string name="dfk_ddmmyyyy_point" translatable="false">dd.mm.yyyy 31.01.2017"</string>
+    <string name="dfk_ddmmyy_point" translatable="false">dd.mm.yy 31.01.17"</string>
+    <string name="dfk_mmddyyyy_point" translatable="false">mm.dd.yyyy 01.31.2017"</string>
+    <string name="dfk_mmddyy_point" translatable="false">mm.dd.yy 01.31.17"</string>
+    <string name="dfk_yyyymmdd_point" translatable="false">yyyy.mm.dd 2017.01.31"</string>
+    <string name="dfk_yymmdd_point" translatable="false">yy.mm.dd 17.01.31"</string>
+    <string name="dfk_ddmmyyyy_hyphen" translatable="false">dd-mm-yyyy 31-01-2017"</string>
+    <string name="dfk_ddmmyy_hyphen" translatable="false">dd-mm-yy 31-01-17"</string>
+    <string name="dfk_mmddyyyy_hyphen" translatable="false">mm-dd-yyyy 01-31-2017"</string>
+    <string name="dfk_mmddyy_hyphen" translatable="false">mm-dd-yy 01-31-17"</string>
+    <string name="dfk_yyyymmdd_hyphen" translatable="false">yyyy-mm-dd 2017-01-31"</string>
+    <string name="dfk_yymmdd_hyphen" translatable="false">yy-mm-dd 2017-01-31"</string>
+
+    <string name="setCurSignKey" translatable="false">cursignkey</string>
+    <string name="setCurSignLeftKey" translatable="false">left</string>
+    <string name="setCurSignRightKey" translatable="false">right</string>
+
+    <string name="setDecimalSymbolKey" translatable="false">decimalsymbolkey</string>
+    <string name="setDotKey" translatable="false">.</string>
+    <string name="setCommaKey" translatable="false">,</string>
+
+    <string name="setMonthFirstDateKey" translatable="false">monthfirstdaykey</string>
+
+    <string name="setDecimalDigitsCountKey" translatable="false">decimaldigitscountkey</string>
+    <string name="setDecimalDigitsCountCurrencyKey" translatable="false">decimaldigitscountcurrencykey</string>
+    <string name="setDecimalDigitsCountDefaultKey" translatable="false">2</string>
+    <string name="setDecimalDigitsCountCurrencyDefaultKey" translatable="false">4</string>
+
+    <string name="setLanguageOptsKey" translatable="false">languageoptskey</string>
+    
+    <string name="setDigitsGroupingSymbolKey" translatable="false">digitsgroupingsymbolkey</string>
+    <string name="setQuoteKey" translatable="false">\'</string>
+    <string name="setSpaceKey" translatable="false">" "</string>
+    <string name="setNoneKey" translatable="false">none</string>
+
+    <string name="setWeekFirstDayKey" translatable="false">setFirstWeekDay</string>
+    <string name="setMondayKey" translatable="false">monday</string>
+    <string name="setTuesdayKey" translatable="false">tuesday</string>
+    <string name="setWednesdayKey" translatable="false">wednesday</string>
+    <string name="setThursdayKey" translatable="false">thursday</string>
+    <string name="setFridayKey" translatable="false">friday</string>
+    <string name="setSaturdayKey" translatable="false">saturday</string>
+    <string name="setSundayKey" translatable="false">sunday</string>
+
+    <string name="setResetLocalizationKey" translatable="false">resetlocalizationkey</string>
+
+    <string name="mb2" translatable="false">2 MB</string>
+    <string name="mb10" translatable="false">10 MB</string>
+    <string name="mb100" translatable="false">100 MB</string>
+    <string name="mb500" translatable="false">500 MB</string>
+    <string name="gb1" translatable="false">1 GB</string>
+
+    <string name="azerbaijan" translatable="false">Azərbaycanca</string>
+    <string name="indonesian" translatable="false">Bahasa Indonesia</string>
+    <string name="german" translatable="false">Deutsch</string>
+    <string name="english" translatable="false">English</string>
+    <string name="spanish" translatable="false">Español</string>
+    <string name="french" translatable="false">Français</string>
+    <string name="italian" translatable="false">Italiano</string>
+    <string name="portugal" translatable="false">Português</string>
+    <string name="russian" translatable="false">Русский</string>
+    <string name="ukrainian" translatable="false">Українською</string>
+
+    <string name="digitCountValue0" translatable="false">0 0</string>
+    <string name="digitCountValue1" translatable="false">1 0.0</string>
+    <string name="digitCountValue2" translatable="false">2 0.00</string>
+    <string name="digitCountValue3" translatable="false">3 0.000</string>
+    <string name="digitCountValue4" translatable="false">4 0.0000</string>
+
+    <string name="digitCountValueKey0" translatable="false">0</string>
+    <string name="digitCountValueKey1" translatable="false">1</string>
+    <string name="digitCountValueKey2" translatable="false">2</string>
+    <string name="digitCountValueKey3" translatable="false">3</string>
+    <string name="digitCountValueKey4" translatable="false">4</string>
+
+    <string name="digitCountValueKey5" translatable="false">5</string>
+    <string name="digitCountValueKey6" translatable="false">6</string>
+    <string name="digitCountValueKey7" translatable="false">7</string>
+    <string name="digitCountValueKey8" translatable="false">8</string>
+    <string name="digitCountValueKey9" translatable="false">9</string>
+    <string name="digitCountValueKey10" translatable="false">10</string>
+    <string name="digitCountValueKey11" translatable="false">11</string>
+    <string name="digitCountValueKey12" translatable="false">12</string>
+    <string name="digitCountValueKey13" translatable="false">13</string>
+    <string name="digitCountValueKey14" translatable="false">14</string>
+    <string name="digitCountValueKey15" translatable="false">15</string>
+    <string name="digitCountValueKey16" translatable="false">16</string>
+    <string name="digitCountValueKey17" translatable="false">17</string>
+    <string name="digitCountValueKey18" translatable="false">18</string>
+    <string name="digitCountValueKey19" translatable="false">19</string>
+    <string name="digitCountValueKey20" translatable="false">20</string>
+    <string name="digitCountValueKey21" translatable="false">21</string>
+    <string name="digitCountValueKey22" translatable="false">22</string>
+    <string name="digitCountValueKey23" translatable="false">23</string>
+    <string name="digitCountValueKey24" translatable="false">24</string>
+    <string name="digitCountValueKey25" translatable="false">25</string>
+    <string name="digitCountValueKey26" translatable="false">26</string>
+    <string name="digitCountValueKey27" translatable="false">27</string>
+    <string name="digitCountValueKey28" translatable="false">28</string>
+
+</resources>

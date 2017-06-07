@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="trans_camera_button_width">40dp</dimen>
+</resources>

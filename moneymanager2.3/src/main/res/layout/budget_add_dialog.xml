@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/Black">
+
+    <TextView
+        android:id="@+id/badTitle"
+        style="@style/ThemeNew.Dialog.Title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center_horizontal"
+        android:text="@string/addBudget"
+        android:textSize="@dimen/title_text_size" />
+
+    <EditText
+        android:id="@+id/badValue"
+        style="@style/ThemeNew.ButtonText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="@dimen/button_text_main_margin"
+        android:layout_marginRight="@dimen/button_text_main_margin"
+        android:inputType="numberDecimal"
+        />
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dialog_items_margin_top"
+        android:layout_marginLeft="@dimen/button_text_main_margin"
+        android:layout_marginRight="@dimen/button_text_main_margin">
+
+        <TextView
+            android:id="@+id/badLastName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/badLastValue"
+            android:layout_alignParentLeft="true"
+            android:text="@string/lastMonth"
+            android:textColor="@color/White"
+            style="@style/ThemeNew.LabelText.First" />
+
+        <TextView
+            android:id="@+id/badLastValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="125"
+            android:textColor="@color/White"
+            style="@style/ThemeNew.LabelText.First" />
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dialog_items_margin_top"
+        android:layout_marginLeft="@dimen/button_text_main_margin"
+        android:layout_marginRight="@dimen/button_text_main_margin">
+
+        <TextView
+            android:id="@+id/badAverName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/badAverValue"
+            android:layout_alignParentLeft="true"
+            android:text="@string/average"
+            android:textColor="@color/White"
+            style="@style/ThemeNew.LabelText.First" />
+
+        <TextView
+            android:id="@+id/badAverValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="125"
+            android:textColor="@color/White"
+            style="@style/ThemeNew.LabelText.First" />
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dialog_items_margin_top"
+        android:layout_marginLeft="@dimen/button_text_main_margin"
+        android:layout_marginRight="@dimen/button_text_main_margin"
+        android:id="@+id/badSubCategLayout">
+
+        <TextView
+            android:id="@+id/badIncludeSub"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/badCbIncludeSub"
+            android:layout_alignParentLeft="true"
+            android:text="@string/includeSubCategoriesBudget"
+            android:textColor="@color/White"
+            style="@style/ThemeNew.LabelText.First" />
+
+        <CheckBox
+            android:id="@+id/badCbIncludeSub"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:textColor="@color/White"
+            android:layout_alignTop="@+id/badIncludeSub"
+            android:layout_alignBottom="@+id/badIncludeSub"/>
+
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dialog_title_margin_bottom"
+        android:layout_marginTop="@dimen/dialog_items_margin_top"
+        android:layout_marginLeft="@dimen/button_text_main_margin"
+        android:layout_marginRight="@dimen/button_text_main_margin">
+
+        <Button
+            android:id="@+id/badCancel"
+            style="@style/ThemeNew.Converter.Button.Filter"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/Cancel"
+            android:textSize="@dimen/dialog_ok_text_size" />
+
+        <Button
+            android:id="@+id/badOK"
+            style="@style/ThemeNew.Converter.Button.Filter"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/ok"
+            android:textSize="@dimen/dialog_ok_text_size" />
+
+    </LinearLayout>
+</LinearLayout>

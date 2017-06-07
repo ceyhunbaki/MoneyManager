@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="category_list_left_margin">5dp</dimen>
+    <dimen name="category_list_right_margin">5dp</dimen>
+    <dimen name="category_button_left_margin">20dp</dimen>
+    <dimen name="category_button_right_margin">20dp</dimen>
+    <dimen name="category_button_min_width">175dp</dimen>
+</resources>

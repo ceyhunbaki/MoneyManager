@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="whatsnew">Cosa c\'è di nuovo?</string>
+	<string name="v3_4_1">-Aggiunto nuovo report: Budget - Grafico a torta.
+				\n -Aggiunto il valore medio e il valore del mese scorso per la finestra di dialogo "Aggiungi valore" nella schermata del budget.
+				\n -Corretti bug.</string>
+	<string name="v3_5_0">-Aggiunto nuovo widget - Aggiungi una transazione.
+				\n -Aggiunta nuova opzione per la sincronizzazione automatica con Dropbox.</string>
+	<string name="v3_5_1">-Aggiunto nuovo report - Confronto delle spese dei mesi.
+				\n -Corretti bug.</string>
+	<string name="v3_5_2">-Aggiunta di una nuova finestra - Risparmi.
+				\n -Aggiunta dello stato della transazione e del tipo di pagamento per la ripetizione delle transazioni.
+				\n -Migliorato il bilancio di previsione.
+				\n -Corretti bug.</string>
+	<string name="v3_5_3">-Navigazione tra i menu migliorata.
+				\n -Aggiunta descrizione ai salvataggi.
+				\n -Corretti bug.</string>
+	<string name="v3_5_4">-Aggiunta nuova opzione - Imposta il budget di questo mese nei mesi successivi.
+				\n -Corretti bug.</string>
+	<string name="v3_5_6">-Aggiunta nuova opzione - Transazione split;
+		\n-Aggiunta nuova opzione - Carica automaticamente su Dropbox solo quando è disponibile il WiFi.
+	</string>
+	<string name="v3_6_0">-Aggiunta nuova opzione - Formati data, numero e valuta;
+		\n-Corretti bug.
+	</string>
+	<string name="v3_6_1">-Calcolatrice migliorata;
+		\n-Corretti bug.</string>
+</resources>

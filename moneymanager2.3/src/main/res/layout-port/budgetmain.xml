@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" >       
+
+    <RelativeLayout
+        android:id="@+id/repLayDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="1dp"
+        android:background="@color/AntiqueWhite" >
+
+        <ImageButton
+            android:id="@+id/repImgDateLeft"
+            style="@style/ReportButton.Image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:onClick="myClickHandler"
+            android:src="@drawable/left_arrow" />
+
+        <Button
+            android:id="@+id/repBtDate"
+            style="@style/ReportButton.Little"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/repImgDateLeft"
+            android:layout_alignTop="@+id/repImgDateLeft"
+            android:layout_toLeftOf="@+id/repImgDateRight"
+            android:layout_toRightOf="@+id/repImgDateLeft"
+            android:background="@color/AntiqueWhite"
+            android:onClick="myClickHandler"
+            android:text="March, 2013" />
+
+        <ImageButton
+            android:id="@+id/repImgDateRight"
+            style="@style/ReportButton.Image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:onClick="myClickHandler"
+            android:src="@drawable/right_arrow" />
+    </RelativeLayout>
+
+    <android.support.v4.view.ViewPager
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/repLayDate" 
+        android:background="@color/White">
+    </android.support.v4.view.ViewPager>
+
+</RelativeLayout>

@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/hmScrollView1"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentLeft="true"
+    android:layout_alignParentTop="true"
+    android:background="@color/newThemeBlue" >
+
+    <LinearLayout
+        android:id="@+id/hmLayOpen"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/White"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/hmTvOpen"
+            style="@style/ThemeNew.Main.MenuItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="@string/open"
+            android:textSize="@dimen/title_text_size"
+            android:textColor="@color/White"/>
+
+        <!--<Button
+            android:id="@+id/hmBtOpenAccounts"
+            style="@style/ThemeNew.Main.MenuItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/hmTvOpen"
+            android:onClick="myClickHandler"
+            android:text="@string/accounts" />
+
+        <Button
+            android:id="@+id/hmBtAllTransactions"
+            style="@style/ThemeNew.Main.MenuItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/hmBtOpenAccounts"
+            android:onClick="myClickHandler"
+            android:text="@string/allTransactions" />
+
+        <Button
+            android:id="@+id/hmBtOpenTransfer"
+            style="@style/ThemeNew.Main.MenuItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/hmBtAllTransactions"
+            android:onClick="myClickHandler"
+            android:text="@string/menuTransfers"/>
+
+        <Button
+            android:id="@+id/hmBtOpenRPTransactions"
+            style="@style/ThemeNew.Main.MenuItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/hmBtOpenTransfer"
+            android:onClick="myClickHandler"
+            android:text="@string/rptransactions"/>
+
+        <Button
+            android:id="@+id/hmBtOpenBudget"
+            style="@style/ThemeNew.Main.MenuItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/hmBtOpenRPTransactions"
+            android:onClick="myClickHandler"
+            android:text="@string/budget"/>
+
+        <Button
+            android:id="@+id/hmBtOpenDebts"
+            style="@style/ThemeNew.Main.MenuItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/hmBtOpenBudget"
+            android:onClick="myClickHandler"
+            android:text="@string/mydebts"/>
+
+        <Button
+            android:id="@+id/hmBtOpenCurrencies"
+            style="@style/ThemeNew.Main.MenuItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/hmBtOpenDebts"
+            android:onClick="myClickHandler"
+            android:text="@string/currencies"/>
+
+        <Button
+            android:id="@+id/hmBtOpenExpenseCategories"
+            style="@style/ThemeNew.Main.MenuItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/hmBtOpenCurrencies"
+            android:onClick="myClickHandler"
+            android:text="@string/expenseCategories"/>
+
+        <Button
+            android:id="@+id/hmBtOpenIncomeCategories"
+            style="@style/ThemeNew.Main.MenuItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/hmBtOpenExpenseCategories"
+            android:onClick="myClickHandler"
+            android:text="@string/incomeCategories"/>
+
+        <Button
+            android:id="@+id/hmBtOpenSettings"
+            style="@style/ThemeNew.Main.MenuItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/hmBtOpenIncomeCategories"
+            android:onClick="myClickHandler"
+            android:text="@string/settings"/>
+
+        <Button
+            android:id="@+id/hmBtOpenHelp"
+            style="@style/ThemeNew.Main.MenuItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/hmBtOpenSettings"
+            android:onClick="myClickHandler"
+            android:text="@string/help"/>
+
+        <Button
+            android:id="@+id/hmBtOpenAbout"
+            style="@style/ThemeNew.Main.MenuItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/hmBtOpenHelp"
+            android:onClick="myClickHandler"
+            android:text="@string/about"/> -->
+    </LinearLayout>
+
+</ScrollView>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="whatsnew">O que há de novo?</string>
+	<string name="v3_4_1"> -Novo relatório adicionado: Orçamento - Gráfico de pizza.
+				\n -Adicionado o valor médio e o valor do mês passado para a caixa de diálogo "Adicionar valor" na tela de orçamento.
+				\n -Erros corrigidos.</string>
+	<string name="v3_5_0">-Adicionado novo widget - Adicionar uma transação.
+				\n -Adicionado nova opção para sincronização automática com o Dropbox.</string>
+	<string name="v3_5_1">-Novo relatório adicionado - Comparação das despesas pelos meses.
+				\n -Erros corrigidos.</string>
+	<string name="v3_5_2">-Adicionada uma nova janela - Poupança.
+				\n -Adicionada situação de transação e tipo de pagamento para transações repetidas.
+				\n -Cálculo de orçamento melhorado.
+				\n -Erros corrigidos.</string>
+	<string name="v3_5_3">-Navegação melhorada de menus.
+				\n -Descrição adicionada para a poupança.
+				\n -Erros corrigidos.</string>
+	<string name="v3_5_4">-Adicionado nova opção - Defina o orçamento deste mês aos meses seguintes.
+				\n -Erros corrigidos.</string>
+	<string name="v3_5_6">-Adicionado nova opção - Transação compartilhada;
+		\n-Adicionado nova opção - Fazer upload automaticamente para o Dropbox apenas quando o WiFi estiver disponível.
+	</string>
+	<string name="v3_6_0">-Adicionado nova opção - Data, número e formatos de moeda;
+		\n-Erros corrigidos.
+	</string>
+	<string name="v3_6_1">-Calculadora Melhorada;
+		\n-Erros corrigidos.</string>
+</resources>

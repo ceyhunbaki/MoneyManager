@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layTrList"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ListView
+        android:id="@+id/trListView"
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:layout_marginTop="1dp"
+        android:layout_weight="6"
+        android:background="@color/White"
+        android:cacheColorHint="#00000000"
+        android:divider="@color/newThemeBlue"
+        android:dividerHeight="@dimen/main_round_button_side"
+        android:scrollingCache="true" />
+
+    <TextView
+        android:id="@+id/tvTrTotal"
+        style="@style/CombinedListLabelNew"
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:layout_marginBottom="5dp"
+        android:layout_weight="0.7"
+        android:background="@color/newThemeBlue"
+        android:gravity="right"
+        android:text="@string/total"
+        android:textColor="@color/White" />
+
+</LinearLayout>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="whatsnew">What\'s new?</string>
+    <string name="v2_1" translatable="false">We added new \"My Debts\" menu. With this option you can add your debts. They are not added to your transactions. You can also add returning date and with \"remind me\" option you will not forget returning date.</string>
+    <string name="v2_2" translatable="false">-We added new Dropbox Backup/Restore opportunity. Now with your Dropbox account you can backup or restore your data and only you can access your data in Dropbox. If you use more than one device and you want to sync your data with Dropbox, you should backup to Dropbox before closing application if you made any changes. But when you open application in another device in first manually restore from Dropbox, then you’ll get a notification about new version of your data in every application opening.
+				\n-Transactions from invisible accounts are visible in All transactions list.
+				\n-Added Returned option to debts\' context menu and returned debts’ color changed in My debts list.</string>
+    <string name="v2_2_1" translatable="false">-Changed the application icon.
+				\n-Fixed bug when editing account.
+				\n-Excluded transfers from transactions list, if none of the accounts are selected.</string>
+	<string name="v2_2_2" translatable="false">-If the currency of any of your accounts are different from the base currency, the application automatically retrieves daily exchange rates from the Internet.
+				\n-Improved Dropbox backup/restore
+				\n-Several other improvement and bug fixes</string>
+	<string name="v2_2_3" translatable="false">-Improved design.
+				\n-Fixed bugs</string>
+	<string name="v2_2_4" translatable="false">-Improved exchange rates.</string>
+	<string name="v3_0" translatable="false">-Added budgeting features (Get more information on the help page in the settings menu).
+	    		\n-Categories are divided into categories of income and expenses.
+	    		\n-Several other improvement and bug fixes.</string>
+	<string name="v3_0_1" translatable="false">- Improved main screen and transaction list - value will be updated on the background;
+				\n- Added option to disable automatic currency exchange rates on the Settings screen;
+				\n- Fixed bug.</string>
+	<string name="v3_1_0" translatable="false">-Improved password protection.
+				\n- Fixed bugs.</string>
+	<string name="v3_2" translatable="false">-Changed the design of some screens and other\'s design will be changed in the future too;
+				\n-Added the ability to add pictures and status to operations;
+				\n-Added the ability to choose a specific time period to the reports;
+				\n-Budget reports added;
+				\n-The password screen improved, and now the password consists only of numbers (if you have a pre-assigned password, the password deleted, you can set the password again);
+				\n-Fixed some bugs.</string>
+	<string name="v3_3" translatable="false">-Step by step we are changing our design;
+				\n-Added advanced version of the Main screen;
+				\n-Added Portuguese (Brazil) translation</string>
+	<string name="v3_3_1" translatable="false">-Step by step we are changing our design</string>
+	<string name="v3_3_2" translatable="false">-Step by step we are changing our design</string>
+	<string name="v3_3_3" translatable="false">-Step by step we are changing our design.
+				\n- Fixed bugs.
+				\n- Added a new Report: Budget - compare with previous months. Compare your budget with the values of the previous and the last 12 months.</string>
+	<string name="v3_3_4" translatable="false">-Step by step we are changing our design.
+				\n- Fixed bugs.</string>
+	<string name="v3_3_6" translatable="false">-Added a new report - Account balance. Account balances for the selected date.
+				\n- Fixed bugs.</string>
+	<string name="v3_4_1">-Added new language - Indonesian.
+				\n -Added new report: Budget - Pie chart.
+				\n -Added the average value and the value of the last month to the "Add value" dialog box on the budget screen.
+				\n -Fixed bugs.</string>
+	<string name="v3_5_0">-Added new widget - Add a transaction.
+				\n -Added new option for automatic synchronization with Dropbox.</string>
+	<string name="v3_5_1">-Added new report - Comparison of the expenses by the months.
+				\n -Fixed bugs.</string>
+	<string name="v3_5_2">-Added a new window - Savings. Set the target month and the amount. Add the minimum monthly budget and achieve your goals.
+				\n -Added transaction\'s status and payment type to repeating transactions.
+				\n -Improved budget calculation.
+				\n -Fixed bugs.</string>
+	<string name="v3_5_3">-Improved navigation menus.
+		\n -Added description to savings.
+		\n -Fixed bugs.</string>
+	<string name="v3_5_4">-Added new option - Set this month\'s budget in following months.
+		\n -Fixed bugs.</string>
+	<string name="v3_5_6">-Added new option - Split transaction;
+		\n-Added new option - Automatically upload to Dropbox only when WiFi available.
+	</string>
+	<string name="v3_6_0">-Added new option - Date, number and currency formats;
+		\n-Fixed bugs.
+	</string>
+	<string name="v3_6_1">-Improved Calculator;
+		\n-Fixed bugs.</string>
+</resources>

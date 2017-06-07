@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@color/White">
+    <!-- 
+    android:background="@color/White"  -->
+
+    <TextView
+        android:id="@+id/ltTrDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/combined_list_label_left_margin"
+        android:layout_marginTop="@dimen/combined_list_label_top_margin"
+        android:layout_alignParentLeft="true"
+        android:minWidth="100dp"
+        style="@style/CombinedListLabelNew"
+        android:textColor="@color/newThemeBlue"
+        android:text="28.09.2023" />
+
+    <TextView
+        android:id="@+id/ltTrAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="@dimen/combined_list_label_top_margin"
+        android:layout_marginRight="@dimen/combined_list_label_right_margin"
+        android:gravity="right"
+        style="@style/CombinedListLabelNew"
+        android:textStyle="bold"
+        android:text="365003.99" />
+
+    <TextView
+        android:id="@+id/ltTrBalance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignBaseline="@+id/ltTrCategory"
+        android:layout_below="@+id/ltTrAmount"
+        android:layout_marginRight="@dimen/combined_list_label_right_margin"
+        android:layout_marginTop="@dimen/combined_list_label_top_margin"
+        android:maxWidth="140dp"
+        android:gravity="right"
+        style="@style/CombinedListLabelNew"
+        android:text="(7854.09)"/>
+
+    <TextView
+        android:id="@+id/ltTrCategory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/ltTrDate"
+        android:layout_toLeftOf="@+id/ltTrBalance"
+        android:layout_marginTop="@dimen/combined_list_label_between_top_margin"
+        android:layout_marginLeft="@dimen/combined_list_label_left_margin"
+        style="@style/CombinedListLabelNew"
+        android:textStyle="bold"
+        android:text="@string/category" />
+
+    <TextView
+        android:id="@+id/ltTrAccount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignBaseline="@+id/ltTrDescription"
+        android:layout_below="@+id/ltTrBalance"
+        android:layout_marginRight="@dimen/combined_list_label_right_margin"
+        android:gravity="left"
+        style="@style/CombinedListLabelNew.Small"
+        android:textColor="@color/newThemeBlue"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/ltTrDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ltTrCategory"
+        android:layout_alignLeft="@+id/ltTrCategory"
+        android:layout_toLeftOf="@+id/ltTrAccount"
+        android:layout_marginTop="@dimen/combined_list_label_between_top_margin"
+        android:gravity="left"
+        style="@style/CombinedListLabelNew.Small"
+        android:text="@string/description"/>
+
+</RelativeLayout>

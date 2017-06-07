@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <style name="Theme.White" parent="android:Theme">
+        
+    </style>
+    
+    <style name="Theme.White.BlackBackground" parent="Theme.White">
+        <item name="android:windowBackground">@color/Black</item>
+    </style>
+
+    <style name="Theme.White.Button" parent="android:Theme">
+        <item name="android:layout_width">120dp</item>
+        <item name="android:layout_height">50dp</item>
+    </style>
+    
+    <style name="CustomWindowTitleBackground">
+        <item name="android:background">@android:drawable/title_bar</item>
+        <item name="android:padding">0px</item>
+    </style>
+ 
+    <style name="CustomTheme" parent="android:Theme">
+        <item name="android:windowTitleSize">45dip</item>
+        <item name="android:windowTitleBackgroundStyle">@style/CustomWindowTitleBackground</item>
+    </style>
+ 
+    <style name="CustomDialogTheme" parent="android:Theme.Dialog">
+        <item name="android:windowTitleSize">60dip</item>
+        <item name="android:windowTitleBackgroundStyle">@style/CustomWindowTitleBackground</item>
+    </style>
+    
+    <style name="Theme.BudgetLayout" parent="Theme.MainButtons">
+        <item name="android:layout_marginTop">1dp</item>
+        <item name="android:background">@drawable/cool_budget_background</item>      
+    </style>
+    
+    <style name="Theme.BudgetLayoutGreen" parent="Theme.BudgetLayout">
+        <item name="android:background">@drawable/cool_budget_background_green</item>      
+    </style>
+    
+    <style name="Theme.BudgetLayoutRed" parent="Theme.BudgetLayout">
+        <item name="android:background">@drawable/cool_budget_background_red</item>      
+    </style>
+    
+    <style name="Theme.BudgetStatusLabels" parent="Theme.LabelTextSize">
+        <item name="android:gravity">left|center_vertical</item>
+        <item name="android:textColor">@color/Black</item>
+    </style>
+</resources>

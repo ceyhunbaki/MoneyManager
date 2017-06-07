@@ -1,0 +1,16 @@
+<!-- [ Mirror metadata ] generatedAt: 1459238185359 -->
+<!-- Generated screen file. Fill the id tags below with content with
+which to populate your previewed layout. For a complete specification
+of sample data, please see http://jimulabs.com/sample-data-specifications/ 
+
+Valid attributes on <screen> tag: theme="@style/someTheme" inEditMode="false" overlay="@drawable/mockup" -->
+<screen>
+    <_content layout="@layout/datedialog_dual">
+        <!-- TextView Examples:
+        <dmTvTitle text="@string/string_resource" />
+        <dmTvTitle text="Text literal" textSize="14sp" /> -->
+        <dmTvTitle />
+        <dmTvFromPeriod />
+        <dmTvToPeriod />
+    </_content>
+</screen>

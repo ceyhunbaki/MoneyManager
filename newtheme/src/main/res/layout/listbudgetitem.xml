@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/White" >
+
+    <TextView
+        android:id="@+id/tvCategory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_toLeftOf="@+id/tvRemaining"
+        android:paddingLeft="@dimen/category_child_row_left_pad"
+        android:text="@string/category"
+        android:gravity="left|center_vertical"
+        android:textColor="@drawable/color_selector"
+        style="@style/ThemeNew.BudgetGroupTextSize.Left"/>
+
+    <TextView
+        android:id="@+id/tvRemaining"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_toLeftOf="@+id/bt_child_edit"
+        android:text="15AZN"
+        android:gravity="center_vertical"
+        android:layout_marginRight="5dp"
+        android:textColor="@drawable/color_selector"
+        style="@style/ThemeNew.BudgetGroupTextSize.Right" />
+
+    <RelativeLayout
+        android:id="@+id/layBudgetChild"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvCategory"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="@dimen/category_child_row_left_pad"
+        android:layout_toLeftOf="@+id/bt_child_edit">
+
+        <ProgressBar
+            android:id="@+id/progressBar1"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:max="100"
+            android:visibility="visible"
+            android:progressDrawable="@drawable/greenprogress" />
+
+        <!--TextView
+            android:id="@+id/tvProgressText"
+            style="@style/CombinedListLabelNew.Small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="15/50"
+            android:textColor="@drawable/color_selector" /-->
+    </RelativeLayout>
+
+    <ImageButton
+        android:id="@+id/bt_child_edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/layBudgetChild"
+        android:layout_alignTop="@id/tvCategory"
+        android:layout_gravity="center_vertical"
+        android:layout_alignParentRight="true"
+        android:background="@color/transparent"
+        android:focusable="false"
+        android:onClick="myClickHandler"
+        android:src="@drawable/edit_new"
+        android:textColor="@drawable/color_selector" />
+
+</RelativeLayout>

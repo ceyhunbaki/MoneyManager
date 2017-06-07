@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/White">
+
+    <TextView
+        android:id="@+id/badTitle"
+        style="@style/ThemeNew.Dialog.Title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center_horizontal"
+        android:text="@string/addBudget"
+        android:textSize="@dimen/title_text_size" />
+
+    <EditText
+        android:id="@+id/badValue"
+        style="@style/ThemeNew.ButtonText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="@dimen/dialog_items_margin"
+        android:layout_marginRight="@dimen/dialog_items_margin"
+        android:inputType="numberDecimal"
+        />
+
+
+    <RelativeLayout
+        android:id="@+id/badLastLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dialog_items_margin_top"
+        android:layout_marginLeft="@dimen/dialog_items_margin"
+        android:layout_marginRight="@dimen/dialog_items_margin">
+
+        <TextView
+            android:id="@+id/badLastName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/badLastValue"
+            android:layout_alignParentLeft="true"
+            android:text="@string/lastMonth"
+            style="@style/ThemeNew.LabelText" />
+
+        <TextView
+            android:id="@+id/badLastValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="125"
+            style="@style/ThemeNew.LabelText.First" />
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/badAverLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dialog_items_margin_top"
+        android:layout_marginLeft="@dimen/dialog_items_margin"
+        android:layout_marginRight="@dimen/dialog_items_margin">
+
+        <TextView
+            android:id="@+id/badAverName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/badAverValue"
+            android:layout_alignParentLeft="true"
+            android:text="@string/average"
+            style="@style/ThemeNew.LabelText" />
+
+        <TextView
+            android:id="@+id/badAverValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="125"
+            style="@style/ThemeNew.LabelText.First" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dialog_items_margin_top"
+        android:layout_marginLeft="@dimen/dialog_items_margin"
+        android:layout_marginRight="@dimen/dialog_items_margin"
+        android:id="@+id/badSubCategLayout">
+
+        <TextView
+            android:id="@+id/badIncludeSub"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/badCbIncludeSub"
+            android:layout_alignParentLeft="true"
+            android:layout_alignBaseline="@+id/badCbIncludeSub"
+            android:text="@string/includeSubCategoriesBudget"
+            style="@style/ThemeNew.LabelText" />
+
+        <CheckBox
+            android:id="@+id/badCbIncludeSub"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="0dp"
+            style="@style/ThemeNew.ButtonText.CheckBox"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dialog_items_margin_top"
+        android:layout_marginLeft="@dimen/dialog_items_margin"
+        android:layout_marginRight="@dimen/dialog_items_margin"
+        android:id="@+id/badRepeatLayout">
+
+        <TextView
+            android:id="@+id/badRepeatLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/badCbRepeat"
+            android:layout_alignParentLeft="true"
+            android:layout_alignBaseline="@+id/badCbRepeat"
+            android:text="@string/repeatBudget"
+            style="@style/ThemeNew.LabelText" />
+
+        <CheckBox
+            android:id="@+id/badCbRepeat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="0dp"
+            style="@style/ThemeNew.ButtonText.CheckBox"/>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/badCancel"
+            style="@style/ThemeNew.Dialog.OKButton.Left"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/Cancel"/>
+
+        <Button
+            android:id="@+id/badOK"
+            style="@style/ThemeNew.Dialog.OKButton.Right"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/ok"/>
+
+    </LinearLayout>
+</LinearLayout>

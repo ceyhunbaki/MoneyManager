@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:key="@string/settings"
+    android:summary="@string/settingsSummary"
+    android:title="@string/settings" >
+
+    <PreferenceCategory
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:key="@string/generalOptions"
+        android:summary="@string/generalSummary"
+        android:title="@string/generalOptions" >
+        <Preference
+            android:key="@string/setLanguageOptsKey"
+            android:summary="@string/setLanguageOptsSummary"
+            android:title="@string/setLanguage" />
+        <ListPreference
+            android:defaultValue="@string/version2"
+            android:dialogTitle="@string/setHomeScreenVersion"
+            android:entries="@array/HomeScreenType"
+            android:entryValues="@array/HomeScreenTypeKeys"
+            android:key="@string/setHomeScreenKey"
+            android:summary="@string/version2"
+            android:title="@string/setHomeScreenVersion" />
+        <CheckBoxPreference
+			android:key="@string/enablebudgetkey"
+			android:defaultValue="true"
+			android:title="@string/enableBudget"
+			android:summary="@string/enableBudgetSummary" />
+        <CheckBoxPreference
+			android:key="@string/internetRatesKey"
+			android:defaultValue="true"
+			android:title="@string/currencyrates"
+			android:summary="@string/internetRatesSummary" />
+        <Preference
+            android:key="@string/receiptFolderKey"
+            android:defaultValue="@string/receiptFolderDefaultValue"
+            android:title="@string/receiptsFolderTitle"
+            android:summary="@string/receiptFolderDefaultValue"/>
+        <!-- <ListPreference
+            android:defaultValue="@string/setTransactionListDFDefaultValue"
+            android:dialogTitle="@string/setTransactionListDFDialogTitle"
+            android:entries="@array/DateFilterTitles"
+            android:key="@string/setTransactionListDFKey"
+            android:summary="@string/setTransactionListDFSummary"
+            android:title="@string/setTransactionListDateFilter" />
+        <ListPreference
+            android:defaultValue="@string/setStartupScreenDefaultValue"
+            android:dialogTitle="@string/setStartupScreenDialogTitle"
+            android:entries="@array/StartupList"
+            android:key="@string/setStartupScreenKey"
+            android:summary="@string/setStartupScreenSummary"
+            android:title="@string/setStartupScreenDialogTitle" /> -->
+    </PreferenceCategory>
+    
+    <PreferenceCategory
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:key="@string/security"
+        android:title="@string/security">        
+        <Preference
+            android:key="@string/setPasswordKey"
+            android:title="@string/setPassword"/>        
+        <Preference
+            android:key="@string/forgetPasswordKey"
+            android:title="@string/forgetpassword"
+            android:summary="@string/forgetPasswordSummary"/>
+        <CheckBoxPreference
+			android:key="@string/askpasswordkey"
+			android:defaultValue="false"
+			android:title="@string/askpasswordtitle"
+			android:summary="@string/askpasswordsummary" />
+        <!-- Preference 
+        	android:key="@string/emailKey" 
+        	android:title="@string/setEmail" 
+        	android:summary="@string/emailSummary"/> -->        
+        <Preference
+            android:key="@string/securityQuestionKey"
+            android:title="@string/securityQuestionTitle"
+            android:summary="@string/securityQuestionSummary"/>
+    </PreferenceCategory>
+    
+    <PreferenceCategory
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:key="@string/backupOptions"
+        android:title="@string/backupOptions" >
+        <CheckBoxPreference
+			android:key="@string/autoBackupKey"
+			android:defaultValue="true"
+			android:title="@string/autoBackupTitle"
+			android:summary="@string/autoBackupSummary" />
+        <CheckBoxPreference
+			android:key="@string/backupToDataFolderKey"
+			android:defaultValue="false"
+			android:title="@string/backupToDataFolderTitle"/>
+        <Preference
+            android:key="@string/backupFolderKey"
+            android:defaultValue="@string/backupFolderDefaultValue"
+            android:title="@string/backupFolderTitle"
+            android:summary="@string/btBackupSummary"/>
+        <Preference
+            android:key="@string/backupKey"
+            android:title="@string/menuBackup"
+            android:summary="@string/btBackupSummary"/>
+        <Preference
+            android:key="@string/restoreKey"
+            android:title="@string/menuRestore"
+            android:summary="@string/btRestoreSummary"/>
+        <ListPreference 
+            android:key="@string/backupMaxDateKey"
+            android:title="@string/backupMaxDateTitle"
+            android:summary="@string/backupMaxDateSummary"
+            android:defaultValue="@string/backupMaxDateDefValue"
+            android:dialogTitle="@string/backupMaxDateTitle"
+            android:entries="@array/MaxBackupDaysValues" />
+        <ListPreference 
+            android:key="@string/backupMaxSizeKey"
+            android:title="@string/backupMaxSizeTitle"
+            android:dialogTitle="@string/backupMaxSizeTitle"
+            android:summary="@string/backupMaxSizeSummary"
+            android:defaultValue="@string/backupMaxSizeDefValue"
+            android:entries="@array/MaxBackupSizeValues"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:key="@string/backupDropbox"
+        android:title="@string/backupDropbox">
+        <CheckBoxPreference
+            android:key="@string/dropboxAutoSyncKey"
+            android:defaultValue="false"
+            android:title="@string/dropboxAutoSyncTitle"
+            android:summary="@string/dropboxAutoSyncSummary" />
+        <CheckBoxPreference
+            android:key="@string/dropboxAutoSyncWiFiKey"
+            android:defaultValue="false"
+            android:title="@string/dropboxAutoSyncWiFiTitle"
+            android:summary="@string/dropboxAutoSyncWiFiSummary" />
+        <Preference
+            android:key="@string/dropboxBackupKey"
+            android:title="@string/menuBackup"
+            android:summary="@string/btBackupDropboxSummary"/>
+        <Preference
+            android:key="@string/dropboxRestoreKey"
+            android:title="@string/menuRestore"
+            android:summary="@string/btRestoreDropboxSummary"/>
+        <Preference
+            android:key="@string/dropboxResetUserKey"
+            android:title="@string/resetUserName"
+            android:summary="@string/btResetDropboxUserNameSummary"/>
+    </PreferenceCategory>
+    
+    <PreferenceCategory
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:key="@string/exportOptions"
+        android:title="@string/exportOptions" >
+        <Preference
+            android:key="export"
+            android:title="@string/menuExport"
+            android:summary="@string/btExportSummary"/>
+        <Preference
+            android:key="import"
+            android:title="@string/menuImport"
+            android:summary="@string/btImportSummary"/>
+        <!--<Preference
+            android:key="exportFolder"
+            android:title="@string/folder"
+            android:summary="@string/exportFolderSummary"/>-->
+    </PreferenceCategory>
+    
+    <PreferenceCategory 
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:key="@string/aboutOptions"
+        android:title="@string/about">
+        <Preference
+            android:key="@string/pAbout"
+            android:title="@string/about"/>
+        <Preference
+            android:key="@string/pAdsFree"
+            android:title="@string/removeAds"
+            android:summary="@string/adsRemoveSummaryBuy"/>
+        <Preference 
+            android:key="@string/pHelp"
+            android:title="@string/help"
+            android:summary="@string/helpSummary"/>
+        <Preference 
+            android:key="@string/sendEmailKey"
+            android:title="@string/sendEmailTitle"
+            android:summary="@string/sendEmailSummary"/>
+    </PreferenceCategory>
+
+</PreferenceScreen>

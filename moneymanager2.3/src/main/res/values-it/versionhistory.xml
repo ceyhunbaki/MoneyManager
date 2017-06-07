@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="whatsnew">Cosa c\'è di nuovo?</string>
+	<string name="v3_4_1">-Aggiunto nuovo report: Budget - Grafico a torta.
+				\n -Aggiunto il valore medio e il valore del mese scorso per la finestra di dialogo "Aggiungi valore" nella schermata del budget.
+				\n -Corretti bug.</string>
+	<string name="v3_5_0">-Aggiunto nuovo widget - Aggiungi una transazione.
+				\n -Aggiunta nuova opzione per la sincronizzazione automatica con Dropbox.</string>
+	<string name="v3_5_1">-Aggiunto nuovo report - Confronto delle spese dei mesi.
+				\n -Corretti bug.</string>
+</resources>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layTrList"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ListView
+        android:id="@+id/trListView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="1dp"
+        android:layout_marginTop="1dp"
+        android:background="@color/White"
+        android:cacheColorHint="#00000000"
+        android:divider="@color/newThemeBlue"
+        android:dividerHeight="@dimen/main_round_button_side"
+        android:scrollingCache="true"
+        android:layout_weight="1" />
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/White">
+
+        <Button
+            android:id="@+id/btTrAdd"
+            style="@style/ThemeNew.ButtonText.OKButton.Left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:minWidth="@dimen/ok_button_min_width_wide"
+            android:layout_marginLeft="@dimen/ok_button_margin_side_wide"
+            android:onClick="myClickHandler"
+            android:text="@string/menuAdd" />
+
+        <Button
+            android:id="@+id/btTrDeleteAll"
+            style="@style/ThemeNew.ButtonText.OKButton.Right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:minWidth="@dimen/ok_button_min_width_wide"
+            android:layout_marginRight="@dimen/ok_button_margin_side_wide"
+            android:onClick="myClickHandler"
+            android:text="@string/menuDeleteAll" />
+
+        <Button
+            android:id="@+id/btTrDeleteFinished"
+            style="@style/ThemeNew.ButtonText.OKButton.Third"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/btTrAdd"
+            android:layout_alignRight="@+id/btTrDeleteAll"
+            android:layout_below="@id/btTrAdd"
+            android:onClick="myClickHandler"
+            android:text="@string/menuDeleteAllFinished" />
+
+    </RelativeLayout>
+
+</LinearLayout>

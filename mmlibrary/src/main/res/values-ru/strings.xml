@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="accounts">Счета</string>
+    <string name="currencies">Валюты</string>
+    <string name="categories">Категории</string>
+    <string name="transactions">Операции</string>
+    <string name="transfer">Переводы</string>
+    <string name="calculator">Калькулятор</string>
+    <string name="convertor">Конвертер</string>
+    <string name="explorer">Проводник</string>
+
+    <string name="mydebts">Мои долги</string>
+    <string name="browse">Просмотреть</string>
+
+    <string name="currencyrates">Курсы валют</string>
+    <string name="rate">Курс</string>
+    <string name="result">Результат</string>
+    <string name="name">Название</string>
+    <string name="sign">Знак валюты</string>
+    <string name="initialBalance">Начальный \nбаланс</string>
+    <string name="up">ВВЕРХ</string>
+    <string name="description">Описание</string>
+    <string name="isDefault">По умолчанию</string>
+    <string name="status">Статус</string>
+    <string name="addedDate">Дата добавления</string>
+
+    <string name="notSet">Не задано</string>
+    <string name="addCategory">Добавить категорию</string>
+    <string name="addSubCategory">Добавить подкатегорию</string>
+
+    <string name="account">Счет</string>
+    <string name="category">Категория</string>
+    <string name="date">Дата</string>
+    <string name="amount">Сумма</string>
+    <string name="addIncome">Добавить доход</string>
+    <string name="addExpence">Добавить расход</string>
+    <string name="currency">Валюта</string>
+    <string name="value">Значения</string>
+    <string name="convert">Конвертировать</string>
+
+    <string name="totalBalance">Итого:</string>
+    <string name="total">Итого:</string>
+
+    <string name="from">От</string>
+    <string name="to">На</string>
+    <string name="repeatType">Тип \nповтора</string>
+    <string name="periodEnd">Конец \nпериода</string>
+    <string name="interval">Интервал</string>
+    <string name="days">дней</string>
+    <string name="first">Первый</string>
+    <string name="next">Следующий</string>
+    <string name="latest">Последний</string>
+
+    <string name="Yes">Да</string>
+    <string name="No">Нет</string>
+    <string name="Cancel">Отмена</string>
+    <string name="Continue">"Продолжить"</string>
+
+
+    <string name="type">Тип</string>
+
+    <string name="filter">Фильтр</string>
+    <string name="dateFrom">Дата от</string>
+    <string name="dateTo">Дата до</string>
+    <string name="amountFrom">Сумма более</string>
+    <string name="amountTo">Сумма менее</string>
+    <string name="operation">Действие</string>
+    <string name="transaction">Операция</string>
+
+    <string name="chooseFile">Выберите файл</string>
+
+    <string name="income">Доход</string>
+    <string name="expense">Расход</string>
+
+    <string name="Monday">Понедельник</string>
+    <string name="Tuesday">Вторник</string>
+    <string name="Wednesday">Среда</string>
+    <string name="Thursday">Четверг</string>
+    <string name="Friday">Пятница</string>
+    <string name="Saturday">Суббота</string>
+    <string name="Sunday">Воскресенье</string>
+    <!-- Settings -->
+    <string name="settings">Настройки</string>
+    <string name="settingsSummary">Установить настройки Money Manager</string>
+    <string name="generalOptions">Общий</string>
+    <string name="generalSummary">Установить общие настройки</string>
+
+    <string name="setTransactionListDateFilter">Фильтр по умолчанию для даты</string>
+    <string name="setTransactionListDFSummary">Установить по умолчанию фильтр даты для списка транзакций</string>
+    <string name="setTransactionListDFDialogTitle">Выберите фильтр для даты</string>
+
+    <string name="setStartupScreen">Начальный экран</string>
+    <string name="setStartupScreenSummary">Установите экран для запуска программы</string>
+    <string name="setStartupScreenDialogTitle">Начальный экран</string>
+
+    <string name="backupOptions">Резервное копирование/восстановление на карту SD/в память телефона</string>
+    <string name="btBackupSummary">Резервное копирование базы данных в </string>
+    <string name="btRestoreSummary">Восстановление базы</string>
+    <string name="folder">Папка</string>
+    <string name="addFolder">Добавить папку</string>
+    <string name="backupFolderSummary">Установить папку для автоматического архивации</string>
+    <string name="exportOptions">Импорт и экспорт</string>
+    <string name="btExportSummary">Экспортировать операции в файл CSV</string>
+    <string name="btImportSummary">Импортировать операции</string>
+    <string name="exportFolderSummary">Задать папку для экспорта</string>
+    <string name="backupMaxDateTitle">Максимальный период хранения резервной копии</string>
+    <string name="backupMaxDateSummary">После этого периода резервная копия будет автоматически удалена</string>
+    <string name="backupMaxSizeTitle">Общий размер резервной копии</string>
+    <string name="backupMaxSizeSummary">Общий размер папки резервной копии, МБ</string>
+    <string name="autoBackupTitle">Автоматическое резервное копирование</string>
+    <string name="autoBackupSummary">Ежедневное резервное копирование</string>
+    <string name="backupToDataFolderTitle">Резервное копирование в папку /data</string>
+    <string name="backupFolderTitle">Папка резервной копии</string>
+
+    <string name="security">Безопасность</string>
+    <string name="setPassword">Установить пароль</string>
+    <string name="changePassword">Изменить пароль</string>
+    <string name="setEmail">Установить эл. почту</string>
+    <string name="changeEmail">Изменить эл. почту</string>
+    <string name="emailSummary">Адрес электронной почты для восстановления пароля</string>
+    <string name="securityQuestionTitle">Контрольный вопрос</string>
+    <string name="securityQuestionSummary">Установите контрольный вопрос для восстановления пароля</string>
+    <string name="forgetPasswordSummary">Нажмите, чтобы получить новый пароль</string>
+
+
+    <string name="selectCategory">Выберите категорию</string>
+    <string name="selectAccount">Выберите счет</string>
+    <string name="selectCurrency">Выберите валюту</string>
+    <string name="selectFolder">Выберите папку</string>
+
+    <string name="newPassword">Новый пароль</string>
+    <string name="oldPassword">Старый пароль</string>
+    <string name="showPassword">Показать пароль</string>
+    <string name="question">Вопрос</string>
+    <string name="answer">Ответ</string>
+    <string name="securityanswer">Контрольный ответ</string>
+    <string name="askpasswordtitle">Защита паролем</string>
+    <string name="askpasswordsummary">Запрашивать пароль при запуске</string>
+    <string name="enterpassword">Введите пароль</string>
+    <string name="forgetpassword"><u>Забыли пароль?</u></string>
+    <string name="yourNewPassword">Ваш новый пароль</string>
+    <string name="information">Информация</string>
+
+    <string name="about">О программе</string>
+    <string name="help">Справка</string>
+    <string name="sendEmailTitle">Отправить электронное письмо</string>
+    <string name="sendEmailSummary">Отправить электронное письмо разработчику</string>
+    <string name="helpSummary">Открыть руководство пользователя</string>
+    <string name="removeAds">Скрыть рекламу</string>
+    <string name="adsRemoveSummaryRemoved">Ключ "Никакой рекламы" уже получен</string>
+    <string name="adsRemoveSummaryBuy">Купить Ключ "Никакой рекламы"</string>
+
+    <string name="allow">Разрешить</string>
+    <string name="dont_allow">Не разрешить</string>
+
+    <string name="month">Месяц</string>
+    <string name="year">Год</string>
+    <string name="Sum">ИТОГО</string>
+
+    <string name="open"><b>Открыть</b></string>
+    <string name="boldedit"><b>ИЗМЕНИТЬ</b></string>
+    <string name="boldfilter"><b>ФИЛЬТР</b></string>
+
+    <string name="setLanguage">Язык</string>
+    <string name="setLanguageSummary">Установить язык</string>
+    <string name="setLanguageDialogTitle">Выбрать язык</string>
+
+    <string name="setHomeScreenVersion">Версия главного экрана</string>
+
+    <string name="report">Отчет</string>
+    <string name="today">Сегодня</string>
+    <string name="thisMonth">За месяц</string>
+    <string name="thisYear">За год</string>
+    <string name="balance2">Баланс</string>
+    <string name="recurring">Повторяющаяся операция</string>
+    <string name="addRecurring">Добавить повторяющиеся</string>
+
+    <string name="sortAtoZ">Сортировать от А до Я</string>
+    <string name="addNew">Добавить</string>
+    <string name="allTransactions">Все операции</string>
+    <string name="incomes">Доходы</string>
+    <string name="expences">Расходы</string>
+    <string name="editTransaction">Редактировать операции</string>
+    <string name="selectMainCategory">Выберите главную категорию</string>
+    <string name="deleteTransaction">Удалить операцию</string>
+    <string name="all">Все</string>
+    <string name="cash">Наличные</string>
+    <string name="bank">Банк</string>
+
+    <string name="transferShort">ПЕР</string>
+    <string name="rpTransShort">ПТ</string>
+
+    <string name="returnDate">Дата возврата</string>
+    <string name="returnDate2">Дата\nвозврата</string>
+    <string name="addToTransaction">Добавить в операции</string>
+    <string name="borrowed">Взято взаймы</string>
+    <string name="lent">Отдано взаймы</string>
+
+    <string name="backupDropbox">Dropbox - Резервное копирование/восстановление</string>
+    <string name="btBackupDropboxSummary">Резервное копирование базы данных в Dropbox</string>
+    <string name="btRestoreDropboxSummary">Восстановление данных из Dropbox</string>
+    <string name="uploading">Загрузка</string>
+    <string name="downloading">Cкачивание</string>
+    <string name="autentificateError">Это приложение не прошло проверку подлинности</string>
+    <string name="fileBigError">Этот файл слишком большой для загрузки</string>
+    <string name="emptyDirectory">Пустой файл или каталог</string>
+    <string name="noBackup">Нет резервной копии в Dropbox</string>
+    <string name="couldntRestore">Не удалось создать локальный файл для восстановления</string>
+    <string name="canceled">Отменено</string>
+    <string name="networkError">Ошибка сети. Попробуйте еще раз.</string>
+    <string name="dropboxError">Ошибка Dropbox. Попробуйте еще раз.</string>
+    <string name="unknownError">Неизвестная ошибка. Попробуйте еще раз.</string>
+    <string name="resetUserName">Сбросить имя пользователя/пароль</string>
+    <string name="btResetDropboxUserNameSummary">Отключить приложение от учетной записи в Dropbox</string>
+    <string name="dropboxUserAccess">Dropbox запросить разрешение на доступ при следующем резервном копировании/восстановлении</string>
+    <!-- BUDGET -->
+    <string name="budget">Бюджет</string>
+    <string name="budgetMainGroup">Бюджет основной группы</string>
+    <string name="selectAll">Выбрать все</string>
+    <string name="lastMonth">В прошлом месяце</string>
+    <string name="notBudgeted">Не внесено в бюджет</string>
+    <string name="budgeted">Внесено в бюджет</string>
+    <string name="remaining">Остаточный бюджет</string>
+    <string name="remainingFromPrevMonth">Остаточный бюджет за предыдущий месяц</string>
+    <string name="remainingFromPrevMonthMain">Остаточный бюджет за предыдущий месяц, основная группа</string>
+    <string name="remainingFromPrevMonthTotal">Общий остаточный бюджет за предыдущий месяц</string>
+    <string name="remainingCurrent">Текущий остаточный бюджет</string>
+    <string name="overspent">Перерасход</string>
+    <string name="editBudget">Редактировать бюджет</string>
+    <string name="selectValue">Выберите значение</string>
+    <string name="moveBudget">Переместить бюджет в другую категорию</string>
+    <string name="addBudget">Добавить бюджет</string>
+    <string name="remainingBudget">Остаточный бюджет:</string>
+    <string name="budgetTotal">Всего</string>
+    <string name="movedValueIsTooBig">Сумма перевода не может превышать текущий бюджет</string>
+    <string name="incomeCategories">Категории доходов</string>
+    <string name="expenseCategories">Категории расходов</string>
+    <string name="applyThis">Применить это</string>
+    <string name="change">Изменить</string>
+    <string name="neverAsk">Не спрашивать</string>
+    <string name="enableBudget">Включить бюджет</string>
+    <string name="enableBudgetSummary">Включить или выключить все опции бюджета</string>
+    <string name="internetRatesSummary">Получать обменные курсы автоматически из Интернета</string>
+    <string name="editRemainingBudget">Уменьшить оставшийся бюджет</string>
+
+    <string name="usedShort">И</string>
+    <string name="used">Использовано</string>
+    <string name="budgetShort">Б</string>
+    <string name="remainingShort">О</string>
+    <string name="totalRemainingShort">ОО</string>
+    <string name="totalRemaining">Общее оставшееся</string>
+    <string name="totalBudgetShort">ОБ</string>
+    <string name="totalBudget">Общий бюджет</string>
+    <string name="barChart">Линейчатая диаграмма</string>
+    <string name="cleared">Оплачено</string>
+    <string name="lineChart">Линейный график</string>
+    <string name="menuAddTransaction">Добавить операцию</string>
+    <string name="msgCameraError">Ошибка при попытке запустить камеру</string>
+    <string name="msgChangeName">Изменить имя</string>
+    <string name="msgChooseFromGallery">Выберите из галереи</string>
+    <string name="msgDeleteCurrentPhoto">Удалить текущую фотографию</string>
+    <string name="msgFromDateIsLessThanTo">Начальная дата не может быть позднее конечной даты</string>
+    <string name="msgPleaseSelect">Выберите</string>
+    <string name="msgPasswordReset">Ваш пароль был удален. Установите пароль еще раз.</string>
+    <string name="msgTakeNew">Выбрать новую фотографию</string>
+
+    <string name="repAccountBalanceReport">Остатки на счетах</string>
+    <string name="repAccountReport">Отчет по счету</string>
+    <string name="repCategory">Отчет по категории</string>
+    <string name="repSubCategory">Отчет по подкатегории</string>
+    <string name="repCategoryPieChart">Круговая диаграмма по категории</string>
+    <string name="repCategoryBarChart">Столбиковая диаграмма по категории</string>
+    <string name="repBudgetAmount">Сумма бюджета</string>
+    <string name="repBudgetGrowth">Рост бюджета</string>
+    <string name="repBudgetGrowthCategories">Рост бюджета по категориям</string>
+    <string name="repBudgetGrowthTotal">Общий рост бюджета</string>
+    <string name="repBudgetedAmountCategories">Ежемесячный бюджет, сумма по категориям</string>
+    <string name="repBudgetedAmountTotal">Ежемесячная общая сумма в бюджете</string>
+    <string name="repBudgetCompare">Сравнить бюджет с предыдущими месяцами</string>
+    <string name="repBudgetPieChart">Бюджет - Круговая диаграмма</string>
+    <string name="transactionStatus">Статус операции</string>
+    <string name="uncleared">Не оплачено</string>
+    <string name="void_">Отменено</string>
+    <string name="disable">Отключить</string>
+    <string name="later">Позже</string>
+    <string name="setNow">Установить</string>
+
+    <string name="paymentMethod">Способ оплаты</string>
+    <string name="paymentMethodN">Способ \nоплаты</string>
+    <string name="check">Чек</string>
+    <string name="checkNo">Номер чека</string>
+    <string name="card">Карта</string>
+
+    <string name="version1">Расширенный</string>
+    <string name="version2">Простой</string>
+
+    <string name="last12Month">Последние 12 месяцев</string>
+    <string name="custom">Пользовательский</string>
+    <string name="defaultt">По умолчанию</string>
+    <string name="average">Средний</string>
+
+    <string name="onlyOnce">Только один раз</string>
+    <string name="daily">Ежедневно</string>
+    <string name="weekly">Еженедельно</string>
+    <string name="monthly">Ежемесячно</string>
+    <string name="quarterly">Ежеквартально</string>
+    <string name="yearly">Ежегодно</string>
+    <string name="visible">Видимый</string>
+    <string name="invisible">Невидимый</string>
+    <string name="thisWeek">На этой неделе</string>
+    <string name="last30Days">Последние 30 дней</string>
+    <string name="never">Никогда</string>
+    <string name="sameDay">В тот же день</string>
+    <string name="dayBefore1">1 день до</string>
+    <string name="dayBefore2">2 дня до</string>
+    <string name="dayBefore3">3 дня до</string>
+    <string name="dayBefore7">7 дней до</string>
+    <string name="day1">1 день</string>
+    <string name="day3">3 дня</string>
+    <string name="week1">1 неделя</string>
+    <string name="week2">2 недели</string>
+    <string name="month1">1 месяц</string>
+    <string name="month2">2 месяца</string>
+    <string name="january">Январь</string>
+    <string name="february">Февраль</string>
+    <string name="march">Март</string>
+    <string name="april">Апрель</string>
+    <string name="may">Май</string>
+    <string name="june">Июнь</string>
+    <string name="july">Июль</string>
+    <string name="august">Август</string>
+    <string name="september">Сентябрь</string>
+    <string name="october">Октябрь</string>
+    <string name="november">Ноябрь</string>
+    <string name="december">Декабрь</string>
+
+    <string name="includeSubCategoriesBudget">Включать бюджет подкатегорий</string>
+    <string name="repeatBudget">Установить бюджет этово месяца в последующие месяцы</string>
+    <string name="dropboxAutoSyncSummary">Автоматическая синхронизация с Dropbox. Используйте эту опцию, если вы используете более одного устройства с тем же Dropbox счет.</string>
+    <string name="dropboxAutoSyncTitle">Dropbox auto sync</string>
+    <string name="msgDropboxNotAutorised">Для авторизации в вашем Dropbox, сделайте резервную копию или восстановление из Dropbox.</string>
+    <string name="msgDropboxSnycing">Синхронизация с Dropbox ... </string>
+    <string name="repExpensesCompare">Сравнение расходов на несколько месяцев</string>
+    <string name="repExpensesCompareTitle">Ежемесячное сравнение</string>
+
+    <string name="goals">Сбережении</string>
+    <string name="addGoal">Добавить цель</string>
+    <string name="editGoal">Изменить цель</string>
+    <string name="targetMonth">Целевой месяц</string>
+    <string name="targetAmount">Целевая сумма</string>
+    <string name="monthlyMinimum">Ежемесячный минимальный</string>
+    <string name="dropboxAutoSyncWiFiSummary">Автоматически загружать на Dropbox только тогда, когда Wi-Fi доступен</string>
+    <string name="dropboxAutoSyncWiFiTitle">Загрузка только через Wi-Fi</string>
+    <string name="min2Max10">Минимальное количество подтранзакция с категорией и сумма должна быть 2, максимум 10</string>
+    <string name="splitTransaction">Разделить транзакции</string>
+    <string name="split">Разделить</string>
+    <string name="addSubTransaction">Добавить подтранзакция</string>
+    <string name="msgAmountNotAllowedSplit">Общая сумма автоматически рассчитывается для сплит-транзакций</string>
+    <string name="msgCategoryNotAllowedSplit">Отдельные категории не допускается для сплит-транзакций</string>
+    <string name="setDecimalDigitsCountCurrency">Количество цифр после десятичной точки для валютных курсов</string>
+    <string name="setDecimalDigitsCount">Количество цифр после десятичной точки</string>
+    <string name="setDigitsGroupingSymbol">Символ группировки цифр</string>
+    <string name="setDecimalSymbol">Десятичный символ</string>
+    <string name="left">Влево</string>
+    <string name="msgChooseReceiptFolder">Сбой операции. Выберите папку квитанции из настроек</string>
+    <string name="msgViewCurrentPhoto">Просмотр текущей фотографии</string>
+    <string name="none">Ни одной</string>
+    <string name="receiptsFolderTitle">Папка квитанции</string>
+    <string name="right">Вправа</string>
+    <string name="setCurSignPosition">Позиция значении валют</string>
+    <string name="setDateFormat">Формат даты</string>
+    <string name="setLanguageOptsSummary">Настройка языка, форматов валюты и даты</string>
+    <string name="setResetLocalizationSummary">Восстановить форматы по умолчанию</string>
+    <string name="setResetLocalizationTitle">Сброс</string>
+
+    <string name="setWeekFirstDay">Первый день недели</string>
+    <string name="setMonthFirstDate">Первый день месяца</string>
+</resources>

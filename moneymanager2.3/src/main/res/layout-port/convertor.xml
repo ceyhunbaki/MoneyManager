@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ConLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/White"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tvATTitle"
+        style="@style/ThemeNew.Title"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/title_bar_height"
+        android:background="@color/newThemeBlue"
+        android:gravity="center|center_vertical"
+        android:text="@string/convertor" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/title_bar_height"
+                android:background="@color/Black"
+                android:baselineAligned="false">
+
+                <LinearLayout
+                    android:layout_width="0px"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1.4">
+
+                    <TextView
+                        android:id="@+id/lbConFrom"
+                        style="@style/ThemeNew.Converter.Button.ComboBox"
+                        android:layout_width="0px"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1.2"
+                        android:text="@string/from" />
+
+                    <ImageButton
+                        android:id="@+id/btConFrom"
+                        style="@style/Theme.MainButtons.FirstButtons"
+                        android:layout_width="0px"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.5"
+                        android:onClick="myClickHandler"
+                        android:background="@color/Black"
+                        android:src="@drawable/ic_menu_more" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0px"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="0.9" />
+
+                <LinearLayout
+                    android:layout_width="0px"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1.4">
+
+                    <TextView
+                        android:id="@+id/lbConTo"
+                        style="@style/ThemeNew.Converter.Button.ComboBox"
+                        android:layout_width="0px"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1.2"
+                        android:text="@string/to" />
+
+                    <ImageButton
+                        android:id="@+id/btConTo"
+                        style="@style/Theme.MainButtons.FirstButtons"
+                        android:layout_width="0px"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.5"
+                        android:onClick="myClickHandler"
+                        android:background="@color/Black"
+                        android:src="@drawable/ic_menu_more" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layConFirst"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:baselineAligned="false"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/layConFirstFrom"
+                    android:layout_width="0px"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.4"
+                    android:orientation="vertical">
+
+                    <Button
+                        android:id="@+id/btConvFrom1"
+                        style="@style/ThemeNew.Converter.Button"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:onClick="myClickHandler" />
+
+                    <Button
+                        android:id="@+id/btConvFrom2"
+                        style="@style/ThemeNew.Converter.Button"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:onClick="myClickHandler" />
+
+                    <Button
+                        android:id="@+id/btConvFrom3"
+                        style="@style/ThemeNew.Converter.Button"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:onClick="myClickHandler" />
+
+                    <EditText
+                        android:id="@+id/edConvFrom"
+                        style="@style/ThemeNew.Converter.Button.Filter"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/filter" />
+                </LinearLayout>
+                <!-- layConFirstFrom -->
+
+                <LinearLayout
+                    android:id="@+id/layConFirstChange"
+                    android:layout_width="0px"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.9"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/imConRefresh"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:adjustViewBounds="true"
+                        android:onClick="myClickHandler"
+                        android:padding="20dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/refresh" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/layConFirstTo"
+                    android:layout_width="0px"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.4"
+                    android:orientation="vertical">
+
+                    <Button
+                        android:id="@+id/btConvTo1"
+                        style="@style/ThemeNew.Converter.Button"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:onClick="myClickHandler" />
+
+                    <Button
+                        android:id="@+id/btConvTo2"
+                        style="@style/ThemeNew.Converter.Button"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:onClick="myClickHandler" />
+
+                    <Button
+                        android:id="@+id/btConvTo3"
+                        style="@style/ThemeNew.Converter.Button"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:onClick="myClickHandler" />
+
+                    <EditText
+                        android:id="@+id/edConvTo"
+                        style="@style/ThemeNew.Converter.Button.Filter"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/filter" />
+                </LinearLayout>
+                <!-- layConFirstTo -->
+            </LinearLayout>
+            <!-- layConFirst -->
+
+            <LinearLayout
+                android:id="@+id/layConValues"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/converter_layout_margin_top"
+                android:orientation="horizontal"
+                android:baselineAligned="false">
+
+                <LinearLayout
+                    android:id="@+id/layConValuesCourse"
+                    android:layout_width="0px"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/lbConRate"
+                        style="@style/ThemeNew.Converter.Label.Small"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="@string/rate" />
+
+                    <EditText
+                        android:id="@+id/edConRate"
+                        style="@style/ThemeNew.Converter.Button.Values"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="numberDecimal"
+                        android:text="1.00" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/layConValuesValue"
+                    android:layout_width="0px"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/lbConValue"
+                        style="@style/ThemeNew.Converter.Label.Small"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="@string/value" />
+
+                    <EditText
+                        android:id="@+id/edConValue"
+                        style="@style/ThemeNew.Converter.Button.Values"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="numberDecimal">
+
+                        <requestFocus />
+                    </EditText>
+                </LinearLayout>
+            </LinearLayout>
+            <!-- layConValues -->
+
+            <LinearLayout
+                android:id="@+id/layConResult"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/converter_result_layout_margin_top"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/lbConResult"
+                    style="@style/ThemeNew.Converter.Label.Big"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/result" />
+
+                <EditText
+                    android:id="@+id/edConResult"
+                    style="@style/ThemeNew.Converter.Button.Result"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="none"
+                    android:text="0.00" />
+
+                <RelativeLayout
+                    android:id="@+id/layConAd"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent">
+
+                </RelativeLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+    <!-- layConResult -->
+</LinearLayout>

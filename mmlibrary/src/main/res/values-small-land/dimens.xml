@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="category_list_left_margin">5dp</dimen>
+    <dimen name="category_list_right_margin">5dp</dimen>
+    <dimen name="category_button_min_width">175dp</dimen>
+
+    <dimen name="calculator_button_text_size">15sp</dimen>
+    <dimen name="calculator_console_text_size">30sp</dimen>
+    <dimen name="calculator_console_text_small_size">17sp</dimen>
+
+    <dimen name="converter_combobox_button_textsize">15sp</dimen>
+
+
+</resources>

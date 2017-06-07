@@ -1,0 +1,99 @@
+<!-- [ Mirror metadata ] generatedAt: 1459238186125 -->
+<!-- Generated screen file. Fill the id tags below with content with
+which to populate your previewed layout. For a complete specification
+of sample data, please see http://jimulabs.com/sample-data-specifications/ 
+
+Valid attributes on <screen> tag: theme="@style/someTheme" inEditMode="false" overlay="@drawable/mockup" -->
+<screen>
+    <_content layout="@layout/transferedit">
+        <!-- TextView Examples:
+        <tvATTitle text="@string/string_resource" />
+        <tvATTitle text="Text literal" textSize="14sp" /> -->
+        <tvATTitle />
+        <lbTfAccountFrom />
+        <spTfAccountFrom>
+            <items layout="@android:layout/simple_spinner_item" >
+                <_item>
+                    <text1>Apple</text1>
+                </_item>
+                <_item>
+                    <text1>Orange</text1>
+                </_item>
+                <_item>
+                    <text1>Pear</text1>
+                </_item>
+                <_item>
+                    <text1>Grapefruit</text1>
+                </_item>
+                <_item>
+                    <text1>Banana</text1>
+                </_item>
+                <_item>
+                    <text1>Lemon</text1>
+                </_item>
+                <_item>
+                    <text1>Carrot</text1>
+                </_item>
+            </items>
+                </spTfAccountFrom>
+        <lbTfAccountTo />
+        <spTfAccountTo>
+            <items layout="@android:layout/simple_spinner_item" >
+                <_item>
+                    <text1>Apple</text1>
+                </_item>
+                <_item>
+                    <text1>Orange</text1>
+                </_item>
+                <_item>
+                    <text1>Pear</text1>
+                </_item>
+                <_item>
+                    <text1>Grapefruit</text1>
+                </_item>
+                <_item>
+                    <text1>Banana</text1>
+                </_item>
+                <_item>
+                    <text1>Lemon</text1>
+                </_item>
+                <_item>
+                    <text1>Carrot</text1>
+                </_item>
+            </items>
+                </spTfAccountTo>
+        <lbTfTransDate />
+        <lbTfAmount />
+        <lbTfDescription />
+        <lbTfRepeat />
+        <spTfRepeat>
+            <items layout="@android:layout/simple_spinner_item" >
+                <_item>
+                    <text1>Apple</text1>
+                </_item>
+                <_item>
+                    <text1>Orange</text1>
+                </_item>
+                <_item>
+                    <text1>Pear</text1>
+                </_item>
+                <_item>
+                    <text1>Grapefruit</text1>
+                </_item>
+                <_item>
+                    <text1>Banana</text1>
+                </_item>
+                <_item>
+                    <text1>Lemon</text1>
+                </_item>
+                <_item>
+                    <text1>Carrot</text1>
+                </_item>
+            </items>
+                </spTfRepeat>
+        <lbTfPeriodEnd />
+        <lbTfCustomInterval />
+        <lbTfCustomDays />
+        <lbTfCurrency />
+    </_content>
+</screen>

@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/newThemeBlue"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/relATTop"
+        style="@style/Theme.MainLayout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_bar_height"
+        android:background="@color/newThemeBlue"
+        android:orientation="horizontal" >
+
+        <ImageView
+            android:id="@+id/btATMenu"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@color/transparent"
+            android:src="@drawable/menu_new" />
+
+        <TextView
+            android:id="@+id/tvATTitle"
+            style="@style/ThemeNew.Title"
+            android:layout_width="0px"
+            android:layout_height="fill_parent"
+            android:layout_weight="5"
+            android:background="@color/transparent"
+            android:gravity="center|center_vertical"
+            android:text="@string/app_name" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layATBalance"
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:layout_weight="1.1"
+        android:background="@color/Black"
+        android:orientation="vertical"
+        android:onClick="myClickHandler">
+
+        <TextView
+            android:id="@+id/tvATBalance"
+            style="@style/ThemeNew.MainBalanceLabel"
+            android:layout_width="match_parent"
+            android:layout_height="0px"
+            android:layout_weight="3"
+            android:gravity="center"
+            android:text="@string/balance2"
+            android:textColor="@color/White" />
+
+        <!-- Balans meblegi ucun -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0px"
+            android:layout_weight="4"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvATBalanceAmount"
+                style="@style/ThemeNew.MainBalanceValueLabel.Left"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:text="72.00"
+                android:textColor="@color/newThemeBlue" />
+
+            <TextView
+                android:id="@+id/tvATBalanceCurrency"
+                style="@style/ThemeNew.MainBalanceValueLabel.Right"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="left"
+                android:text="AZN"
+                android:textColor="@color/White" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Account adlari -->
+    <HorizontalScrollView
+        android:id="@+id/hsATAccounts"
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:layout_weight="0.45"
+        android:layout_margin="1dp"
+        android:layout_marginBottom="0dp"
+        android:background="@color/White"
+        android:fillViewport="false">
+
+        <LinearLayout
+            android:id="@+id/llATAccounts"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@color/White"
+            android:orientation="horizontal">
+            <!--
+            <Button
+                style="@style/ThemeNew.Main.DeactiveAccount"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="@string/all"/>
+
+            <Button
+                style="@style/ThemeNew.Main.ActiveAccount"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="@string/cash" />
+
+            <Button
+                style="@style/ThemeNew.Main.DeactiveAccount"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="@string/ekran"/>
+
+            <Button
+                style="@style/ThemeNew.Main.DeactiveAccount"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Dollar"/>
+
+            <Button
+                style="@style/ThemeNew.Main.DeactiveAccount"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Bankomat" />
+                -->
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <!-- Birinci sira buttonlar -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:layout_weight="0.9"
+        android:layout_marginTop="1dp"
+        android:orientation="horizontal"
+        android:baselineAligned="false">
+
+        <RelativeLayout
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/White">
+
+            <ImageButton
+                android:id="@+id/btATBudget"
+                style="@style/ThemeNew.Main.CircleButton.Left"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:onClick="myClickHandler"
+                android:src="@drawable/budget"/>
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/White">
+
+            <ImageButton
+                android:id="@+id/btATReports"
+                style="@style/ThemeNew.Main.CircleButton.Right"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:onClick="myClickHandler"
+                android:src="@drawable/reportn" />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <!-- Ikinci sira buttonlar -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:layout_weight="0.9"
+        android:orientation="horizontal"
+        android:baselineAligned="false">
+
+        <RelativeLayout
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/White">
+
+            <ImageButton
+                android:id="@+id/btATCalculator"
+                style="@style/ThemeNew.Main.CircleButton.Left"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:onClick="myClickHandler"
+                android:src="@drawable/calculatorn" />
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/White">
+
+            <ImageButton
+                android:id="@+id/btATConverter"
+                style="@style/ThemeNew.Main.CircleButton.Right"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:onClick="myClickHandler"
+                android:src="@drawable/convertor" />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <!-- Ucuncu sira buttonlar -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:layout_weight="0.8"
+        android:background="@color/White"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btATTransfer"
+            style="@style/ThemeNew.Main.RoundButtons.White"
+            android:layout_width="match_parent"
+            android:layout_height="0px"
+            android:layout_weight="1"
+            android:text="@string/menuAddTransfer"
+            android:onClick="myClickHandler" />
+
+        <Button
+            android:id="@+id/btATTransaction"
+            style="@style/ThemeNew.Main.RoundButtons.Blue"
+            android:layout_width="match_parent"
+            android:layout_height="0px"
+            android:layout_weight="1"
+            android:text="@string/menuAddTransaction"
+            android:onClick="myClickHandler" />
+    </LinearLayout>
+</LinearLayout>

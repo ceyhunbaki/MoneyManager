@@ -1,0 +1,737 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/TrLayoutFirst"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/layTrTop"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:background="@color/White"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btTrInc"
+            style="@style/ThemeNew.ButtonText"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/label_text_margin_left"
+            android:layout_weight="1"
+            android:background="@drawable/round_button_left"
+            android:onClick="myClickHandler"
+            android:text="@string/income"
+            android:textColor="@color/Black" />
+
+        <Button
+            android:id="@+id/btTrExp"
+            style="@style/ThemeNew.ButtonText"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/label_text_margin_left"
+            android:layout_weight="1"
+            android:background="@drawable/round_button_right"
+            android:onClick="myClickHandler"
+            android:text="@string/expense"
+            android:textColor="@color/Black" />
+
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@color/White"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <RelativeLayout
+            android:id="@+id/TrLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/lbTrAccount"
+                style="@style/ThemeNew.LabelText.First"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/spTrAccount"
+                android:layout_alignBottom="@+id/spTrAccount"
+                android:layout_alignParentLeft="true"
+                android:gravity="center_vertical"
+                android:text="@string/account" />
+
+            <!--Button
+                android:id="@+id/btTrAccount"
+                style="@style/ThemeNew.ButtonText.First"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/edTrDescription"
+                android:layout_toLeftOf="@+id/btTrAccountEd"
+                android:onClick="myClickHandler" /-->
+
+            <Spinner
+                android:id="@+id/spTrAccount"
+                style="@style/ThemeNew.Spinner.First"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/btTrCategory"
+                android:layout_toLeftOf="@+id/btTrAccountEd" />
+
+            <ImageButton
+                android:id="@+id/btTrAccountEd"
+                style="@style/ThemeNew.TransImageButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/spTrAccount"
+                android:layout_alignParentRight="true"
+                android:layout_alignTop="@+id/spTrAccount"
+                android:background="@color/transparent"
+                android:onClick="myClickHandler"
+                android:src="@drawable/edit_new" />
+
+            <TextView
+                android:id="@+id/lbTrCategory"
+                style="@style/ThemeNew.LabelText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/btTrCategory"
+                android:layout_alignLeft="@+id/lbTrAccount"
+                android:text="@string/category" />
+
+            <Button
+                android:id="@+id/btTrCategory"
+                style="@style/ThemeNew.ButtonText.NewMain"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/spTrAccount"
+                android:layout_toLeftOf="@+id/btTrCategoryEd"
+                android:layout_toRightOf="@+id/lbTrCategory"
+                android:onClick="myClickHandler"
+                android:hint="@string/category" />
+
+            <ImageButton
+                android:id="@+id/btTrCategoryEd"
+                style="@style/ThemeNew.TransImageButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/btTrCategory"
+                android:layout_alignParentRight="true"
+                android:layout_alignTop="@+id/btTrCategory"
+                android:background="@color/transparent"
+                android:onClick="myClickHandler"
+                android:src="@drawable/edit_new" />
+
+            <TextView
+                android:id="@+id/lbTrTransDate"
+                style="@style/ThemeNew.LabelText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/btTrTransDate"
+                android:layout_alignLeft="@+id/lbTrAccount"
+                android:text="@string/date" />
+
+            <Button
+                android:id="@+id/btTrTransDate"
+                style="@style/ThemeNew.ButtonText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/btTrCategory"
+                android:layout_below="@+id/btTrCategory"
+                android:layout_toLeftOf="@+id/btTrTransDateEd"
+                android:onClick="myClickHandler"
+                android:hint="@string/date"/>
+
+            <ImageButton
+                android:id="@+id/btTrTransDateEd"
+                style="@style/ThemeNew.TransImageButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/btTrTransDate"
+                android:layout_alignParentRight="true"
+                android:layout_alignTop="@+id/btTrTransDate"
+                android:background="@color/transparent"
+                android:onClick="myClickHandler"
+                android:src="@drawable/edit_new" />
+
+            <TextView
+                android:id="@+id/lbTrAmount"
+                style="@style/ThemeNew.LabelText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/edTrAmount"
+                android:layout_alignLeft="@+id/lbTrAccount"
+                android:text="@string/amount" />
+
+            <ImageButton
+                android:id="@+id/btTrCalc"
+                style="@style/ThemeNew.TransImageButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/edTrAmount"
+                android:layout_alignParentRight="true"
+                android:layout_alignTop="@+id/edTrAmount"
+                android:background="@color/transparent"
+                android:onClick="myClickHandler"
+                android:src="@drawable/edit_new" />
+
+            <EditText
+                android:id="@+id/edTrAmount"
+                style="@style/ThemeNew.ButtonText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/btTrCategory"
+                android:layout_below="@+id/btTrTransDate"
+                android:layout_toLeftOf="@+id/btTrCalc"
+                android:hint="@string/amount"
+                android:inputType="numberDecimal">
+
+                <requestFocus />
+            </EditText>
+
+            <RelativeLayout
+                android:id="@+id/layTrBudget"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/lbTrAccount"
+                android:layout_alignRight="@+id/edTrDescription"
+                android:layout_below="@+id/btTrCalc"
+                android:layout_marginTop="@dimen/button_text_margin_top"
+                android:visibility="gone">
+
+                <ProgressBar
+                    android:id="@+id/pbTrProgress"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:max="100"
+                    android:minHeight="@dimen/trans_budget_progress_min_width"
+                    android:progressDrawable="@drawable/greenprogress" />
+
+                <TextView
+                    android:id="@+id/tvTrProgressText"
+                    style="@style/CombinedListLabelNew.Small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="Remaining budget: 50AZN"
+                    android:textColor="@drawable/color_selector" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/layTrSplitMain"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@id/lbTrAccount"
+                android:layout_marginRight="@dimen/button_text_main_margin"
+                android:layout_below="@+id/layTrBudget">
+
+                <Button
+                    android:id="@+id/btTrSplit"
+                    style="@style/ThemeNew.LabelText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_toLeftOf="@+id/btTrSplitDel"
+                    android:background="@color/transparent"
+                    android:gravity="left|center_vertical"
+                    android:minHeight="@dimen/button_text_min_height"
+                    android:onClick="myClickHandler"
+                    android:text="@string/splitTransaction" />
+
+                <ImageButton
+                    android:id="@+id/btTrSplitDel"
+                    style="@style/ThemeNew.TransImageButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/btTrSplit"
+                    android:layout_alignTop="@+id/btTrSplit"
+                    android:layout_toLeftOf="@+id/btTrSplitEdit"
+                    android:layout_marginRight="0dp"
+                    android:background="@color/transparent"
+                    android:onClick="myClickHandler"
+                    android:src="@drawable/bin" />
+
+                <ImageButton
+                    android:id="@+id/btTrSplitEdit"
+                    style="@style/ThemeNew.TransImageButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/btTrSplit"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignTop="@+id/btTrSplit"
+                    android:layout_marginRight="0dp"
+                    android:background="@color/transparent"
+                    android:onClick="myClickHandler"
+                    android:src="@drawable/edit_new" />
+
+                <LinearLayout
+                    android:id="@+id/layTrSplitItems"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/btTrSplit"
+                    android:layout_alignRight="@id/btTrSplitEdit"
+                    android:layout_marginRight="@dimen/split_items_right_margin"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/layTrSplitRow1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:id="@+id/lbTrSplitCategories1"
+                            style="@style/CombinedListLabelNew.Small"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="5"
+                            android:text="birinci:birinci" />
+
+                        <TextView
+                            android:id="@+id/lbTrSplitAmounts1"
+                            style="@style/CombinedListLabelNew.Small"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3"
+                            android:gravity="right"
+                            android:text="10000.45" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/layTrSplitRow2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:id="@+id/lbTrSplitCategories2"
+                            style="@style/CombinedListLabelNew.Small"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="5"
+                            android:text="ikinci:ikinci" />
+
+                        <TextView
+                            android:id="@+id/lbTrSplitAmounts2"
+                            style="@style/CombinedListLabelNew.Small"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3"
+                            android:gravity="right"
+                            android:text="1523324383.56" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/layTrSplitRow3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:id="@+id/lbTrSplitCategories3"
+                            style="@style/CombinedListLabelNew.Small"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="5"
+                            android:text="ikinci:ikinci" />
+
+                        <TextView
+                            android:id="@+id/lbTrSplitAmounts3"
+                            style="@style/CombinedListLabelNew.Small"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3"
+                            android:gravity="right"
+                            android:text="1523324383.56" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/layTrSplitRow4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:id="@+id/lbTrSplitCategories4"
+                            style="@style/CombinedListLabelNew.Small"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="5"
+                            android:text="ikinci:ikinci" />
+
+                        <TextView
+                            android:id="@+id/lbTrSplitAmounts4"
+                            style="@style/CombinedListLabelNew.Small"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3"
+                            android:gravity="right"
+                            android:text="1523324383.56" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/layTrSplitRow5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:id="@+id/lbTrSplitCategories5"
+                            style="@style/CombinedListLabelNew.Small"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="5"
+                            android:text="ikinci:ikinci" />
+
+                        <TextView
+                            android:id="@+id/lbTrSplitAmounts5"
+                            style="@style/CombinedListLabelNew.Small"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3"
+                            android:gravity="right"
+                            android:text="1523324383.56" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/layTrSplitRow6"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:id="@+id/lbTrSplitCategories6"
+                            style="@style/CombinedListLabelNew.Small"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="5"
+                            android:text="ikinci:ikinci" />
+
+                        <TextView
+                            android:id="@+id/lbTrSplitAmounts6"
+                            style="@style/CombinedListLabelNew.Small"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3"
+                            android:gravity="right"
+                            android:text="1523324383.56" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/layTrSplitRow7"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:id="@+id/lbTrSplitCategories7"
+                            style="@style/CombinedListLabelNew.Small"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="5"
+                            android:text="ikinci:ikinci" />
+
+                        <TextView
+                            android:id="@+id/lbTrSplitAmounts7"
+                            style="@style/CombinedListLabelNew.Small"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3"
+                            android:gravity="right"
+                            android:text="1523324383.56" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/layTrSplitRow8"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:id="@+id/lbTrSplitCategories8"
+                            style="@style/CombinedListLabelNew.Small"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="5"
+                            android:text="ikinci:ikinci" />
+
+                        <TextView
+                            android:id="@+id/lbTrSplitAmounts8"
+                            style="@style/CombinedListLabelNew.Small"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3"
+                            android:gravity="right"
+                            android:text="1523324383.56" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/layTrSplitRow9"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:id="@+id/lbTrSplitCategories9"
+                            style="@style/CombinedListLabelNew.Small"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="5"
+                            android:text="ikinci:ikinci" />
+
+                        <TextView
+                            android:id="@+id/lbTrSplitAmounts9"
+                            style="@style/CombinedListLabelNew.Small"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3"
+                            android:gravity="right"
+                            android:text="1523324383.56" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/layTrSplitRow10"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:id="@+id/lbTrSplitCategories10"
+                            style="@style/CombinedListLabelNew.Small"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="5"
+                            android:text="ikinci:ikinci" />
+
+                        <TextView
+                            android:id="@+id/lbTrSplitAmounts10"
+                            style="@style/CombinedListLabelNew.Small"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3"
+                            android:gravity="right"
+                            android:text="1523324383.56" />
+                    </LinearLayout>
+
+                </LinearLayout>
+            </RelativeLayout>
+
+            <EditText
+                android:id="@+id/edTrDescription"
+                style="@style/ThemeNew.ButtonText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/btTrCategory"
+                android:layout_below="@+id/layTrSplitMain"
+                android:layout_marginRight="0dp"
+                android:layout_toLeftOf="@+id/btTrPhoto"
+                android:hint="@string/description" />
+
+            <ImageButton
+                android:id="@+id/btTrPhoto"
+                style="@style/ThemeNew.TransImageButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/edTrDescription"
+                android:layout_alignParentRight="true"
+                android:layout_alignTop="@+id/edTrDescription"
+                android:layout_gravity="center_vertical"
+                android:background="@color/transparent"
+                android:onClick="myClickHandler"
+                android:src="@drawable/camera" />
+
+            <TextView
+                android:id="@+id/lbTrCurrency"
+                style="@style/ThemeNew.LabelText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/btTrCurrency"
+                android:layout_alignLeft="@+id/lbTrAccount"
+                android:text="@string/currency" />
+
+            <Button
+                android:id="@+id/btTrCurrency"
+                style="@style/ThemeNew.ButtonText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/btTrCategory"
+                android:layout_below="@+id/edTrDescription"
+                android:layout_toLeftOf="@+id/btTrCurrencyEd"
+                android:onClick="myClickHandler"
+                android:hint="@string/currency" />
+
+            <ImageButton
+                android:id="@+id/btTrCurrencyEd"
+                style="@style/ThemeNew.TransImageButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/btTrCurrency"
+                android:layout_alignParentRight="true"
+                android:layout_alignTop="@+id/btTrCurrency"
+                android:background="@color/transparent"
+                android:onClick="myClickHandler"
+                android:src="@drawable/edit_new" />
+
+            <TextView
+                android:id="@+id/lbTrRate"
+                style="@style/ThemeNew.LabelText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/edTrRate"
+                android:layout_alignLeft="@+id/lbTrAccount"
+                android:text="@string/rate" />
+
+            <EditText
+                android:id="@+id/edTrRate"
+                style="@style/ThemeNew.ButtonText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/btTrCategory"
+                android:layout_below="@+id/btTrCurrency"
+                android:layout_toLeftOf="@+id/btTrRateEd"
+                android:hint="@string/rate"
+                android:inputType="numberDecimal" />
+
+            <ImageButton
+                android:id="@+id/btTrRateEd"
+                style="@style/ThemeNew.TransImageButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/edTrRate"
+                android:layout_alignParentRight="true"
+                android:layout_alignTop="@+id/edTrRate"
+                android:background="@color/transparent"
+                android:onClick="myClickHandler"
+                android:src="@drawable/edit_new" />
+
+            <TextView
+                android:id="@+id/lbTrStatus"
+                style="@style/ThemeNew.LabelText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/spTrStatus"
+                android:layout_alignBottom="@+id/spTrStatus"
+                android:layout_alignLeft="@+id/lbTrAccount"
+                android:gravity="center_vertical"
+                android:text="@string/status" />
+
+            <Spinner
+                android:id="@+id/spTrStatus"
+                style="@style/ThemeNew.Spinner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/btTrCategory"
+                android:layout_below="@+id/edTrRate"
+                android:layout_toLeftOf="@+id/btTrStatusEd"
+                android:background="@drawable/spinner_bg" />
+
+            <ImageButton
+                android:id="@+id/btTrStatusEd"
+                style="@style/ThemeNew.TransImageButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/spTrStatus"
+                android:layout_alignParentRight="true"
+                android:layout_alignTop="@+id/spTrStatus"
+                android:background="@color/transparent"
+                android:onClick="myClickHandler"
+                android:src="@drawable/edit_new" />
+
+            <TextView
+                android:id="@+id/lbTrMethod"
+                style="@style/ThemeNew.LabelText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/lbTrAccount"
+                android:layout_alignTop="@+id/spTrMethod"
+                android:gravity="center_vertical"
+                android:text="@string/paymentMethodN" />
+
+            <Spinner
+                android:id="@+id/spTrMethod"
+                style="@style/ThemeNew.Spinner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/btTrCategory"
+                android:layout_below="@+id/spTrStatus"
+                android:layout_toLeftOf="@+id/btTrMethodEd"
+                android:background="@drawable/spinner_bg" />
+
+            <ImageButton
+                android:id="@+id/btTrMethodEd"
+                style="@style/ThemeNew.TransImageButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/spTrMethod"
+                android:layout_alignParentRight="true"
+                android:layout_alignTop="@+id/spTrMethod"
+                android:background="@color/transparent"
+                android:onClick="myClickHandler"
+                android:src="@drawable/edit_new" />
+
+            <Button
+                android:id="@+id/btTrCancel"
+                style="@style/ThemeNew.ButtonText.OKButton.Left"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/lbTrAccount"
+                android:layout_below="@id/spTrMethod"
+                android:onClick="myClickHandler"
+                android:text="@string/Cancel" />
+
+            <Button
+                android:id="@+id/btTrOk"
+                style="@style/ThemeNew.ButtonText.OKButton.Right"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignRight="@id/btTrPhoto"
+                android:layout_below="@id/spTrMethod"
+                android:onClick="myClickHandler"
+                android:text="@string/ok" />
+
+            <Button
+                android:id="@+id/btTrDelete"
+                style="@style/ThemeNew.ButtonText.OKButton.Third"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/btTrCancel"
+                android:layout_alignRight="@+id/btTrOk"
+                android:layout_below="@id/btTrOk"
+                android:onClick="myClickHandler"
+                android:text="@string/deleteTransaction" />
+
+            <RelativeLayout
+                android:id="@+id/TrLayoutAds"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/btTrDelete" />
+
+            <TextView
+                android:id="@+id/lbTrDescription"
+                style="@style/ThemeNew.LabelText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/edTrDescription"
+                android:layout_alignBottom="@+id/edTrDescription"
+                android:layout_alignEnd="@+id/lbTrTransDate"
+                android:layout_alignRight="@+id/lbTrTransDate"
+                android:text="@string/description" />
+        </RelativeLayout>
+    </ScrollView>
+
+
+</RelativeLayout>

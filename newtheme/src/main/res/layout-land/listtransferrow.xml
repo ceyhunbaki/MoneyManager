@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@color/White">
+
+    <TextView
+        android:id="@+id/ltTfDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_toLeftOf="@+id/ltTfAmount"
+        android:layout_marginTop="1dp"
+        style="@style/CombinedListLabelNew"
+        android:text="@string/description" />
+
+    <ImageButton
+        android:id="@+id/btTfEdit"
+        style="@style/ThemeNew.TransImageButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minWidth="0dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="0dp"
+        android:layout_alignTop="@+id/ltTfAmount"
+        android:layout_alignBottom="@+id/ltTfLatest"
+        android:background="@color/transparent"
+        android:onClick="myClickHandler"
+        android:src="@drawable/edit_new" />
+
+    <TextView
+        android:id="@+id/ltTfAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@+id/btTfEdit"
+        android:layout_alignTop="@+id/ltTfDescription"
+        android:layout_marginRight="5dp"
+        style="@style/CombinedListLabelNew"
+        android:gravity="right"
+        android:text="@string/amount"  />
+
+    <TextView
+        android:id="@+id/ltTfAccounts"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/ltTfDescription"
+        android:layout_below="@+id/ltTfDescription"
+        android:layout_marginTop="1dp"
+        style="@style/CombinedListLabelNew"
+        android:text="@string/account" />
+
+    <TextView
+        android:id="@+id/ltTfType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ltTfAmount"
+        android:layout_alignRight="@+id/ltTfAmount"
+        android:layout_marginTop="1dp"
+        style="@style/CombinedListLabelNew"
+        android:text="@string/type" />
+
+    <TextView
+        android:id="@+id/ltTfDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/ltTfAccounts"
+        android:layout_below="@+id/ltTfAccounts"
+        android:layout_marginTop="1dp"
+        style="@style/CombinedListLabelNew"
+        android:text="@string/next" />
+
+    <TextView
+        android:id="@+id/ltTfLatest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ltTfType"
+        android:layout_marginTop="1dp"
+        android:layout_alignRight="@+id/ltTfType"
+        style="@style/CombinedListLabelNew"
+        android:text="@string/latest"/>
+
+
+</RelativeLayout>

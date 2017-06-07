@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="whatsnew">Yeniliklər</string>
+	<string name="v3_4_1">-Yeni hesabat əlavə edildi: Büdcə - Dqairəvi diaqram.
+				\n -Büdcə əlavə edilməsi bölməsinə orta və əvvəlki ayın göstəriciləri əlavə edildi.
+				\n -Xətalar aradan qaldırıldı.</string>
+	<string name="v3_5_0">-Yeni vidcet əlavə edildi - Tranzaksiya əlavə et.
+				\n -Dropbox ilə avtomatik sonxronlaşma üçün yeni funksiya əlavə edildi.</string>
+	<string name="v3_5_1">-Yeni hesabat əlavə edildi - Aylar üzrə xərclərin müqayisəsi.
+				\n -Xətalar aradan qaldırıldı.</string>
+</resources>

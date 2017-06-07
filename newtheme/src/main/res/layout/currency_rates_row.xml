@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@color/White">
+	<TextView
+		android:id="@+id/lbCRFirstSign"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        style="@style/CombinedListLabelNew"
+        android:text="AZN"/>
+	<TextView
+		android:id="@+id/lbCRSign"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_toRightOf="@+id/lbCRFirstSign"
+        style="@style/CombinedListLabelNew"
+        android:text="@string/delimiter"/>
+	<TextView
+        android:id="@+id/lbCRSecondSign"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/lbCRSign"
+        style="@style/CombinedListLabelNew"
+        android:text="RUB"/>
+
+    <TextView
+		android:id="@+id/lbCRValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@+id/igCREdit"
+        style="@style/CombinedListLabelNew.Small"
+        android:text="67576.4343"/>
+    
+    <TextView
+		android:id="@+id/lbCRRateDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@+id/igCREdit"
+        android:layout_below="@+id/lbCRFirstSign"
+        style="@style/CombinedListLabelNew.Small"
+        android:text="30.09.2016"/>
+
+    <ImageButton
+        android:id="@+id/igCREdit"
+        style="@style/ThemeNew.TransImageButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/lbCRRateDate"
+        android:layout_alignTop="@+id/lbCRValue"
+        android:layout_alignParentRight="true"
+		android:layout_marginRight="0dp"
+        android:background="@color/transparent"
+        android:onClick="myClickHandler"
+        android:src="@drawable/edit_new" >
+    </ImageButton>
+    
+</RelativeLayout>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="whatsnew">Was gibt es Neues?</string>
+	<string name="v3_4_1">-Neuen Bericht hinzugefügt: Budget - Tortendiagramm.
+				\n -Durchschnittsbetrag und den Betrag des letzten Monats im Dialogfeld „Betrag hinzufügen“ im Budget-Fenster hinzugefügt.
+				\n -Behobene Fehler.</string>
+	<string name="v3_5_0">-Neues Widget hinzugefügt — Transaktion hinzufügen.
+				\n -Neue Optionen für automatisches Synchronisieren mit Dropbox hinzugefügt.</string>
+	<string name="v3_5_1">-Neuen Bericht hinzugefügt - Ausgabenvergleich nach Monaten.
+				\n -Behobene Fehler.</string>
+	<string name="v3_5_2">-Neues Fenster hinzugefügt - Ersparnisse.
+				\n -Transaktionsstatus und Zahlungsart für sich wiederholende Transaktionen hinzugefügt.
+				\n -Budgetkalkulation verbessert.
+				\n -Behobene Fehler.</string>
+	<string name="v3_5_3">-Verbesserte Menüführung.
+				\n -Zusätzliche Beschreibung der Ersparnis.
+				\n -Behobene Fehler.</string>
+	<string name="v3_5_4">-Neue optionen - Das Budget des aktuellen Monats für die folgenden Monate ansetzen.
+				\n -Behobene Fehler.</string>
+	<string name="v3_5_6">-Neue optionen - Zahlung aufteilen;
+		\n-Neue optionen - Automatischer Upload zu Dropbox nur bei verfügbarer WLAN-Verbindung.
+	</string>
+	<string name="v3_6_0">-Neue optionen - Datums, Zahlen und Währungsformate;
+		\n-Behobene Fehler.
+	</string>
+	<string name="v3_6_1">-Verbesserter Rechner;
+		\n-Behobene Fehler.</string>
+</resources>

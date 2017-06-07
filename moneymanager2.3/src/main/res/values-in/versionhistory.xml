@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="whatsnew">Apa yang baru?</string>
+	<string name="v3_4_1">-Penambahan laporan baru: Anggaran - Diagram lingkaran.
+				\n -Penambahan nilai rata-rata dan nilai bulan lalu ke kotak dialog "Tambah nilai" di layar anggaran.
+				\n -Perbaikan bug.</string>
+	<string name="v3_5_0">-Menambahkan widget baru - Tambahkan transaksi.
+				\n -Menambahkan opsi baru untuk sinkronisasi otomatis dengan Dropbox.</string>
+	<string name="v3_5_1">-Penambahan laporan baru - Perbandingan pengeluaran setiap bulan.
+				\n -Perbaikan bug.</string>
+</resources>

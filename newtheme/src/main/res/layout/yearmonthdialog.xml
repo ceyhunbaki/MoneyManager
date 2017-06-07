@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/White"
+    android:weightSum="2" >
+
+    <LinearLayout
+        android:id="@+id/dmLayTv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:weightSum="2" >
+
+        <TextView
+            android:id="@+id/dmTvMonth"
+            style="@style/ThemeNew.LabelText.Black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textAlignment="center"
+            android:text="@string/month" />
+
+        <TextView
+            android:id="@+id/dmTvYear"
+            style="@style/ThemeNew.LabelText.Black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:layout_weight="1"
+            android:text="@string/year" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/dmLayTv"
+        android:weightSum="2" >
+
+        <Spinner
+            android:id="@+id/dmSpMonth"
+            style="@style/ThemeNew.Spinner"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
+
+        <Spinner
+            android:id="@+id/dmSpYear"
+            style="@style/ThemeNew.Spinner"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+</RelativeLayout>

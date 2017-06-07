@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/CatLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/White" >
+
+    <ListView
+        android:id="@+id/catListView"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginTop="@dimen/main_round_button_side"
+        android:layout_alignParentTop="true"
+        android:layout_above="@+id/btCatAdd"
+        android:dividerHeight="@dimen/main_round_button_side"
+        android:layout_marginLeft="@dimen/combined_list_label_left_margin"
+        android:layout_marginRight="@dimen/combined_list_label_right_margin"
+        android:divider="@color/newThemeBlue">
+    </ListView>
+
+    <Button
+        android:id="@+id/btCatAdd"
+        style="@style/ThemeNew.ButtonText.OKButton.Third"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/main_round_button_side"
+        android:layout_marginLeft="@dimen/ok_button_margin_side"
+        android:layout_marginRight="@dimen/ok_button_margin_side"
+        android:layout_above="@+id/CatLayout2"
+        android:onClick="myClickHandler"
+        android:text="@string/addCategory" />
+    
+    <LinearLayout         
+        android:id="@+id/CatLayout2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
+        
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/White"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/ltRpAmount"
+        style="@style/CombinedListLabelNew"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/ltRpType"
+        android:layout_marginRight="5dp"
+        android:layout_toLeftOf="@+id/igRpMenu"
+        android:gravity="right"
+        android:text="@string/amount" />
+
+    <TextView
+        android:id="@+id/ltRpType"
+        style="@style/CombinedListLabelNew"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_toLeftOf="@+id/ltRpAmount"
+        android:layout_marginTop="1dp"
+        android:text="@string/type" />
+
+    <TextView
+        android:id="@+id/ltRpAccounts"
+        style="@style/CombinedListLabelNew"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/ltRpType"
+        android:layout_marginTop="2dp"
+        android:text="@string/account" />
+
+    <TextView
+        android:id="@+id/ltRpCategory"
+        style="@style/CombinedListLabelNew"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/ltRpAccounts"
+        android:layout_marginRight="5dp"
+        android:layout_toLeftOf="@+id/igRpMenu"
+        android:text="@string/category" />
+
+    <TextView
+        android:id="@+id/ltRpDescription"
+        style="@style/CombinedListLabelNew"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="2dp"
+        android:layout_below="@+id/ltRpAccounts"
+        android:textColor="@color/newThemeBlue"
+        android:text="@string/description" />
+
+    <TextView
+        android:id="@+id/ltRpDate"
+        style="@style/CombinedListLabelNew"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/ltRpDescription"
+        android:layout_marginTop="2dp"
+        android:text="@string/next" />
+
+    <TextView
+        android:id="@+id/ltRpLatest"
+        style="@style/CombinedListLabelNew"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/ltRpDate"
+        android:layout_marginTop="2dp"
+        android:text="@string/latest" />
+
+    <ImageButton
+        android:id="@+id/igRpMenu"
+        style="@style/ThemeNew.TransImageButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minWidth="0dp"
+        android:layout_marginRight="0dp"
+        android:layout_alignBottom="@+id/ltRpDate"
+        android:layout_alignTop="@+id/ltRpAmount"
+        android:layout_alignParentRight="true"
+        android:background="@color/transparent"
+        android:onClick="myClickHandler"
+        android:src="@drawable/edit_new" >
+    </ImageButton>
+
+</RelativeLayout>

@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <style name="Theme.TextSize" parent="android:Theme">
+        <item name="android:textSize">16dp</item>
+        <item name="android:layout_marginTop">5dp</item>
+        <item name="android:minHeight">40dp</item>
+    </style>
+        
+    <style name="Theme.TextSize.First" parent="@style/Theme.TextSize">
+        <item name="android:layout_marginTop">10dp</item>
+    </style> 
+    
+    <style name="Theme.TextSize.Main" parent="@style/Theme.TextSize">
+        <item name="android:layout_marginRight">5dp</item>
+        <item name="android:layout_marginLeft">5dp</item>
+    </style>
+    
+    <style name="Theme.TextSize.FirstMain" parent="@style/Theme.TextSize.First">
+        <item name="android:layout_marginRight">5dp</item>
+        <item name="android:layout_marginLeft">5dp</item>
+    </style>
+
+    <style name="Theme.TextSize.Dialog" parent="@style/Theme.TextSize">
+        <item name="android:layout_marginLeft">5dp</item>
+        <item name="android:layout_marginTop">5dp</item>
+        <item name="android:minWidth">60dp</item>
+    </style>  
+    
+    <style name="Theme.TextSize.Title" parent="android:Theme">
+        <item name="android:textSize">17dp</item>
+        <item name="android:layout_marginRight">5dp</item>
+    </style>
+
+   	<style name="Theme.TrCalcSize" parent="android:Theme">
+        <item name="android:minWidth">50dp</item>
+        <item name="android:textSize">20dp</item>
+    </style>
+    
+    <style name="Theme.LabelTextSize" parent="android:Theme">
+        <item name="android:textSize">17dp</item>
+    </style>
+    
+    <style name="Theme.LabelTextSize.First" parent="@style/Theme.LabelTextSize">        
+        <item name="android:layout_marginLeft">7dp</item>
+    </style>
+
+    <style name="Theme.LabelTextSize.Spinner" parent="@style/Theme.LabelTextSize">        
+        <item name="android:layout_marginTop">13dp</item>
+    </style>
+
+    <style name="Theme.LabelTextSize.Menu" parent="@style/Theme.LabelTextSize">        
+        <item name="android:minHeight">40dp</item>
+    </style>
+
+    <style name="Theme.ListTextSize" parent="android:Theme">  
+        <item name="android:textSize">21dp</item>      
+        <item name="android:minHeight">40dp</item>
+    </style>
+    
+    <style name="Theme.ListTextSize.Right" parent="Theme.ListTextSize">
+        <item name="android:layout_marginRight">5dp</item>
+    </style>
+    
+    <style name="Theme.ListTextSize.Left" parent="Theme.ListTextSize">
+        <item name="android:layout_marginLeft">1dp</item>
+    </style>
+
+    <!--style name="Theme.SpinnerTextSize" parent="android:Theme">
+        <item name="android:textSize">20dp</item>
+    </style-->
+    
+    <style name="Theme.TextSize.OKButton" parent="@style/Theme.TextSize">
+        <item name="android:minWidth">100dp</item>
+        <item name="android:layout_marginTop">25dp</item>
+    </style>
+    
+    <style name="Theme.TextSize.OKButton.Left" parent="@style/Theme.TextSize.OKButton">
+        <item name="android:layout_marginLeft">40dp</item>
+    </style>
+    
+    <style name="Theme.TextSize.OKButton.Right" parent="@style/Theme.TextSize.OKButton">
+        <item name="android:layout_marginRight">40dp</item>
+    </style>
+    
+    <style name="Theme.TextSize.OKButton.Dialog.Left" parent="@style/Theme.TextSize.OKButton">
+        <item name="android:layout_marginLeft">40dp</item>
+        <item name="android:layout_marginTop">15dp</item>
+    </style>
+    
+    <style name="Theme.TextSize.OKButton.Dialog.Right" parent="@style/Theme.TextSize.OKButton">
+        <item name="android:layout_marginRight">40dp</item>
+        <item name="android:layout_marginTop">15dp</item>
+    </style>
+    
+    <style name="Theme.TextSize.TransButtons" parent="@style/Theme.TextSize">
+        <item name="android:minWidth">125dp</item>
+    </style>
+    
+    <style name="Theme.TextSize.TransButtons.Main" parent="Theme.TextSize.TransButtons">
+        <item name="android:layout_marginTop">15dp</item>
+        <item name="android:layout_marginLeft">20dp</item>
+        <item name="android:layout_marginRight">20dp</item>
+    </style>
+    
+    <style name="GroupImageSize">
+        <item name="android:layout_height">40dp</item>
+        <item name="android:layout_width">40dp</item>
+        <item name="android:minWidth">40dp</item>
+    </style>
+
+    <style name="CombinedListLabel">
+        <item name="android:textColor">@drawable/color_selector</item>
+        <item name="android:textSize">17dp</item> 
+        <item name="android:maxLines">1</item>       
+    </style>
+    
+    <style name="CombinedListLabel.Small" parent="@style/CombinedListLabel">
+        <item name="android:textSize">15dp</item>    
+    </style>
+    
+    <style name="CombinedListLabel.Transaction" parent="@style/CombinedListLabel">
+        <item name="android:textSize">17dp</item>    
+    </style>
+    
+    <style name="Calculator.Console" parent="android:Theme">
+        <item name="android:textSize">30dp</item>
+        <item name="android:layout_weight">3</item>
+        <item name="android:layout_marginTop">5dp</item>
+        <item name="android:layout_marginLeft">8dp</item>
+        <item name="android:layout_marginRight">8dp</item>
+    </style>
+    
+    <style name="Calculator.Button" parent="android:Theme">
+        <item name="android:textSize">22dp</item>
+    </style>
+    
+    <style name="Calculator.Button.Left" parent="@style/Calculator.Button">
+        <item name="android:layout_marginLeft">4dp</item>    
+    </style>
+    
+    <style name="Calculator.Button.Right" parent="@style/Calculator.Button">
+        <item name="android:layout_marginRight">4dp</item>    
+    </style>
+    
+    <style name="Calculator.Button.Text">
+        <item name="android:textSize">17dp</item>    
+    </style>
+    
+    <style name="Calculator.Button.Text.Right" parent="@style/Calculator.Button.Text">
+        <item name="android:layout_marginRight">4dp</item>    
+    </style>
+    
+    <style name="Calculator.Button.Text.Left" parent="@style/Calculator.Button.Text">
+        <item name="android:layout_marginLeft">4dp</item>    
+    </style>
+    
+    <style name="ReportButton">
+        <item name="android:minHeight">25dp</item>
+        <item name="android:maxHeight">30dp</item>
+        <item name="android:textSize">25dp</item>
+    </style>
+    
+    <style name="ReportButton.Little" parent="ReportButton">
+        <item name="android:textSize">20sp</item>
+    </style>
+    
+    <style name="ReportButton.Image" parent="ReportButton" >
+        <item name="android:minWidth">50dp</item>
+        <item name="android:maxWidth">50dp</item>
+        <item name="android:layout_marginLeft">2dp</item>
+        <item name="android:layout_marginRight">2dp</item>
+        <item name="android:layout_marginTop">1dp</item>
+        <item name="android:layout_marginBottom">1dp</item>
+        <item name="android:minHeight">40dp</item>
+        <item name="android:maxHeight">40dp</item>
+    </style>
+    
+    <style name="Theme.MainLayout" parent="android:Theme">
+        <item name="android:layout_marginTop">1dp</item>
+    </style>
+    
+    <style name="Theme.MainLayout.Balance" parent="Theme.MainLayout">
+        <item name="android:layout_marginRight">1dp</item>
+        <item name="android:layout_marginLeft">1dp</item>
+    </style>
+    
+    <style name="Theme.MainLayout.Labels" parent="Theme.MainLayout">
+        <item name="android:layout_marginTop">3dp</item>
+    </style>
+    
+    <style name="Theme.MainLayout.ConvertorFirstLayout" parent="Theme.MainLayout">
+        <item name="android:minHeight">250dp</item>
+    </style>
+    
+    <style name="BarChartMargins" parent="android:Theme">
+        <item name="android:layout_marginTop">5dp</item>
+        <item name="android:layout_marginLeft">8dp</item>
+        <item name="android:layout_marginBottom">70dp</item>
+        <item name="android:layout_marginRight">0dp</item>
+    </style>
+
+	<style name="ThemeNew.MainBalanceLabel" parent="android:Theme">
+        <item name="android:textSize">@dimen/main_balance_text_size</item>
+        <item name="android:background">@color/Black</item>
+    </style>
+
+    <style name="ThemeNew.MainBalanceValueLabel" parent="android:Theme">
+        <item name="android:textSize">@dimen/main_balance_value_text_size</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:background">@color/Black</item>
+    </style>
+
+    <style name="ThemeNew.MainBalanceValueLabel.Left" parent="ThemeNew.MainBalanceValueLabel">
+        <item name="android:layout_marginRight">@dimen/main_balance_value_margin</item>
+    </style>
+
+    <style name="ThemeNew.MainBalanceValueLabel.Right" parent="ThemeNew.MainBalanceValueLabel">
+        <item name="android:layout_marginLeft">@dimen/main_balance_value_margin</item>
+    </style>
+
+    <style name="ThemeNew.Main.CircleButton" parent="android:Theme">
+        <item name="android:minHeight">@dimen/main_circle_button_radius</item>
+        <item name="android:minWidth">@dimen/main_circle_button_radius</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:background">@drawable/circle_image_button</item>
+    </style>
+
+    <style name="ThemeNew.Main.CircleButton.Right" parent="ThemeNew.Main.CircleButton">
+        <item name="android:layout_marginLeft">@dimen/main_circle_button_left_right_margin</item>
+        <item name="android:layout_alignParentLeft">true</item>
+    </style>
+
+    <style name="ThemeNew.Main.CircleButton.Left" parent="ThemeNew.Main.CircleButton">
+        <item name="android:layout_marginRight">@dimen/main_circle_button_left_right_margin</item>
+        <item name="android:layout_alignParentRight">true</item>
+    </style>
+
+    <style name="ThemeNew.Main.RoundButtons" parent="android:Theme">
+        <item name="android:textSize">@dimen/main_round_button_text_size</item>
+        <item name="android:layout_marginRight">@dimen/main_round_button_left_right_margin</item>
+        <item name="android:layout_marginLeft">@dimen/main_round_button_left_right_margin</item>
+        <item name="android:minHeight">@dimen/main_round_button_min_height</item>
+    </style>
+
+    <style name="ThemeNew.Main.RoundButtons.Blue" parent="ThemeNew.Main.RoundButtons">
+        <item name="android:background">@drawable/round_button_blue</item>
+        <item name="android:textColor">@color/White</item>
+        <item name="android:layout_marginTop">@dimen/main_round_button_top_margin</item>
+    </style>
+
+    <style name="ThemeNew.Main.RoundButtons.White" parent="ThemeNew.Main.RoundButtons">
+        <item name="android:background">@drawable/round_button_white</item>
+        <item name="android:textColor">@color/newThemeBlue</item>
+    </style>
+</resources>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="whatsnew">Was gibt es Neues?</string>
+	<string name="v3_4_1">-Neuen Bericht hinzugefügt: Budget - Tortendiagramm.
+				\n -Durchschnittsbetrag und den Betrag des letzten Monats im Dialogfeld „Betrag hinzufügen“ im Budget-Fenster hinzugefügt.
+				\n -Behobene Fehler.</string>
+	<string name="v3_5_0">-Neues Widget hinzugefügt — Transaktion hinzufügen.
+				\n -Added new option for automatic synchronization with Dropbox.</string>
+	<string name="v3_5_1">-Neuen Bericht hinzugefügt - Ausgabenvergleich nach Monaten.
+				\n -Behobene Fehler.</string>
+</resources>

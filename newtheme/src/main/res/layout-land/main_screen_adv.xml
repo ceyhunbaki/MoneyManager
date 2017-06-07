@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/newThemeBlue">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/DarkGray"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            style="@style/ThemeNew.Main.Layout"
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:layout_weight="4.8"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                style="@style/ThemeNew.Main.Layout"
+                android:layout_width="match_parent"
+                android:layout_height="0px"
+                android:layout_weight="1"
+                android:background="@color/White"
+                android:orientation="horizontal">
+
+                <HorizontalScrollView
+                    android:id="@+id/hsATAccounts"
+                    android:layout_width="0px"
+                    android:layout_height="fill_parent"
+                    android:layout_toLeftOf="@+id/btATAccounts"
+                    android:layout_margin="@dimen/main_round_button_side"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginBottom="0dp"
+                    android:layout_alignParentLeft="true"
+                    android:background="@color/White"
+                    android:fillViewport="false">
+
+                    <LinearLayout
+                        android:id="@+id/llATAccounts"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:background="@color/White"
+                        android:orientation="horizontal">
+
+                    </LinearLayout>
+                </HorizontalScrollView>
+
+
+                <ImageButton
+                    android:id="@+id/btATAccounts"
+                    style="@style/ThemeNew.ButtonText.First"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:onClick="myClickHandler"
+                    android:background="@color/White"
+                    android:src="@drawable/ic_menu_more" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/llATBalance"
+                style="@style/Theme.MainLayout.Balance"
+                android:layout_width="fill_parent"
+                android:layout_height="0px"
+                android:layout_weight="0.7"
+                android:background="@color/DarkGreen"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/tvATBalance"
+                    style="@style/ThemeNew.Main.Label.Left"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_marginRight="0dp"
+                    android:layout_weight="1"
+                    android:background="@color/transparent"
+                    android:textColor="@color/White"
+                    android:text="@string/balance2" />
+
+                <Button
+                    android:id="@+id/tvATBalanceAmount"
+                    style="@style/ThemeNew.Main.Label.Left"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_marginLeft="0dp"
+                    android:layout_weight="1"
+                    android:background="@color/transparent"
+                    android:textColor="@color/White"
+                    android:text="10AZN" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llATLabels"
+                style="@style/Theme.MainLayout.Labels"
+                android:layout_width="fill_parent"
+                android:layout_height="0px"
+                android:layout_weight="0.6"
+                android:background="@color/Black"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tvATIncome"
+                    style="@style/ThemeNew.Main.Label.Left"
+                    android:layout_width="0px"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:gravity="center|center_vertical"
+                    android:text="@string/income" />
+
+                <TextView
+                    android:id="@+id/tvATNull"
+                    style="@style/ThemeNew.Main.Label"
+                    android:layout_width="0px"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1.5"
+                    android:text="" />
+
+                <TextView
+                    android:id="@+id/tvATExpence"
+                    style="@style/ThemeNew.Main.Label.Right"
+                    android:layout_width="0px"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:gravity="center|center_vertical"
+                    android:text="@string/expense" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llATToday"
+                style="@style/Theme.MainLayout"
+                android:layout_width="fill_parent"
+                android:layout_height="0px"
+                android:layout_weight="1"
+                android:background="@color/Black"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btATTodayIncome"
+                    style="@style/ThemeNew.Main.Label.Income"
+                    android:layout_width="0px"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center|center_vertical"
+                    android:onClick="myClickHandler"
+                    android:text="10"/>
+
+                <Button
+                    android:id="@+id/btATToday"
+                    style="@style/ThemeNew.Main.Label.Center"
+                    android:layout_width="0px"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.5"
+                    android:onClick="myClickHandler"
+                    android:text="@string/today"/>
+
+                <Button
+                    android:id="@+id/btATTodayExpence"
+                    style="@style/ThemeNew.Main.Label.Expense"
+                    android:layout_width="0px"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center|center_vertical"
+                    android:onClick="myClickHandler"
+                    android:text="64" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llATMonth"
+                style="@style/Theme.MainLayout"
+                android:layout_width="fill_parent"
+                android:layout_height="0px"
+                android:layout_weight="1"
+                android:background="@color/Black"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btATMonthIncome"
+                    style="@style/ThemeNew.Main.Label.Income"
+                    android:layout_width="0px"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center|center_vertical"
+                    android:onClick="myClickHandler"
+                    android:text="10"/>
+
+                <Button
+                    android:id="@+id/btATMonth"
+                    style="@style/ThemeNew.Main.Label.Center"
+                    android:layout_width="0px"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.5"
+                    android:onClick="myClickHandler"
+                    android:text="@string/thisMonth"/>
+
+                <Button
+                    android:id="@+id/btATMonthExpence"
+                    style="@style/ThemeNew.Main.Label.Expense"
+                    android:layout_width="0px"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center|center_vertical"
+                    android:onClick="myClickHandler"
+                    android:text="64"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llATYear"
+                style="@style/Theme.MainLayout"
+                android:layout_width="fill_parent"
+                android:layout_height="0px"
+                android:layout_weight="1"
+                android:background="@color/Black"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btATYearIncome"
+                    style="@style/ThemeNew.Main.Label.Income.Last"
+                    android:layout_width="0px"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center|center_vertical"
+                    android:onClick="myClickHandler"
+                    android:text="10"/>
+
+                <Button
+                    android:id="@+id/btATYear"
+                    style="@style/ThemeNew.Main.Label.Center.Last"
+                    android:layout_width="0px"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.5"
+                    android:onClick="myClickHandler"
+                    android:text="@string/thisYear"/>
+
+                <Button
+                    android:id="@+id/btATYearExpence"
+                    style="@style/ThemeNew.Main.Label.Expense.Last"
+                    android:layout_width="0px"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center|center_vertical"
+                    android:onClick="myClickHandler"
+                    android:text="64"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/relATCenter"
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/llATFirst"
+                style="@style/ThemeNew.Main.Layout"
+                android:layout_width="fill_parent"
+                android:layout_height="0px"
+                android:layout_weight="0.7"
+                android:background="@color/White"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/btATBudget"
+                    style="@style/ThemeNew.Main.RoundButtonOld.White"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.4"
+                    android:onClick="myClickHandler"
+                    android:src="@drawable/budget" />
+
+                <ImageButton
+                    android:id="@+id/btATReports"
+                    style="@style/ThemeNew.Main.RoundButtonOld.White"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.4"
+                    android:onClick="myClickHandler"
+                    android:src="@drawable/reportn" />
+
+                <ImageButton
+                    android:id="@+id/btATCalculator"
+                    style="@style/ThemeNew.Main.RoundButtonOld.White"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.4"
+                    android:onClick="myClickHandler"
+                    android:src="@drawable/calculatorn" />
+
+                <ImageButton
+                    android:id="@+id/btATConverter"
+                    style="@style/ThemeNew.Main.RoundButtonOld.White"
+                    android:layout_width="0px"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.4"
+                    android:onClick="myClickHandler"
+                    android:src="@drawable/convertor" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llATOther"
+                style="@style/ThemeNew.Main.Layout"
+                android:layout_width="fill_parent"
+                android:layout_height="0px"
+                android:layout_weight="1.2"
+                android:background="@color/White"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/btATTransfer"
+                    style="@style/ThemeNew.Main.RoundButtons.IncExpButtons"
+                    android:layout_width="match_parent"
+                    android:layout_height="0px"
+                    android:layout_weight="1"
+                    android:onClick="myClickHandler"
+                    android:text="@string/menuAddTransfer" />
+
+                <Button
+                    android:id="@+id/btATRecurring"
+                    style="@style/ThemeNew.Main.RoundButtons.IncExpButtons"
+                    android:layout_width="match_parent"
+                    android:layout_height="0px"
+                    android:layout_weight="1"
+                    android:onClick="myClickHandler"
+                    android:text="@string/addRecurring" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llATIncExp"
+                style="@style/ThemeNew.Main.Layout"
+                android:layout_width="fill_parent"
+                android:layout_height="0px"
+                android:layout_weight="0.9"
+                android:background="@color/White"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btATIncome"
+                    style="@style/ThemeNew.Main.RoundButtons.IncExpButtons.Income"
+                    android:layout_width="0px"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:onClick="myClickHandler"
+                    android:text="@string/addIncome"
+                    android:textColor="@color/White" />
+
+                <Button
+                    android:id="@+id/btATExpence"
+                    style="@style/ThemeNew.Main.RoundButtons.IncExpButtons.Expense"
+                    android:layout_width="0px"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:onClick="myClickHandler"
+                    android:text="@string/addExpence"
+                    android:textColor="@color/White" />
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="whatsnew">Yeniliklər</string>
+	<string name="v3_4_1">-Yeni hesabat əlavə edildi: Büdcə - Dqairəvi diaqram.
+				\n -Büdcə əlavə edilməsi bölməsinə orta və əvvəlki ayın göstəriciləri əlavə edildi.
+				\n -Xətalar aradan qaldırıldı.</string>
+	<string name="v3_5_0">-Yeni vidcet əlavə edildi - Tranzaksiya əlavə et.
+				\n -Dropbox ilə avtomatik sonxronlaşma üçün yeni funksiya əlavə edildi.</string>
+	<string name="v3_5_1">-Yeni hesabat əlavə edildi - Aylar üzrə xərclərin müqayisəsi.
+				\n -Xətalar aradan qaldırıldı.</string>
+	<string name="v3_5_2">-Yeni opsiya əlavə edildi - Hədəflər. Hədəf ay və hədəf məbləği daxil et. Minimum aylıq büdcə vəsaitini ayır və məqsədinə nail ol.
+				\n -Təkrarlanan əməliyyatlara status və ödəniş növü əlavə edildi.
+				\n -Büdcə hesablanması təkmilləşdirildi.
+				\n -Xətalar aradan qaldırıldı.</string>
+	<string name="v3_5_3">-Menyuların görünüşü təkmilləşdirldi.
+				\n -Hədəflərə açıqlama əlavə edildi.
+				\n -Xətalar aradan qaldırıldı.</string>
+	<string name="v3_5_4">-Yeni opsiya - Növbəti aylar üçün də bu büdcəni təyin et.
+		\n -Xətalar aradan qaldırıldı.</string>
+	<string name="v3_5_6">-Yeni opsiya əlavə edildi - Əməliyyatı parçala;
+		\n-Yeni opsiya əlavə edildi - Dropboxa yalnız WiFi bağlantı mövcud olduqda yüklə.
+		</string>
+	<string name="v3_6_0">-Yeni opsiya əlavə edildi - Tarix, rəqəm və valyuta formatları;
+		\n-Xətalar aradan qaldırıldı.
+	</string>
+	<string name="v3_6_1">-Kalkulyator təkmilləşdirildi;
+		\n-Xətalar aradan qaldırıldı.</string>
+</resources>

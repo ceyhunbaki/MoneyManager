@@ -1,0 +1,29 @@
+<!-- [ Mirror metadata ] generatedAt: 1459238185928 -->
+<!-- Generated screen file. Fill the id tags below with content with
+which to populate your previewed layout. For a complete specification
+of sample data, please see http://jimulabs.com/sample-data-specifications/ 
+
+Valid attributes on <screen> tag: theme="@style/someTheme" inEditMode="false" overlay="@drawable/mockup" -->
+<screen>
+    <_content layout="@layout/budget_status">
+        <!-- TextView Examples:
+        <bd_lb_income text="@string/string_resource" />
+        <bd_lb_income text="Text literal" textSize="14sp" /> -->
+        <bd_lb_income />
+        <bd_value_income />
+        <bd_lb_budgeted />
+        <bd_value_budgeted />
+        <bd_lb_notbudgeted />
+        <bd_value_notbudgeted />
+        <bd_lb_remaining />
+        <bd_value_remaining />
+        <bd_lb_overspent />
+        <bd_value_overspent />
+        <bd_lb_prev_not_budgeted />
+        <bd_value_prev_not_budgeted />
+        <bd_lb_prev_remaining />
+        <bd_value_prev_remaining />
+        <bd_lb_prev_overspent />
+        <bd_value_prev_overspent />
+    </_content>
+</screen>

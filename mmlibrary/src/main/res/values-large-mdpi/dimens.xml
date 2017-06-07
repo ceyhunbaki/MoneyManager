@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="title_text_size">30sp</dimen>
+    <dimen name="main_circle_button_radius">120dp</dimen>
+    <dimen name="main_balance_layout_height">60dp</dimen>
+    <dimen name="main_balance_text_size">45sp</dimen>
+    <dimen name="main_balance_value_text_size">55sp</dimen>
+    <dimen name="main_account_names_size">28sp</dimen>
+    <dimen name="main_labels_size">25sp</dimen>
+    <dimen name="budget_status_labels_size">26sp</dimen>
+    <dimen name="menu_item_left_padding">9dp</dimen>
+    <dimen name="menu_item_min_height">50dp</dimen>
+    <dimen name="menu_item_text_size">26sp</dimen>
+    <dimen name="main_round_button_min_height">30dp</dimen>
+    <dimen name="main_round_button_text_size">30sp</dimen>
+    <dimen name="main_round_button_side">1dp</dimen>
+    <dimen name="main_round_button_corner_radius">10dp</dimen>
+    <dimen name="button_text_main_margin">4dp</dimen>
+    <dimen name="split_items_right_margin">4dp</dimen>
+    <dimen name="label_text_size">24sp</dimen>
+    <dimen name="dialog_ok_text_size">25sp</dimen>
+    <dimen name="label_text_margin_left">15dp</dimen>
+    <dimen name="button_text_corner_radius">5dp</dimen>
+    <dimen name="button_text_margin_top">8dp</dimen>
+    <dimen name="button_text_main_left_margin">7dp</dimen>
+    <dimen name="button_text_first_margin_top">10dp</dimen>
+    <dimen name="ok_button_min_width">180dp</dimen>
+    <dimen name="ok_button_min_width_wide">180dp</dimen>
+    <dimen name="ok_button_margin_top">25dp</dimen>
+    <dimen name="ok_button_margin_side">30dp</dimen>
+    <dimen name="ok_button_margin_side_wide">30dp</dimen>
+    <dimen name="ok_button_dialog_margin_side">15dp</dimen>
+    <dimen name="button_text_min_height">50dp</dimen>
+    <dimen name="main_account_names_margin">9dp</dimen>
+    <dimen name="main_circle_button_left_right_margin">30dp</dimen>
+    <dimen name="main_balance_value_margin">5dp</dimen>
+    <dimen name="main_round_button_left_right_margin">26dp</dimen>
+    <dimen name="main_round_button_top_margin">5dp</dimen>
+
+    <dimen name="trans_budget_progress_min_width">30dp</dimen>
+    <dimen name="trans_camera_button_width">40dp</dimen>
+
+    <dimen name="calculator_button_text_size">40sp</dimen>
+    <dimen name="calculator_button_text_small_size">25sp</dimen>
+    <dimen name="calculator_button_side_margin">4dp</dimen>
+    <dimen name="calculator_console_text_size">70sp</dimen>
+    <dimen name="calculator_console_text_small_size">35sp</dimen>
+    <dimen name="calculator_console_top_margin">15dp</dimen>
+    <dimen name="calculator_console_side_margin">8dp</dimen>
+    <dimen name="calc_ok_button_margin_top">10dp</dimen>
+    <dimen name="calc_ok_button_min_width">120dp</dimen>
+
+    <dimen name="converter_layout_margin_top">18dp</dimen>
+    <dimen name="converter_result_layout_margin_top">30dp</dimen>
+    <dimen name="converter_button_land_first_margin">30dp</dimen>
+    <dimen name="converter_button_margin_top">4dp</dimen>
+    <dimen name="converter_combobox_button_textsize">25sp</dimen>
+    <dimen name="converter_button_min_height">50dp</dimen>
+    <dimen name="converter_result_button_min_height">55dp</dimen>
+    <dimen name="converter_button_left_margin">6dp</dimen>
+    <dimen name="converter_button_textsize">26sp</dimen>
+    <dimen name="converter_values_button_textsize">24sp</dimen>
+    <dimen name="converter_result_value_button_text_size">35sp</dimen>
+    <dimen name="converter_result_button_text_size">32sp</dimen>
+    <dimen name="converter_values_button_margin_top">10dp</dimen>
+
+    <dimen name="title_bar_height">50dp</dimen>
+    <dimen name="main_account_bar_height">50dp</dimen>
+    <dimen name="combined_list_label_text_size">26sp</dimen>
+    <dimen name="combined_list_label_text_size_small">22sp</dimen>
+    <dimen name="combined_list_label_text_size_medium">23sp</dimen>
+    <dimen name="combined_list_label_left_margin">10dp</dimen>
+    <dimen name="combined_list_label_right_margin">10dp</dimen>
+    <dimen name="combined_list_label_top_margin">5dp</dimen>
+    <dimen name="combined_list_label_between_top_margin">3dp</dimen>
+    <dimen name="combined_list_label_between_margin">5dp</dimen>
+    <dimen name="combined_list_label_side_margin">2dp</dimen>
+
+    <dimen name="category_list_right_margin">10dp</dimen>
+    <dimen name="category_list_left_margin">10dp</dimen>
+
+    <dimen name="report_left_dimen">12dp</dimen>
+    <dimen name="report_title_min_height">40dp</dimen>
+    <dimen name="report_layout_left_dimen">2dp</dimen>
+    <dimen name="report_layout_right_dimen">2dp</dimen>
+    <dimen name="report_right_dimen">5dp</dimen>
+    <dimen name="report_top_dimen">10dp</dimen>
+    <dimen name="report_bottom_dimen">65dp</dimen>
+    <dimen name="report_axis_title_text_size">18sp</dimen>
+    <dimen name="report_chart_title_text_size">18sp</dimen>
+
+    <dimen name="dialog_min_width">300dp</dimen>
+    <dimen name="dialog_spinner_text_left_margin">6dp</dimen>
+    <dimen name="dialog_spinner_text_size">25sp</dimen>
+    <dimen name="dialog_title_margin_bottom">25dp</dimen>
+    <dimen name="dialog_items_margin_top">10dp</dimen>
+
+    <dimen name="password_button_min_height">40dp</dimen>
+    <dimen name="password_button_text_size">25sp</dimen>
+    <dimen name="password_password_text_size">40sp</dimen>
+    <dimen name="password_button_margin_bottom">20dp</dimen>
+    <dimen name="password_title_margin_bottom">15dp</dimen>
+</resources>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="whatsnew">What\'s new?</string>
+	<string name="v3_4_1">-Added new language - Indonesian.
+				\n -Added new report: Budget - Pie chart.
+				\n -Added the average value and the value of the last month to the "Add value" dialog box on the budget screen.
+				\n -Fixed bugs.</string>
+	<string name="v3_5_0">-Added new widget - Add a transaction.
+				\n -Added new option for automatic synchronization with Dropbox.</string>
+	<string name="v3_5_1">-Added new report - Comparison of the expenses by the months.
+				\n -Fixed bugs.</string>
+</resources>

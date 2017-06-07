@@ -1,0 +1,18 @@
+<!-- [ Mirror metadata ] generatedAt: 1459238185394 -->
+<!-- Generated screen file. Fill the id tags below with content with
+which to populate your previewed layout. For a complete specification
+of sample data, please see http://jimulabs.com/sample-data-specifications/ 
+
+Valid attributes on <screen> tag: theme="@style/someTheme" inEditMode="false" overlay="@drawable/mockup" -->
+<screen>
+    <_content layout="@layout/dragitem_new">
+        <!-- ImageView Examples:
+        <drImage src="@drawable/image_resource" />
+        <drImage src="relative_path/image.jpg" /> -->
+        <drImage />
+        <!-- TextView Examples:
+        <drText text="@string/string_resource" />
+        <drText text="Text literal" textSize="14sp" /> -->
+        <drText />
+    </_content>
+</screen>

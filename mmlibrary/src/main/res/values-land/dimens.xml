@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="abc_text_size_title_material_toolbar">15dp</dimen>
+    <dimen name="main_circle_button_bottom_margin">2dp</dimen>
+    <dimen name="main_round_button_middle_margin">15dp</dimen>
+</resources>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/White"
+    android:orientation="horizontal" >
+    <!-- 
+    android:background="@color/White" -->
+
+    <TextView
+        android:id="@+id/grp_child"
+        style="@style/CombinedListLabelNew.Medium"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:paddingLeft="@dimen/category_child_row_left_pad"
+        android:layout_toLeftOf="@+id/grp_child_check"
+        android:gravity="center_vertical"
+        android:text="@string/repBudgetedAmountCategories"
+        android:textColor="@drawable/color_selector"/>
+
+    <CheckBox 
+        android:id="@+id/grp_child_check"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/grp_child"
+        android:layout_alignTop="@+id/grp_child"
+        android:layout_alignParentRight="true"/>
+
+</RelativeLayout>

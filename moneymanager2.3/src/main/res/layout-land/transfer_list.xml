@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layTrList"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/White"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/relATTop"
+        style="@style/Theme.MainLayout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_bar_height"
+        android:background="@color/newThemeBlue"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tvATTitle"
+            style="@style/ThemeNew.Title"
+            android:layout_width="0px"
+            android:layout_height="fill_parent"
+            android:layout_weight="5"
+            android:background="@color/transparent"
+            android:gravity="center|center_vertical"
+            android:text="@string/menuTransfers" />
+
+    </LinearLayout>
+
+    <ListView
+        android:id="@android:id/list"
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:layout_marginBottom="1dp"
+        android:layout_marginTop="1dp"
+        android:layout_weight="7"
+        android:background="@color/White"
+        android:cacheColorHint="#00000000"
+        android:divider="@color/newThemeBlue"
+        android:dividerHeight="@dimen/main_round_button_side"
+        android:layout_marginLeft="@dimen/transfer_list_label_left_margin"
+        android:layout_marginRight="@dimen/transfer_list_label_right_margin"
+        android:scrollingCache="true" />
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/White">
+
+        <Button
+            android:id="@+id/btTrAdd"
+            style="@style/ThemeNew.ButtonText.OKButton.Left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/transfer_list_label_left_margin"
+            android:layout_alignParentLeft="true"
+            android:onClick="myClickHandler"
+            android:text="@string/menuAdd" />
+
+        <Button
+            android:id="@+id/btTrDeleteAll"
+            style="@style/ThemeNew.ButtonText.OKButton.Right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/transfer_list_label_right_margin"
+            android:layout_alignParentRight="true"
+            android:onClick="myClickHandler"
+            android:text="@string/menuDeleteAll" />
+
+        <Button
+            android:id="@+id/btTrDeleteFinished"
+            style="@style/ThemeNew.ButtonText.OKButton.Third"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/btTrAdd"
+            android:layout_alignRight="@+id/btTrDeleteAll"
+            android:layout_below="@id/btTrAdd"
+            android:onClick="myClickHandler"
+            android:text="@string/menuDeleteAllFinished" />
+
+    </RelativeLayout>
+
+</LinearLayout>

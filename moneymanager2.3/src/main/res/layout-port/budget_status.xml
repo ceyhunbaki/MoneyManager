@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/Black"
+    android:orientation="vertical" >      
+
+    <RelativeLayout
+        android:id="@+id/repLayDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="1dp"
+        android:background="@color/AntiqueWhite" >
+
+        <ImageButton
+            android:id="@+id/repImgDateLeft"
+            style="@style/ReportButton.Image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:onClick="myClickHandler"
+            android:src="@drawable/left_arrow" />
+
+        <Button
+            android:id="@+id/repBtDate"
+            style="@style/ReportButton.Little"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/repImgDateLeft"
+            android:layout_alignTop="@+id/repImgDateLeft"
+            android:layout_toLeftOf="@+id/repImgDateRight"
+            android:layout_toRightOf="@+id/repImgDateLeft"
+            android:background="@color/AntiqueWhite"
+            android:onClick="myClickHandler"
+            android:text="March, 2013" />
+
+        <ImageButton
+            android:id="@+id/repImgDateRight"
+            style="@style/ReportButton.Image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:onClick="myClickHandler"
+            android:src="@drawable/right_arrow" />
+    </RelativeLayout>
+    
+    <TextView 
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:layout_weight="0.7"
+        android:background="@color/Black"
+        android:textColor="@color/White"
+        android:text="@string/thisMonth"
+        android:gravity="center|center_horizontal"
+        style="@style/Theme.MainBigLabel"
+        />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:layout_marginTop="1dp"
+        android:layout_weight="1"
+        style="@style/Theme.BudgetLayout" >
+
+        <TextView
+            android:id="@+id/bd_lb_income"
+            style="@style/Theme.BudgetStatusLabels"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_alignParentLeft="true"
+            android:text="@string/budgetTotal"/>
+
+        <TextView
+            android:id="@+id/bd_value_income"
+            style="@style/Theme.BudgetStatusLabels"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_alignParentRight="true"
+            android:text="2000AZN"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/bd_Lay_Budgeted"
+        style="@style/Theme.BudgetLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:layout_marginTop="1dp"
+        android:layout_weight="1" >
+
+        <TextView
+            android:id="@+id/bd_lb_budgeted"
+            style="@style/Theme.BudgetStatusLabels"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_alignParentLeft="true"
+            android:text="@string/budgeted" />
+
+        <TextView
+            android:id="@+id/bd_value_budgeted"
+            style="@style/Theme.BudgetStatusLabels"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_alignParentRight="true"
+            android:text="1200AZN" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:layout_marginTop="1dp"
+        android:layout_weight="1"
+        style="@style/Theme.BudgetLayout">
+
+        <TextView
+            android:id="@+id/bd_lb_notbudgeted"
+            style="@style/Theme.BudgetStatusLabels"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_alignParentLeft="true"
+            android:text="@string/notBudgeted"/>
+
+        <TextView
+            android:id="@+id/bd_value_notbudgeted"
+            style="@style/Theme.BudgetStatusLabels"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_alignParentRight="true"
+            android:text="800AZN" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/bd_Lay_Remaining"
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:layout_marginTop="1dp"
+        android:layout_weight="1"
+        style="@style/Theme.BudgetLayout">
+
+        <TextView
+            android:id="@+id/bd_lb_remaining"
+            style="@style/Theme.BudgetStatusLabels"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_alignParentLeft="true"
+            android:text="@string/remaining"/>
+
+        <TextView
+            android:id="@+id/bd_value_remaining"
+            style="@style/Theme.BudgetStatusLabels"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_alignParentRight="true"
+            android:text="200AZN"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/bd_Lay_Overspent"
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:layout_marginTop="1dp"
+        android:layout_weight="1"
+        style="@style/Theme.BudgetLayout">
+
+        <TextView
+            android:id="@+id/bd_lb_overspent"
+            style="@style/Theme.BudgetStatusLabels"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_alignParentLeft="true"
+            android:text="@string/overspent"/>
+
+        <TextView
+            android:id="@+id/bd_value_overspent"
+            style="@style/Theme.BudgetStatusLabels"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_alignParentRight="true"
+            android:text="10AZN"/>
+    </RelativeLayout>
+
+    <TextView 
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:layout_weight="0.7"
+        android:background="@color/Black"
+        android:textColor="@color/White"
+        android:text="@string/lastMonth"
+        android:gravity="center|center_horizontal"
+        style="@style/Theme.MainBigLabel"
+        />
+    
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:layout_marginTop="1dp"
+        android:layout_weight="1"
+        style="@style/Theme.BudgetLayout">
+
+        <TextView
+            android:id="@+id/bd_lb_prev_not_budgeted"
+            style="@style/Theme.BudgetStatusLabels"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_alignParentLeft="true"
+            android:text="@string/notBudgeted"/>
+
+        <TextView
+            android:id="@+id/bd_value_prev_not_budgeted"
+            style="@style/Theme.BudgetStatusLabels"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_alignParentRight="true"
+            android:text="0AZN"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:layout_marginTop="1dp"
+        android:layout_weight="1"
+        style="@style/Theme.BudgetLayout">
+
+        <TextView
+            android:id="@+id/bd_lb_prev_remaining"
+            style="@style/Theme.BudgetStatusLabels"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_alignParentLeft="true"
+            android:text="@string/remaining"/>
+
+        <TextView
+            android:id="@+id/bd_value_prev_remaining"
+            style="@style/Theme.BudgetStatusLabels"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_alignParentRight="true"
+            android:text="0AZN"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:layout_marginTop="1dp"
+        android:layout_weight="1"
+        style="@style/Theme.BudgetLayout">
+
+        <TextView
+            android:id="@+id/bd_lb_prev_overspent"
+            style="@style/Theme.BudgetStatusLabels"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_alignParentLeft="true"
+            android:text="@string/overspent"/>
+
+        <TextView
+            android:id="@+id/bd_value_prev_overspent"
+            style="@style/Theme.BudgetStatusLabels"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_alignParentRight="true"
+            android:text="0AZN"/>
+    </RelativeLayout>
+
+</LinearLayout>

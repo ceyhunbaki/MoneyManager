@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="TransferTypes">
+        <item>@string/onlyOnce</item>
+        <item>@string/daily</item>
+        <item>@string/weekly</item>
+        <item>@string/monthly</item>
+        <item>@string/quarterly</item>
+        <item>@string/yearly</item>
+        <item>@string/custom</item>
+    </string-array>
+    
+    <string-array name="Status">
+        <item>@string/invisible</item>
+        <item>@string/visible</item>
+    </string-array>
+
+    <string-array name="RPTransTypes">
+        <item>@string/income</item>
+        <item>@string/expense</item>
+    </string-array>
+
+    <string-array name="TransFOperType">
+        <item>@string/all</item>
+        <item>@string/transaction</item>
+        <item>@string/transfer</item>
+    </string-array>
+
+    <string-array name="TransFTransaction">
+        <item>@string/all</item>
+        <item>@string/income</item>
+        <item>@string/expense</item>
+    </string-array>
+    
+    <string-array name="DateFilterTitles">
+        <item>@string/today</item>
+        <item>@string/thisWeek</item>
+        <item>@string/thisMonth</item>
+        <item>@string/last30Days</item>
+        <item>@string/thisYear</item>
+        <item>@string/all</item>
+    </string-array>
+    
+    <string-array name="RPTransRemindValues">
+        <item>@string/never</item>
+        <item>@string/sameDay</item>
+        <item>@string/dayBefore1</item>
+        <item>@string/dayBefore2</item>
+        <item>@string/dayBefore3</item>
+        <item>@string/dayBefore7</item>
+    </string-array>
+    
+    <string-array name="ReportNames">
+        <item>@string/repAccountBalanceReport</item>
+        <item>@string/repAccountReport</item>
+        <item>@string/repCategory</item>
+        <item>@string/repSubCategory</item>
+        <item>@string/repCategoryPieChart</item>
+        <item>@string/repCategoryBarChart</item>
+        <item>@string/repBudgetGrowthCategories</item>
+        <item>@string/repBudgetGrowthTotal</item>
+        <item>@string/repBudgetedAmountCategories</item>
+        <item>@string/repBudgetedAmountTotal</item>
+        <item>@string/repBudgetCompare</item>
+        <item>@string/repBudgetPieChart</item>
+        <item>@string/repExpensesCompare</item>
+    </string-array>
+    
+    <string-array name="MaxBackupDaysValues">
+        <item>@string/day1</item>
+        <item>@string/day3</item>
+        <item>@string/week1</item>
+        <item>@string/week2</item>
+        <item>@string/month1</item>
+        <item>@string/month2</item>
+    </string-array>
+    
+    <string-array name="MaxBackupSizeValues">
+        <item>@string/mb2</item>
+        <item>@string/mb10</item>
+        <item>@string/mb100</item>
+        <item>@string/mb500</item>
+        <item>@string/gb1</item>
+    </string-array>
+
+    <string-array name="ReportTimeInterval">
+        <item>@string/daily</item>
+        <item>@string/weekly</item>
+        <item>@string/monthly</item>
+        <item>@string/yearly</item>
+        <item>@string/custom</item>
+    </string-array>
+
+    <string-array name="ReportTimeIntervalBudget">
+        <item>@string/thisYear</item>
+        <item>@string/last12Month</item>
+        <item>@string/custom</item>
+    </string-array>
+
+    <string-array name="ReportTimeIntervalBudget2">
+        <item>@string/monthly</item>
+        <item>@string/custom</item>
+    </string-array>
+    
+    <string-array name="Months">
+        <item>@string/january</item>
+        <item>@string/february</item>
+        <item>@string/march</item>
+        <item>@string/april</item>
+        <item>@string/may</item>
+        <item>@string/june</item>
+        <item>@string/july</item>
+        <item>@string/august</item>
+        <item>@string/september</item>
+        <item>@string/october</item>
+        <item>@string/november</item>
+        <item>@string/december</item>
+   </string-array>
+    
+    <string-array name="Languages">
+        <item>@string/defaultt</item>
+        <item>@string/azerbaijan</item>
+        <item>@string/indonesian</item>
+        <item>@string/german</item>
+        <item>@string/english</item>
+        <item>@string/spanish</item>
+        <item>@string/french</item>
+        <item>@string/italian</item>
+        <item>@string/portugal</item>
+        <item>@string/russian</item>
+        <item>@string/ukrainian</item>
+   </string-array>
+
+    <string-array name="HomeScreenType">
+        <item>@string/version1</item>
+        <item>@string/version2</item>
+    </string-array>
+
+    <string-array name="HomeScreenTypeKeys">
+        <item>@string/version1Key</item>
+        <item>@string/version2Key</item>
+    </string-array>
+
+    <string-array name="dateFormatTypeArray">
+        <item>@string/dfk_ddmmyyyy_slash</item>
+        <item>@string/dfk_ddmmyy_slash</item>
+        <item>@string/dfk_mmddyyyy_slash</item>
+        <item>@string/dfk_mmddyy_slash</item>
+        <item>@string/dfk_yyyymmdd_slash</item>
+        <item>@string/dfk_yymmdd_slash</item>
+        <item>@string/dfk_ddmmyyyy_point</item>
+        <item>@string/dfk_ddmmyy_point</item>
+        <item>@string/dfk_mmddyyyy_point</item>
+        <item>@string/dfk_mmddyy_point</item>
+        <item>@string/dfk_yyyymmdd_point</item>
+        <item>@string/dfk_yymmdd_point</item>
+        <item>@string/dfk_ddmmyyyy_hyphen</item>
+        <item>@string/dfk_ddmmyy_hyphen</item>
+        <item>@string/dfk_mmddyyyy_hyphen</item>
+        <item>@string/dfk_mmddyy_hyphen</item>
+        <item>@string/dfk_yyyymmdd_hyphen</item>
+        <item>@string/dfk_yymmdd_hyphen</item>
+    </string-array>
+
+    <string-array name="dateFormatTypeKeysArray">
+        <item>@string/dfk_ddmmyyyy_slashKey</item>
+        <item>@string/dfk_ddmmyy_slashKey</item>
+        <item>@string/dfk_mmddyyyy_slashKey</item>
+        <item>@string/dfk_mmddyy_slashKey</item>
+        <item>@string/dfk_yyyymmdd_slashKey</item>
+        <item>@string/dfk_yymmdd_slashKey</item>
+        <item>@string/dfk_ddmmyyyy_pointKey</item>
+        <item>@string/dfk_ddmmyy_pointKey</item>
+        <item>@string/dfk_mmddyyyy_pointKey</item>
+        <item>@string/dfk_mmddyy_pointKey</item>
+        <item>@string/dfk_yyyymmdd_pointKey</item>
+        <item>@string/dfk_yymmdd_pointKey</item>
+        <item>@string/dfk_ddmmyyyy_hyphenKey</item>
+        <item>@string/dfk_ddmmyy_hyphenKey</item>
+        <item>@string/dfk_mmddyyyy_hyphenKey</item>
+        <item>@string/dfk_mmddyy_hyphenKey</item>
+        <item>@string/dfk_yyyymmdd_hyphenKey</item>
+        <item>@string/dfk_yymmdd_hyphenKey</item>
+    </string-array>
+
+    <string-array name="curSignPositionKeysArray">
+        <item>@string/setCurSignLeftKey</item>
+        <item>@string/setCurSignRightKey</item>
+    </string-array>
+
+    <string-array name="curSignPositionArray">
+        <item>@string/left</item>
+        <item>@string/right</item>
+    </string-array>
+
+    <string-array name="decimalSymbolArray">
+        <item>@string/setDotKey</item>
+        <item>@string/setCommaKey</item>
+    </string-array>
+
+    <string-array name="decimalDigitsCountArray">
+        <item>@string/digitCountValue0</item>
+        <item>@string/digitCountValue1</item>
+        <item>@string/digitCountValue2</item>
+        <item>@string/digitCountValue3</item>
+        <item>@string/digitCountValue4</item>
+    </string-array>
+
+    <string-array name="decimalDigitsCountKeyArray">
+        <item>@string/digitCountValueKey0</item>
+        <item>@string/digitCountValueKey1</item>
+        <item>@string/digitCountValueKey2</item>
+        <item>@string/digitCountValueKey3</item>
+        <item>@string/digitCountValueKey4</item>
+    </string-array>
+
+    <string-array name="monthValueArray">
+        <item>@string/digitCountValueKey1</item>
+        <item>@string/digitCountValueKey2</item>
+        <item>@string/digitCountValueKey3</item>
+        <item>@string/digitCountValueKey4</item>
+        <item>@string/digitCountValueKey5</item>
+        <item>@string/digitCountValueKey6</item>
+        <item>@string/digitCountValueKey7</item>
+        <item>@string/digitCountValueKey8</item>
+        <item>@string/digitCountValueKey9</item>
+        <item>@string/digitCountValueKey10</item>
+        <item>@string/digitCountValueKey11</item>
+        <item>@string/digitCountValueKey12</item>
+        <item>@string/digitCountValueKey13</item>
+        <item>@string/digitCountValueKey14</item>
+        <item>@string/digitCountValueKey15</item>
+        <item>@string/digitCountValueKey16</item>
+        <item>@string/digitCountValueKey17</item>
+        <item>@string/digitCountValueKey18</item>
+        <item>@string/digitCountValueKey19</item>
+        <item>@string/digitCountValueKey20</item>
+        <item>@string/digitCountValueKey21</item>
+        <item>@string/digitCountValueKey22</item>
+        <item>@string/digitCountValueKey23</item>
+        <item>@string/digitCountValueKey24</item>
+        <item>@string/digitCountValueKey25</item>
+        <item>@string/digitCountValueKey26</item>
+        <item>@string/digitCountValueKey27</item>
+        <item>@string/digitCountValueKey28</item>
+    </string-array>
+
+    <string-array name="digitsGroupingSymbolKeyArray">
+        <item>@string/setNoneKey</item>
+        <item>@string/setCommaKey</item>
+        <item>@string/setDotKey</item>
+        <item>@string/setSpaceKey</item>
+        <item>@string/setQuoteKey</item>
+    </string-array>
+
+    <string-array name="digitsGroupingSymbolArray">
+        <item>@string/none</item>
+        <item>@string/setCommaKey</item>
+        <item>@string/setDotKey</item>
+        <item>@string/setSpaceKey</item>
+        <item>@string/setQuoteKey</item>
+    </string-array>
+
+    <string-array name="weeksArrayKey">
+        <item>@string/setMondayKey</item>
+        <item>@string/setTuesdayKey</item>
+        <item>@string/setWednesdayKey</item>
+        <item>@string/setThursdayKey</item>
+        <item>@string/setFridayKey</item>
+        <item>@string/setSaturdayKey</item>
+        <item>@string/setSundayKey</item>
+    </string-array>
+
+    <string-array name="weeksArray">
+        <item>@string/Monday</item>
+        <item>@string/Tuesday</item>
+        <item>@string/Wednesday</item>
+        <item>@string/Thursday</item>
+        <item>@string/Friday</item>
+        <item>@string/Saturday</item>
+        <item>@string/Sunday</item>
+    </string-array>
+
+</resources>

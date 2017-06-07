@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="menu">Menú</string>
+    <string name="menuEdit">Editar</string>
+    <string name="menuDelete">Apagar</string>
+    <string name="menuContextTitle">Menú de contexto</string>
+    <string name="menuChangeGroup">Alterar grupo</string>
+    <string name="menuAdd">Adicionar</string>
+    <string name="menuMMAdd">MM-Adicionar</string>
+    <string name="menuDeleteAll">Apagar todos</string>
+    <string name="menuDeleteAllFinished">Apagar todos os completados</string>
+    <string name="menuDeleteAllReturned">Apagar todos os devolvidos</string>
+    <string name="menuRates">Taxas</string>
+    <string name="menuSetDefault">Definir padrão</string>
+    <string name="menuGoTotransactions">Ir para transações</string>
+    <string name="menuRepeatingTransactions">Transações repetidas</string>
+    <string name="menuTransfers">Transferências</string>
+    <string name="menuImport">Importar</string>
+    <string name="menuExport">Exportar</string>
+    <string name="menuClear">Restaurar todos</string>
+    <string name="menuBackup">Cópia de Segurança</string>
+    <string name="menuRestore">Restaurar</string>
+    <string name="menuRenew">Renovar lista</string>
+    <string name="menuAddTransfer">Adicionar transferência</string>
+    <string name="menuOtherAccount">Outra conta?</string>
+    <string name="menuTools">Ferramentas</string>
+    <string name="menuAction">Ação</string>
+    <string name="menuCopy">Copiar resultado</string>
+    <string name="menuBack">Retroceder</string>
+    <string name="menuAddFolder">Adicionar pasta</string>
+    <string name="menuSelectFolder">Selecionar esta pasta</string>
+    <string name="menuRearrange">Reorganizar</string>
+    <string name="menuSave">Guardar</string>
+    <string name="menuRemind">Lembrar-me</string>
+    <string name="menuSortAZ">Organizar de A a Z</string>
+    <string name="menuReports">Relatórios</string>
+    <string name="menuCategoriesReport">Relatório das Categorias</string>
+    <string name="menuReportType">Tipo de Relatório</string>
+    <string name="menuSummary">Resumo</string>
+    <string name="menuTimeInterval">Intervalo de Tempo</string>
+    <string name="menuExpandAll">Expandir tudo</string>
+    <string name="menuCollapseAll">Colapsar tudo</string>
+    <string name="menuReturned">Devolvido</string>        
+    <string name="menuSetAsIncome">Definir como categoria de rendimento</string>
+    <string name="menuSetAsExpense">Definir como categoria de despesa</string>
+    <string name="menuChangeTotalAmount">Alterar quantia total</string>
+    <string name="menuResetBudget">Restaurar orçamento</string>    
+    <string name="menuSetValues">Estados/Valores</string>
+    <string name="menuAddTransaction">Adicionar transação</string>
+    <string name="menuIncludeTransfers">Incluem as transferências</string>
+    <string name="menuExcludeTransfers">Excluir as transferências</string>
+
+</resources>

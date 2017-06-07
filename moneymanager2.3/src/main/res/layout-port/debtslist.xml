@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/White">
+
+    <TextView
+        android:id="@+id/tvATTitle"
+        style="@style/ThemeNew.Title"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/title_bar_height"
+        android:layout_alignParentTop="true"
+        android:background="@color/newThemeBlue"
+        android:gravity="center|center_vertical"
+        android:text="@string/mydebts" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/tvATTitle"
+        android:layout_above="@+id/layDebList2">
+
+        <ListView
+            android:id="@+id/android:list"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:cacheColorHint="#00000000"
+            android:scrollingCache="true"
+            android:divider="@color/newThemeBlue"
+            android:dividerHeight="@dimen/main_round_button_side">
+        </ListView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layDebList2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/layDebList3"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/btDebBorrowed"
+            style="@style/ThemeNew.Main.RoundButtons.IncExpButtons.Expense"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:minHeight="@dimen/button_text_min_height"
+            android:onClick="myClickHandler"
+            android:text="@string/borrowed" />
+
+        <Button
+            android:id="@+id/btDebLend"
+            style="@style/ThemeNew.Main.RoundButtons.IncExpButtons.Income"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:minHeight="@dimen/button_text_min_height"
+            android:onClick="myClickHandler"
+            android:text="@string/lent" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layDebList3"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/onlyListAdsLayout"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/btDebDeleteAll"
+            style="@style/ThemeNew.Main.RoundButtons.IncExpButtons"
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:minHeight="@dimen/button_text_min_height"
+            android:onClick="myClickHandler"
+            android:text="@string/menuDeleteAllReturned" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/onlyListAdsLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical" >
+    </LinearLayout>
+
+</RelativeLayout>

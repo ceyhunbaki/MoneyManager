@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Money Manager Pro</string>
+    <string name="line1">	This is Money Manager Pro Key</string>
+    <string name="line2">	For using Money Manager with Pro features, open an old Money Manager from application list or install Money Manager from Play Store</string>
+
+
+
+    <string name="application_error" translatable="false">Application error: %1$s</string>
+</resources>

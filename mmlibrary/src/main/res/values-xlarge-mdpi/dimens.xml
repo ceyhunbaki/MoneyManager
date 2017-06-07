@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="main_labels_size">25sp</dimen>
+    <dimen name="budget_status_labels_size">25sp</dimen>
+    <dimen name="title_bar_height">55dp</dimen>
+    <dimen name="main_account_bar_height">55dp</dimen>
+    <dimen name="title_text_size">36sp</dimen>
+    <dimen name="main_account_names_size">31sp</dimen>
+    <dimen name="main_round_button_text_size">30sp</dimen>
+    <dimen name="main_circle_button_radius">165dp</dimen>
+    <dimen name="main_circle_button_left_right_margin">50dp</dimen>
+    <dimen name="button_text_main_margin">100dp</dimen>
+    <dimen name="button_text_min_height">56dp</dimen>
+    <dimen name="label_text_margin_left">30dp</dimen>
+    <dimen name="combined_list_label_left_margin">90dp</dimen>
+    <dimen name="combined_list_label_right_margin">100dp</dimen>
+    <dimen name="combined_list_label_text_size">26sp</dimen>
+
+    <dimen name="category_list_right_margin">40dp</dimen>
+    <dimen name="category_list_left_margin">50dp</dimen>
+
+    <dimen name="converter_layout_margin_top">25dp</dimen>
+    <dimen name="converter_button_land_first_margin">30dp</dimen>
+    <dimen name="converter_button_margin_top">5dp</dimen>
+    <dimen name="converter_combobox_button_textsize">32sp</dimen>
+    <dimen name="converter_button_min_height">55dp</dimen>
+    <dimen name="converter_result_button_min_height">68dp</dimen>
+    <dimen name="converter_button_left_margin">6dp</dimen>
+    <dimen name="converter_button_textsize">32sp</dimen>
+    <dimen name="converter_values_button_textsize">35sp</dimen>
+    <dimen name="converter_result_layout_margin_top">30dp</dimen>
+    <dimen name="converter_result_value_button_text_size">40sp</dimen>
+    <dimen name="converter_values_button_margin_top">10dp</dimen>
+    <dimen name="converter_result_button_text_size">45sp</dimen>
+    <dimen name="ok_button_margin_side">80dp</dimen>
+    <dimen name="ok_button_margin_side_wide">100dp</dimen>
+    <dimen name="ok_button_dialog_margin_side">50dp</dimen>
+    <dimen name="ok_button_min_width_wide">200dp</dimen>
+
+    <dimen name="report_axis_title_text_size">22sp</dimen>
+    <dimen name="report_chart_title_text_size">26sp</dimen>
+
+    <dimen name="password_button_min_height">58dp</dimen>
+    <dimen name="password_button_text_size">29sp</dimen>
+
+    <dimen name="calculator_button_text_small_size">29sp</dimen>
+    <dimen name="calculator_button_text_size">45sp</dimen>
+    <dimen name="calculator_console_text_size">70sp</dimen>
+
+</resources>

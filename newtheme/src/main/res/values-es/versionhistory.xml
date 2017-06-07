@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="whatsnew">Novedades?</string>
+	<string name="v3_4_1">-Se añadió un nuevo importe: Presupuesto - Gráfico circular.
+				\n -Se añadió el valor medio y el valor del último mes al cuadro de diálogo de «Añadir valor» en la pantalla del presupuesto.
+				\n -Errores resueltos.</string>
+	<string name="v3_5_0">-Nuevo widget añadido - Añadir una transacción.
+				\n -Nueva opción añadida para la sincronización automática con Dropbox.</string>
+	<string name="v3_5_1">-Se añadió un nuevo importe - Comparativa de los gastos por mes.
+				\n -Errores resueltos.</string>
+	<string name="v3_5_2">-Hemos añadido una ventana nueva - Ahorros.
+				\n -Hemos añadido el estado y el tipo de pago de las transacción recurrentes.
+				\n -Cálculo del presupuesto mejorado.
+				\n -Errores resueltos.</string>
+	<string name="v3_5_3">-Navegación mejorada de los menús.
+				\n -Descripción añadida a los ahorros.
+				\n -Errores resueltos.</string>
+	<string name="v3_5_4">-Nueva opción - Establece en presupuesto de este mes en los siguientes meses.
+				\n -Errores resueltos.</string>
+	<string name="v3_5_6">-Nueva opción - Transacción dividida;
+		\n-Nueva opción - Cargar automáticamente a Dropbox sólo con wifi disponible.
+	</string>
+	<string name="v3_6_0">-Nueva opción - Formatos de fecha, número y moneda;
+		\n-Errores resueltos.
+	</string>
+	<string name="v3_6_1">-Calculadora mejorada;
+		\n-Errores resueltos.</string>
+</resources>

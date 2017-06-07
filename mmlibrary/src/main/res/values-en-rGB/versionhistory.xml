@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="whatsnew">What\'s new?</string>
+    <string name="v2_1">We added a new \"My Debts\" menu. With this option you can add your debts. They are not added to your transactions. You can also add returning date and with \"remind me\" option you will not forget returning date.</string>
+    <string name="v2_2">-We added new Dropbox Backup/Restore opportunity. Now with your Dropbox account you can backup or restore your data and only you can access your data in Dropbox. If you use more than one device and you want to sync your data with Dropbox, you should backup to Dropbox before closing application if you made any changes. But when you open application in another device in first manually restore from Dropbox, then you’ll get a notification about new version of your data in every application opening.
+				\n-Transactions from invisible accounts are visible in All transactions list.
+				\n-Added Returned option to debts\' context menu and returned debts’ color changed in My debts list.</string>
+    <string name="v2_2_1">-Changed the application icon.
+				\n-Fixed bug when editing account.
+				\n-Excluded transfers from transactions list, if none of the accounts are selected.</string>
+	<string name="v2_2_2">-If the currency of any of your accounts are different from the base currency, the application automatically retrieves daily exchange rates from the Internet.
+				\n-Improved Dropbox backup/restore
+				\n-Several other improvement and bug fixes</string>
+	<string name="v2_2_3">-Improved design.
+				\n-Fixed bugs</string>
+	<string name="v2_2_4">-Improved exchange rates.</string>
+	<string name="v3_0">-Added budgeting features (Get more information on the help page in the settings menu).
+	    		\n-Categories are divided into categories of income and expenses.
+	    		\n-Several other improvement and bug fixes.</string>
+	<string name="v3_0_1">- Improved main screen and transaction list - value will be updated on the background;
+				\n- Added option to disable automatic currency exchange rates on the Settings screen;
+				\n- Fixed bug.</string>
+	<string name="v3_1_0">- Improved password protection.
+				\n- Fixed bugs.</string>
+	<string name="v3_1_2">- Improved budget screen. Now to view used, remaining, etc. budget values for the selected category use the menu status from the context menu.
+				\n- Fixed minor bug.</string>
+</resources>

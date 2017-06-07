@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <TextView
+        android:id="@+id/lbSQQuestion"
+        style="@style/Theme.LabelTextSize.First"
+        android:layout_alignParentLeft="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/edSQQuestion"
+        android:text="@string/question" />
+
+    <EditText
+        android:id="@+id/edSQQuestion"
+        style="@style/Theme.TextSize.FirstMain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="0dp"
+        android:layout_toRightOf="@+id/lbSQQuestion"
+        android:hint="@string/securityQuestionTitle" >
+
+        <requestFocus />
+    </EditText>
+
+    <TextView
+        android:id="@+id/lbSQAnswer"
+        style="@style/Theme.LabelTextSize"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/edSQAnswer"
+        android:layout_alignLeft="@+id/lbSQQuestion"
+        android:maxLines="1"
+        android:text="@string/answer" />
+
+    <EditText
+        android:id="@+id/edSQAnswer"
+        style="@style/Theme.TextSize"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/edSQQuestion"
+        android:layout_alignRight="@+id/edSQQuestion"
+        android:layout_below="@+id/edSQQuestion"
+        android:hint="@string/securityanswer" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/edSQAnswer"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/btSQCancel"
+            style="@style/Theme.TextSize.OKButton.Dialog.Left"
+            android:layout_width="0px"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="@string/Cancel" />
+
+        <Button
+            android:id="@+id/btSQOk"
+            style="@style/Theme.TextSize.OKButton.Dialog.Right"
+            android:layout_width="0px"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="@string/ok" />
+    </LinearLayout>
+
+</RelativeLayout>

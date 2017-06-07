@@ -1,0 +1,14 @@
+<!-- [ Mirror metadata ] generatedAt: 1459238185440 -->
+<!-- Generated screen file. Fill the id tags below with content with
+which to populate your previewed layout. For a complete specification
+of sample data, please see http://jimulabs.com/sample-data-specifications/ 
+
+Valid attributes on <screen> tag: theme="@style/someTheme" inEditMode="false" overlay="@drawable/mockup" -->
+<screen>
+    <_content layout="@layout/horz_scroll_menu">
+        <!-- TextView Examples:
+        <hmTvOpen text="@string/string_resource" />
+        <hmTvOpen text="Text literal" textSize="14sp" /> -->
+        <hmTvOpen />
+    </_content>
+</screen>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+        
+    <style name="Theme.MainButtons" parent="android:Theme">
+        <item name="android:textSize">16sp</item>
+        <item name="android:background">@drawable/cool_button_background</item>      
+    </style>
+    
+    <style name="Theme.MainButtons.FirstButtons" parent="Theme.MainButtons">
+        <item name="android:layout_margin">2dp</item>      
+    </style>
+    
+    <style name="Theme.MainButtons.IncExpButtons" parent="Theme.MainButtons">
+        <item name="android:layout_margin">3dp</item>
+        <item name="android:background">@drawable/cool_button_background</item>      
+    </style>
+    
+    <style name="Theme.MainButtons.IncExpButtons.Inc" parent="Theme.MainButtons.IncExpButtons">
+        <item name="android:background">@drawable/cool_button_background_green</item>      
+    </style>
+    
+    <style name="Theme.MainButtons.IncExpButtons.Exp" parent="Theme.MainButtons.IncExpButtons">
+        <item name="android:background">@drawable/cool_button_background_red</item>      
+    </style>
+    
+    <style name="Theme.MainBigLabel" parent="android:Theme">
+        <item name="android:textSize">21sp</item> 
+        <item name="android:background">@color/Black</item>
+    </style>
+    
+    <style name="Theme.MainBigLabel.Left" parent="Theme.MainBigLabel">  
+        <item name="android:layout_marginRight">1dp</item>
+    </style>
+    
+    <style name="Theme.MainBigLabel.Menu" parent="Theme.MainBigLabel">  
+        <item name="android:layout_marginRight">3dp</item>
+        <item name="android:layout_marginLeft">1dp</item>
+    </style>
+    
+    <style name="Theme.MainBigLabel.Right" parent="Theme.MainBigLabel"> 
+        <item name="android:layout_marginLeft">1dp</item>      
+    </style>
+    
+    <style name="Theme.MainBigLabel.DeactiveAccount" parent="Theme.MainBigLabel">
+        <item name="android:textSize">21sp</item>
+    </style>
+    
+    <style name="Theme.MainBigLabel.ActiveAccount" parent="Theme.MainBigLabel">
+        <item name="android:textSize">26sp</item>
+    </style>
+    
+</resources>

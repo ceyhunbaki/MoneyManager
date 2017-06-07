@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" >
+    
+    <RelativeLayout 
+        android:id="@+id/repLayDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="1dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentLeft="true"
+        android:background="@color/Black">
+
+        <ImageButton
+            android:id="@+id/repImgDateLeft"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:background="@color/transparent"
+            android:onClick="myClickHandler"
+            android:src="@drawable/arrow_left"/>
+
+        <Button
+            android:id="@+id/repBtDate"
+            style="@style/ReportTitleButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/repImgDateRight"
+            android:layout_toRightOf="@+id/repImgDateLeft"
+            android:background="@color/transparent"
+            android:minHeight="@dimen/report_title_min_height"
+            android:onClick="myClickHandler"
+            android:text="March, 2013" />
+
+        <ImageButton
+            android:id="@+id/repImgDateRight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:background="@color/transparent"
+            android:onClick="myClickHandler"
+            android:src="@drawable/arrow_right"/>
+        
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/lay_budget_balance"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/repLayDate"
+        android:background="@color/White"
+        android:orientation="vertical">
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads"
+    android:id="@+id/TrLayoutFirst"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/White"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tvATTitle"
+        style="@style/ThemeNew.Title"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/title_bar_height"
+        android:background="@color/newThemeBlue"
+        android:gravity="center|center_vertical"
+        android:text="@string/debts" />
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="fill">
+
+            <TextView
+                android:id="@+id/lbDebTransDate"
+                style="@style/ThemeNew.LabelText.First"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/btDebTransDate"
+                android:text="@string/date" />
+
+            <Button
+                android:id="@+id/btDebTransDate"
+                style="@style/ThemeNew.ButtonText.First"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/btDebReturnDate"
+                android:layout_alignRight="@+id/btDebDelRetDate"
+                android:onClick="myClickHandler" />
+
+            <TextView
+                android:id="@+id/lbDebAmount"
+                style="@style/ThemeNew.LabelText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/edDebAmount"
+                android:layout_alignLeft="@+id/lbDebTransDate"
+                android:text="@string/amount" />
+
+            <ImageButton
+                android:id="@+id/btDebCalc"
+                style="@style/ThemeNew.TransImageButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/edDebAmount"
+                android:layout_alignRight="@+id/btDebDelRetDate"
+                android:layout_alignTop="@+id/edDebAmount"
+                android:layout_marginRight="0dp"
+                android:background="@color/transparent"
+                android:onClick="myClickHandler"
+                android:src="@drawable/edit_new" />
+
+            <EditText
+                android:id="@+id/edDebAmount"
+                style="@style/ThemeNew.ButtonText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/btDebReturnDate"
+                android:layout_below="@+id/btDebTransDate"
+                android:layout_toLeftOf="@+id/btDebCalc"
+                android:gravity="left|center"
+                android:inputType="number|numberSigned|numberDecimal"
+                android:text="@string/zeroValue" />
+
+            <TextView
+                android:id="@+id/lbDebCurrency"
+                style="@style/ThemeNew.LabelText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/btDebCurrency"
+                android:layout_alignLeft="@+id/lbDebTransDate"
+                android:text="@string/currency" />
+
+            <Button
+                android:id="@+id/btDebCurrency"
+                style="@style/ThemeNew.ButtonText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/btDebReturnDate"
+                android:layout_alignRight="@+id/btDebDelRetDate"
+                android:layout_below="@+id/edDebAmount"
+                android:onClick="myClickHandler" />
+
+            <TextView
+                android:id="@+id/lbDebDesciption"
+                style="@style/ThemeNew.LabelText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/edDebDescription"
+                android:layout_alignLeft="@+id/lbDebTransDate"
+                android:text="@string/description" />
+
+            <EditText
+                android:id="@+id/edDebDescription"
+                style="@style/ThemeNew.ButtonText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/btDebReturnDate"
+                android:layout_alignRight="@+id/btDebDelRetDate"
+                android:layout_below="@+id/btDebCurrency"
+                android:hint="@string/description"
+                android:inputType="text"
+                android:maxWidth="180dp"
+                android:minWidth="180dp" />
+
+            <TextView
+                android:id="@+id/lbDebReturnDate"
+                style="@style/ThemeNew.LabelText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/btDebReturnDate"
+                android:layout_alignLeft="@+id/lbDebTransDate"
+                android:text="@string/returnDate" />
+
+            <Button
+                android:id="@+id/btDebReturnDate"
+                style="@style/ThemeNew.ButtonText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/edDebDescription"
+                android:layout_toLeftOf="@+id/btDebDelRetDate"
+                android:layout_toRightOf="@+id/lbDebReturnDate"
+                android:onClick="myClickHandler" />
+
+            <ImageButton
+                android:id="@+id/btDebDelRetDate"
+                style="@style/ThemeNew.TransImageButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/btDebReturnDate"
+                android:layout_alignParentRight="true"
+                android:layout_alignTop="@+id/btDebReturnDate"
+                android:background="@color/transparent"
+                android:onClick="myClickHandler"
+                android:src="@drawable/bin" />
+
+            <TextView
+                android:id="@+id/lbDebRemind"
+                style="@style/ThemeNew.LabelText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/cbDebRemind"
+                android:layout_alignLeft="@+id/lbDebDesciption"
+                android:text="@string/menuRemind" />
+
+            <CheckBox
+                android:id="@+id/cbDebRemind"
+                style="@style/Theme.TextSize"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignRight="@+id/edDebDescription"
+                android:layout_below="@+id/btDebReturnDate" />
+
+            <Button
+                android:id="@+id/btDebCancel"
+                style="@style/ThemeNew.ButtonText.OKButton.Left"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/lbDebTransDate"
+                android:layout_below="@+id/cbDebRemind"
+                android:onClick="myClickHandler"
+                android:text="@string/Cancel" />
+
+            <Button
+                android:id="@+id/btDebOk"
+                style="@style/ThemeNew.ButtonText.OKButton.Right"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/cbDebRemind"
+                android:layout_alignBottom="@+id/btDebCancel"
+                android:layout_alignRight="@+id/btDebTransDate"
+                android:onClick="myClickHandler"
+                android:text="@string/ok" />
+
+            <RelativeLayout
+                android:id="@+id/DebLayoutAds"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/btDebOk"/>
+        </RelativeLayout>
+
+    </ScrollView>
+</LinearLayout>

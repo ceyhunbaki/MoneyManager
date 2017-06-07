@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout_root"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:background="@color/White">
+
+    <TextView
+        android:id="@+id/tvATTitle"
+        style="@style/ThemeNew.Title"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/title_bar_height"
+        android:background="@color/newThemeBlue"
+        android:gravity="center|center_vertical"
+        android:text="@string/chooseFile" />
+
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/RelativeLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="fill" >
+
+        <Button
+            android:id="@+id/btDofUp"
+            style="@style/ThemeNew.ButtonText.Main"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/up" />
+
+        <TextView
+            android:id="@+id/tvDofPath"
+            style="@style/ThemeNew.LabelText.First"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/btDofUp"
+            android:textColor="@color/Black"
+            android:text="/android/MoneyManager/pathhsw1/knfdfdf/fdfdf"
+            android:layout_alignTop="@+id/btDofUp"/>
+    </RelativeLayout>
+
+    <ListView
+        android:id="@+id/dofList"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:cacheColorHint="#00000000" />
+
+</LinearLayout>

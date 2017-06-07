@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.jgmoneymanager.main"
+    android:installLocation="auto"
+    android:versionCode="50"
+    android:versionName="3.1.1" >
+
+    <uses-sdk
+        android:minSdkVersion="7"
+        android:targetSdkVersion="10" />
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="com.android.vending.CHECK_LICENSE" />
+    <!--uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" /-->
+
+    <supports-screens
+        android:largeScreens="true"
+        android:xlargeScreens="true" />
+
+    <application
+        android:name="com.jgmoneymanager.entity.MyApplicationLocal"
+        android:icon="@drawable/icon"
+        android:label="@string/app_name" >
+        <activity
+            android:name=".MainScreen"
+            android:configChanges="orientation|screenSize"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.White" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".CurrencyList"
+            android:label="@string/currencies"
+            android:theme="@style/Theme.White" >
+            <intent-filter>
+                <action android:name="com.jgmoneymanager.intent.action.CURRENCYLIST" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".CurrencyEdit"
+            android:configChanges="orientation"
+            android:label="@string/currencies"
+            android:theme="@style/CustomTheme" >
+            <intent-filter>
+                <action android:name="com.jgmoneymanager.intent.action.CURRENCYEDIT" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".AccountList"
+            android:label="@string/accounts"
+            android:theme="@style/Theme.White" >
+            <intent-filter>
+                <action android:name="com.jgmoneymanager.intent.action.ACCOUNTLIST" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".AccountSort"
+            android:label="@string/accounts"
+            android:theme="@style/Theme.White" >
+            <intent-filter>
+                <action android:name="com.jgmoneymanager.intent.action.ACCOUNTSORT" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".AccountEdit"
+            android:configChanges="orientation"
+            android:label="@string/accounts"
+            android:theme="@style/CustomTheme" >
+            <intent-filter>
+                <action android:name="com.jgmoneymanager.intent.action.ACCOUNTEDIT" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".CurrRatesList"
+            android:label="@string/currencyrates"
+            android:theme="@style/CustomTheme" >
+            <intent-filter>
+                <action android:name="com.jgmoneymanager.intent.action.CURRRATESLIST" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".CurrRatesEdit"
+            android:configChanges="orientation"
+            android:label="@string/currencyrates"
+            android:theme="@style/CustomTheme" >
+            <intent-filter>
+                <action android:name="com.jgmoneymanager.intent.action.CURRRATESEDIT" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".CategoryListForExpense"
+            android:label="@string/expenseCategories"
+            android:theme="@style/Theme.White.BlackBackground" >
+            <intent-filter>
+                <action android:name="com.jgmoneymanager.intent.action.CATEGORYLISTFOREXPENSE" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".CategoryListForIncome"
+            android:label="@string/incomeCategories"
+            android:theme="@style/Theme.White.BlackBackground" >
+            <intent-filter>
+                <action android:name="com.jgmoneymanager.intent.action.CATEGORYLISTFORINCOME" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".CategoryFilter"
+            android:label="@string/categories"
+            android:theme="@android:style/Theme.Dialog" >
+            <intent-filter>
+                <action android:name="com.jgmoneymanager.intent.action.CATEGORYFILTER" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".TransactionList"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.White" >
+            <intent-filter>
+                <action android:name="com.jgmoneymanager.intent.action.TRANSACTIONLIST" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".TransactionEdit"
+            android:configChanges="orientation"
+            android:label="@string/transactions"
+            android:theme="@style/Theme.White.BlackBackground" >
+            <intent-filter>
+                <action android:name="com.jgmoneymanager.intent.action.TRANSACTIONEDIT" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".TransferList"
+            android:label="@string/transfer"
+            android:theme="@style/CustomTheme" >
+            <intent-filter>
+                <action android:name="com.jgmoneymanager.intent.action.TRANSFERLIST" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".TransferEdit"
+            android:configChanges="orientation"
+            android:label="@string/transfer"
+            android:theme="@style/CustomTheme" >
+            <intent-filter>
+                <action android:name="com.jgmoneymanager.intent.action.TRANSFEREDIT" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".RPTransactionEdit"
+            android:configChanges="orientation"
+            android:label="@string/menuRepeatingTransactions"
+            android:theme="@style/Theme.White.BlackBackground" >
+            <intent-filter>
+                <action android:name="com.jgmoneymanager.intent.action.RPTRANSACTIONEDIT" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".RPTransactionList"
+            android:label="@string/menuRepeatingTransactions"
+            android:theme="@style/CustomTheme" >
+            <intent-filter>
+                <action android:name="com.jgmoneymanager.intent.action.RPTRANSACTIONEDIT" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".DebtsList"
+            android:label="@string/mydebts"
+            android:theme="@style/Theme.White" >
+            <intent-filter>
+                <action android:name="com.jgmoneymanager.intent.action.DEBTSLIST" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".DebtsEdit"
+            android:label="@string/mydebts"
+            android:theme="@style/Theme.White.BlackBackground" >
+            <intent-filter>
+                <action android:name="com.jgmoneymanager.intent.action.DEBTSEDIT" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.jgmoneymanager.budget.BudgetStatus"
+            android:label="@string/budget"
+            android:theme="@style/Theme.White" >
+            <intent-filter>
+                <action android:name="com.jgmoneymanager.intent.action.BUDGETSTATUS" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".TransactionFilter"
+            android:label="@string/filter"
+            android:theme="@style/CustomTheme" >
+            <intent-filter>
+                <action android:name="com.jgmoneymanager.intent.action.TRANSACTIONFILTER" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.jgmoneymanager.dialogs.ChooseFileDialog"
+            android:label="@string/chooseFile"
+            android:theme="@style/Theme.White" >
+            <intent-filter>
+                <action android:name="com.jgmoneymanager.intent.action.CHOOSEFILEDIALOG" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Calculator"
+            android:configChanges="orientation"
+            android:label="@string/calculator"
+            android:theme="@style/Theme.White" >
+            <intent-filter>
+                <action android:name="com.jgmoneymanager.intent.action.CALCULATOR" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Convertor"
+            android:configChanges="orientation"
+            android:label="@string/convertor"
+            android:theme="@style/Theme.White.BlackBackground" >
+            <intent-filter>
+                <action android:name="com.jgmoneymanager.intent.action.CONVERTOR" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".FileExplorer"
+            android:configChanges="orientation"
+            android:label="@string/explorer"
+            android:theme="@style/CustomTheme" >
+            <intent-filter>
+                <action android:name="com.jgmoneymanager.intent.action.FILEEXPLORER" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.jgmoneymanager.reports.ReportList"
+            android:label="@string/menuReports"
+            android:theme="@style/Theme.White" >
+            <intent-filter>
+                <action android:name="com.jgmoneymanager.intent.action.REPORTLIST" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.jgmoneymanager.reports.ListReport"
+            android:configChanges="orientation"
+            android:theme="@style/CustomTheme" >
+            <intent-filter>
+                <action android:name="com.jgmoneymanager.intent.action.ACCOUNTREPORT" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.jgmoneymanager.reports.SubCategoryReport"
+            android:configChanges="orientation"
+            android:theme="@style/CustomTheme" >
+            <intent-filter>
+                <action android:name="com.jgmoneymanager.intent.action.SUBCATEGORYREPORT" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.jgmoneymanager.reports.PieChartReport"
+            android:configChanges="orientation"
+            android:theme="@style/CustomTheme" >
+            <intent-filter>
+                <action android:name="com.jgmoneymanager.intent.action.PIECHARTREPORT" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.jgmoneymanager.reports.BarChartReport"
+            android:configChanges="orientation"
+            android:theme="@style/CustomTheme" >
+            <intent-filter>
+                <action android:name="com.jgmoneymanager.intent.action.BARCHARTREPORT" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".SettingsScreen"
+            android:label="@string/settings"
+            android:theme="@style/Theme.White" >
+            <intent-filter>
+                <action android:name="com.jgmoneymanager.intent.action.SETTINGSSCREEN" />
+
+                <category android:name="android.intent.category.PREFERENCE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.google.ads.AdActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize" />
+        <activity
+            android:name="com.dropbox.client2.android.AuthActivity"
+            android:configChanges="orientation|keyboard"
+            android:launchMode="singleTask" >
+            <intent-filter>
+                <data android:scheme="db-9dn8ox451k4vbsg" />
+
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.BROWSABLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <!--receiver
+            android:name="com.jgmoneymanager.tools.MyStartServiceReceiver"
+            android:enabled="true"
+            android:exported="false"
+            android:process=":MoneyManagerBudget">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.PACKAGE_RESTARTED" />
+                <action android:name="android.intent.action.PACKAGE_REPLACED" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </receiver-->
+
+        <!-- service
+            android:name="com.jgmoneymanager.tools.DropboxAutoUpload"
+            android:icon="@drawable/icon"
+            android:label="@string/app_service" >
+        </service> -->
+
+        <provider
+            android:name="com.jgmoneymanager.database.MoneyManagerProvider"
+            android:authorities="com.jgmoneymanager.MoneyManager" />
+    </application>
+
+</manifest>

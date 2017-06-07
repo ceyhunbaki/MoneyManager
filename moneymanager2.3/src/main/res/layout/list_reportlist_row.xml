@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/White">
+
+    <ImageButton
+        android:id="@+id/bt_grp_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_alignParentLeft="true"
+        android:layout_alignTop="@+id/grp_child"
+        android:layout_alignBottom="@+id/grp_child"
+        android:layout_marginTop="@dimen/combined_list_label_top_margin"
+        android:layout_marginBottom="@dimen/combined_list_label_top_margin"
+        android:background="@color/transparent"
+        android:src="@drawable/rep1_account_2"
+        android:textColor="@drawable/color_selector" />
+
+    <TextView
+        android:id="@+id/grp_child"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:layout_alignParentLeft="true"
+        android:paddingLeft="@dimen/report_list_row_left_pad"
+        android:text="@string/repBudgetedAmountCategories"
+        android:textColor="@color/newThemeBlue"
+        android:maxLines="2"
+        style="@style/CombinedListLabelNew.Medium" />
+    
+
+</RelativeLayout>

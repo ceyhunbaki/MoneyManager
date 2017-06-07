@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Money Manager Pro</string>
+    <string name="line1">	Это Money Manager Pro Ключ</string>
+    <string name="line2">	Для использования Money Manager с Pro функциями, откройте старую Money Manager из списка приложений или установите Money Manager из Play Store</string>
+
+</resources>

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/newThemeBlue">
+
+    <RelativeLayout
+        android:id="@+id/repLayInterval"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:background="@color/Black" >
+
+        <ImageButton
+            android:id="@+id/repImgIntLeft"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/transparent"
+            android:minHeight="@dimen/report_title_min_height"
+            android:layout_alignTop="@+id/repBtInterval"
+            android:layout_alignBottom="@+id/repBtInterval"
+            android:onClick="myClickHandler"
+            android:src="@drawable/arrow_left" />
+
+        <Button
+            android:id="@+id/repBtInterval"
+            style="@style/ReportTitleButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minHeight="@dimen/report_title_min_height"
+            android:layout_toLeftOf="@+id/repImgIntRight"
+            android:layout_toRightOf="@+id/repImgIntLeft"
+            android:background="@color/transparent"
+            android:text="monthly" />
+
+        <ImageButton
+            android:id="@+id/repImgIntRight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:background="@color/transparent"
+            android:layout_alignTop="@+id/repBtInterval"
+            android:layout_alignBottom="@+id/repBtInterval"
+            android:minHeight="@dimen/report_title_min_height"
+            android:onClick="myClickHandler"
+            android:src="@drawable/arrow_right" />
+    </RelativeLayout>
+    
+    <RelativeLayout 
+        android:id="@+id/repLayDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/repLayInterval"
+        android:background="@color/Black">
+
+        <ImageButton
+            android:id="@+id/repImgDateLeft"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/transparent"
+            android:minHeight="@dimen/report_title_min_height"
+            android:layout_alignTop="@+id/repBtDate"
+            android:layout_alignBottom="@+id/repBtDate"
+            android:onClick="myClickHandler"
+            android:src="@drawable/arrow_left"/>
+
+        <Button
+            android:id="@+id/repBtDate"
+            style="@style/ReportTitleButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/repImgDateRight"
+            android:layout_toRightOf="@+id/repImgDateLeft"
+            android:background="@color/transparent"
+            android:minHeight="@dimen/report_title_min_height"
+            android:onClick="myClickHandler"
+            android:text="March, 2013" />
+
+        <ImageButton
+            android:id="@+id/repImgDateRight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:background="@color/transparent"
+            android:layout_alignTop="@+id/repBtDate"
+            android:layout_alignBottom="@+id/repBtDate"
+            android:minHeight="@dimen/report_title_min_height"
+            android:onClick="myClickHandler"
+            android:src="@drawable/arrow_right"/>
+        
+    </RelativeLayout>
+    
+    <LinearLayout 
+        android:id="@+id/chart" 
+        android:orientation="horizontal"
+        android:layout_width="fill_parent" 
+        android:layout_height="fill_parent"
+        android:layout_marginTop="@dimen/main_round_button_side"
+        android:layout_below="@+id/repLayDate"
+        android:background="@color/Black"/>
+
+</RelativeLayout>

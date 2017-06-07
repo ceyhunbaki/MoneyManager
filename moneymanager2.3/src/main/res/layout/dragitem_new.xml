@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal" >
+
+    <ImageView
+        android:id="@+id/drImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_alignParentLeft="true"
+        android:src="@drawable/icmpmove" >
+    </ImageView>
+
+    <TextView
+        android:id="@+id/drText"
+        style="@style/ThemeNew.Main.MenuItem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/drImage"
+        android:layout_alignBottom="@+id/drImage"
+        android:layout_toRightOf="@+id/drImage"
+        android:layout_toLeftOf="@+id/drEdit"
+        android:gravity="center_vertical"
+        android:layout_margin="0dp"
+        android:text="TextView01"
+        android:background="@color/White"
+        android:textColor="@color/Black">
+    </TextView>
+
+    <ImageButton
+        android:id="@+id/drEdit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_alignTop="@+id/drImage"
+        android:layout_alignBottom="@+id/drImage"
+        android:background="@color/transparent"
+        android:layout_alignParentRight="true"
+        android:onClick="myClickHandler"
+        android:src="@drawable/edit_new">
+    </ImageButton>
+
+</RelativeLayout>

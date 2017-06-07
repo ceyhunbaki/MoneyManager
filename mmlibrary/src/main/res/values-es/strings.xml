@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="accounts">Cuentas</string>
+    <string name="currencies">Monedas</string>
+    <string name="categories">Categorías</string>
+    <string name="transactions">Transacciones</string>
+    <string name="transfer">Transferencia</string>
+    <string name="calculator">Calculadora</string>
+    <string name="convertor">Convertidor</string>
+    <string name="explorer">Explorar</string>
+    <string name="mydebts">Mis deudas</string>
+    <string name="browse">Navegar</string>
+
+    <string name="currencyrates">Tipos de cambio</string>
+    <string name="rate">Calificar</string>
+    <string name="result">Resultado</string>
+    <string name="name">Nombre</string>
+    <string name="sign">Signo</string>
+    <string name="initialBalance">Saldo inicial</string>
+    <string name="up">Arriba</string>
+    <string name="description">Descripción</string>
+    <string name="isDefault">Por defecto</string>
+    <string name="status">Estado</string>
+    <string name="addedDate">Añadido en Fecha</string>
+
+    <string name="notSet">No establecido</string>
+
+    <string name="addCategory">Añadir categoría</string>
+    <string name="addSubCategory">Agregar subcategoría</string>
+
+    <string name="account">Cuenta</string>
+    <string name="category">Categoría</string>
+    <string name="date">Fecha</string>
+    <string name="amount">Cantidad</string>
+    <string name="addIncome">Añadir Ingreso</string>
+    <string name="addExpence">Agregar gasto</string>
+    <string name="currency">Moneda</string>
+    <string name="value">Valor</string>
+    <string name="convert">Convertir</string>
+
+    <string name="totalBalance">Balance Total:</string>
+    <string name="total">Total:</string>
+
+    <string name="from">Desde</string>
+    <string name="to">Hacia</string>
+    <string name="repeatType">Repetir tipo</string>
+    <string name="periodEnd">Fin del \nperíodo</string>
+    <string name="interval">Intervalo</string>
+    <string name="days">dias</string>
+    <string name="first">Primero</string>
+    <string name="next">Siguiente</string>
+    <string name="latest">Más recientes</string>
+
+    <string name="Yes">Sí</string>
+    <string name="No">No</string>
+    <string name="Cancel">Cancelar</string>
+    <string name="Continue">"Continuar"</string>
+
+    <string name="type">Tipo</string>
+
+    <string name="filter">Filtro</string>
+    <string name="dateFrom">Desde fecha</string>
+    <string name="dateTo">Hasta fecha</string>
+    <string name="amountFrom">Desde cantidad</string>
+    <string name="amountTo">Hasta cantidad</string>
+    <string name="operation">Operación</string>
+    <string name="transaction">Transacción</string>
+
+    <string name="chooseFile">Seleccionar archivo</string>
+
+    <string name="income">Ingreso</string>
+    <string name="expense">Gasto</string>
+
+    <string name="Monday">Lunes</string>
+    <string name="Tuesday">Martes</string>
+    <string name="Wednesday">Miércoles</string>
+    <string name="Thursday">Jueves</string>
+    <string name="Friday">Viernes</string>
+    <string name="Saturday">Sábado</string>
+    <string name="Sunday">Domingo</string>
+    <!-- Settings -->
+    <string name="settings">Configuración</string>
+    <string name="settingsSummary">Establecer configuración de gestor de dinero</string>
+    <string name="generalOptions">General</string>
+    <string name="generalSummary">Establecer configuración general de gestor de dinero</string>
+
+    <string name="setTransactionListDateFilter">Fecha predeterminada de filtro</string>
+    <string name="setTransactionListDFSummary">Establecer fecha predeterminada de filtro para transacciones</string>
+    <string name="setTransactionListDFDialogTitle">Seleccionar filtro de datos</string>
+
+    <string name="setStartupScreen">Pantalla de inicio</string>
+    <string name="setStartupScreenSummary">Establecer pantalla para inicio del programa</string>
+    <string name="setStartupScreenDialogTitle">Pantalla de inicio</string>
+
+    <string name="backupOptions">Copia de seguridad/restaurar SD/Dispositivo de memoria</string>
+    <string name="btBackupSummary">Base de datos de copia de seguridad en</string>
+    <string name="btRestoreSummary">Restaurar base de datos</string>
+    <string name="folder">Carpeta</string>
+    <string name="addFolder">Agregar carpeta</string>
+    <string name="backupFolderSummary">Establecer carpeta para copia de seguridad automática -</string>
+    <string name="exportOptions">Importar y exportar</string>
+    <string name="btExportSummary">Exportar transacciones a archivo csv</string>
+    <string name="btImportSummary">Importar transacciones</string>
+    <string name="exportFolderSummary">Establecer carpeta para exportación</string>
+    <string name="backupMaxDateTitle">Máximo de días para copia de seguridad</string>
+    <string name="backupMaxDateSummary">Después de estos días la copia de seguridad será eliminada automáticamente</string>
+    <string name="backupMaxSizeTitle">Tamaño total de la copia de seguridad</string>
+    <string name="backupMaxSizeSummary">Tamaño total de la carpeta de copia de seguridad en MB</string>
+    <string name="autoBackupTitle">Auto Copia de seguridad</string>
+    <string name="autoBackupSummary">Copia de seguridad automática diaria en</string>
+    <string name="backupToDataFolderTitle">Copia de seguridad en /carpeta de archivos</string>
+    <string name="backupFolderTitle">Carpeta de respaldo</string>
+
+    <string name="security">Seguridad</string>
+    <string name="setPassword">Establecer contraseña</string>
+    <string name="changePassword">Cambiar contraseña</string>
+    <string name="setEmail">Establecer correo electrónico</string>
+    <string name="changeEmail">Cambiar correo electrónico</string>
+    <string name="emailSummary">Correo electrónico para recuperación de contraseña</string>
+    <string name="securityQuestionTitle">Pregunta de seguridad</string>
+    <string name="securityQuestionSummary">Establecer pregunta de seguridad para recuperación de contraseña</string>
+    <string name="forgetPasswordSummary">Haga clic para obtener una nueva contraseña</string>
+
+    <string name="selectCategory">Seleccionar categoría</string>
+    <string name="selectAccount">Seleccionar cuenta</string>
+    <string name="selectCurrency">Eljia moneda</string>
+    <string name="selectFolder">Seleccionar Carpeta</string>
+
+    <string name="newPassword">Contraseña nueva</string>
+    <string name="oldPassword">Contraseña anterior</string>
+    <string name="showPassword">Mostrar contraseña</string>
+    <string name="question">Pregunta</string>
+    <string name="answer">Responder</string>
+    <string name="securityanswer">respuesta de seguridad</string>
+    <string name="askpasswordtitle">Protección por contraseña</string>
+    <string name="askpasswordsummary">Solicitar contraseña al iniciar</string>
+    <string name="enterpassword">Entrar contraseña</string>
+    <string name="forgetpassword">¿Olvidó su contraseña?</string>
+    <string name="yourNewPassword">Su nueva contraseña</string>
+    <string name="information">Información</string>
+
+    <string name="about">Sobre</string>
+    <string name="help">Ayuda</string>
+    <string name="sendEmailTitle">Enviar correo</string>
+    <string name="sendEmailSummary">Enviar un correo electrónico al desarrollador</string>
+    <string name="helpSummary">Abrir el documento de Guía de usuario</string>
+    <string name="removeAds">Quitar anuncios</string>
+    <string name="adsRemoveSummaryRemoved">"Anuncio clasificado" clave ya se ha obtenido</string>
+    <string name="adsRemoveSummaryBuy">Comprar "anuncio clasificado" clave </string>
+
+    <string name="allow">Permitir</string>
+    <string name="dont_allow">No permitir</string>
+
+    <string name="month">Mes</string>
+    <string name="year">Año</string>
+    <string name="Sum">Suma</string>
+
+    <string name="open"><b>Abrir</b></string>
+    <string name="boldedit"><b>Editar</b></string>
+    <string name="boldfilter"><b>Filtrar</b></string>
+
+    <string name="setLanguage">Idioma</string>
+    <string name="setLanguageSummary">Establezca el idioma de la aplicación</string>
+    <string name="setLanguageDialogTitle">Elegir Idioma</string>
+
+    <string name="setHomeScreenVersion">Versión de pantalla de inicio</string>
+
+    <string name="report">Reporte</string>
+    <string name="today">Hoy</string>
+    <string name="thisMonth">Este mes</string>
+    <string name="thisYear">Este año</string>
+    <string name="balance2">Saldo:</string>
+    <string name="recurring">Recurrente</string>
+    <string name="addRecurring">Agregar recurrente</string>
+
+    <string name="sortAtoZ">Ordenar alfabéticamente</string>
+    <string name="addNew">Añadir nuevo</string>
+    <string name="allTransactions">Todas las transacciones</string>
+    <string name="incomes">Ingresos</string>
+    <string name="expences">Gastos</string>
+    <string name="editTransaction">Editar transacción</string>
+    <string name="selectMainCategory">Seleccionar categoría principal</string>
+    <string name="deleteTransaction">Eliminar transacción</string>
+    <string name="all">Todos</string>
+    <string name="cash">Efectivo</string>
+    <string name="bank">Banco</string>
+
+    <string name="transferShort">TRF</string>
+    <string name="rpTransShort">RPT</string>
+
+    <string name="returnDate">Fecha de \nretorno</string>
+    <string name="addToTransaction">Agregar a transacciones</string>
+    <string name="borrowed">Prestada</string>
+    <string name="lent">Prestar</string>
+
+    <string name="backupDropbox">Copia de seguridad en Dropbox/Restaurar</string>
+    <string name="btBackupDropboxSummary">Copiar base de datos a Dropbox</string>
+    <string name="btRestoreDropboxSummary">Restaurar base de datos desde Dropbox</string>
+    <string name="uploading">Cargando</string>
+    <string name="downloading">Descargando</string>
+    <string name="autentificateError">Esta aplicación no fue autenticada correctamente</string>
+    <string name="fileBigError">El archivo es muy grande para ser cargado</string>
+    <string name="emptyDirectory">Archivo o directorio vacío</string>
+    <string name="noBackup">No existe un archivo de copia de seguridad en Dropbox</string>
+    <string name="couldntRestore">No se pudo crear un archivo local para restaurar</string>
+    <string name="canceled">Cancelado</string>
+    <string name="networkError">Error de red. Intentar nuevamente.</string>
+    <string name="dropboxError">Error de Dropbox. Intentar nuevamente.</string>
+    <string name="unknownError">Error desconocido. Intentar nuevamente.</string>
+    <string name="resetUserName">Restablecer nombre de usuario/contraseña</string>
+    <string name="btResetDropboxUserNameSummary">Desvincular la aplicación de su cuenta actual de Dropbox</string>
+    <string name="dropboxUserAccess">Dropbox solicitará su acceso para la siguiente copia de seguridad/restauración</string>
+    <string name="dropboxAutoSyncWiFiTitle">Cargar sólo via wifi</string>
+    <string name="dropboxAutoSyncWiFiSummary">Cargar automáticamente a Dropbox sólo con wifi disponible</string>
+    <!-- BUDGET -->
+    <string name="budget">Presupuesto</string>
+    <string name="budgetMainGroup">Presupuesto del grupo principal</string>
+    <string name="selectAll">Seleccionar todo</string>
+    <string name="lastMonth">El mes pasado</string>
+    <string name="notBudgeted">No presupuestado</string>
+    <string name="budgeted">Presupuestado</string>
+    <string name="remaining">Restante</string>
+    <string name="remainingFromPrevMonth">Resto del mes anterior</string>
+    <string name="remainingFromPrevMonthMain">Resto del grupo principal del mes anterior</string>
+    <string name="remainingFromPrevMonthTotal">Resto total del mes anterior</string>
+    <string name="remainingCurrent">Resto actual</string>
+    <string name="overspent">Exceso de gastos</string>
+    <string name="editBudget">Editar presupuesto</string>
+    <string name="selectValue">Seleccionar valor</string>
+    <string name="moveBudget">Mover presupuesto a otra categoría</string>
+    <string name="addBudget">Agregar presupuesto</string>
+    <string name="remainingBudget">Presupuesto restante:</string>
+    <string name="budgetTotal">Total</string>
+    <string name="movedValueIsTooBig">El valor movido no puede ser mayor al presupuesto actual</string>
+    <string name="incomeCategories">Categorías de ingresos</string>
+    <string name="expenseCategories">Categoría de gastos</string>
+    <string name="applyThis">Aplicar esto</string>
+    <string name="change">Cambiar</string>
+    <string name="neverAsk">No preguntar nunca</string>
+    <string name="enableBudget">Habilitar presupuesto</string>
+    <string name="enableBudgetSummary">Habilitar o deshabilitar todas las opciones de presupuesto</string>
+    <string name="internetRatesSummary">Obtener tipos de cambio automáticamente desde internet</string>
+    <string name="editRemainingBudget">Disminuir el presupuesto restante</string>
+
+    <string name="usedShort">U</string>
+    <string name="used">usada</string>
+    <string name="budgetShort">B</string>
+    <string name="remainingShort">R</string>
+    <string name="totalRemainingShort">TR</string>
+    <string name="totalRemaining">Resto total</string>
+    <string name="totalBudgetShort">TB</string>
+    <string name="totalBudget">Presupuesto total</string>
+
+    <string name="repAccountBalanceReport">Balance de cuenta</string>
+    <string name="repAccountReport">Reporte de cuenta</string>
+    <string name="repCategory">Reporte de categorías</string>
+    <string name="repSubCategory">Reporte de subcategorías</string>
+    <string name="repCategoryPieChart">Gráfico de torta de categorías</string>
+    <string name="repCategoryBarChart">Gráfico de barras de categoría</string>
+    <string name="repBudgetGrowthCategories">Crecimiento de presupuesto por categorías</string>
+    <string name="repBudgetGrowth">Crecimiento de presupuesto</string>
+    <string name="repBudgetGrowthTotal">Crecimiento total de presupuesto</string>
+    <string name="repBudgetedAmountCategories">Suma presupuestada mensualmente por categorías</string>
+    <string name="repBudgetedAmountTotal">Suma total presupuestada mensualmente</string>
+    <string name="repBudgetCompare">Comparación de presupuesto con meses anteriores</string>
+    <string name="repBudgetPieChart">Presupuesto - Gráfico circular</string>
+    <string name="repBudgetAmount">Suma presupuestada</string>
+    <string name="lineChart">Gráfico de línea</string>
+    <string name="barChart">Gráfico de barras</string>
+
+    <string name="transactionStatus">Estado de transacciones</string>
+    <string name="cleared">Despejado</string>
+    <string name="uncleared">No despejado</string>
+    <string name="void_">Vacío</string>
+    <string name="disable">Inhabilitar</string>
+    <string name="later">Más tarde</string>
+    <string name="setNow">Establezca ahora</string>
+
+    <string name="paymentMethod">Método de pago</string>
+    <string name="paymentMethodN">Método \nde pago</string>
+    <string name="check">Cheque</string>
+    <string name="checkNo">No de cheque</string>
+    <string name="card">Tarjeta</string>
+
+    <string name="version1">Avanzado</string>
+    <string name="version2">Simple</string>
+    <string name="last12Month">Últimos 12 meses</string>
+    <string name="custom">Personalizado</string>
+    <string name="defaultt">Predeterminado</string>
+    <string name="average">Promedio</string>
+    <string name="onlyOnce">Única vez</string>
+    <string name="daily">Diariamente</string>
+    <string name="weekly">Semanalmente</string>
+    <string name="monthly">Mensual</string>
+    <string name="quarterly">Trimestral</string>
+    <string name="yearly">Anual</string>
+    <string name="visible">Visible</string>
+    <string name="invisible">invisible</string>
+    <string name="thisWeek">Esta semana</string>
+    <string name="last30Days">En los últimos 30 días</string>
+    <string name="never">Nunca</string>
+    <string name="sameDay">Mismo día</string>
+    <string name="dayBefore1">Un día antes</string>
+    <string name="dayBefore2">2 días antes</string>
+    <string name="dayBefore3">3 días antes</string>
+    <string name="dayBefore7">7 días antes</string>
+    <string name="day1">1 día</string>
+    <string name="day3">3 Días</string>
+    <string name="week1">1 semana</string>
+    <string name="week2">2 Semanas</string>
+    <string name="month1">1 mes</string>
+    <string name="month2">2 meses</string>
+    <string name="january">Enero</string>
+    <string name="february">Febrero</string>
+    <string name="march">Marzo</string>
+    <string name="april">Abril</string>
+    <string name="may">Mayo</string>
+    <string name="june">Junio</string>
+    <string name="july">Julio</string>
+    <string name="august">Agosto</string>
+    <string name="september">Septiembre</string>
+    <string name="october">Octubre</string>
+    <string name="november">Noviembre</string>
+    <string name="december">Diciembre</string>
+
+    <string name="includeSubCategoriesBudget">Incluir el presupuesto de las subcategorías</string>
+    <string name="repeatBudget">Establece en presupuesto de este mes en los siguientes meses</string>
+    <string name="dropboxAutoSyncSummary">Sincronización automática con Dropbox. Utilice esta opción si está utilizando más de un dispositivo con la misma cuenta de Dropbox.</string>
+    <string name="dropboxAutoSyncTitle">Sincronización automática de Dropbox.</string>
+    <string name="msgDropboxNotAutorised">Para autorizar en su Dropbox, haga una copia de seguridad o realice una restauración desde Dropbox.</string>
+    <string name="msgDropboxSnycing">Sincronizar con Dropbox...</string>
+    <string name="whatsnew">NOVEDADES</string>
+    <string name="repExpensesCompare">Comparativa de los gastos por mes</string>
+    <string name="repExpensesCompareTitle">Comparativa mensual</string>
+
+    <string name="addGoal">Añadir meta</string>
+    <string name="editGoal">Editar meta</string>
+    <string name="targetMonth">Mes objetivo</string>
+    <string name="targetAmount">Cantidad objetivo</string>
+    <string name="monthlyMinimum">Mínimo mensual</string>
+    <string name="goals">Ahorros</string>
+    <string name="min2Max10">El número mínimo de sub-transacción con categoría y cantidad debe ser 2, máximo 10</string>
+    <string name="split">Dividir</string>
+    <string name="splitTransaction">Transacción dividida</string>
+    <string name="addSubTransaction">Añadir subtransacción</string>
+    <string name="msgCategoryNotAllowedSplit">No se permite una única categoría para transacciones divididas</string>
+    <string name="msgAmountNotAllowedSplit">La cantidad total se calcula automáticamente para las transacciones divididas</string>
+    <string name="msgChooseReceiptFolder">Operación fallida. Por favor, elija la carpeta de acuse de recibo de la configuración</string>
+    <string name="msgViewCurrentPhoto">Ver la foto actual</string>
+    <string name="receiptsFolderTitle">Carpeta de acuse de recibo</string>
+    <string name="setResetLocalizationTitle">Reiniciar</string>
+    <string name="setResetLocalizationSummary">Restaurar formatos predeterminados</string>
+    <string name="setDateFormat">Formato de fecha</string>
+    <string name="setLanguageOptsSummary">Establecer los formatos de idioma, moneda y fecha</string>
+    <string name="setCurSignPosition">Posición de signo de moneda</string>
+    <string name="left">Izquierda</string>
+    <string name="right">Derecha</string>
+    <string name="setDecimalSymbol">Símbolo decimal</string>
+    <string name="setDecimalDigitsCount">Número de dígitos después del decimal</string>
+    <string name="setDecimalDigitsCountCurrency">Número de dígitos después del decimal para tipos de cambio</string>
+    <string name="setDigitsGroupingSymbol">Símbolo de agrupación de dígitos</string>
+    <string name="none">Ninguno</string>
+    <string name="setWeekFirstDay">Primer día de la semana</string>
+    <string name="setMonthFirstDate">Primera fecha del mes</string>
+</resources>

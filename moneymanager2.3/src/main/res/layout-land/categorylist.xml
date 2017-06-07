@@ -1,0 +1,51 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/CatLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/White">
+
+    <TextView
+        android:id="@+id/tvATTitle"
+        style="@style/ThemeNew.Title"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/title_bar_height"
+        android:layout_alignParentTop="true"
+        android:background="@color/newThemeBlue"
+        android:gravity="center|center_vertical"
+        android:text="@string/expenseCategories" />
+
+    <ExpandableListView
+        android:id="@+id/android:list"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_above="@id/btCatAddMain"
+        android:layout_below="@id/tvATTitle"
+        android:layout_marginLeft="@dimen/category_list_left_margin"
+        android:layout_marginRight="@dimen/category_list_right_margin"
+        android:divider="@color/newThemeBlue"
+        android:dividerHeight="@dimen/main_round_button_side" />
+
+    <Button
+        android:id="@+id/btCatAddMain"
+        style="@style/ThemeNew.ButtonText.OKButton.Left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/android:list"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="@dimen/category_button_left_margin"
+        android:minWidth="@dimen/category_button_min_width"
+        android:onClick="myClickHandler"
+        android:text="@string/addCategory" />
+
+    <Button
+        android:id="@+id/btCatAddSubCategory"
+        style="@style/ThemeNew.ButtonText.OKButton.Left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/android:list"
+        android:layout_marginRight="@dimen/category_button_right_margin"
+        android:minWidth="@dimen/category_button_min_width"
+        android:onClick="myClickHandler"
+        android:text="@string/addSubCategory" />
+</RelativeLayout>

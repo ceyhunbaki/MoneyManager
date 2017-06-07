@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="accounts">Accounts</string>
+    <string name="currencies">Currencies</string>
+    <string name="categories">Categories</string>
+    <string name="transactions">Transactions</string>
+    <string name="transfer">Transfer</string>
+    <string name="calculator">Calculator</string>
+    <string name="convertor">Converter</string>
+    <string name="explorer">Explorer</string>
+    <string name="mydebts">My debts</string>
+    <string name="browse">Browse</string>
+    
+    <string name="currencyrates">Currency rates</string>
+    <string name="rate">Rate</string>
+    <string name="result">Result</string>
+    <string name="name">Name</string>
+    <string name="sign">Sign</string>
+    <string name="initialBalance">Initial balance</string>
+    <string name="up">UP</string>
+    <string name="description">Description</string>
+    <string name="isDefault">Is default</string>
+    <string name="status">Status</string>
+    <string name="addedDate">Added date</string>
+    
+    <string name="notSet">Not set</string>  
+    
+    <string name="account">Account</string>
+    <string name="category">Category</string>
+    <string name="date">Date</string>
+    <string name="amount">Amount</string>
+    <string name="addIncome">Add Income</string>     
+    <string name="addExpence">Add Expense</string>    
+    <string name="currency">Currency</string>    
+    <string name="value">Value</string>
+    <string name="convert">Convert</string>
+    
+    <string name="totalBalance">Total Balance:</string>
+    <string name="total">Total:</string>
+    
+    <string name="from">From</string>
+    <string name="to">To</string>
+    <string name="repeatType">Repeat Type</string>
+    <string name="periodEnd">Period end</string>
+    <string name="interval">Interval</string>
+    <string name="days">days</string>
+    <string name="first">First</string>
+    <string name="next">Next</string>
+    <string name="latest">Latest</string>
+    
+    <string name="Yes">Yes</string>
+    <string name="No">No</string>
+    <string name="Cancel">Cancel</string> 
+    <string name="Continue">"Continue"</string>   
+    
+    <string name="type">Type</string>
+    
+    <string name="filter">Filter</string>
+    <string name="dateFrom">Date from</string>
+    <string name="dateTo">Date to</string>
+    <string name="amountFrom">Amount from</string>
+    <string name="amountTo">Amount to</string>
+    <string name="operation">Operation</string>
+    <string name="transaction">Transaction</string>
+    
+    <string name="chooseFile">Choose File</string>
+    
+    <string name="income">Income</string>
+    <string name="expense">Expense</string>
+    
+    <string name="Monday">Monday</string>
+    <string name="Tuesday">Tuesday</string>
+    <string name="Wednesday">Wednesday</string>
+    <string name="Thursday">Thursday</string>
+    <string name="Friday">Friday</string>
+    <string name="Saturday">Saturday</string>
+    <string name="Sunday">Sunday</string>
+    <!-- Settings -->
+    <string name="settings">Settings</string>
+    <string name="settingsSummary">Set Money manager settings</string>
+    <string name="generalOptions">General</string>
+    <string name="generalSummary">Set Money manager general settings</string>
+    
+    <string name="setTransactionListDateFilter">Default Date Filter</string>
+    <string name="setTransactionListDFSummary">Set transaction list default date filter</string>
+    <string name="setTransactionListDFDialogTitle">Choose date filter</string>
+    
+    <string name="setStartupScreen">Startup screen</string>
+    <string name="setStartupScreenSummary">Set screen for program startup</string>
+    <string name="setStartupScreenDialogTitle">Startup screen</string>
+    
+    <string name="backupOptions">SD/Device memory backup/restore</string>
+    <string name="btBackupSummary">Backup database on </string>
+    <string name="btRestoreSummary">Restore database</string>
+    <string name="folder">Folder</string>
+    <string name="addFolder">Add folder</string>
+    <string name="backupFolderSummary">Set folder for Auto backup - </string>
+    <string name="exportOptions">Import and Export</string>
+    <string name="btExportSummary">Export transactions to csv file</string>
+    <string name="btImportSummary">Import transactions</string>
+    <string name="exportFolderSummary">Set export folder</string>
+    <string name="backupMaxDateTitle">Maximum days for backup</string>
+    <string name="backupMaxDateSummary">After these days backups will be deleted automatically</string>
+    <string name="backupMaxSizeTitle">Total size for backup</string>
+    <string name="backupMaxSizeSummary">Total size of backup folder in MB</string>
+    <string name="autoBackupTitle">Auto backup</string>
+    <string name="autoBackupSummary">Daily auto backup on </string>
+    <string name="backupToDataFolderTitle">Backup on /data folder</string>
+    <string name="backupFolderTitle">Backup folder</string>
+    
+    <string name="security">Security</string>
+    <string name="setPassword">Set password</string>
+    <string name="changePassword">Change password</string>
+    <string name="setEmail">Set email</string>
+    <string name="changeEmail">Change email</string>
+    <string name="emailSummary">Email address for password recovery</string>
+    <string name="securityQuestionTitle">Security question</string>
+    <string name="securityQuestionSummary">Set security question for password recovery</string>
+    <string name="forgetPasswordSummary">Click to get new password</string>
+    
+    
+    <string name="selectCategory">Select category</string>
+    <string name="selectAccount">Select account</string>
+    <string name="selectCurrency">Select currency</string>
+    <string name="selectFolder">Select folder</string>
+    
+    <string name="newPassword">New Password</string>
+    <string name="oldPassword">Old Password</string>
+    <string name="showPassword">Show Password</string>
+    <string name="question">Question</string>
+    <string name="answer">Answer</string>
+    <string name="securityanswer">Security answer</string>
+    <string name="askpasswordtitle">Password protection</string>
+    <string name="askpasswordsummary">Ask password on startup</string>
+    <string name="enterpassword">Enter password</string>
+    <string name="forgetpassword"><u>Forgot password?</u></string>
+    <string name="yourNewPassword">Your new password</string>
+    <string name="information">Information</string>
+    
+    <string name="about">About</string>
+    <string name="help">Help</string>
+    <string name="sendEmailTitle">Send email</string>
+    <string name="sendEmailSummary">Send email to developer</string>
+    <string name="helpSummary">Open the user guide document</string>
+    <string name="removeAds">Remove Ads</string>
+    <string name="adsRemoveSummaryRemoved">"Ads free" Key has already been obtained</string>
+    <string name="adsRemoveSummaryBuy">Buy "Ads free" Key </string>
+    
+    <string name="allow">Allow</string>
+    <string name="dont_allow">Don\'t allow</string>
+    
+    <string name="month">Month</string>
+    <string name="year">Year</string>
+    <string name="Sum">SUM</string>
+    
+    <string name="open"><b>Open</b></string>
+    <string name="boldedit"><b>EDIT</b></string>
+    <string name="boldfilter"><b>FILTER</b></string>
+    
+    <string name="setLanguage">Language</string>
+    <string name="setLanguageSummary">Set application language</string>
+    <string name="setLanguageDialogTitle">Choose language</string>
+
+    <string name="setHomeScreenVersion">Home screen version</string>
+    
+    <string name="report">Report</string>
+    <string name="today">Today</string>
+    <string name="thisMonth">This month</string>
+    <string name="thisYear">This year</string>
+    <string name="balance2">Balance</string>
+    <string name="recurring">Recurring</string>
+    <string name="addRecurring">Add recurring</string>
+    
+    <string name="sortAtoZ">Sort AZ</string>
+    <string name="addNew">Add new</string>
+    <string name="allTransactions">All transactions</string>
+    <string name="incomes">Incomes</string>
+    <string name="expences">Expenses</string>
+    <string name="editTransaction">Edit transaction</string>
+    <string name="selectMainCategory">Select main category</string>    
+    <string name="deleteTransaction">Delete transaction</string>    
+    <string name="all">All</string>
+    <string name="cash">Cash</string>
+    <string name="bank">Bank</string>
+        
+    <string name="transferShort">TRF</string>
+    <string name="rpTransShort">RPT</string>
+    
+    <string name="returnDate">Return Date</string>
+    <string name="addToTransaction">Add to transactions</string>
+    <string name="borrowed">Borrowed</string>
+    <string name="lent">Lent</string>  
+        
+    <string name="backupDropbox">Dropbox Backup/Restore</string>
+    <string name="btBackupDropboxSummary">Backup database to Dropbox</string>
+    <string name="btRestoreDropboxSummary">Restore database from Dropbox</string>
+    <string name="uploading">Uploading</string>
+    <string name="downloading">Downloading</string>
+    <string name="autentificateError">This app wasn\'t authenticated properly</string>
+    <string name="fileBigError">This file is too big to upload</string>
+    <string name="emptyDirectory">File or empty directory</string>
+    <string name="noBackup">No backup file in Dropbox</string>
+    <string name="couldntRestore">Couldn\'t create a local file to restore</string>
+    <string name="canceled">Canceled</string>
+    <string name="networkError">Network error.  Try again.</string>
+    <string name="dropboxError">Dropbox error.  Try again.</string>
+    <string name="unknownError">Unknown error.  Try again.</string>
+    <string name="resetUserName">Reset username/password</string>
+    <string name="btResetDropboxUserNameSummary">Disconnect application from your current Dropbox account</string>
+    <string name="dropboxUserAccess">Dropbox will request your access in next backup/restore</string>
+    <!-- BUDGET -->
+    <string name="budget">Budget</string>
+    <string name="budgetMainGroup">Main group\'s budget</string>
+    <string name="selectAll">Select all</string>
+    <string name="lastMonth">Last month</string>
+    <string name="notBudgeted">Not budgeted</string>
+    <string name="budgeted">Budgeted</string>
+    <string name="remaining">Remaining</string>
+    <string name="remainingFromPrevMonth">Prev. month\'s remaining</string>
+    <string name="remainingFromPrevMonthMain">Main group\'s remaining from prev. month</string>
+    <string name="remainingFromPrevMonthTotal">Total remaining from prev. month</string>
+    <string name="remainingCurrent">Current remaining</string>
+    <string name="overspent">Overspent</string>
+    <string name="editBudget">Edit budget</string>
+    <string name="selectValue">Select value</string>
+    <string name="moveBudget">Move budget to another category</string>
+    <string name="addBudget">Add budget</string>
+    <string name="remainingBudget">Remaining budget:</string>
+    <string name="budgetTotal">Total</string>
+    <string name="movedValueIsTooBig">Moved value cannot be greater than current budget</string>    
+    <string name="incomeCategories">Income categories</string>
+    <string name="expenseCategories">Expense categories</string>
+    <string name="applyThis">Apply this</string>
+    <string name="change">Change</string>
+    <string name="neverAsk">Never ask</string>
+    <string name="enableBudget">Enable budget</string>
+    <string name="enableBudgetSummary">Enable or disable all budget options</string> 
+    <string name="internetRatesSummary">Get exchange rates automatically from internet</string>
+    <string name="editRemainingBudget">Reduce remaining budget</string>
+    
+    <string name="usedShort">U</string>
+    <string name="used">Used</string>
+    <string name="budgetShort">B</string>
+    <string name="remainingShort">R</string>
+    <string name="totalRemainingShort">TR</string>
+    <string name="totalRemaining">Total remaining</string>
+    <string name="totalBudgetShort">TB</string>
+    <string name="totalBudget">Total budget</string>
+    <string name="addCategory">Add Category</string>
+    <string name="addSubCategory">Add SubCategory</string>
+    <string name="barChart">Bar chart</string>
+    <string name="cleared">Cleared</string>
+    <string name="lineChart">Line chart</string>
+    <string name="menuAddTransaction">Add transaction</string>
+    <string name="msgCameraError">Error occurred when attempting to open camera</string>
+    <string name="msgChangeName">Change name</string>
+    <string name="msgChooseFromGallery">Choose from gallery</string>
+    <string name="msgDeleteCurrentPhoto">Delete current photo</string>
+    <string name="msgFromDateIsLessThanTo">\'From date\' cannot be greater than \'To date\'</string>
+    <string name="msgPasswordReset">Your password has been deleted. Please set your password again.</string>
+    <string name="msgPleaseSelect">Please select</string>
+    <string name="msgTakeNew">Take a new photo</string>
+
+    <string name="repAccountBalanceReport">Account balance</string>
+    <string name="repAccountReport">Account Report</string>
+    <string name="repCategory">Category Report</string>
+    <string name="repSubCategory">SubCategory Report</string>
+    <string name="repCategoryPieChart">Category Pie Chart</string>
+    <string name="repCategoryBarChart">Category Bar Chart</string>
+    <string name="repBudgetAmount">Budgeted amount</string>
+    <string name="repBudgetGrowth">Budget growth</string>
+    <string name="repBudgetGrowthCategories">Budget growth by categories</string>
+    <string name="repBudgetGrowthTotal">Total budget growth</string>
+    <string name="repBudgetedAmountCategories">Monthly budgeted amount by categories</string>
+    <string name="repBudgetedAmountTotal">Monthly total budgeted amount</string>
+    <string name="repBudgetCompare">Budget-Compare with previous months</string>
+    <string name="repBudgetPieChart">Budget - Pie chart</string>
+    <string name="transactionStatus">Transactions\' status</string>
+    <string name="uncleared">Uncleared</string>
+    <string name="void_">Void</string>
+    <string name="disable">Disable</string>
+    <string name="later">Later</string>
+    <string name="setNow">Set now</string>
+
+    <string name="paymentMethod">Payment method</string>
+    <string name="paymentMethodN">Payment \nmethod</string>
+    <string name="check">Bill</string>
+    <string name="checkNo">Bill No</string>
+    <string name="card">Card</string>
+
+    <string name="version1">Advanced</string>
+    <string name="version2">Simple</string>
+
+    <string name="last12Month">Last 12 month</string>
+    <string name="custom">Custom</string>
+    <string name="defaultt">Default</string>
+    <string name="average">Average</string>
+
+    <string name="onlyOnce">Only once</string>
+    <string name="daily">Daily</string>
+    <string name="weekly">Weekly</string>
+    <string name="monthly">Monthly</string>
+    <string name="quarterly">Quarterly</string>
+    <string name="yearly">Yearly</string>
+    <string name="visible">Visible</string>
+    <string name="invisible">Invisible</string>
+    <string name="thisWeek">This week</string>
+    <string name="last30Days">Last 30 days</string>
+    <string name="never">Never</string>
+    <string name="sameDay">Same day</string>
+    <string name="dayBefore1">1 day before</string>
+    <string name="dayBefore2">2 day before</string>
+    <string name="dayBefore3">3 day before</string>
+    <string name="dayBefore7">7 day before</string>
+    <string name="day1">1 day</string>
+    <string name="day3">3 days</string>
+    <string name="week1">1 week</string>
+    <string name="week2">2 weeks</string>
+    <string name="month1">1 month</string>
+    <string name="month2">2 months</string>
+    <string name="january">January</string>
+    <string name="february">February</string>
+    <string name="march">March</string>
+    <string name="april">April</string>
+    <string name="may">May</string>
+    <string name="june">June</string>
+    <string name="july">July</string>
+    <string name="august">August</string>
+    <string name="september">September</string>
+    <string name="october">October</string>
+    <string name="november">November</string>
+    <string name="december">December</string>
+
+    <string name="includeSubCategoriesBudget">Include subcategories\' budget</string>
+    <string name="repeatBudget">Set this month\'s budget in the following months</string>
+    <string name="dropboxAutoSyncSummary">Automatic synchronization with Dropbox. Use this option if you are using more than one device with the same Dropbox account.</string>
+    <string name="dropboxAutoSyncTitle">Dropbox auto sync</string>
+    <string name="msgDropboxNotAutorised">For authorization in your Dropbox, make a backup or restore from Dropbox.</string>
+    <string name="msgDropboxSnycing">Syncing with Dropbox...</string>
+    <string name="repExpensesCompare">Comparison of the expenses by the months</string>
+    <string name="repExpensesCompareTitle">Monthly comparison</string>
+
+    <string name="addGoal">Add goal</string>
+    <string name="editGoal">Edit goal</string>
+    <string name="targetMonth">Target month</string>
+    <string name="targetAmount">Target amount</string>
+    <string name="monthlyMinimum">Monthly minimum</string>
+    <string name="goals">Savings</string>
+    <string name="splitTransaction">Split transaction</string>
+    <string name="split">Split</string>
+    <string name="min2Max10">The minimum number of sub-transaction with category and amount should be 2, maximum 10</string>
+    <string name="dropboxAutoSyncWiFiSummary">Automatically upload to Dropbox only when WiFi available</string>
+    <string name="dropboxAutoSyncWiFiTitle">Upload only via WiFi</string>
+    <string name="msgAmountNotAllowedSplit">The total amount is automatically calculated for split transactions</string>
+    <string name="msgCategoryNotAllowedSplit">Single category is not allowed for split transactions</string>
+    <string name="addSubTransaction">Add sub-transaction</string>
+    <string name="msgChooseReceiptFolder">Operation failed. Please, choose receipt folder from settings</string>
+    <string name="msgViewCurrentPhoto">View current photo</string>
+    <string name="none">None</string>
+    <string name="receiptsFolderTitle">Receipts\' folder</string>
+    <string name="right">Right</string>
+    <string name="setCurSignPosition">Currency sign position</string>
+    <string name="setDateFormat">Date format</string>
+    <string name="setDecimalDigitsCount">No. of digits after decimal</string>
+    <string name="setDecimalDigitsCountCurrency">No. of digits after decimal for currency rates</string>
+    <string name="setDecimalSymbol">Decimal symbol</string>
+    <string name="setDigitsGroupingSymbol">Digit grouping symbol</string>
+    <string name="setLanguageOptsSummary">Set language, currency and date formats</string>
+    <string name="setResetLocalizationSummary">Restore the default formats</string>
+    <string name="setResetLocalizationTitle">Reset</string>
+    <string name="left">Left</string>
+
+    <string name="setWeekFirstDay">First day of the week</string>
+    <string name="setMonthFirstDate">First date of the month</string>
+</resources>

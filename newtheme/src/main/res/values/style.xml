@@ -1,0 +1,519 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.Dialog" parent="Theme.AppCompat.Light.Dialog">
+
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="Theme.White" parent="android:Theme"/>
+
+    <style name="ThemeNew.Blue" parent="android:Theme">
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+    <style name="ThemeNew.Dialog" parent="android:Theme.Dialog">
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.White.BlackBackground" parent="Theme.White">
+        <item name="android:windowBackground">@color/Black</item>
+    </style>
+
+    <style name="CustomWindowTitleBackground">
+        <item name="android:background">@android:drawable/title_bar</item>
+        <item name="android:textColor">@color/Black</item>
+        <item name="android:padding">0px</item>
+    </style>
+
+    <style name="CustomTheme" parent="android:Theme">
+        <item name="android:windowTitleSize">45dip</item>
+        <item name="android:windowTitleBackgroundStyle">@style/CustomWindowTitleBackground</item>
+    </style>
+
+    <style name="ThemeNew.CustomDialogTheme" parent="android:Theme.Dialog">
+        <item name="android:background">@color/White</item>
+        <item name="android:windowBackground">@color/transparent</item>
+    </style>
+
+    <style name="ThemeNew.BudgetLayout" parent="android:Theme">
+        <item name="android:layout_marginTop">1dp</item>
+        <item name="android:background">@drawable/round_button_white_little_3</item>
+    </style>
+
+    <style name="Theme.BudgetLayoutGreen" parent="Theme.BudgetLayout">
+        <item name="android:background">@drawable/cool_budget_background_green</item>
+    </style>
+
+    <style name="Theme.BudgetLayoutRed" parent="Theme.BudgetLayout">
+        <item name="android:background">@drawable/cool_budget_background_red</item>
+    </style>
+
+    <style name="ThemeNew.BudgetStatusLabels" parent="android:Theme">
+        <item name="android:gravity">left|center_vertical</item>
+        <item name="android:textColor">@color/Black</item>
+        <item name="android:background">@color/transparent</item>
+        <item name="android:textSize">@dimen/budget_status_labels_size</item>
+    </style>
+
+    <style name="ThemeNew.BudgetStatusLabel.Left" parent="ThemeNew.BudgetStatusLabels">
+        <item name="android:paddingLeft">@dimen/menu_item_left_padding</item>
+    </style>
+
+    <style name="ThemeNew.BudgetStatusLabel.Right" parent="ThemeNew.BudgetStatusLabels">
+        <item name="android:paddingRight">@dimen/menu_item_left_padding</item>
+    </style>
+
+    <style name="ThemeNew.BudgetStatusLabel.Bold" parent="ThemeNew.BudgetStatusLabels">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/menu_item_text_size</item>
+    </style>
+
+    <style name="ThemeNew.Main.DeactiveAccount" parent="android:Theme">
+        <item name="android:textSize">@dimen/main_account_names_size</item>
+        <item name="android:layout_marginLeft">@dimen/main_account_names_margin</item>
+        <item name="android:layout_marginRight">@dimen/main_account_names_margin</item>
+        <item name="android:textColor">@color/newThemeBlue</item>
+        <item name="android:background">@color/White</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="ThemeNew.Main.ActiveAccount" parent="ThemeNew.Main.DeactiveAccount">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="ThemeNew.Main.MenuItem" parent="android:Theme">
+        <item name="android:textSize">@dimen/abc_text_size_title_material_toolbar</item>
+        <item name="android:minHeight">@dimen/menu_item_min_height</item>
+        <item name="android:paddingLeft">@dimen/menu_item_left_padding</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:layout_marginBottom">@dimen/main_round_button_side</item>
+    </style>
+
+    <style name="SplitTransaction.CategoryButton" parent="ThemeNew.ButtonText.Main">
+        <item name="android:layout_alignParentLeft">true</item>
+        <item name="android:hint">@string/category</item>
+        <item name="android:layout_marginRight">@dimen/button_text_main_left_margin</item>
+        <item name="android:gravity">center_horizontal|center_vertical</item>
+        <item name="android:textColor">@color/Black</item>
+    </style>
+
+    <style name="SplitTransaction.EditTextAmount" parent="@style/ThemeNew.ButtonText.Main">
+        <item name="android:layout_marginRight">@dimen/button_text_main_left_margin</item>
+        <item name="android:inputType">numberDecimal</item>
+        <item name="android:gravity">center_horizontal|center_vertical</item>
+    </style>
+
+    <style name="ThemeNew.WindowTitle" parent="android:Theme">
+        <item name="android:textColor">@color/White</item>
+        <item name="android:textSize">@dimen/title_text_size</item>
+    </style>
+
+    <style name="CombinedListLabelNew">
+        <item name="android:textColor">@drawable/color_selector</item>
+        <item name="android:textSize">@dimen/combined_list_label_text_size</item>
+        <item name="android:maxLines">1</item>
+    </style>
+
+    <style name="CombinedListLabelNew.Small" parent="@style/CombinedListLabelNew">
+        <item name="android:textSize">@dimen/combined_list_label_text_size_small</item>
+    </style>
+
+    <style name="CombinedListLabelNew.Medium" parent="@style/CombinedListLabelNew">
+        <item name="android:minHeight">@dimen/title_bar_height</item>
+        <item name="android:textSize">@dimen/combined_list_label_text_size_medium</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+
+    <style name="ThemeNew.BudgetGroupTextSize" parent="android:Theme">
+        <item name="android:textSize">@dimen/combined_list_label_text_size</item>
+    </style>
+
+    <style name="ThemeNew.BudgetGroupTextSize.Right" parent="ThemeNew.BudgetGroupTextSize">
+        <item name="android:layout_marginRight">5dp</item>
+    </style>
+
+    <style name="ThemeNew.BudgetGroupTextSize.Left" parent="ThemeNew.BudgetGroupTextSize">
+        <item name="android:layout_marginLeft">1dp</item>
+    </style>
+
+    <style name="ThemeNew.LabelText" parent="android:Theme">
+        <item name="android:textSize">@dimen/label_text_size</item>
+        <item name="android:textColor">@color/newThemeBlue</item>
+    </style>
+
+    <style name="ThemeNew.LabelText.First" parent="@style/ThemeNew.LabelText">
+        <item name="android:layout_marginLeft">@dimen/label_text_margin_left</item>
+    </style>
+
+    <style name="ThemeNew.LabelText.Black" parent="@style/ThemeNew.LabelText">
+        <item name="android:textColor">@color/Black</item>
+    </style>
+    <!--
+        <style name="ThemeNew.LabelText.Spinner" parent="@style/ThemeNew.LabelText">
+            <item name="android:layout_marginTop">13dp</item>
+        </style> -->
+    <style name="ThemeNew.Main.Layout" parent="android:Theme">
+        <item name="android:layout_marginTop">@dimen/main_round_button_side</item>
+    </style>
+
+    <style name="ThemeNew.ButtonText" parent="android:Theme">
+        <item name="android:textSize">@dimen/label_text_size</item>
+        <item name="android:layout_marginTop">@dimen/button_text_margin_top</item>
+        <item name="android:minHeight">@dimen/button_text_min_height</item>
+        <item name="android:background">@drawable/round_button_white_little</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="ThemeNew.ButtonText.Dialog" parent="@style/ThemeNew.ButtonText">
+        <item name="android:layout_marginRight">@dimen/converter_button_left_margin</item>
+        <item name="android:layout_marginLeft">@dimen/converter_button_left_margin</item>
+    </style>
+
+    <style name="ThemeNew.ButtonText.First" parent="@style/ThemeNew.ButtonText">
+        <item name="android:layout_marginTop">@dimen/button_text_first_margin_top</item>
+    </style>
+
+    <style name="ThemeNew.ButtonText.Main" parent="@style/ThemeNew.ButtonText">
+        <item name="android:layout_marginRight">@dimen/button_text_main_margin</item>
+        <item name="android:layout_marginLeft">@dimen/button_text_main_left_margin</item>
+    </style>
+
+    <style name="ThemeNew.ButtonText.Main.First" parent="@style/ThemeNew.ButtonText.Main">
+        <item name="android:layout_marginTop">@dimen/button_text_first_margin_top</item>
+    </style>
+
+    <style name="ThemeNew.ButtonText.NewMain" parent="@style/ThemeNew.ButtonText">
+        <item name="android:layout_marginRight">0dp</item>
+        <item name="android:layout_marginLeft">@dimen/button_text_main_left_margin</item>
+    </style>
+
+    <style name="ThemeNew.ButtonText.NewMain.First" parent="@style/ThemeNew.ButtonText.NewMain">
+        <item name="android:layout_marginTop">@dimen/button_text_first_margin_top</item>
+    </style>
+
+    <style name="ThemeNew.ButtonText.CheckBox" parent="@style/ThemeNew.ButtonText">
+        <item name="android:background">@drawable/check_box_button_white</item>
+    </style>
+
+    <style name="ThemeNew.TransImageButton" parent="android:Theme">
+        <item name="android:minWidth">@dimen/trans_camera_button_width</item>
+        <item name="android:layout_marginRight">@dimen/button_text_main_margin</item>
+    </style>
+
+    <style name="ThemeNew.TransImageButton.SplitTransaction" parent="ThemeNew.TransImageButton">
+        <item name="android:minHeight">@dimen/button_text_min_height</item>
+        <item name="android:layout_marginTop">@dimen/button_text_margin_top</item>
+        <item name="android:layout_marginRight">0dp</item>
+        <item name="android:background">@color/transparent</item>
+    </style>
+
+    <style name="ThemeNew.BottomButtonsLayout" parent="android:Theme">
+        <item name="android:layout_marginLeft">@dimen/label_text_margin_left</item>
+        <item name="android:layout_marginRight">@dimen/button_text_main_margin</item>
+        <item name="android:background">@color/White</item>
+    </style>
+
+    <style name="ThemeNew.ButtonText.OKButton" parent="@style/ThemeNew.ButtonText">
+        <item name="android:minWidth">@dimen/ok_button_min_width</item>
+        <item name="android:layout_marginTop">@dimen/ok_button_margin_top</item>
+        <item name="android:background">@drawable/round_button_blue</item>
+    </style>
+
+    <style name="ThemeNew.ButtonText.OKButton.Left" parent="@style/ThemeNew.ButtonText.OKButton">
+        <item name="android:layout_marginLeft">@dimen/ok_button_margin_side</item>
+    </style>
+
+    <style name="ThemeNew.Dialog.OKButton.Left" parent="@style/ThemeNew.ButtonText.OKButton.Left">
+        <item name="android:textSize">@dimen/dialog_ok_text_size</item>
+        <item name="android:layout_marginLeft">@dimen/ok_button_dialog_margin_side</item>
+        <item name="android:layout_marginRight">@dimen/button_text_corner_radius</item>
+    </style>
+
+    <style name="ThemeNew.ButtonText.OKButton.Right" parent="@style/ThemeNew.ButtonText.OKButton">
+        <item name="android:layout_marginRight">@dimen/ok_button_margin_side</item>
+        <item name="android:layout_marginLeft">@dimen/button_text_corner_radius</item>
+    </style>
+
+    <style name="ThemeNew.Dialog.OKButton.Right" parent="@style/ThemeNew.ButtonText.OKButton.Right">
+        <item name="android:textSize">@dimen/dialog_ok_text_size</item>
+        <item name="android:layout_marginRight">@dimen/ok_button_dialog_margin_side</item>
+    </style>
+
+    <style name="ThemeNew.ButtonText.OKButton.Third" parent="@style/ThemeNew.ButtonText.OKButton">
+        <item name="android:layout_marginTop">@dimen/button_text_margin_top</item>
+        <item name="android:layout_marginBottom">@dimen/button_text_margin_top</item>
+    </style>
+
+    <style name="ThemeNew.ButtonText.OKButton.Center" parent="@style/ThemeNew.ButtonText.OKButton.Third">
+        <item name="android:layout_marginRight">@dimen/ok_button_margin_side</item>
+        <item name="android:layout_marginLeft">@dimen/ok_button_margin_side</item>
+    </style>
+
+    <style name="ThemeNew.Dialog.OKButton.Third" parent="@style/ThemeNew.ButtonText.OKButton.Third">
+        <item name="android:textSize">@dimen/dialog_ok_text_size</item>
+    </style>
+
+    <style name="ThemeNew.Calc.OKButton" parent="@style/ThemeNew.ButtonText">
+        <item name="android:minWidth">@dimen/calc_ok_button_min_width</item>
+        <item name="android:layout_marginTop">@dimen/calc_ok_button_margin_top</item>
+        <item name="android:background">@drawable/round_button_white</item>
+    </style>
+
+    <style name="ThemeNew.Calc.OKButton.Right" parent="@style/ThemeNew.Calc.OKButton">
+        <item name="android:layout_marginRight">@dimen/ok_button_margin_side</item>
+    </style>
+
+    <style name="ThemeNew.Calc.OKButton.Left" parent="@style/ThemeNew.Calc.OKButton">
+        <item name="android:layout_marginLeft">@dimen/ok_button_margin_side</item>
+    </style>
+
+    <style name="CalculatorNew.Console" parent="android:Theme">
+        <item name="android:textSize">@dimen/calculator_console_text_size</item>
+        <item name="android:textColor">@color/newThemeBlue</item>
+        <item name="android:layout_marginLeft">@dimen/calculator_console_side_margin</item>
+        <item name="android:layout_marginRight">@dimen/calculator_console_side_margin</item>
+    </style>
+
+    <style name="CalculatorNew.Console.Small" parent="@style/CalculatorNew.Console">
+        <item name="android:textSize">@dimen/calculator_console_text_small_size</item>
+        <item name="android:layout_marginTop">@dimen/calculator_console_top_margin</item>
+        <item name="android:textColor">@color/newThemeLightBlack</item>
+    </style>
+
+    <style name="CalculatorNew.Button" parent="android:Theme">
+        <item name="android:textSize">@dimen/calculator_button_text_size</item>
+        <item name="android:background">@drawable/calculator_button</item>
+        <item name="android:textColor">@color/newThemeBlue</item>
+    </style>
+
+    <style name="CalculatorNew.Button.Left" parent="@style/CalculatorNew.Button">
+        <item name="android:layout_marginLeft">@dimen/calculator_button_side_margin</item>
+    </style>
+
+    <style name="CalculatorNew.Button.Right" parent="@style/CalculatorNew.Button">
+        <item name="android:layout_marginRight">@dimen/calculator_button_side_margin</item>
+    </style>
+
+    <style name="CalculatorNew.Button.Text" parent="@style/CalculatorNew.Button">
+        <item name="android:textSize">@dimen/calculator_button_text_small_size</item>
+    </style>
+
+    <style name="CalculatorNew.Button.Text.Right" parent="@style/CalculatorNew.Button.Text">
+        <item name="android:layout_marginRight">@dimen/calculator_button_side_margin</item>
+    </style>
+
+    <style name="CalculatorNew.Button.Text.Left" parent="@style/CalculatorNew.Button.Text">
+        <item name="android:layout_marginLeft">@dimen/calculator_button_side_margin</item>
+    </style>
+
+    <style name="ThemeNew.Converter.Button" parent="android:Theme">
+        <item name="android:minHeight">@dimen/converter_button_min_height</item>
+        <item name="android:textSize">@dimen/converter_button_textsize</item>
+        <item name="android:layout_marginTop">@dimen/converter_button_margin_top</item>
+        <item name="android:background">@drawable/round_button_white_little</item>
+        <item name="android:textColor">@color/newThemeBlue</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_marginLeft">@dimen/converter_button_left_margin</item>
+        <item name="android:layout_marginRight">@dimen/converter_button_left_margin</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="ThemeNew.Converter.Button.Filter" parent="@style/ThemeNew.Converter.Button">
+        <item name="android:background">@drawable/round_button_black_little</item>
+        <item name="android:textColor">@color/White</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="ThemeNew.Converter.Button.Values" parent="@style/ThemeNew.Converter.Button">
+        <item name="android:background">@drawable/round_button_white_little_2</item>
+        <item name="android:textColor">@color/newThemeBlue</item>
+        <item name="android:textSize">@dimen/converter_values_button_textsize</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_marginTop">@dimen/converter_values_button_margin_top</item>
+    </style>
+
+    <style name="ThemeNew.Converter.Button.Result" parent="@style/ThemeNew.Converter.Button.Values">
+        <item name="android:textSize">@dimen/converter_result_value_button_text_size</item>
+        <item name="android:minHeight">@dimen/converter_result_button_min_height</item>
+        <item name="android:textColor">@color/newThemeLightBlack</item>
+    </style>
+
+    <style name="ThemeNew.Converter.Button.ComboBox" parent="@style/ThemeNew.Converter.Button.Filter">
+        <item name="android:textSize">@dimen/converter_combobox_button_textsize</item>
+        <item name="android:textColor">@color/White</item>
+        <item name="android:background">@color/transparent</item>
+        <item name="android:gravity">left|center</item>
+    </style>
+
+    <style name="ThemeNew.Converter.Label.Big" parent="android:Theme">
+        <item name="android:textSize">@dimen/converter_result_button_text_size</item>
+        <item name="android:textColor">@color/newThemeLightBlack</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="ThemeNew.Converter.Label.Small" parent="android:Theme">
+        <item name="android:textSize">@dimen/converter_combobox_button_textsize</item>
+        <item name="android:textColor">@color/newThemeBlue</item>
+    </style>
+
+    <style name="ThemeNew.Dialog.Title" parent="@style/ThemeNew.Converter.Label.Big">
+        <item name="android:textColor">@color/newThemeBlue</item>
+        <item name="android:layout_marginBottom">@dimen/password_title_margin_bottom</item>
+    </style>
+
+    <style name="LineReportMargins" parent="android:Theme">
+        <item name="android:layout_marginTop">@dimen/report_top_dimen</item>
+        <item name="android:layout_marginLeft">@dimen/report_left_dimen</item>
+        <item name="android:layout_marginBottom">@dimen/report_bottom_dimen</item>
+        <item name="android:layout_marginRight">@dimen/report_right_dimen</item>
+    </style>
+
+    <style name="ThemeNew.Title" parent="android:Theme">
+        <item name="android:textSize">@dimen/title_text_size</item>
+        <item name="android:textColor">@color/White</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+    </style>
+
+    <style name="ReportTitleButton" parent="ThemeNew.Title">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/newThemeBlue</item>
+    </style>
+
+    <style name="ThemeNew.Spinner" parent="android:Theme">
+        <item name="android:textSize">@dimen/label_text_size</item>
+        <item name="android:layout_marginTop">@dimen/button_text_margin_top</item>
+        <item name="android:minHeight">@dimen/button_text_min_height</item>
+        <item name="android:minWidth">@dimen/ok_button_min_width</item>
+        <item name="android:background">@drawable/spinner_bg</item>
+        <item name="android:textColor">@color/newThemeBlue</item>
+    </style>
+
+    <style name="ThemeNew.Spinner.First" parent="@style/ThemeNew.Spinner">
+        <item name="android:layout_marginTop">@dimen/button_text_first_margin_top</item>
+    </style>
+
+    <style name="ThemeNew.Spinner.Black" parent="ThemeNew.Spinner">
+        <item name="android:textColor">@color/Black</item>
+    </style>
+
+    <style name="ThemeNew.Spinner.Main" parent="ThemeNew.Spinner">
+        <item name="android:layout_marginRight">@dimen/button_text_main_margin</item>
+        <item name="android:layout_marginLeft">@dimen/button_text_main_left_margin</item>
+    </style>
+
+    <style name="ThemeNew.Spinner.NewMain" parent="ThemeNew.Spinner">
+        <item name="android:layout_marginRight">0dp</item>
+        <item name="android:layout_marginLeft">@dimen/button_text_main_left_margin</item>
+    </style>
+
+    <style name="ThemeNew.PasswordEditBox" parent="android:Theme">
+        <item name="android:textSize">@dimen/password_password_text_size</item>
+        <item name="android:minHeight">@dimen/password_button_min_height</item>
+        <item name="android:layout_marginLeft">@dimen/dialog_spinner_text_left_margin</item>
+        <item name="android:layout_marginRight">@dimen/dialog_spinner_text_left_margin</item>
+        <item name="android:layout_marginBottom">@dimen/password_button_margin_bottom</item>
+        <item name="android:background">@drawable/round_button_white_little</item>
+    </style>
+
+    <style name="ThemeNew.PasswordButtons" parent="android:Theme">
+        <item name="android:textSize">@dimen/password_button_text_size</item>
+        <item name="android:minHeight">@dimen/password_button_min_height</item>
+        <item name="android:background">@drawable/round_button_white_gray</item>
+    </style>
+
+    <style name="ThemeNew.PasswordButtonForget" parent="android:Theme">
+        <item name="android:textSize">@dimen/converter_button_textsize</item>
+        <item name="android:minHeight">@dimen/password_button_min_height</item>
+        <item name="android:background">@drawable/round_button_black</item>
+        <item name="android:layout_marginBottom">@dimen/password_button_margin_bottom</item>
+        <item name="android:layout_marginTop">@dimen/password_button_margin_bottom</item>
+        <item name="android:textColor">@color/White</item>
+    </style>
+
+    <style name="ThemeNew.Main.Label" parent="android:Theme">
+        <item name="android:textColor">@color/Black</item>
+        <item name="android:background">@color/White</item>
+        <item name="android:textSize">@dimen/main_labels_size</item>
+    </style>
+
+    <style name="ThemeNew.Main.Label.Left" parent="ThemeNew.Main.Label">
+        <item name="android:layout_marginRight">@dimen/main_round_button_side</item>
+    </style>
+
+    <style name="ThemeNew.Main.Label.Center" parent="ThemeNew.Main.Label">
+        <item name="android:layout_marginTop">@dimen/main_round_button_side</item>
+    </style>
+
+    <style name="ThemeNew.Main.Label.Center.Last" parent="ThemeNew.Main.Label.Center">
+        <item name="android:layout_marginBottom">@dimen/main_round_button_side</item>
+    </style>
+
+    <style name="ThemeNew.Main.Label.Income" parent="ThemeNew.Main.Label.Left">
+        <item name="android:textColor">@color/DarkGreen</item>
+        <item name="android:layout_marginTop">@dimen/main_round_button_side</item>
+    </style>
+
+    <style name="ThemeNew.Main.Label.Income.Last" parent="ThemeNew.Main.Label.Income">
+        <item name="android:layout_marginBottom">@dimen/main_round_button_side</item>
+    </style>
+
+    <style name="ThemeNew.Main.Label.Right" parent="ThemeNew.Main.Label">
+        <item name="android:layout_marginLeft">@dimen/main_round_button_side</item>
+    </style>
+
+    <style name="ThemeNew.Main.Label.Expense" parent="ThemeNew.Main.Label.Right">
+        <item name="android:textColor">@color/DarkRed</item>
+        <item name="android:layout_marginTop">@dimen/main_round_button_side</item>
+    </style>
+
+    <style name="ThemeNew.Main.Label.Expense.Last" parent="ThemeNew.Main.Label.Expense">
+        <item name="android:layout_marginBottom">@dimen/main_round_button_side</item>
+    </style>
+
+    <style name="ThemeNew.Main.RoundButtonOld" parent="ThemeNew.Main.Label">
+        <item name="android:background">@drawable/cool_button_background</item>
+        <item name="android:layout_margin">@dimen/main_round_button_side</item>
+    </style>
+
+    <style name="ThemeNew.Main.RoundButtonOld.Green" parent="ThemeNew.Main.RoundButtonOld">
+        <item name="android:background">@drawable/cool_button_background_green</item>
+    </style>
+
+    <style name="ThemeNew.Main.RoundButtonOld.Red" parent="ThemeNew.Main.RoundButtonOld">
+        <item name="android:background">@drawable/cool_button_background_red</item>
+    </style>
+
+    <style name="ThemeNew.Main.RoundButtonOld.White" parent="ThemeNew.Main.RoundButtonOld">
+        <item name="android:background">@drawable/round_button_white</item>
+    </style>
+
+    <style name="ThemeNew.Main.RoundButtons.IncExpButtons" parent="ThemeNew.Main.RoundButtons">
+        <item name="android:background">@drawable/cool_button_background</item>
+        <item name="android:layout_margin">@dimen/main_round_button_side</item>
+    </style>
+
+    <style name="ThemeNew.Main.RoundButtons.IncExpButtons.Income" parent="ThemeNew.Main.RoundButtons.IncExpButtons">
+        <item name="android:background">@drawable/cool_button_background_green</item>
+    </style>
+
+    <style name="ThemeNew.Main.RoundButtons.IncExpButtons.Expense" parent="ThemeNew.Main.RoundButtons.IncExpButtons">
+        <item name="android:background">@drawable/cool_button_background_red</item>
+    </style>
+
+</resources>

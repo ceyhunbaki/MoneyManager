@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="main_circle_button_radius">160dp</dimen>
+
+    <dimen name="label_text_margin_left">230dp</dimen>
+    <dimen name="button_text_main_margin">220dp</dimen>
+
+    <dimen name="ok_button_margin_side">40dp</dimen>
+    <dimen name="ok_button_min_width">200dp</dimen>
+
+    <dimen name="label_text_size">24sp</dimen>
+
+    <dimen name="category_list_right_margin">190dp</dimen>
+    <dimen name="category_list_left_margin">180dp</dimen>
+    <dimen name="category_button_min_width">280dp</dimen>
+
+    <dimen name="combined_list_label_left_margin">150dp</dimen>
+    <dimen name="combined_list_label_right_margin">230dp</dimen>
+
+</resources>

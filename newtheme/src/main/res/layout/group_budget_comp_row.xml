@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/White">
+
+    <TextView
+        android:id="@+id/tvCategory"
+        style="@style/ThemeNew.BudgetGroupTextSize.Left"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@+id/tvCurrentValue"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/category_child_row_left_pad"
+        android:text="@string/category"
+        android:textColor="@drawable/color_selector" />
+
+    <TextView
+        android:id="@+id/tvCurrentValue"
+        style="@style/ThemeNew.BudgetGroupTextSize.Right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@+id/img_status"
+        android:gravity="right|center_vertical"
+        android:text="21"
+        android:textColor="@drawable/color_selector" />
+
+    <TextView
+        android:id="@+id/tvLastMonth"
+        style="@style/ThemeNew.BudgetGroupTextSize.Left"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvCategory"
+        android:layout_toLeftOf="@+id/tvLastMonthValue"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/category_child_row_left_pad"
+        android:text="@string/lastMonth"
+        android:textSize="@dimen/combined_list_label_text_size_small"
+        android:textColor="@drawable/color_selector" />
+
+    <TextView
+        android:id="@+id/tvLastMonthValue"
+        style="@style/ThemeNew.BudgetGroupTextSize.Right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@+id/img_status"
+        android:layout_below="@id/tvCurrentValue"
+        android:gravity="right|center_vertical"
+        android:text="12"
+        android:textSize="@dimen/combined_list_label_text_size_small"
+        android:textColor="@drawable/color_selector" />
+
+    <TextView
+        android:id="@+id/tvAverage"
+        style="@style/ThemeNew.BudgetGroupTextSize.Left"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvLastMonth"
+        android:layout_toLeftOf="@+id/tvAverageValue"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/category_child_row_left_pad"
+        android:text="@string/average"
+        android:textSize="@dimen/combined_list_label_text_size_small"
+        android:textColor="@drawable/color_selector" />
+
+    <TextView
+        android:id="@+id/tvAverageValue"
+        style="@style/ThemeNew.BudgetGroupTextSize.Right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@+id/img_status"
+        android:layout_below="@id/tvLastMonthValue"
+        android:gravity="right|center_vertical"
+        android:text="12"
+        android:textSize="@dimen/combined_list_label_text_size_small"
+        android:textColor="@drawable/color_selector" />
+
+    <ImageView
+        android:id="@+id/img_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/tvAverage"
+        android:layout_alignTop="@id/tvCategory"
+        android:layout_gravity="center_vertical"
+        android:layout_alignParentRight="true"
+        android:background="@color/transparent"
+        android:focusable="false"
+        android:src="@drawable/arrow_up_rep"
+        android:textColor="@drawable/color_selector"/>
+
+</RelativeLayout>

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/Black">
+
+    <TextView
+        android:id="@+id/bgsTitle"
+        style="@style/ThemeNew.Dialog.Title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center_horizontal"
+        android:text="@string/addGoal"
+        android:textSize="@dimen/title_text_size" />
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dialog_items_margin_top"
+        android:layout_marginLeft="@dimen/button_text_main_margin"
+        android:layout_marginRight="@dimen/button_text_main_margin">
+
+        <TextView
+            android:id="@+id/bgsTargetMonthName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/badLastValue"
+            android:layout_alignParentLeft="true"
+            android:text="@string/targetMonth"
+            android:layout_alignBaseline="@+id/bgsTargetMonth"
+            android:textColor="@color/White"
+            style="@style/ThemeNew.LabelText.First" />
+
+        <EditText
+            android:id="@+id/bgsTargetMonth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="Jun,2020"
+            android:minWidth="@dimen/ok_button_min_width"
+            android:textColor="@color/White"
+            android:background="@drawable/round_button_black_little"
+            style="@style/ThemeNew.ButtonText" />
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dialog_items_margin_top"
+        android:layout_marginLeft="@dimen/button_text_main_margin"
+        android:layout_marginRight="@dimen/button_text_main_margin">
+
+        <TextView
+            android:id="@+id/bgsTargetAmountName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/badAverValue"
+            android:layout_alignParentLeft="true"
+            android:layout_alignBaseline="@+id/bgsTargetAmount"
+            android:text="@string/targetAmount"
+            android:textColor="@color/White"
+            style="@style/ThemeNew.LabelText.First" />
+
+        <EditText
+            android:id="@+id/bgsTargetAmount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="125"
+            android:minWidth="@dimen/ok_button_min_width"
+            android:textColor="@color/White"
+            android:background="@drawable/round_button_black_little"
+            style="@style/ThemeNew.ButtonText" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dialog_title_margin_bottom"
+        android:layout_marginTop="@dimen/dialog_items_margin_top"
+        android:layout_marginLeft="@dimen/button_text_main_margin"
+        android:layout_marginRight="@dimen/button_text_main_margin">
+
+        <Button
+            android:id="@+id/bgsCancel"
+            style="@style/ThemeNew.Converter.Button.Filter"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/Cancel"
+            android:textSize="@dimen/dialog_ok_text_size" />
+
+        <Button
+            android:id="@+id/bgsOK"
+            style="@style/ThemeNew.Converter.Button.Filter"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/ok"
+            android:textSize="@dimen/dialog_ok_text_size" />
+
+    </LinearLayout>
+</LinearLayout>

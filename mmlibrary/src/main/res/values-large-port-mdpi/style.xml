@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <style name="Theme.ListTextSize" parent="android:Theme">  
+        <item name="android:textSize">25sp</item>
+        <item name="android:minHeight">40dp</item>
+        <item name="android:paddingLeft">5dp</item>
+    </style>
+    
+    <style name="Theme.ListTextSize.Right" parent="Theme.ListTextSize">
+        <item name="android:layout_marginRight">5dp</item>
+    </style>
+    
+    <style name="Theme.ListTextSize.Left" parent="Theme.ListTextSize">
+        <item name="android:layout_marginLeft">1dp</item>
+    </style>
+    
+    <style name="GroupImageSize">
+        <item name="android:layout_height">50dp</item>
+        <item name="android:layout_width">30dp</item>
+        <item name="android:minWidth">30dp</item>
+    </style>
+    
+</resources>

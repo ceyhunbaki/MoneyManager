@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/White">
+
+    <TextView
+        android:id="@+id/tvATTitle"
+        style="@style/ThemeNew.Title"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/title_bar_height"
+        android:layout_alignParentTop="true"
+        android:background="@color/newThemeBlue"
+        android:gravity="center|center_vertical"
+        android:text="@string/selectCategory" />
+
+    <ExpandableListView
+        android:id="@+id/android:list"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/tvATTitle"
+        android:layout_above="@+id/btCatFilterSelAll" >
+    </ExpandableListView>
+    
+    <Button
+        android:id="@+id/btCatFilterCancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="1dp"
+        android:onClick="myClickHandler"
+        style="@style/ThemeNew.Dialog.OKButton.Left"
+        android:text="@string/Cancel" />
+
+    <Button
+        android:id="@+id/btCatFilterOk"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/btCatFilterCancel"
+        android:layout_alignBottom="@+id/btCatFilterCancel"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:onClick="myClickHandler"
+        android:layout_marginTop="@dimen/button_text_margin_top"
+        style="@style/ThemeNew.Dialog.OKButton.Right"
+        android:text="@string/ok" />
+
+    <Button
+        android:id="@+id/btCatFilterSelAll"
+        style="@style/ThemeNew.Dialog.OKButton.Third"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btCatFilterOk"
+        android:layout_alignLeft="@+id/btCatFilterCancel"
+        android:layout_alignRight="@+id/btCatFilterOk"
+        android:layout_marginBottom="0dp"
+        android:onClick="myClickHandler"
+        android:text="@string/selectAll" />
+
+</RelativeLayout>

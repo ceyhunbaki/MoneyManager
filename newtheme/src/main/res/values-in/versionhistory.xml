@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="whatsnew">Apa yang baru?</string>
+	<string name="v3_4_1">-Penambahan laporan baru: Anggaran - Diagram lingkaran.
+				\n -Penambahan nilai rata-rata dan nilai bulan lalu ke kotak dialog "Tambah nilai" di layar anggaran.
+				\n -Perbaikan bug.</string>
+	<string name="v3_5_0">-Menambahkan widget baru - Tambahkan transaksi.
+				\n -Menambahkan opsi baru untuk sinkronisasi otomatis dengan Dropbox.</string>
+	<string name="v3_5_1">-Penambahan laporan baru - Perbandingan pengeluaran setiap bulan.
+				\n -Perbaikan bug.</string>
+	<string name="v3_5_2">-Ditambahkan jendela baru - Tabungan.
+				\n -Ditambahkan status transaksi dan jenis pembayaran untuk transaksi berulang.
+				\n -Peningkatan kalkulasi budget.
+				\n -Perbaikan bug.</string>
+	<string name="v3_5_3">-Menu navigasi yang ditingkatkan.
+				\n -Penambahan deskripsi pada tabungan.
+				\n -Perbaikan bug.</string>
+	<string name="v3_5_4">-Menambahkan opsi - Jadikan anggaran bulan ini untuk bulan-bulan berikut.
+				\n -Perbaikan bug.</string>
+	<string name="v3_5_6">-Menambahkan opsi - Pisah transaksi;
+		\n-Menambahkan opsi - Mengunggah ke Dropbox secara otomatis hanya saat WiFi tersedia.
+	</string>
+	<string name="v3_6_0">-Menambahkan opsi - Format tanggal, angka dan mata uang;
+		\n-Perbaikan bug.
+	</string>
+	<string name="v3_6_1">-Kalkulator yang Ditingkatkan;
+		\n-Perbaikan bug.</string>
+</resources>

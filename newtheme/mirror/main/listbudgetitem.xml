@@ -1,0 +1,15 @@
+<!-- [ Mirror metadata ] generatedAt: 1459238185491 -->
+<!-- Generated screen file. Fill the id tags below with content with
+which to populate your previewed layout. For a complete specification
+of sample data, please see http://jimulabs.com/sample-data-specifications/ 
+
+Valid attributes on <screen> tag: theme="@style/someTheme" inEditMode="false" overlay="@drawable/mockup" -->
+<screen>
+    <_content layout="@layout/listbudgetitem">
+        <!-- TextView Examples:
+        <tvCategory text="@string/string_resource" />
+        <tvCategory text="Text literal" textSize="14sp" /> -->
+        <tvCategory />
+        <tvRemaining />
+    </_content>
+</screen>

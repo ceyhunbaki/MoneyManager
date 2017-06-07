@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/White"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/ltDebDescription"
+        style="@style/CombinedListLabelNew"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="1dp"
+        android:text="@string/description" />
+
+    <TextView
+        android:id="@+id/ltDebAmount"
+        style="@style/CombinedListLabelNew"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/ltDebTransDate"
+        android:layout_marginRight="5dp"
+        android:layout_toLeftOf="@+id/igDebMenu"
+        android:layout_marginTop="1dp"
+        android:text="@string/amount" />
+
+    <TextView
+        android:id="@+id/ltDebRetDate"
+        style="@style/CombinedListLabelNew"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/ltDebTransDate"
+        android:layout_below="@+id/ltDebTransDate"
+        android:layout_marginTop="1dp"
+        android:text="@string/returnDate" />
+
+    <TextView
+        android:id="@+id/ltDebTransDate"
+        style="@style/CombinedListLabelNew"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/ltDebDescription"
+        android:layout_below="@+id/ltDebDescription"
+        android:gravity="right"
+        android:text="@string/date" />
+
+    <ImageButton
+        android:id="@+id/igDebMenu"
+        style="@style/ThemeNew.TransImageButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/ltDebAmount"
+        android:layout_alignParentRight="true"
+        android:background="@color/transparent"
+        android:onClick="myClickHandler"
+        android:src="@drawable/edit_new" >
+    </ImageButton>
+
+</RelativeLayout>

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:minWidth="@dimen/dialog_min_width"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/dmTvTitle"
+        style="@style/ThemeNew.Dialog.Title"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/msgSelectPeriod"
+        android:textSize="@dimen/title_text_size"
+        android:gravity="center_horizontal"/>
+
+    <TextView
+        android:id="@+id/dmTvFromPeriod"
+        style="@style/ThemeNew.Converter.Label.Small"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/dateFrom"
+        android:textColor="@color/Black"
+        android:gravity="center_horizontal"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Spinner
+            android:id="@+id/dmSpMonthFrom"
+            style="@style/ThemeNew.Spinner"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/spinner_bg"
+            android:entries="@array/Months" />
+
+        <Spinner
+            android:id="@+id/dmSpYearFrom"
+            style="@style/ThemeNew.ButtonText"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/spinner_bg"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/dmTvToPeriod"
+        style="@style/ThemeNew.Converter.Label.Small"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dialog_items_margin_top"
+        android:text="@string/dateTo"
+        android:textColor="@color/Black"
+        android:gravity="center_horizontal" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Spinner
+            android:id="@+id/dmSpMonthTo"
+            style="@style/ThemeNew.ButtonText"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/spinner_bg"
+            android:entries="@array/Months" />
+
+        <Spinner
+            android:id="@+id/dmSpYearTo"
+            style="@style/ThemeNew.ButtonText"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/spinner_bg"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dialog_items_margin_top"
+        android:layout_marginBottom="@dimen/dialog_title_margin_bottom">
+
+        <Button
+            android:id="@+id/dmBtCancel"
+            style="@style/ThemeNew.Converter.Button.Filter"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="@dimen/dialog_ok_text_size"
+            android:text="@string/Cancel" />
+
+        <Button
+            android:id="@+id/dmBtOK"
+            style="@style/ThemeNew.Converter.Button.Filter"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="@dimen/dialog_ok_text_size"
+            android:text="@string/ok" />
+
+    </LinearLayout>
+
+</LinearLayout>

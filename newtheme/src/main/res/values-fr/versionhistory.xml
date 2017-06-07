@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="whatsnew">Quoi de neuf?</string>
+	<string name="v3_4_1">-Nouveau rapport ajouté: Budget - Diagramme en camembert.
+				\n -La valeur moyenne et la valeur du mois dernier ont été ajoutées à la boîte de dialogue "Ajouter valeur" sur l\'écran du budget.
+				\n -Bugs résolus.</string>
+	<string name="v3_5_0">-Ajout d\'un nouveau widget - Ajouter une transaction.
+				\n -Ajout d\'une nouvelle option pour la synchronisation automatique avec Dropbox.</string>
+	<string name="v3_5_1">-Nouveau rapport ajouté - Comparaison des dépenses par mois.
+				\n -Bugs résolus.</string>
+	<string name="v3_5_2">– Ajout d\'une nouvelle fenêtre – Épargne.
+				\n – Ajout de l\'état de la transaction et du type de paiement aux transactions répétitives.
+				\n – Amélioration du calcul du budget.
+				\n – Bugs résolus.</string>
+	<string name="v3_5_3">-Navigation des menus a améliorée.
+				\n -Description ajoutée aux économies.
+				\n -Bugs résolus.</string>
+	<string name="v3_5_4">-Ajout d\'une nouvelle option - Utiliser le budget de ce mois-ci pour les mois suivants.
+				\n -Bugs résolus.</string>
+	<string name="v3_5_6">-Ajout d\'une nouvelle option - Transaction fractionnée;
+		\n-Ajout d\'une nouvelle option - Téléverser automatiquement vers Dropbox uniquement lorsqu\'une connexion Wi-Fi est disponible.
+	</string>
+	<string name="v3_6_0">-Ajout d\'une nouvelle option - Formats de date, de nombre et de devise;
+		\n-Bugs résolus.
+	</string>
+	<string name="v3_6_1">-Calculatrice améliorée;
+		\n-Bugs résolus.</string>
+</resources>

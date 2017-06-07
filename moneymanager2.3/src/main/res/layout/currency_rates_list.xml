@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/onlyListLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/White">
+
+    <LinearLayout
+        android:id="@+id/relATTop"
+        style="@style/Theme.MainLayout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_bar_height"
+        android:background="@color/newThemeBlue"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tvATTitle"
+            style="@style/ThemeNew.Title"
+            android:layout_width="0px"
+            android:layout_height="fill_parent"
+            android:layout_weight="5"
+            android:background="@color/transparent"
+            android:gravity="center|center_vertical"
+            android:text="@string/currencyrates" />
+
+        <ImageButton
+            android:id="@+id/btCurrRatesFilter"
+            style="@style/Theme.MainButtons.FirstButtons"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/transparent"
+            android:onClick="myClickHandler"
+            android:scaleType="center"
+            android:src="@drawable/filter_new" />
+
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/curList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btCurrRatesAdd"
+        android:layout_below="@+id/relATTop"
+        android:layout_marginLeft="@dimen/combined_list_label_left_margin"
+        android:layout_marginRight="@dimen/combined_list_label_right_margin"
+        android:divider="@color/newThemeBlue"
+        android:dividerHeight="@dimen/main_round_button_side"></ListView>
+
+    <Button
+        android:id="@+id/btCurrRatesAdd"
+        style="@style/ThemeNew.ButtonText.OKButton.Third"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/onlyListAdsLayout"
+        android:minHeight="@dimen/button_text_min_height"
+        android:layout_marginLeft="@dimen/combined_list_label_left_margin"
+        android:layout_marginRight="@dimen/combined_list_label_right_margin"
+        android:onClick="myClickHandler"
+        android:text="@string/menuAdd" />
+
+    <LinearLayout
+        android:id="@+id/onlyListAdsLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical"></LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="whatsnew">O que há de novo?</string>
+	<string name="v3_4_1"> -Novo relatório adicionado: Orçamento - Gráfico de pizza.
+				\n -Adicionado o valor médio e o valor do mês passado para a caixa de diálogo "Adicionar valor" na tela de orçamento.
+				\n -Erros corrigidos.</string>
+	<string name="v3_5_0">-Adicionado novo widget - Adicionar uma transação.
+				\n -Adicionado nova opção para sincronização automática com o Dropbox.</string>
+	<string name="v3_5_1">-Novo relatório adicionado - Comparação das despesas pelos meses.
+				\n -Erros corrigidos.</string>
+</resources>

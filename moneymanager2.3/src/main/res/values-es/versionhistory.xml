@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="whatsnew">Novedades?</string>
+	<string name="v3_4_1">-Se añadió un nuevo importe: Presupuesto - Gráfico circular.
+				\n -Se añadió el valor medio y el valor del último mes al cuadro de diálogo de «Añadir valor» en la pantalla del presupuesto.
+				\n -Errores resueltos.</string>
+	<string name="v3_5_0">-Nuevo widget añadido - Añadir una transacción.
+				\n -Nueva opción añadida para la sincronización automática con Dropbox.</string>
+	<string name="v3_5_1">-Se añadió un nuevo importe - Comparativa de los gastos por mes.
+				\n -Errores resueltos.</string>
+</resources>

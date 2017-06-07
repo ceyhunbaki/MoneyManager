@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/grp_child"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:paddingLeft="5dp"
+        android:gravity="center_vertical"
+        android:layout_alignParentLeft="true"
+        android:layout_toLeftOf="@+id/bt_grp_edit"
+        android:textColor="@drawable/color_selector"
+        style="@style/CombinedListLabelNew.Medium"/>
+
+    <ImageButton
+        android:id="@+id/bt_grp_edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/grp_child"
+        android:layout_alignTop="@id/grp_child"
+        android:layout_alignParentRight="true"
+        android:textColor="@drawable/color_selector"
+        android:background="@color/transparent"
+        android:focusable="false"
+        android:onClick="myClickHandler"
+        android:src="@drawable/edit_new" />
+
+</RelativeLayout>

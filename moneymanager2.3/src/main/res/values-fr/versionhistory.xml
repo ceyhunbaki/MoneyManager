@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="whatsnew">Quoi de neuf?</string>
+	<string name="v3_4_1">-Nouveau rapport ajouté: Budget - Diagramme en camembert.
+				\n -La valeur moyenne et la valeur du mois dernier ont été ajoutées à la boîte de dialogue "Ajouter valeur" sur l\'écran du budget.
+				\n -Bugs résolus.</string>
+	<string name="v3_5_0">-Ajout d\'un nouveau widget - Ajouter une transaction.
+				\n -Ajout d\'une nouvelle option pour la synchronisation automatique avec Dropbox.</string>
+	<string name="v3_5_1">-Nouveau rapport ajouté - Comparaison des dépenses par mois.
+				\n -Bugs résolus.</string>
+</resources>
