@@ -13,6 +13,7 @@
     
     <string name="currencyrates">Курси валют</string>
     <string name="rate">Курс</string>
+    <string name="appRate">Оцінити</string>
     <string name="result">Результат</string>
     <string name="name">Назва</string>
     <string name="sign">Знак</string>

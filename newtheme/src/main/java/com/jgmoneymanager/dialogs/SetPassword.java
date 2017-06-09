@@ -174,11 +174,17 @@ public class SetPassword extends MyActivity {
 						@Override
 						public void execute() {
 							if (Tools.encrypt(edAnswer.getText().toString().trim()).equals(Tools.getPreference(context, R.string.securityAnswerKey))) {
-								String newPassword = String.valueOf(SetPassword.generateNewPassword());
+								/*String newPassword = String.valueOf(SetPassword.generateNewPassword());
 								AlertDialog warningDialog = DialogTools.warningDialog(context, R.string.information, 
 										context.getString(R.string.yourNewPassword) + ": " + String.valueOf(newPassword));
 								warningDialog.show();
-								Tools.setPreference(context, R.string.setPasswordKey, newPassword, true);
+								Tools.setPreference(context, R.string.setPasswordKey, newPassword, true);*/
+								boolean passwordExists = false;
+								String oldPassword = null;
+								Intent intent = new Intent(context, SetPassword.class);
+								intent.putExtra(Constants.passwordExists, passwordExists);
+								intent.putExtra(Constants.password, oldPassword);
+								context.startActivity(intent);
 							}
 							else {
 								DialogTools.toastDialog(context, R.string.msgIncorrectAnswer, Toast.LENGTH_SHORT);

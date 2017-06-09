@@ -206,6 +206,9 @@ public class LocalTools {
                                 Tools.resetFormats(context);
                                 message += "\n v 3.6.1 \n" + context.getResources().getString(R.string.v3_6_1);
                                 break;
+                            case 78:
+                                message += "\n v 3.6.3 \n" + context.getResources().getString(R.string.v3_6_3);
+                                break;
                             default:
                                 break;
                         }

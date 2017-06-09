@@ -15,6 +15,7 @@
     
     <string name="currencyrates">Taxas de Câmbio</string>
     <string name="rate">Taxa</string>
+    <string name="appRate">Avaliação</string>
     <string name="result">Resultado</string>
     <string name="name">Nome</string>
     <string name="sign">Sinal</string>

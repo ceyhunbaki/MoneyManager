@@ -13,6 +13,7 @@
     
     <string name="currencyrates">Currency rates</string>
     <string name="rate">Rate</string>
+    <string name="appRate">Rate</string>
     <string name="result">Result</string>
     <string name="name">Name</string>
     <string name="sign">Sign</string>

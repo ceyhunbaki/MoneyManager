@@ -11,7 +11,8 @@
     <string name="mydebts">Hutang saya</string>
     <string name="browse">Jelajahi</string>
     <string name="currencyrates">Nilai mata uang</string>
-    <string name="rate">Nilai</string>
+    <string name="rate">Kurs</string>
+    <string name="appRate">Nilai</string>
     <string name="result">Hasil</string>
     <string name="name">Nama</string>
     <string name="sign">Tanda</string>

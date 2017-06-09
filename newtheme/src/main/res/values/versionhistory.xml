@@ -65,4 +65,5 @@
 	</string>
 	<string name="v3_6_1">-Improved Calculator;
 		\n-Fixed bugs.</string>
+	<string name="v3_6_3">-Improved password protection.</string>
 </resources>

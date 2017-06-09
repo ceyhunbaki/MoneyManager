@@ -11,7 +11,8 @@
     <string name="mydebts">Meine Schulden</string>
     <string name="browse">Durchsuchen</string>
     <string name="currencyrates">Wechselkurse</string>
-    <string name="rate">Bewerten</string>
+    <string name="rate">Kurs</string>
+    <string name="appRate">Bewerten</string>
     <string name="result">Ergebnis</string>
     <string name="name">Name</string>
     <string name="sign">Währungszeichen</string>

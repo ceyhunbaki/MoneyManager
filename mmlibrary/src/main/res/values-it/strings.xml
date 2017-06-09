@@ -11,7 +11,8 @@
     <string name="mydebts">I miei debiti</string>
     <string name="browse">Sfoglia</string>
     <string name="currencyrates">I tassi di cambio</string>
-    <string name="rate">Tasso</string>
+    <string name="rate">Valuta</string>
+    <string name="appRate">Valuta</string>
     <string name="result">Risultato</string>
     <string name="name">Nome</string>
     <string name="sign">Sign</string>

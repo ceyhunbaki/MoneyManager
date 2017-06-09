@@ -1686,7 +1686,7 @@ public class Tools {
 		};
 		dialog = DialogTools.confirmWithCancelDialog(mContext, neverDialog, laterCommand, rateCommand, R.string.information,
 				mContext.getString(R.string.rateDialogTitle),
-				new String[] {mContext.getString(R.string. neverAsk), mContext.getString(R.string.later), mContext.getString(R.string.rate)});
+				new String[] {mContext.getString(R.string. neverAsk), mContext.getString(R.string.later), mContext.getString(R.string.appRate)});
 		dialog.show();
 		/*final Dialog dialog = new Dialog(mContext);
 		SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(mContext);
