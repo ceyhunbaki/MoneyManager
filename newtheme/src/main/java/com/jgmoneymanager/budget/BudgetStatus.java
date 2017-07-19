@@ -2,9 +2,11 @@ package com.jgmoneymanager.budget;
 
 import android.app.AlertDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -33,13 +35,21 @@ public class BudgetStatus extends Fragment {
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
+		super.onCreateView(inflater, container, savedInstanceState);
 
 		rootView = inflater.inflate(R.layout.budget_status, container, false);
 		context = rootView.getContext();
 
+		this.setRetainInstance(true);
+
 		refreshValues();
 
 		return rootView;
+	}
+
+	@Override
+	public void onViewStateRestored(@Nullable Bundle savedInstanceState) {
+		super.onViewStateRestored(savedInstanceState);
 	}
 
 	@Override
@@ -50,6 +60,7 @@ public class BudgetStatus extends Fragment {
 	}
 
 	public void refreshValues() {
+
 		overSpentHint = "";
 		Double income = 0d;
 		Double totalBudgeted = 0d;
@@ -82,7 +93,7 @@ public class BudgetStatus extends Fragment {
 				totalRemaining += Tools.negativeToZero(budget + /*Tools.negativeToZero*/(oldRemaining) - used);
 
 				Double currenttOverspent = Tools.positiveToZero(budget + oldRemaining - used);
-				if (currenttOverspent.compareTo(0d) < 0) {
+				if (Double.compare(Tools.round(currenttOverspent), 0d) < 0) {
 					totalOverspent += Tools.positiveToZero(budget + oldRemaining - used);
 					overSpentHint += CategorySrv.getCategoryNameByID(context, DBTools.getCursorColumnValueLong(cursorOverspent, BudgetCategoriesTableMetaData.CATEGORY_ID))
 							+ ": " + Tools.formatDecimalInUserFormat(-currenttOverspent) + "\n";

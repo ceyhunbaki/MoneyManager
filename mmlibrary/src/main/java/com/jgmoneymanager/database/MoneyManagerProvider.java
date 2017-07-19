@@ -779,6 +779,7 @@ public class MoneyManagerProvider extends ContentProvider{
 						case 62:
 							db.execSQL("DROP view if exists " + VTransactionViewMetaData.VIEW_NAME);
 							db.execSQL(DATABASE_CREATE_VIEW_VTRANSACTION);
+							break;
 					}
 				} catch (Exception e) {
 					Log.e("DB Upgrd err(version:" + String.valueOf(i) + ")", e.getMessage());
@@ -1202,6 +1203,8 @@ public class MoneyManagerProvider extends ContentProvider{
 					values.put(BudgetCategoriesTableMetaData.CREATED_DATE, now);
 				if (!values.containsKey(BudgetCategoriesTableMetaData.USED_AMOUNT))
 					values.put(BudgetCategoriesTableMetaData.USED_AMOUNT, 0);
+				if (!values.containsKey(BudgetCategoriesTableMetaData.REPEAT))
+					values.put(BudgetCategoriesTableMetaData.REPEAT, 0);
 				rowId = db.insert(BudgetCategoriesTableMetaData.TABLE_NAME, null, values);
 				contentUri = BudgetCategoriesTableMetaData.CONTENT_URI;
 				break;

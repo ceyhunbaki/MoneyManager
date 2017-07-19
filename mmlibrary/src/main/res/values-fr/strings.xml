@@ -36,6 +36,7 @@
     <string name="convert">Convertir</string>
     <string name="totalBalance">Solde total :</string>
     <string name="total">Total :</string>
+    <string name="totalAccount">Total</string>
     <string name="from">Du</string>
     <string name="to">À</string>
     <string name="repeatType">Type de \nrépétition</string>

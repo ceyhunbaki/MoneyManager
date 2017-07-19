@@ -27,7 +27,7 @@ import java.util.TreeMap;
 public class CurrencySrv {
 	
 	public static void changeDefaultCurrency(final Context context, final long newCurrID, final Command refreshCurrencyList) {
-		final long oldCurrID = getDefaultCurrencyID(context);
+		final long oldCurrID = getDefaultCurrencyID(context, false);
 		if ((oldCurrID != 0) && (!CurrRatesSrv.rateExists(context, oldCurrID, newCurrID, Tools.getCurrentDate(), null, null))) {
 			final EditText inputText = new EditText(context);
 			inputText.setRawInputType(InputType.TYPE_CLASS_NUMBER|InputType.TYPE_NUMBER_FLAG_DECIMAL);
@@ -118,13 +118,28 @@ public class CurrencySrv {
 	}
 
 	public static int getDefaultCurrencyID(Context context) {
-		int currID = 0;
-		Cursor cursor = context.getContentResolver().query(CurrencyTableMetaData.CONTENT_URI, 
-				new String[] {CurrencyTableMetaData._ID}, 
+		/*int currID = 0;
+		Cursor cursor = context.getContentResolver().query(CurrencyTableMetaData.CONTENT_URI,
+				new String[] {CurrencyTableMetaData._ID},
 				CurrencyTableMetaData.ISDEFAULT + " = 1 ", null, null);
 		if (cursor.moveToFirst())
 			currID = DBTools.getCursorColumnValueInt(cursor, CurrencyTableMetaData._ID);
 		else
+		{
+			DialogTools.toastDialog(context, context.getResources().getString(R.string.msgSetDefaultCurrency), Toast.LENGTH_LONG);
+		}
+		return currID;*/
+		return getDefaultCurrencyID(context, true);
+	}
+
+	public static int getDefaultCurrencyID(Context context, boolean showToastError) {
+		int currID = 0;
+		Cursor cursor = context.getContentResolver().query(CurrencyTableMetaData.CONTENT_URI,
+				new String[] {CurrencyTableMetaData._ID},
+				CurrencyTableMetaData.ISDEFAULT + " = 1 ", null, null);
+		if (cursor.moveToFirst())
+			currID = DBTools.getCursorColumnValueInt(cursor, CurrencyTableMetaData._ID);
+		else if (showToastError)
 		{
 			DialogTools.toastDialog(context, context.getResources().getString(R.string.msgSetDefaultCurrency), Toast.LENGTH_LONG);
 		}

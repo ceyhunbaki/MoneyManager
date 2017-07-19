@@ -49,10 +49,10 @@ public class BudgetSrv {
 				updateBudgetRemainingValues(context, categoryID, amount, currencyID, transDate);
 			}
 		}
-		/*else {
+		else {
 			//eger kateqoriya yoxdursa onun umumi budcenin ustune gelek ve ya cixaq
 			BudgetSrv.updateBudgetIncome(context, transDate, -amount, currencyID);
-		}*/
+		}
 	}
 	
 	/**
@@ -511,14 +511,14 @@ public class BudgetSrv {
 	 * Returns account balance for current date + expense transactions sum for selected period
      */
 	public static Double getTotalAmountForBudget(Context context, Date monthStart, Date monthEnd) {
-		return AccountSrv.getBalanceForDate(context, 0, Tools.getCurrentDate(), Constants.defaultCurrency)
+		/*return AccountSrv.getBalanceForDate(context, 0, Tools.getCurrentDate(), Constants.defaultCurrency)
 				+ TransactionSrv.getTransactionSum(context, "0", "0", monthStart, monthEnd,
-				Constants.TransactionTypeExpence, Constants.defaultCurrency, false);
-		/*return AccountSrv.getBalanceForDate(context, 0, Tools.AddDays(monthStart, -1), Constants.defaultCurrency, Tools.getCurrentDate())
+				Constants.TransactionTypeExpence, Constants.defaultCurrency, false);*/
+		return AccountSrv.getBalanceForDate(context, 0, Tools.AddDays(monthStart, -1), Constants.defaultCurrency, Tools.AddDays(monthStart, -1))
 				+ TransactionSrv.getTransactionSum(context, "0", "0", monthStart, monthEnd, 
 						Constants.TransactionTypeIncome, Constants.defaultCurrency, true)
 				- TransactionSrv.getUnCategorizedTransactionsSum(context, monthStart, monthEnd, 
-						Constants.TransactionTypeExpence, Constants.defaultCurrency);*/
+						Constants.TransactionTypeExpence, Constants.defaultCurrency);
 	}
 	
 	/**
@@ -576,7 +576,7 @@ public class BudgetSrv {
 	 */
 	public static boolean controlNewMonth(Context context) {
 		boolean result = false;
-		if (Constants.defaultCurrency != -1) {
+		if (Constants.defaultCurrency > 0) {
 			Date newMonth = Tools.truncDate(context, Tools.getCurrentDate(), Constants.DateTruncTypes.dateTruncMonth);
 			Cursor cursor = context.getContentResolver().query(BudgetTableMetaData.CONTENT_URI, null,
 					null, null, BudgetTableMetaData.FROM_DATE + " desc ");

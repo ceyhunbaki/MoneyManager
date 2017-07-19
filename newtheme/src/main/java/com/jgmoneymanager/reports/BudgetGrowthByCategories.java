@@ -349,7 +349,7 @@ public class BudgetGrowthByCategories extends AbstractDemoChart {
         CheckBoxDialog.itemsList = categoriesList;
         bundle.putString(Constants.query, CategorySrv.mainCategoriesQueryForReports);
         bundle.putString(Constants.paramTitle, CategoryTableMetaData.NAME);
-        bundle.putSerializable(Constants.paramValues, Tools.convertCheckBoxListToHashMap(categoriesList));
+        //bundle.putSerializable(Constants.paramValues, Tools.convertCheckBoxListToHashMap(categoriesList));
         Intent intent = new Intent(BudgetGrowthByCategories.this, CheckBoxDialog.class);
         intent.putExtras(bundle);
         startActivityForResult(intent, Constants.RequestCategoryForReport);

@@ -187,7 +187,8 @@ public class DBTools {
 		CurrencySrv.insertCurrency(context, context.getString(R.string.gbp), "GBP", 0, R.string.gbp);
 		CurrencySrv.insertCurrency(context, context.getString(R.string.aed), "AED", 0, R.string.aed);
 		CurrencySrv.insertCurrency(context, context.getString(R.string.afn), "AFN", 0, R.string.afn);
-		CurrencySrv.insertCurrency(context, context.getString(R.string.allCur), "ALL", 0, R.string.allCur);
+		//ALL sözü converterdə başda çıxır və ALL sözü ilə qarışır
+		//CurrencySrv.insertCurrency(context, context.getString(R.string.allCur), "ALL", 0, R.string.allCur);
 		CurrencySrv.insertCurrency(context, context.getString(R.string.ang), "ANG", 0, R.string.ang);
 		CurrencySrv.insertCurrency(context, context.getString(R.string.aoa), "AOA", 0, R.string.aoa);
 		CurrencySrv.insertCurrency(context, context.getString(R.string.ars), "ARS", 0, R.string.ars);

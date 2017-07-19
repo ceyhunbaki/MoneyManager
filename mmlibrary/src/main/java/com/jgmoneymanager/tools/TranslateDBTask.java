@@ -4,6 +4,10 @@ import android.content.Context;
 import android.database.Cursor;
 import android.os.AsyncTask;
 
+import com.google.analytics.tracking.android.EasyTracker;
+import com.google.analytics.tracking.android.Fields;
+import com.google.analytics.tracking.android.MapBuilder;
+import com.google.analytics.tracking.android.Tracker;
 import com.jgmoneymanager.database.DBTools;
 import com.jgmoneymanager.database.MoneyManagerProviderMetaData.CurrencyTableMetaData;
 import com.jgmoneymanager.database.MoneyManagerProviderMetaData.PaymentMethodsTableMetaData;
@@ -31,9 +35,17 @@ public class TranslateDBTask extends AsyncTask<String, Void, Boolean> {
                 new String[] {CategoryTableMetaData._ID, CategoryTableMetaData.NAME, CategoryTableMetaData.RESOURCEID},
                 CategoryTableMetaData.RESOURCEID + " is not null ", null, null);
         for (cursor.moveToFirst(); !cursor.isAfterLast(); cursor.moveToNext()) {
-            int stringID = DBTools.getCursorColumnValueInt(cursor, CategoryTableMetaData.RESOURCEID);
-            CategorySrv.changeCategoryName(context, DBTools.getCursorColumnValueLong(cursor, CategoryTableMetaData._ID),
-                    context.getString(stringID), false);
+            int stringID = 0;
+            try {
+                stringID = DBTools.getCursorColumnValueInt(cursor, CategoryTableMetaData.RESOURCEID);
+                CategorySrv.changeCategoryName(context, DBTools.getCursorColumnValueLong(cursor, CategoryTableMetaData._ID),
+                        context.getString(stringID), false);
+            }
+            catch (Exception e) {
+                Tracker myTracker = EasyTracker.getInstance(context);
+                myTracker.set(Fields.SCREEN_NAME, "TranslateDBTask- Error1. StringID:" + stringID);
+                myTracker.send(MapBuilder.createAppView().build());
+            }
         }
 
         cursor = context.getContentResolver().query(TransactionStatusTableMetaData.CONTENT_URI,

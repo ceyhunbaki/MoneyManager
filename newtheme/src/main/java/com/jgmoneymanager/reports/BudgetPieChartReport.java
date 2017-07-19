@@ -200,7 +200,8 @@ public class BudgetPieChartReport extends AbstractDemoChart {
                 + " from (select ifnull(cm."
                 + CategoryTableMetaData.NAME + ", c." + CategoryTableMetaData.NAME + ") " + CategoryTableMetaData.NAME
                 + ",\n ifnull(cm." + CategoryTableMetaData._ID + ", c." + CategoryTableMetaData._ID + ") "
-                + CategoryTableMetaData._ID + ", \nbc." + BudgetCategoriesTableMetaData.BUDGET + " \nfrom " + BudgetCategoriesTableMetaData.TABLE_NAME
+                + CategoryTableMetaData._ID + ", \nMAX(bc." + BudgetCategoriesTableMetaData.BUDGET + "*1, 0) " + BudgetCategoriesTableMetaData.BUDGET
+                + " \nfrom " + BudgetCategoriesTableMetaData.TABLE_NAME
                 + " bc \njoin " + BudgetTableMetaData.TABLE_NAME + " b on bc." + BudgetCategoriesTableMetaData.BUDGET_ID + " = b."
                 + BudgetTableMetaData._ID + " \njoin " + CategoryTableMetaData.TABLE_NAME + " c on c." + CategoryTableMetaData._ID
                 + " = bc." + BudgetCategoriesTableMetaData.CATEGORY_ID + " \nleft join " + CategoryTableMetaData.TABLE_NAME + " cm on cm."

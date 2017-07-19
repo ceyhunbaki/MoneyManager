@@ -48,7 +48,7 @@ public class SettingsLanguage extends MyPreferenceActivity {
                 DBTools.execQuery(SettingsLanguage.this, "Drop view if exists " + MoneyManagerProviderMetaData.VTransAccountViewMetaData.VIEW_NAME);
                 DBTools.execQuery(SettingsLanguage.this,
                         MoneyManagerProvider.DatabaseHelper.DATABASE_CREATE_VIEW_VTRANSACCOUNTS.replace("'ALL'",
-                                "'" + getResources().getString(R.string.all) + "'"));
+                                "'" + getResources().getString(R.string.totalAccount) + "'"));
                 DBTools.execQuery(SettingsLanguage.this, "Drop view if exists " + MoneyManagerProviderMetaData.VTransferViewMetaData.VIEW_NAME);
                 DBTools.execQuery(SettingsLanguage.this,
                         MoneyManagerProvider.DatabaseHelper.DATABASE_CREATE_VIEW_VTRANSFER.

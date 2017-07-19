@@ -41,6 +41,7 @@
 
     <string name="totalBalance">Итого:</string>
     <string name="total">Итого:</string>
+    <string name="totalAccount">Итого</string>
 
     <string name="from">От</string>
     <string name="to">На</string>

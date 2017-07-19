@@ -3,6 +3,7 @@ package com.jgmoneymanager.budget;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.view.ViewGroup;
 
 public class TabsPagerAdapter extends FragmentPagerAdapter {
 
@@ -24,6 +25,21 @@ public class TabsPagerAdapter extends FragmentPagerAdapter {
         }
 
         return null;
+    }
+
+    @Override
+    public Object instantiateItem(ViewGroup container, int position) {
+        Fragment createdFragment = (Fragment) super.instantiateItem(container, position);
+        // save the appropriate reference depending on position
+        switch (position) {
+            case 0:
+                budgetStatus = (BudgetStatus) createdFragment;
+                break;
+            case 1:
+                budgetCategories = (BudgetCategories) createdFragment;
+                break;
+        }
+        return createdFragment;
     }
 
     @Override

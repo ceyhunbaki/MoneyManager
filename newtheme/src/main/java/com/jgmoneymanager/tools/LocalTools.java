@@ -31,12 +31,15 @@ import com.google.android.vending.licensing.LicenseChecker;
 import com.google.android.vending.licensing.LicenseCheckerCallback;
 import com.google.android.vending.licensing.ServerManagedPolicy;
 import com.jgmoneymanager.budget.BudgetNewMonthTask;
+import com.jgmoneymanager.database.DBTools;
+import com.jgmoneymanager.database.MoneyManagerProvider;
 import com.jgmoneymanager.database.MoneyManagerProviderMetaData;
 import com.jgmoneymanager.dialogs.DialogTools;
 import com.jgmoneymanager.main.FileExplorer;
 import com.jgmoneymanager.main.MainScreen;
 import com.jgmoneymanager.main.R;
 import com.jgmoneymanager.main.RPTransactionEdit;
+import com.jgmoneymanager.main.SettingsLanguage;
 import com.jgmoneymanager.services.CurrencySrv;
 import com.jgmoneymanager.services.DebtsSrv;
 import com.jgmoneymanager.services.PaymentMethodsSrv;
@@ -49,19 +52,21 @@ import java.io.IOException;
 public class LocalTools {
 	
 	public static void startupActions(Context context) {
-		CurrencySrv.refreshDefaultCurrency(context);
-		LocalTools.autoBackup(context);
-		TransferSrv.controlTransfers(context);
-		RPTransactionEdit.generateRPTransNotification(context);
-		DebtsSrv.generateUnpaidDebtsNotification(context);
-		RPTransactionSrv.controlRPTransactions(context);
-        controlDropBoxRevision(context);
-        BudgetNewMonthTask budgetNewMonthTask = new BudgetNewMonthTask(context);
-        budgetNewMonthTask.execute();
+        if (CurrencySrv.getDefaultCurrencyID(context) != 0) {
+            CurrencySrv.refreshDefaultCurrency(context);
+            LocalTools.autoBackup(context);
+            TransferSrv.controlTransfers(context);
+            RPTransactionEdit.generateRPTransNotification(context);
+            DebtsSrv.generateUnpaidDebtsNotification(context);
+            RPTransactionSrv.controlRPTransactions(context);
+            controlDropBoxRevision(context);
+            BudgetNewMonthTask budgetNewMonthTask = new BudgetNewMonthTask(context);
+            budgetNewMonthTask.execute();
+        }
 	}
 	
 	public static void controlDropBoxRevision(Context context) {
-		if (!Tools.getPreference(context, R.string.dropboxTokenKey).equals("null")) {
+		if (!Tools.getPreference(context, R.string.dropboxTokenKey).equals("null") && Tools.isInternetAvailable(context)) {
 			AppKeyPair appKeys = new AppKeyPair(Constants.dropboxKey, Constants.dropboxSecret);
 	        AndroidAuthSession session = new AndroidAuthSession(appKeys, Constants.dropboxAccessType);
 	        DropboxAPI<AndroidAuthSession> mDBApi = new DropboxAPI<AndroidAuthSession>(session);
@@ -122,7 +127,7 @@ public class LocalTools {
                                     Tools.removePreferense(context, R.string.securityAnswerKey);
                                     Tools.removePreferense(context, R.string.securityQuestionKey);
                                     Tools.removePreferense(context, R.string.askpasswordkey);
-                                    Tools.removePreferense(context, R.string.emailKey);
+                                    //Tools.removePreferense(context, R.string.emailKey);
                                 } catch (Exception e) {
                                 }
                                 message += "\n" + context.getResources().getString(R.string.v2_2_2);
@@ -208,6 +213,12 @@ public class LocalTools {
                                 break;
                             case 78:
                                 message += "\n v 3.6.3 \n" + context.getResources().getString(R.string.v3_6_3);
+                                break;
+                            case 80:
+                                DBTools.execQuery(context, "Drop view if exists " + MoneyManagerProviderMetaData.VTransAccountViewMetaData.VIEW_NAME);
+                                DBTools.execQuery(context,
+                                        MoneyManagerProvider.DatabaseHelper.DATABASE_CREATE_VIEW_VTRANSACCOUNTS.replace("'ALL'",
+                                                "'" + context.getResources().getString(R.string.totalAccount) + "'"));
                                 break;
                             default:
                                 break;

@@ -141,10 +141,11 @@ public class Constants {
 	public static final int maxButtonTextLength = 150;
 	public static int defaultCurrency = -1;
 	//public final int defaultBcpFileDateCount = 5;
-	
+
 	public static String query = "query";
+	public static String queryPart2 = "queryPart2";
 	public static String title = "title";
-	public static String dialogType = "DilaogType";
+	public static String dialogType = "DialogType";
 	public static String folderKey = "folder";
 	public static String reportType = "reportType";
 	//public static String hideButtons = "hideButtons";
@@ -171,6 +172,7 @@ public class Constants {
 	public static String paramTransferID = "transferID";
 	public static String paramCategory = "category";
 	public static String paramTitle = "title";
+	public static String paramFilterType = "filterType";
 	public static String paramValues = "values";
 	public static String paramTransactionType = "transactionType";
 	public static String paramSplitTransactionIndex = "splitTransactionIndex";

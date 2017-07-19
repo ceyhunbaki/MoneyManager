@@ -373,6 +373,23 @@ public class Tools {
 			return result;
 	}
 
+	/**
+	 * Returns First checked ID
+	 * @param list
+	 * @return
+	 */
+	public static Integer getIDFromCheckBoxList(ArrayList<CheckBoxItem> list) {
+		Integer result = 0;
+		if (list == null)
+			return result;
+		for (int i = 0; i < list.size(); i++) {
+			CheckBoxItem item = list.get(i);
+			if (item.isSelected())
+				return item.getID();
+		}
+		return result;
+	}
+
 	public static HashMap<Integer, Integer> convertCheckBoxListToHashMap(ArrayList<CheckBoxItem> list) {
 		HashMap<Integer, Integer> resultList = new HashMap<>();
 		if (list != null)
@@ -885,7 +902,7 @@ public class Tools {
 		}
 	}
 
-	public static void autoBackup(Context context) {
+	/*public static void autoBackup(Context context) {
 		if (Constants.autoBackupDate.compareTo(Tools.getCurrentDate()) < 0) {
 			if (PreferenceManager.getDefaultSharedPreferences(context).getBoolean(context.getString(R.string.autoBackupKey), true)) {
 				File dbFile = new File(Environment.getDataDirectory() + "/data/com.jgmoneymanager.main/databases/"
@@ -915,7 +932,7 @@ public class Tools {
 			}
 			Constants.autoBackupDate = Tools.getCurrentDate();
 		}
-	}
+	}*/
 
 	public static void addFolder(String path, String name) {
 		File file = new File(path, name);
@@ -984,20 +1001,19 @@ public class Tools {
 			DBTools.insertFirstItems(context);
 			Editor editor = prefs.edit();
 			editor.putBoolean(context.getString(R.string.isFirstLaunch), false);
-			editor.putString(context.getString(R.string.emailKey), getPrimaryEmailAccount(context));
+			//editor.putString(context.getString(R.string.emailKey), getPrimaryEmailAccount(context));
 			editor.putInt(context.getString(R.string.rateAppCurrentOpenCountKey), 0);
 			//editor.putInt(context.getString(R.string.oldversionkey), newVersionCode);
 			editor.commit();
 			Tools.resetFormats(context);
 		}
 
-		//TODO 2.0.10 ucun qoydum, bir muddetsen sonra goturmek lazim
-		if ((prefs.getString(context.getString(R.string.emailKey), null) == null) ||
+		/*if ((prefs.getString(context.getString(R.string.emailKey), null) == null) ||
 				(prefs.getString(context.getString(R.string.emailKey), "").length() == 0)) {
 			Editor editor = prefs.edit();
 			editor.putString(context.getString(R.string.emailKey), getPrimaryEmailAccount(context));
 			editor.commit();
-		}
+		}*/
 
 		int index = Integer.parseInt(prefs.getString(
 				context.getResources().getString(R.string.backupMaxDateKey),

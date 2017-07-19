@@ -1,12 +1,16 @@
 package com.jgmoneymanager.dialogs;
 
 import android.content.Context;
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 import android.widget.TextView;
@@ -16,6 +20,7 @@ import com.google.analytics.tracking.android.Fields;
 import com.google.analytics.tracking.android.MapBuilder;
 import com.google.analytics.tracking.android.Tracker;
 import com.jgmoneymanager.database.DBTools;
+import com.jgmoneymanager.database.MoneyManagerProviderMetaData.CurrencyTableMetaData;
 import com.jgmoneymanager.database.MoneyManagerProviderMetaData.CategoryTableMetaData;
 import com.jgmoneymanager.entity.CheckBoxItem;
 import com.jgmoneymanager.entity.MyActivity;
@@ -32,6 +37,7 @@ public class CheckBoxDialog extends MyActivity {
     //public static final String paramList = "list";
     boolean dontRefreshValues = false;
     String query = null;
+    String queryPart2 = "";
     Cursor mainCursor;
     String itemNameColumn;
 
@@ -40,20 +46,74 @@ public class CheckBoxDialog extends MyActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.check_box_filter);
 
+        final Bundle bundle = getIntent().getExtras();
+        if (bundle.containsKey(Constants.dontRefreshValues))
+            dontRefreshValues = bundle.getBoolean(Constants.dontRefreshValues, false);
+        this.query = bundle.getString(Constants.query);
+        itemNameColumn = bundle.getString(Constants.paramTitle);
+        if (bundle.containsKey(Constants.queryPart2)) {
+            queryPart2 = bundle.getString(Constants.queryPart2);
+        }
+        refreshList(query + queryPart2);
+
+        if( (getIntent().getAction() != null) && (getIntent().getAction().equals(Intent.ACTION_SEARCH))) {
+            EditText tvFilter = (EditText) findViewById(R.id.lbCatFilterSearch);
+            tvFilter.setVisibility(View.VISIBLE);
+            tvFilter.addTextChangedListener(new TextWatcher() {
+                @Override
+                public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+                }
+
+                @Override
+                public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+                }
+
+                @Override
+                public void afterTextChanged(Editable editable) {
+                    if (editable.toString().length() > 0) {
+                        String filterType = bundle.getString(Constants.paramFilterType);
+                        String whereClause = "";
+                        if (filterType.equals(CurrencyTableMetaData.TABLE_NAME)) {
+                            whereClause = " where " + CurrencyTableMetaData.NAME + " like '%" + editable.toString() + "%' or "
+                                    + CurrencyTableMetaData.SIGN + " like '%" + editable.toString() + "%' ";
+                        }
+                        refreshList(query + whereClause + queryPart2);
+                    }
+                    else {
+                        refreshList(query + queryPart2);
+                    }
+                }
+            });
+        }
+    }
+
+    @Override
+    public void onBackPressed() {
+        if ( (getIntent().getAction() != null) && (getIntent().getAction().equals(Intent.ACTION_SEARCH))) {
+            quitApplication();
+        }
+    }
+
+    void quitApplication() {
+        Intent startMain = new Intent(Intent.ACTION_MAIN);
+        startMain.addCategory(Intent.CATEGORY_HOME);
+        startMain.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startMain.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(startMain);
+    }
+
+    void refreshList(String query) {
         ListView listView = (ListView) findViewById(R.id.catListView);
         listView.setBackgroundColor(getResources().getColor(R.color.White));
         listView.setScrollingCacheEnabled(true);
         listView.setCacheColorHint(0);
 
-        Bundle bundle = getIntent().getExtras();
-        if (bundle.containsKey(Constants.dontRefreshValues))
-            dontRefreshValues = bundle.getBoolean(Constants.dontRefreshValues, false);
-        this.query = bundle.getString(Constants.query);
-        itemNameColumn = bundle.getString(Constants.paramTitle);
         itemsList = generateData(getBaseContext(), query, dontRefreshValues);
-        if (bundle.containsKey(Constants.paramValues)) {
+        /*if (bundle.containsKey(Constants.paramValues)) {
             Tools.getValuesFromHashMap((HashMap<Integer, Integer>) Tools.getSerializableFromBundle(bundle, Constants.paramValues), itemsList);
-        }
+        }*/
         String[] from = new String[]{itemNameColumn};
         int[] to = new int[]{R.id.grp_child};
         listView.setAdapter(new MyListAdapter(getBaseContext(), R.layout.list1rowcategorycbox, mainCursor, from, to));

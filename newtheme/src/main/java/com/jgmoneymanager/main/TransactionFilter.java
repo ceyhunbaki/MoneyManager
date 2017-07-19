@@ -469,7 +469,7 @@ public class TransactionFilter extends MyActivity {
 					bundle.putBoolean(Constants.dontRefreshValues, false);
 				bundle.putString(Constants.query, createAccountQuery());
 				bundle.putString(Constants.paramTitle, AccountTableMetaData.NAME);
-				bundle.putSerializable(Constants.paramValues, Tools.convertCheckBoxListToHashMap(accountsList));
+				//bundle.putSerializable(Constants.paramValues, Tools.convertCheckBoxListToHashMap(accountsList));
 				intent.putExtras(bundle);
 				startActivityForResult(intent, Constants.RequestAccountForTransaction);
 				break;
@@ -484,7 +484,7 @@ public class TransactionFilter extends MyActivity {
 					bundle.putBoolean(Constants.dontRefreshValues, false);
 				bundle.putString(Constants.query, createCurrencyQuery());
 				bundle.putString(Constants.paramTitle, CurrencyTableMetaData.NAME);
-				bundle.putSerializable(Constants.paramValues, Tools.convertCheckBoxListToHashMap(currencyList));
+				//bundle.putSerializable(Constants.paramValues, Tools.convertCheckBoxListToHashMap(currencyList));
 				intent.putExtras(bundle);
 				startActivityForResult(intent, Constants.RequestCurrencyForTransaction);
 				break;
@@ -499,7 +499,7 @@ public class TransactionFilter extends MyActivity {
 					bundle.putBoolean(Constants.dontRefreshValues, false);
 				bundle.putString(Constants.query, createStatusQuery());
 				bundle.putString(Constants.paramTitle, TransactionStatusTableMetaData.NAME);
-				bundle.putSerializable(Constants.paramValues, Tools.convertCheckBoxListToHashMap(statusList));
+				//bundle.putSerializable(Constants.paramValues, Tools.convertCheckBoxListToHashMap(statusList));
 				intent.putExtras(bundle);
 				startActivityForResult(intent, Constants.RequestStatusForTransaction);
 				break;
@@ -514,7 +514,7 @@ public class TransactionFilter extends MyActivity {
 					bundle.putBoolean(Constants.dontRefreshValues, false);
 				bundle.putString(Constants.query, createPaymentMethodQuery());
 				bundle.putString(Constants.paramTitle, PaymentMethodsTableMetaData.NAME);
-				bundle.putSerializable(Constants.paramValues, Tools.convertCheckBoxListToHashMap(paymentMethodList));
+				//bundle.putSerializable(Constants.paramValues, Tools.convertCheckBoxListToHashMap(paymentMethodList));
 				intent.putExtras(bundle);
 				startActivityForResult(intent, Constants.RequestMethodForTransaction);
 				break;

@@ -5,11 +5,22 @@
     android:orientation="vertical"
     android:background="@color/White">
 
+    <EditText
+        android:id="@+id/lbCatFilterSearch"
+        style="@style/ThemeNew.ButtonText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/ok_button_dialog_margin_side"
+        android:layout_marginLeft="@dimen/ok_button_dialog_margin_side"
+        android:layout_alignParentTop="true"
+        android:hint="@string/filter"
+        android:visibility="gone"/>
+
     <ListView
         android:id="@+id/catListView"
         android:layout_width="match_parent"
         android:layout_height="fill_parent"
-        android:layout_alignParentTop="true"
+        android:layout_below="@id/lbCatFilterSearch"
         android:layout_above="@+id/btCatFilterCancel" >
     </ListView>
 

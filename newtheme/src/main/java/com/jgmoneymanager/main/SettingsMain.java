@@ -247,6 +247,9 @@ public class SettingsMain extends MyPreferenceActivity {
 			@Override
 			public boolean onPreferenceChange(Preference preference, Object o) {
 				if (!Tools.isPreferenceAvialable(SettingsMain.this, R.string.dropboxTokenKey) && ((Boolean)o)) {
+					Tools.setPreference(SettingsMain.this, R.string.dropboxAutoSyncKey, false);
+                    checkBoxDropboxAutoSync.setChecked(false);
+					o = false;
 					Command backupCommand = new Command() {
 						@Override
 						public void execute() {
@@ -263,7 +266,6 @@ public class SettingsMain extends MyPreferenceActivity {
 						@Override
 						public void execute() {
 							Tools.setPreference(SettingsMain.this, R.string.dropboxAutoSyncKey, false);
-							checkBoxDropboxAutoSync.setChecked(false);
 						}
 					};
 
@@ -273,6 +275,7 @@ public class SettingsMain extends MyPreferenceActivity {
 									getResources().getString(R.string.menuRestore),
 									getResources().getString(R.string.Cancel)});
 					dialog.show();
+					return false;
 				}
 				refreshDropboxUploadWiFiButtonState((Boolean)o);
 				return true;

@@ -246,7 +246,9 @@ public class AccountSrv {
 		String accountIDCondition = null ;
 		Double result = 0d;
 		if (accountID != 0) 
-			accountIDCondition = " and " + AccountTableMetaData._ID + " = " + String.valueOf(accountID);
+			accountIDCondition =  AccountTableMetaData._ID + " = " + String.valueOf(accountID);
+		else
+			accountIDCondition =  AccountTableMetaData.STATUS + " = 1 ";
 		Cursor cursor = context.getContentResolver().query(AccountTableMetaData.CONTENT_URI, 
 				new String[] {AccountTableMetaData._ID, AccountTableMetaData.CURRID}, 
 				/*AccountTableMetaData.STATUS + " = " + Constants.Status.Enabled.index() +*/ accountIDCondition, 
@@ -262,10 +264,6 @@ public class AccountSrv {
 				result += CurrRatesSrv.convertAmount(context, currentValue, accountCurrency, currencyID, conversionDate);
 		}
 		return result;
-	}
-
-	public static Double getBalanceForDate(Context context, long accountID, Date filterDate, long currencyID) {
-		return getBalanceForDate(context, accountID, filterDate, currencyID, filterDate);
 	}
 	
 	public static long insertAccount(Context context, String name, String initialBalance, String isDefault){

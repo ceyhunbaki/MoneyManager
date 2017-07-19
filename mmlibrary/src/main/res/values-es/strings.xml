@@ -41,6 +41,7 @@
 
     <string name="totalBalance">Balance Total:</string>
     <string name="total">Total:</string>
+    <string name="totalAccount">Total</string>
 
     <string name="from">Desde</string>
     <string name="to">Hacia</string>

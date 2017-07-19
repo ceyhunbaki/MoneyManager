@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.res.Configuration;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.os.Environment;
 import android.support.design.widget.NavigationView;
@@ -29,6 +30,8 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.jgmoneymanager.database.DBTools;
+import com.jgmoneymanager.database.MoneyManagerProviderMetaData;
 import com.jgmoneymanager.dialogs.DialogTools;
 import com.jgmoneymanager.entity.MyActivity;
 import com.jgmoneymanager.tools.Command;
@@ -40,7 +43,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
 
-public class FileExplorer extends MyActivity implements NavigationView.OnNavigationItemSelectedListener{
+public class FileExplorer extends MyActivity /*implements NavigationView.OnNavigationItemSelectedListener*/{
 
 	public static final int DialogOpenFileID = 1000;
 	public static final int DialogOpenFolderID = 1100;
@@ -68,10 +71,7 @@ public class FileExplorer extends MyActivity implements NavigationView.OnNavigat
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		initializeViews();
-		//requestWindowFeature(Window.FEATURE_CUSTOM_TITLE);
 		//setContentView(R.layout.fileexplorer);
-		//getWindow().setFeatureInt(Window.FEATURE_CUSTOM_TITLE, R.layout.custom_title);
-		//((TextView)findViewById(R.id.cusTitleText)).setText(R.string.explorer);
 
 		Bundle bundle = getIntent().getExtras();
 		if (bundle.containsKey(Constants.title))
@@ -103,12 +103,7 @@ public class FileExplorer extends MyActivity implements NavigationView.OnNavigat
 		setSupportActionBar(toolbar);
 
 		DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-		ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-		drawer.setDrawerListener(toggle);
-		toggle.syncState();
-
-		NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
-		navigationView.setNavigationItemSelectedListener(FileExplorer.this);
+		drawer.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED);
 
 		LinearLayout mainLayout = (LinearLayout) findViewById(R.id.content_main_layout);
 		LayoutInflater inflater = (LayoutInflater) this.getSystemService(LAYOUT_INFLATER_SERVICE);
@@ -116,9 +111,9 @@ public class FileExplorer extends MyActivity implements NavigationView.OnNavigat
 		View child = inflater.inflate(R.layout.fileexplorer, null);
 		mainLayout.addView(child, params);
 
-		Menu menu = navigationView.getMenu();
-		menu.add(0, btSelectFolder, btSelectFolder, R.string.menuSelectFolder);
-		menu.add(0, btAddFolder, btAddFolder, R.string.menuAddFolder);
+//		Menu menu = navigationView.getMenu();
+//		menu.add(0, btSelectFolder, btSelectFolder, R.string.menuSelectFolder);
+//		menu.add(0, btAddFolder, btAddFolder, R.string.menuAddFolder);
 	}
 
 	@Override
@@ -297,20 +292,24 @@ public class FileExplorer extends MyActivity implements NavigationView.OnNavigat
 		}
 		catch (Exception e) { }
 
-		for (int i = 0; i < files.length; i++) {
-			File file = files[i];
-			if (file.isDirectory()) {
-				arrayItemT.add(file.getName() + "/");
-				arrayPathT.add(file.getPath());
+		try {
+			for (int i = 0; i < files.length; i++) {
+				File file = files[i];
+				if (file.isDirectory()) {
+					arrayItemT.add(file.getName() + "/");
+					arrayPathT.add(file.getPath());
+				} else if (dialogType == DialogOpenFileID) {
+					arrayItemT.add(file.getName());
+					arrayPathT.add(file.getPath());
+				}
 			}
-			else if (dialogType == DialogOpenFileID) {
-				arrayItemT.add(file.getName());
-				arrayPathT.add(file.getPath());
-			}
-		}
 
-		// fill the list view
-		listviewT.setAdapter(new ArrayAdapter<String>(contextT, R.layout.dialog_row_white, arrayItemT));
+			// fill the list view
+			listviewT.setAdapter(new ArrayAdapter<String>(contextT, R.layout.dialog_row_white, arrayItemT));
+		}
+		catch (Exception e) {
+
+		}
 
 	}
 
@@ -327,30 +326,32 @@ public class FileExplorer extends MyActivity implements NavigationView.OnNavigat
 		confirmDialog.show();
 	}
 
-	/*private boolean hasDirectory(File file) {
-		File[] files = file.listFiles();
-		if (files != null)
-			for (int i = 0; i < files.length; i++) {
-				File f = files[i];
-				if (f.isDirectory())
-					return true;
-			}
-		return false;
-	}*/
-
-	@Override
-	public boolean onNavigationItemSelected(MenuItem item) {
-		int id = item.getItemId();
-		if (id == btSelectFolder) {
-			selectFolder(textviewPathCurrent.getText().toString());
+	public void myClickHandler(View target) {
+		switch (target.getId()) {
+			case R.id.btFeSelectThis:
+				selectFolder(textviewPathCurrent.getText().toString());
+				break;
+			case R.id.btFeAddFolder:
+				addFolder(FileExplorer.this, currentDir.toString());
+				break;
+			default:
+				break;
 		}
-		else if (id == btAddFolder) {
-			addFolder(FileExplorer.this, currentDir.toString());
-		}
-
-		DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-		drawer.closeDrawer(GravityCompat.START);
-
-		return true;
 	}
+
+//	@Override
+//	public boolean onNavigationItemSelected(MenuItem item) {
+//		int id = item.getItemId();
+//		if (id == btSelectFolder) {
+//			selectFolder(textviewPathCurrent.getText().toString());
+//		}
+//		else if (id == btAddFolder) {
+//			addFolder(FileExplorer.this, currentDir.toString());
+//		}
+//
+//		DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+//		drawer.closeDrawer(GravityCompat.START);
+//
+//		return true;
+//	}
 }

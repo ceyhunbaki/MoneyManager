@@ -27,9 +27,11 @@ import com.google.analytics.tracking.android.EasyTracker;
 import com.jgmoneymanager.budget.BudgetGoalsList;
 import com.jgmoneymanager.budget.BudgetMain;
 import com.jgmoneymanager.database.DBTools;
+import com.jgmoneymanager.database.MoneyManagerProviderMetaData;
 import com.jgmoneymanager.database.MoneyManagerProviderMetaData.VTransAccountViewMetaData;
 import com.jgmoneymanager.database.MoneyManagerProviderMetaData.TransactionsTableMetaData;
 import com.jgmoneymanager.database.MoneyManagerProviderMetaData.CurrencyTableMetaData;
+import com.jgmoneymanager.dialogs.CheckBoxDialog;
 import com.jgmoneymanager.dialogs.DialogTools;
 import com.jgmoneymanager.entity.CheckBoxItem;
 import com.jgmoneymanager.entity.MyActivity;
@@ -75,18 +77,19 @@ public class MainScreen extends MyActivity
 
 	public long selectedAccountID = 0;
     boolean isOldStyle = false;
+
+    Intent intent;
 	    
     @Override
 	protected void onCreate(Bundle savedInstanceState) {
 
         Tools.loadSettings(this);
         Tools.loadLanguage(this, null);
-        LocalTools.showWhatsNewDialog(this);
 
         super.onCreate(savedInstanceState);
         
         if (CurrencySrv.getDefaultCurrencyID(this) == 0) {
-        	final Cursor cursor = getContentResolver().query(CurrencyTableMetaData.CONTENT_URI, null, null, null, CurrencyTableMetaData.NAME);
+        	/*final Cursor cursor = getContentResolver().query(CurrencyTableMetaData.CONTENT_URI, null, null, null, CurrencyTableMetaData.NAME);
             Command cmd = new Command() {
                 @Override
                 public void execute() {
@@ -101,11 +104,31 @@ public class MainScreen extends MyActivity
                 }
             };
             AlertDialog dialog = DialogTools.RadioListDialog(MainScreen.this, cmd, R.string.msgSetDefaultCurrency, cursor, CurrencyTableMetaData.NAME, false, true);
-        	dialog.show();
+        	dialog.show();*/
+        	String query = "select " + CurrencyTableMetaData._ID + ", " + CurrencyTableMetaData.NAME + " from "
+                    + CurrencyTableMetaData.TABLE_NAME;
+            String queryPart2 = " order by " + CurrencyTableMetaData.DEFAULT_SORT_ORDER;
+
+            intent = new Intent(MainScreen.this, CheckBoxDialog.class);
+            Bundle bundle = new Bundle();
+            bundle.putBoolean(Constants.dontRefreshValues, false);
+            bundle.putString(Constants.query, query);
+            bundle.putString(Constants.queryPart2, queryPart2);
+            bundle.putString(Constants.paramTitle, CurrencyTableMetaData.NAME);
+            bundle.putString(Constants.paramFilterType, CurrencyTableMetaData.TABLE_NAME);
+            intent.putExtras(bundle);
+
+            intent.setAction(Intent.ACTION_SEARCH);
+
+            startActivityForResult(intent, Constants.RequestCurrencyForTransaction);
         }
-        
-        GetNecessaryCurrRatesAndControlBudgetTask getRatesTask = new GetNecessaryCurrRatesAndControlBudgetTask(MainScreen.this, myApp);
-        getRatesTask.execute("");
+        else {
+            GetNecessaryCurrRatesAndControlBudgetTask getRatesTask = new GetNecessaryCurrRatesAndControlBudgetTask(MainScreen.this, myApp);
+            getRatesTask.execute("");
+
+            LocalTools.startupActions(MainScreen.this);
+            LocalTools.showWhatsNewDialog(this);
+        }
 
         initializeViews();
         
@@ -116,7 +139,6 @@ public class MainScreen extends MyActivity
         setActiveAccountButton(Integer.parseInt(String.valueOf(selectedAccountID)));
         refreshAccountDetails();
         
-        LocalTools.startupActions(MainScreen.this);
 
     }
 
@@ -131,7 +153,7 @@ public class MainScreen extends MyActivity
     	LinearLayout layout = (LinearLayout) findViewById(R.id.llATAccounts);
     	layout.removeAllViewsInLayout();
     	
-    	accountsList = AccountSrv.generateAccountsList(MainScreen.this, getResources().getString(R.string.all));
+    	accountsList = AccountSrv.generateAccountsList(MainScreen.this, getResources().getString(R.string.totalAccount));
     	buttons = new Button[accountsList.size()];
 
     	accountButtonParams = new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.MATCH_PARENT);
@@ -448,6 +470,45 @@ public class MainScreen extends MyActivity
 		}
 		if ((requestCode == Constants.RequestAccountSort) && (resultCode == RESULT_CANCELED) && AccountSort.resultOK) 
 			restartActivity();
+
+        if ((requestCode == Constants.RequestCurrencyForTransaction)) {
+            if (resultCode == RESULT_CANCELED) {
+                finish();
+            }
+            else {
+                ArrayList<CheckBoxItem> currencyList = CheckBoxDialog.itemsList;
+                if ((currencyList != null) && (Tools.getIDsFromCheckBoxList(currencyList).length() != 0)) {
+                    try {
+                        CurrencySrv.changeDefaultCurrency(MainScreen.this, Tools.getIDFromCheckBoxList(currencyList), null);
+                        if (AccountSrv.getAccountCount(MainScreen.this) == 0) {
+                            long accoundID = AccountSrv.insertAccount(MainScreen.this, getBaseContext().getString(R.string.cash), "0", "1");
+                            AccountSrv.insertAccount(MainScreen.this, getBaseContext().getString(R.string.bank), "0", "0");
+                            selectedAccountID = accoundID;
+                            restartActivity();
+                        }
+                    }catch (Exception e) {
+                        finish();
+                    }
+                }
+                else {
+                    finish();
+                }
+            /*final Cursor cursor = getContentResolver().query(CurrencyTableMetaData.CONTENT_URI, null, null, null, CurrencyTableMetaData.NAME);
+            Command cmd = new Command() {
+                @Override
+                public void execute() {
+                    cursor.moveToPosition(Constants.cursorPosition);
+                    CurrencySrv.changeDefaultCurrency(MainScreen.this, DBTools.getCursorColumnValueLong(cursor, CurrencyTableMetaData._ID), null);
+                    if (AccountSrv.getAccountCount(MainScreen.this) == 0) {
+                        long accoundID = AccountSrv.insertAccount(MainScreen.this, getBaseContext().getString(R.string.cash), "0", "1");
+                        AccountSrv.insertAccount(MainScreen.this, getBaseContext().getString(R.string.bank), "0", "0");
+                        selectedAccountID = accoundID;
+                        restartActivity();
+                    }
+                }
+            };*/
+            }
+        }
 	}
 	
 	private void restartActivity() {
@@ -562,8 +623,10 @@ public class MainScreen extends MyActivity
 		myApp.setAskPassword(false);
 		
 		super.onConfigurationChanged(newConfig);
-		
-		this.restartActivity();
+
+        if (CurrencySrv.getDefaultCurrencyID(this) != 0) {
+            this.restartActivity();
+        }
 	}
 	
 	void initializeViews() {

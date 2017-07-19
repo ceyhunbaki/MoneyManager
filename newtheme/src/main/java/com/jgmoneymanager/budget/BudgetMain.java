@@ -3,8 +3,10 @@ package com.jgmoneymanager.budget;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
@@ -96,6 +98,24 @@ public class BudgetMain extends MyActivity implements NavigationView.OnNavigatio
 					getSelectedMonth());
 			bTask.execute();
 		}
+
+//		if (savedInstanceState == null) {
+//			// The Activity is NOT being re-created so we can instantiate a new Fragment
+//			// and add it to the Activity
+//			BudgetStatus budgetStatus= new BudgetStatus();
+//
+//			getSupportFragmentManager()
+//					.beginTransaction()
+//					// It's almost always a good idea to use .replace instead of .add so that
+//					// you never accidentally layer multiple Fragments on top of each other
+//					// unless of course that's your intention
+//					.replace(R.id.pager, budgetStatus)
+//					.commit();
+//		} else {
+//			// The Activity IS being re-created so we don't need to instantiate the Fragment or add it,
+//			// but if we need a reference to it, we can use the tag we passed to .replace
+//			mFragment = (MyFragment) getSupportFragmentManager().findFragmentByTag(TAG_MY_FRAGMENT);
+//		}
 	}
 
 	private void initializeViews() {
@@ -196,6 +216,7 @@ public class BudgetMain extends MyActivity implements NavigationView.OnNavigatio
 				BudgetSrv.changeBudgetTotalAmount(BudgetMain.this, getSelectedMonth(),
 						Tools.stringToDouble(BudgetMain.this, inputField.getText().toString(), false));
 				BudgetStatus fragment = (BudgetStatus)mAdapter.getItem(0);
+				getSupportFragmentManager().beginTransaction().detach(fragment).attach(fragment).commit();
 				fragment.refreshValues();
 			}
 		};

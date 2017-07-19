@@ -70,7 +70,7 @@ public class DropboxUploadTask extends AsyncTask<Void, Long, Boolean> {
             }
         };
         if (Tools.isInternetAvailable(mContext, Tools.getPreferenceBool(mContext, R.string.dropboxAutoSyncWiFiKey, false)))
-        	mErrorMsg = DropboxSrv.Upload(mPath, mFile, revision, mApi, progressListener);
+        	mErrorMsg = DropboxSrv.Upload(mContext, mPath, mFile, revision, mApi, progressListener);
         else
         	return false;
         return mErrorMsg.length() == 0;

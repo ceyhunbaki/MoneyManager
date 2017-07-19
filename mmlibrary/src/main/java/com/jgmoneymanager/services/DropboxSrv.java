@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 
+import android.content.Context;
 import android.content.res.Resources;
 
 import com.dropbox.client2.DropboxAPI;
@@ -19,8 +20,8 @@ import com.dropbox.client2.exception.DropboxUnlinkedException;
 import com.jgmoneymanager.mmlibrary.R;
 
 public class DropboxSrv {
-	public static String Upload(String mPath, File mFile,
-		    StringBuilder revision, DropboxAPI<?> mApi, ProgressListener progressListener) {
+	public static String Upload(Context context, String mPath, File mFile,
+                                StringBuilder revision, DropboxAPI<?> mApi, ProgressListener progressListener) {
 		String mErrorMsg = "";
 		try {
             // By creating a request, we get a handle to the putFile operation,
@@ -33,13 +34,13 @@ public class DropboxSrv {
 
         } catch (DropboxUnlinkedException e) {
             // This session wasn't authenticated properly or user unlinked
-            mErrorMsg = Resources.getSystem().getString(R.string.autentificateError);
+            mErrorMsg = context.getString(R.string.autentificateError);
         } catch (DropboxFileSizeException e) {
             // File size too big to upload via the API
-            mErrorMsg = Resources.getSystem().getString(R.string.fileBigError);
+            mErrorMsg = context.getString(R.string.fileBigError);
         } catch (DropboxPartialFileException e) {
             // We canceled the operation
-            mErrorMsg = Resources.getSystem().getString(R.string.canceled);
+            mErrorMsg = context.getString(R.string.canceled);
         } catch (DropboxServerException e) {
             // Server-side exception.  These are examples of what could happen,
             // but we don't do anything special with them here.
@@ -63,13 +64,13 @@ public class DropboxSrv {
             }
         } catch (DropboxIOException e) {
             // Happens all the time, probably want to retry automatically.
-            mErrorMsg = Resources.getSystem().getString(R.string.canceled);
+            mErrorMsg = context.getString(R.string.canceled);
         } catch (DropboxParseException e) {
             // Probably due to Dropbox server restarting, should retry
-            mErrorMsg = Resources.getSystem().getString(R.string.dropboxError);
+            mErrorMsg = context.getString(R.string.dropboxError);
         } catch (DropboxException e) {
             // Unknown error
-            mErrorMsg = Resources.getSystem().getString(R.string.unknownError);
+            mErrorMsg = context.getString(R.string.unknownError);
         } catch (FileNotFoundException e) {
             mErrorMsg = e.getMessage();
         }
