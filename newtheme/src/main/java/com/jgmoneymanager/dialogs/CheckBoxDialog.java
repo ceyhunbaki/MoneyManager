@@ -47,6 +47,9 @@ public class CheckBoxDialog extends MyActivity {
         setContentView(R.layout.check_box_filter);
 
         final Bundle bundle = getIntent().getExtras();
+        if (bundle.containsKey(Constants.paramWindowTitle)) {
+            this.setTitle(bundle.getString(Constants.paramWindowTitle));
+        }
         if (bundle.containsKey(Constants.dontRefreshValues))
             dontRefreshValues = bundle.getBoolean(Constants.dontRefreshValues, false);
         this.query = bundle.getString(Constants.query);

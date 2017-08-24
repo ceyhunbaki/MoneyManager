@@ -45,6 +45,7 @@ public class RPTransactionList extends MyActivity {
 
 	String[] repeatType = null;
 	Uri selectedUri;
+	ListView listView;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -82,7 +83,7 @@ public class RPTransactionList extends MyActivity {
 		int[] to = new int[] { R.id.ltRpDescription, R.id.ltRpAmount,
 				R.id.ltRpType, R.id.ltRpAccounts, R.id.ltRpDate, R.id.ltRpLatest, R.id.ltRpCategory };
 		SimpleCursorAdapter notes = new MyListAdapter(cursor, this, R.layout.listrptransrow, from, to);
-		ListView listView = (ListView) findViewById(R.id.trListView);
+		listView = (ListView) findViewById(R.id.trListView);
 		listView.setAdapter(notes);
 		listView.setScrollingCacheEnabled(true);
 		listView.setCacheColorHint(00000000);
@@ -291,23 +292,29 @@ public class RPTransactionList extends MyActivity {
 				startActivityForResult(intent, Constants.RequestNewRPTransactionForTransfer);
 				break;
 			case R.id.btTrDeleteAll:
-				Command deleteAllCommand;
-				deleteAllCommand = new Command() {
-					public void execute() {
-						RPTransactionEdit.deleteAll(RPTransactionList.this);
-					}};
-				AlertDialog deleteAllDialog = DialogTools.confirmDialog(RPTransactionList.this, deleteAllCommand, R.string.msgConfirm, R.string.msgDeleteAll);
-				deleteAllDialog.show();
+				if ((listView != null) && (listView.getCount() > 0)) {
+					Command deleteAllCommand;
+					deleteAllCommand = new Command() {
+						public void execute() {
+							RPTransactionEdit.deleteAll(RPTransactionList.this);
+						}
+					};
+					AlertDialog deleteAllDialog = DialogTools.confirmDialog(RPTransactionList.this, deleteAllCommand, R.string.msgConfirm, R.string.msgDeleteAll);
+					deleteAllDialog.show();
+				}
 				break;
 			case R.id.btTrDeleteFinished:
-				Command deleteAllFinishedCommand;
-				deleteAllFinishedCommand = new Command() {
-					public void execute() {
-						RPTransactionEdit.deleteAllFinished(RPTransactionList.this);
-					}};
-				AlertDialog deleteAllFinishedDialog = DialogTools.confirmDialog(RPTransactionList.this, deleteAllFinishedCommand, R.string.msgConfirm,
-						R.string.msgDeleteAllFinished);
-				deleteAllFinishedDialog.show();
+				if ((listView != null) && (listView.getCount() > 0)) {
+					Command deleteAllFinishedCommand;
+					deleteAllFinishedCommand = new Command() {
+						public void execute() {
+							RPTransactionEdit.deleteAllFinished(RPTransactionList.this);
+						}
+					};
+					AlertDialog deleteAllFinishedDialog = DialogTools.confirmDialog(RPTransactionList.this, deleteAllFinishedCommand, R.string.msgConfirm,
+							R.string.msgDeleteAllFinished);
+					deleteAllFinishedDialog.show();
+				}
 				break;
 			default:
 				break;

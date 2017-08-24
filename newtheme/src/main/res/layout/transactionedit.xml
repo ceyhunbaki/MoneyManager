@@ -243,7 +243,8 @@
                     android:layout_marginRight="0dp"
                     android:background="@color/transparent"
                     android:onClick="myClickHandler"
-                    android:src="@drawable/bin" />
+                    android:src="@drawable/bin"
+                    android:visibility="gone"/>
 
                 <ImageButton
                     android:id="@+id/btTrSplitEdit"

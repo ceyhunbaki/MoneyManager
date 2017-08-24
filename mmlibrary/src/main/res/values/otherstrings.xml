@@ -3,6 +3,7 @@
     <string name="balance" translatable="false">balance</string>
 
     <string name="app_name" translatable="false">Money Manager</string>
+    <string name="app_name_pro" translatable="false">Money Manager Pro</string>
     <string name="app_service" translatable="false">Money Manager Service</string>
     <string name="ok" translatable="false">OK</string>
     <string name="ce" translatable="false">C</string>

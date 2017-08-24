@@ -95,7 +95,7 @@
     <string name="setStartupScreenDialogTitle">Pantalla de inicio</string>
 
     <string name="backupOptions">Copia de seguridad/restaurar SD/Dispositivo de memoria</string>
-    <string name="btBackupSummary">Base de datos de copia de seguridad en</string>
+    <string name="btBackupSummary">"Base de datos de copia de seguridad en : "</string>
     <string name="btRestoreSummary">Restaurar base de datos</string>
     <string name="folder">Carpeta</string>
     <string name="addFolder">Agregar carpeta</string>
@@ -109,7 +109,7 @@
     <string name="backupMaxSizeTitle">Tamaño total de la copia de seguridad</string>
     <string name="backupMaxSizeSummary">Tamaño total de la carpeta de copia de seguridad en MB</string>
     <string name="autoBackupTitle">Auto Copia de seguridad</string>
-    <string name="autoBackupSummary">Copia de seguridad automática diaria en</string>
+    <string name="autoBackupSummary">\"Copia de seguridad automática diaria en : \"</string>
     <string name="backupToDataFolderTitle">Copia de seguridad en /carpeta de archivos</string>
     <string name="backupFolderTitle">Carpeta de respaldo</string>
 
@@ -364,4 +364,12 @@
     <string name="none">Ninguno</string>
     <string name="setWeekFirstDay">Primer día de la semana</string>
     <string name="setMonthFirstDate">Primera fecha del mes</string>
+
+    <string name="buy">Comprar</string>
+    <string name="backupToMemory">Copia de seguridad en la carpeta seleccionada</string>
+    <string name="backupToDropbox">Copia de seguridad en Dropbox</string>
+    <string name="restoreFromMemory">Restaurar desde la carpeta seleccionada</string>
+    <string name="restoreFromDropbox">Restaurar desde Dropbox</string>
+    <string name="uninstall">Desinstalar</string>
+    <string name="freshNew">Nuevo</string>
 </resources>

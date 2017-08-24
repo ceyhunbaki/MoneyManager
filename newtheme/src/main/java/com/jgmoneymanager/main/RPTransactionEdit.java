@@ -217,15 +217,7 @@ public class RPTransactionEdit extends MyActivity {
 
 		// Create the adView
 		try {
-			if (!Tools.proVersionExists(this) /*&& (getResources().getConfiguration().orientation != Configuration.ORIENTATION_LANDSCAPE)*/) {
-//				adView = new AdView(this, AdSize.BANNER, "ca-app-pub-5995868530154544/5164011719");
-//				RelativeLayout layout = (RelativeLayout) findViewById(R.id.RtpLayoutAds);
-//				// Add the adView to it
-//				RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
-//				layoutParams.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM);
-//				layout.addView(adView, layoutParams); // Initiate a generic request to load it with an ad
-//				AdRequest adRequest = new AdRequest();
-//				adView.loadAd(adRequest);
+			/*if (!Tools.proVersionExists(this))*/ {
 				MobileAds.initialize(getApplicationContext(), "ca-app-pub-5995868530154544/5164011719");
 				adView = new AdView(this);
 				adView.setAdSize(AdSize.SMART_BANNER);

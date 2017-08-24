@@ -94,7 +94,7 @@
     <string name="setStartupScreenDialogTitle">Başlanğıc ekran</string>
     
     <string name="backupOptions">SD/Telefon yaddaşına arxivləşmə/bərpa</string>
-    <string name="btBackupSummary">Arxiv faylın saxlanma yeri</string>
+    <string name="btBackupSummary">"Arxiv faylın saxlanma yeri : "</string>
     <string name="btRestoreSummary">Bazanı bərpa et</string>
     <string name="folder">Qovluq</string>
     <string name="addFolder">Qovluq əlavə et</string>
@@ -108,7 +108,7 @@
     <string name="backupMaxSizeTitle">Arxiv fayllar üçün ümumi həcm</string>
     <string name="backupMaxSizeSummary">Arxiv qovluğun MB-la maksimum həcmi</string>
     <string name="autoBackupTitle">Avtomat arxivlənmə</string>
-    <string name="autoBackupSummary">Gündəlik arxiv faylları harada saxla </string>
+    <string name="autoBackupSummary">\"Gündəlik arxiv faylları burada saxla : \"</string>
     <string name="backupToDataFolderTitle">Arxiv faylları /data qovluğuna al</string>
     <string name="backupFolderTitle">Arxiv qovluq</string>
     
@@ -374,4 +374,12 @@
     <string name="setResetLocalizationTitle">Sıfırla</string>
     <string name="setWeekFirstDay">Həftənin ilk günü</string>
     <string name="setMonthFirstDate">Ayın ilk günü</string>
+
+    <string name="buy">Al</string>
+    <string name="backupToMemory">Seçilmiş qovluğa arxivləşdir</string>
+    <string name="backupToDropbox">Dropboxa arxivləşdir</string>
+    <string name="restoreFromMemory">Seçilmiş qovluqdan bərpa et</string>
+    <string name="restoreFromDropbox">Dropboxdan bərpa et</string>
+    <string name="uninstall">Sil</string>
+    <string name="freshNew">Tamamilə yeni</string>
 </resources>

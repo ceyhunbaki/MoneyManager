@@ -94,7 +94,7 @@
     <string name="msgYouHaveUnpaidDebts">You have unpaid debt</string>    
     <string name="msgDropboxVersionConflict">There is a newer version of database in Dropbox. It would be good to restore from Dropbox before working</string>
     <string name="msgAttention">Attention</string>
-    <string name="msgDropBoxAttention">This will not AUTOMATICALLY backs up to Dropbox. If you use more than one device with one Dropbox account then backup manually</string>    
+    <!--string name="msgDropBoxAttention">This will not AUTOMATICALLY backs up to Dropbox. If you use more than one device with one Dropbox account then backup manually</string-->
     <string name="msgDropboxBackupDeleted">Your backup file has been deleted from Dropbox</string>    
     <string name="msgSetDefaultInvisibleAccount">You can not set invisible account as the default account</string>
     <string name="msgSetPasswordAgain">Please, for security improvements set your password and security question again</string>    
@@ -137,4 +137,11 @@
     <string name="msgAmountNotAllowedSplit">The total amount is automatically calculated for split transactions</string>
 
     <string name="msgSameDecimalAndDigitSymbol">Decimal and digit grouping symbols can\'t be the same</string>
+
+    <string name="msgBuyProDialogMessage">If you want to use Money Manager without ads with the current database,
+        you need to back up your data to device memory or Dropbox, uninstall this application, buy pro version,
+        then restore. If you don\'t want to use current data, you only need uninstall this application
+        and install pro version.</string>
+    <string name="msgRestoreFreshNew">Do you want to restore old database or create new one?</string>
+    <string name="msgAppNeedsPermission">If you need daily back up data to sd card memory you should give permission. Otherwise, disable auto backup in the application settings</string>
 </resources>

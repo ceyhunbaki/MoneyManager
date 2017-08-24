@@ -76,12 +76,7 @@ public class DebtsList extends MyActivity {
 		registerForContextMenu(lv);
 
 		// Create the adView
-		if (!Tools.proVersionExists(this)) {
-//			adView = new AdView(this, AdSize.BANNER, "ca-app-pub-5995868530154544/2578328512");
-//			LinearLayout layout = (LinearLayout)findViewById(R.id.onlyListAdsLayout);
-//			layout.addView(adView);
-//			AdRequest adRequest = new AdRequest();
-//			adView.loadAd(adRequest);
+		/*if (!Tools.proVersionExists(this))*/ {
 			MobileAds.initialize(getApplicationContext(), "ca-app-pub-5995868530154544/2578328512");
 			adView = new AdView(this);
 			adView.setAdSize(AdSize.SMART_BANNER);

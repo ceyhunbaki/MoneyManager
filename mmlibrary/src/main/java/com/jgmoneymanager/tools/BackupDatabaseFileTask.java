@@ -31,7 +31,8 @@ public class BackupDatabaseFileTask extends AsyncTask<String, Void, Boolean> {
 	protected Boolean doInBackground(final String... args) {
 
 		final File dbFile = new File(Environment.getDataDirectory()
-				+ "/data/com.jgmoneymanager.main/databases/"
+				/*+ "/data/com.jgmoneymanager.pro/databases/"*/
+                + "/data/" + ctx.getPackageName() + "/databases/"
 				+ MoneyManagerProviderMetaData.DATABASE_NAME);
 
         String revision = Tools.LongDateToString(dbFile.lastModified(), "dd.MM.yyyy HH:mm:ss");

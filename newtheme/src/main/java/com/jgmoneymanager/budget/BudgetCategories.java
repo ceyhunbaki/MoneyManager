@@ -311,7 +311,7 @@ public class BudgetCategories extends Fragment {
 			else {
 				budget = Tools.round(DBTools.getCursorColumnValueDouble(cursor, BudgetCategoriesTableMetaData.BUDGET)
 						+ DBTools.getCursorColumnValueDouble(cursor, BudgetCategoriesTableMetaData.REMAINING)
-				 		- DBTools.getCursorColumnValueDouble(cursor, BudgetCategoriesTableMetaData.USED_AMOUNT));
+				 		/*- DBTools.getCursorColumnValueDouble(cursor, BudgetCategoriesTableMetaData.USED_AMOUNT)*/);
 			}
 			input.addTextChangedListener(new TextWatcher() {
 				@Override

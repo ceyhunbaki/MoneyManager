@@ -118,6 +118,12 @@ public class BudgetMain extends MyActivity implements NavigationView.OnNavigatio
 //		}
 	}
 
+	@Override
+	public void onBackPressed() {
+
+		super.onBackPressed();
+	}
+
 	private void initializeViews() {
 		setContentView(R.layout.main_activity);
 

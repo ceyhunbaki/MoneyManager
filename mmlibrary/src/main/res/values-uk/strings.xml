@@ -97,7 +97,7 @@
     <string name="setStartupScreenDialogTitle">Початковий екран</string>
     
     <string name="backupOptions">Резервне копіювання/відновлення на SD-картку/пам\'ять телефона</string>
-    <string name="btBackupSummary">Резервне копіювання бази даних у </string>
+    <string name="btBackupSummary">"Резервне копіювання бази даних у : "</string>
     <string name="btRestoreSummary">Відновити базу</string>
     <string name="folder">Папка</string>
     <string name="addFolder">Додати папку</string>
@@ -111,7 +111,7 @@
     <string name="backupMaxSizeTitle">Загальний об\'єм для резервного копіювання</string>
     <string name="backupMaxSizeSummary">Загальний розмір папки для архівації, МБ</string>
     <string name="autoBackupTitle">Автоматичне резервне копіювання</string>
-    <string name="autoBackupSummary">Щоденна резервне копіювання </string>
+    <string name="autoBackupSummary">\"Щоденна резервне копіювання : \"</string>
     <string name="backupToDataFolderTitle">Резервне копіювання до папки /data</string>
     <string name="backupFolderTitle">Папка резервної копії</string>
     
@@ -371,4 +371,12 @@
 
     <string name="setWeekFirstDay">Перший день тижня</string>
     <string name="setMonthFirstDate">Перше число місяця </string>
+
+    <string name="buy">Купити</string>
+    <string name="backupToMemory">Записати резервну копію в обрану папку</string>
+    <string name="backupToDropbox">Записати резервну копію у Dropbox</string>
+    <string name="restoreFromMemory">Відновити з обраної папки</string>
+    <string name="restoreFromDropbox">Відновити з Dropbox</string>
+    <string name="uninstall">Видалити</string>
+    <string name="freshNew">Зовсім новий</string>
 </resources>

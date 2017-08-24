@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="bright_foreground_dark">#d78888</color>
+    <color name="bright_foreground_dark_disabled">#80e45050</color>
+    <color name="bright_foreground_dark_inverse">#be1818</color>
+</resources>

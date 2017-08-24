@@ -3,6 +3,7 @@ package com.jgmoneymanager.main;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Intent;
+import android.media.audiofx.BassBoost;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
@@ -33,6 +34,7 @@ import com.jgmoneymanager.tools.Constants.BackupMaxDaysValues;
 import com.jgmoneymanager.tools.Constants.BackupMaxSizeValues;
 import com.jgmoneymanager.tools.DropboxDownload;
 import com.jgmoneymanager.tools.DropboxUploadTaskLocal;
+import com.jgmoneymanager.tools.LocalTools;
 import com.jgmoneymanager.tools.RestoreDatabaseFileTask;
 import com.jgmoneymanager.tools.Tools;
 
@@ -162,7 +164,7 @@ public class SettingsMain extends MyPreferenceActivity {
 		btBackup.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
 			@Override
 			public boolean onPreferenceClick(Preference arg0) {
-				File file = new File(Constants.backupDirectory);
+				/*File file = new File(Constants.backupDirectory);
 				if (!file.exists())
 					if (!file.mkdirs()) {
 						AlertDialog warning = DialogTools.warningDialog(SettingsMain.this, R.string.msgWarning, SettingsMain.this.getString(R.string.msgChooseBackupFolder));
@@ -180,8 +182,8 @@ public class SettingsMain extends MyPreferenceActivity {
 				};
 				AlertDialog inputDialog = DialogTools.InputDialog(SettingsMain.this, cmd, R.string.msgBckFileName, input, R.drawable.ic_menu_manage);
 				inputDialog.show();
-				inputDialog.getButton(Dialog.BUTTON_POSITIVE).setEnabled(input.getText().toString().trim().length() != 0);
-
+				inputDialog.getButton(Dialog.BUTTON_POSITIVE).setEnabled(input.getText().toString().trim().length() != 0);*/
+				Tools.backupToMemory(SettingsMain.this);
 				return true;
 			}
 		});
@@ -234,7 +236,7 @@ public class SettingsMain extends MyPreferenceActivity {
 			public boolean onPreferenceChange(Preference preference, Object newValue) {
 				btBackupFolder.setEnabled(!(Boolean)newValue);
 				if ((Boolean)newValue)
-					Constants.backupDirectory = Environment.getDataDirectory() + "/data/com.jgmoneymanager.main/";
+					Constants.backupDirectory = Environment.getDataDirectory() + "/data/" + getPackageName() + "/";
 				else
 					Constants.backupDirectory = getString(R.string.backupFolderDefaultValue);
 				refreshBackupFolderNames();
@@ -396,7 +398,7 @@ public class SettingsMain extends MyPreferenceActivity {
 		btAbout.setOnPreferenceClickListener(new OnPreferenceClickListener() {
 			@Override
 			public boolean onPreferenceClick(Preference preference) {
-				Tools.showAboutDialog(SettingsMain.this);
+				Tools.showAboutDialog(SettingsMain.this, R.string.app_name);
 				return false;
 			}
 		});
@@ -405,11 +407,8 @@ public class SettingsMain extends MyPreferenceActivity {
 		btAdsFree.setOnPreferenceClickListener(new OnPreferenceClickListener() {
 			@Override
 			public boolean onPreferenceClick(Preference preference) {
-				if (Tools.getPreferenceBool(SettingsMain.this, R.string.proInstalledKey, false))
-					DialogTools.toastDialog(SettingsMain.this, R.string.adsRemoveSummaryRemoved, Toast.LENGTH_LONG);
-				else {
-					Tools.removeAds(SettingsMain.this);
-				}
+				//Tools.removeAds(SettingsMain.this);
+				LocalTools.removeAds(SettingsMain.this);
 				return true;
 			}
 		});
@@ -517,7 +516,7 @@ public class SettingsMain extends MyPreferenceActivity {
 	}
 	
 	void dropBoxBackupRestore(int type) {
-		File file = new File(Environment.getDataDirectory() + "/data/com.jgmoneymanager.main/databases/"
+		File file = new File(Environment.getDataDirectory() + "/data/" + getPackageName() + "/databases/"
 				+ MoneyManagerProviderMetaData.DATABASE_NAME);
 		if (type == dropAuthBackupRequested) {
 			DropboxUploadTaskLocal dUpload = new DropboxUploadTaskLocal(SettingsMain.this, mDBApi, "", file, true);

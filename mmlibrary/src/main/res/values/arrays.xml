@@ -282,4 +282,14 @@
         <item>@string/Sunday</item>
     </string-array>
 
+    <string-array name="backupDialogItems">
+        <item>@string/backupToMemory</item>
+        <item>@string/backupToDropbox</item>
+    </string-array>
+
+    <string-array name="restoreDialogItems">
+        <item>@string/restoreFromMemory</item>
+        <item>@string/restoreFromDropbox</item>
+    </string-array>
+
 </resources>

@@ -1,6 +1,9 @@
 package com.jgmoneymanager.entity;
 
+import android.app.ActionBar;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
+import android.content.pm.PackageManager;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -34,6 +37,23 @@ public class MyActivity extends AppCompatActivity {
 		}
 		else if (!(this instanceof MainScreen))
 			myApp.setAskPassword(false);
+
+		try{
+
+			ActivityInfo activityInfo = getPackageManager().getActivityInfo(getComponentName(),
+					PackageManager.GET_META_DATA);
+
+			ActionBar actionBar = getActionBar();
+
+			if(actionBar != null)
+				actionBar.setTitle(activityInfo.labelRes);
+
+		}catch (PackageManager.NameNotFoundException ex){
+
+			Log.e(this.getClass().getSimpleName(),
+					"Error while getting activity info. " + ex.getMessage(), ex);
+
+		}
  	}
 
 	@Override

@@ -27,7 +27,6 @@ import com.google.analytics.tracking.android.EasyTracker;
 import com.jgmoneymanager.budget.BudgetGoalsList;
 import com.jgmoneymanager.budget.BudgetMain;
 import com.jgmoneymanager.database.DBTools;
-import com.jgmoneymanager.database.MoneyManagerProviderMetaData;
 import com.jgmoneymanager.database.MoneyManagerProviderMetaData.VTransAccountViewMetaData;
 import com.jgmoneymanager.database.MoneyManagerProviderMetaData.TransactionsTableMetaData;
 import com.jgmoneymanager.database.MoneyManagerProviderMetaData.CurrencyTableMetaData;
@@ -45,7 +44,6 @@ import com.jgmoneymanager.tools.LocalTools;
 import com.jgmoneymanager.tools.RefreshAccountDetailsTask;
 import com.jgmoneymanager.tools.Tools;
 import com.jgmoneymanager.tools.TranslateDBTask;
-import com.xlythe.calculator.material.BasicCalculator;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -115,10 +113,13 @@ public class MainScreen extends MyActivity
             bundle.putString(Constants.query, query);
             bundle.putString(Constants.queryPart2, queryPart2);
             bundle.putString(Constants.paramTitle, CurrencyTableMetaData.NAME);
+            bundle.putString(Constants.paramWindowTitle, getString(R.string.currencies));
             bundle.putString(Constants.paramFilterType, CurrencyTableMetaData.TABLE_NAME);
             intent.putExtras(bundle);
 
             intent.setAction(Intent.ACTION_SEARCH);
+
+            Tools.setPreference(this, R.string.oldversionkey, Tools.getVersionCode(this));
 
             startActivityForResult(intent, Constants.RequestCurrencyForTransaction);
         }
@@ -165,6 +166,7 @@ public class MainScreen extends MyActivity
     		buttons[j] = new Button(this);
     	    buttons[j].setLayoutParams(accountButtonParams);
     	    buttons[j].setText("  " + item.getName() + "  ");
+            buttons[j].setTransformationMethod(null);
             buttons[j].setId(buttonFirstId + Integer.parseInt(String.valueOf(item.getID())));
             buttons[j].setTextAppearance(this, R.style.ThemeNew_Main_DeactiveAccount);
             buttons[j].setTextColor(getResources().getColor(R.color.newThemeBlue));
@@ -577,10 +579,11 @@ public class MainScreen extends MyActivity
             startActivityForResult(browserIntent, Constants.RequestNONE);
         }
         else if (id == btRemoveAdsMenuID) {
-            Tools.removeAds(MainScreen.this);
+            //Tools.removeAds(MainScreen.this);
+            LocalTools.removeAds(MainScreen.this);
         }
         else if (id == btAboutMenuID) {
-            Tools.showAboutDialog(MainScreen.this);
+            Tools.showAboutDialog(MainScreen.this, R.string.app_name);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -673,7 +676,7 @@ public class MainScreen extends MyActivity
         menu.add(0, btPaymentMethodMenuID, btPaymentMethodMenuID, R.string.paymentMethod);
         menu.add(0, btSettingMenuID, btSettingMenuID, R.string.settings);
         menu.add(0, btHelpMenuID, btHelpMenuID, R.string.help);
-        if (!Tools.proVersionExists(this))
+        //if (!Tools.proVersionExists(this))
             menu.add(0, btRemoveAdsMenuID, btRemoveAdsMenuID, R.string.removeAds);
         menu.add(0, btAboutMenuID, btAboutMenuID, R.string.about);
 

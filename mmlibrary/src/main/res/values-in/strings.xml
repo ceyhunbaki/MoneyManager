@@ -79,7 +79,7 @@
     <string name="setStartupScreenSummary">Atur layar untuk program mulai</string>
     <string name="setStartupScreenDialogTitle">Layar mulai</string>
     <string name="backupOptions">Backup/pengembalian memori SD/Device</string>
-    <string name="btBackupSummary">Backup database nyala</string>
+    <string name="btBackupSummary">"Backup database nyala : "</string>
     <string name="btRestoreSummary">Kembalikan database</string>
     <string name="folder">Folder</string>
     <string name="addFolder">Tambahkan folder</string>
@@ -93,7 +93,7 @@
     <string name="backupMaxSizeTitle">Ukuran total untuk backup</string>
     <string name="backupMaxSizeSummary">Ukuran total folder backup dalam MB</string>
     <string name="autoBackupTitle">Backup otomatis</string>
-    <string name="autoBackupSummary">Backup otomatis harian nyala</string>
+    <string name="autoBackupSummary">\"Backup otomatis harian nyala : \"</string>
     <string name="backupToDataFolderTitle">Backup nyala /folder data</string>
     <string name="backupFolderTitle">Folder backup</string>
     <string name="security">Keamanan</string>
@@ -330,4 +330,12 @@
     <string name="none">Tidak ada</string>
     <string name="setWeekFirstDay">Hari pertama mingguan</string>
     <string name="setMonthFirstDate">Tanggal pertama bulanan</string>
+
+    <string name="buy">Beli</string>
+    <string name="backupToMemory">Simpan cadangan ke folder terpilih</string>
+    <string name="backupToDropbox">Simpan cadangan ke Dropbox</string>
+    <string name="restoreFromMemory">Pulihkan dari folder terpilih</string>
+    <string name="restoreFromDropbox">Pulihkan dari Dropbox</string>
+    <string name="uninstall">Uninstall</string>
+    <string name="freshNew">Baru</string>
 </resources>

@@ -233,15 +233,7 @@ public class TransactionEdit extends MyActivity {
 
         // Create the adView
         try {
-            if (!Tools.proVersionExists(this) /*&& (getResources().getConfiguration().orientation != Configuration.ORIENTATION_LANDSCAPE)*/) {
-//                adView = new AdView(this, AdSize.BANNER, "ca-app-pub-5995868530154544/3468276114");
-//                RelativeLayout layout = (RelativeLayout) findViewById(R.id.TrLayoutAds);
-//                // Add the adView to it
-//                RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
-//                layoutParams.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM);
-//                layout.addView(adView, layoutParams); // Initiate a generic request to load it with an ad
-//                AdRequest adRequest = new AdRequest();
-//                adView.loadAd(adRequest);
+            /*if (!Tools.proVersionExists(this))*/ {
                 MobileAds.initialize(getApplicationContext(), "ca-app-pub-5995868530154544/5913285717");
                 adView = new AdView(this);
                 adView.setAdSize(AdSize.SMART_BANNER);
@@ -462,7 +454,6 @@ public class TransactionEdit extends MyActivity {
             StringBuilder sbBudget = new StringBuilder();
             StringBuilder sbUsed = new StringBuilder();
             RelativeLayout layout = (RelativeLayout) findViewById(R.id.layTrBudget);
-            /**@TODO burda ayin birinde ve iksinde xeta cixir*/
             try {
                 if (BudgetSrv.getCategoryRemainingBudget(getBaseContext(), categoryID, transDate, sbRemaining, sbBudget, sbUsed)) {
                     layout.setVisibility(View.VISIBLE);
@@ -888,6 +879,7 @@ public class TransactionEdit extends MyActivity {
                 case R.id.btTrSplitDel:
                     SplitTransaction.splitItemsList = null;
                     findViewById(R.id.edTrAmount).setEnabled(true);
+                    findViewById(R.id.btTrSplitDel).setVisibility(View.GONE);
                     hideAllSplitItems();
                     btCategory.setText(null);
                     break;
@@ -992,6 +984,7 @@ public class TransactionEdit extends MyActivity {
         findViewById(R.id.layTrSplitRow8).setVisibility(View.GONE);
         findViewById(R.id.layTrSplitRow9).setVisibility(View.GONE);
         findViewById(R.id.layTrSplitRow10).setVisibility(View.GONE);
+        findViewById(R.id.btTrSplitDel).setVisibility(View.GONE);
     }
 
     void setSplitRow(int layoutID, int categoryViewID, int amountViewID, SplitTransaction.SplitItem splitItem) {
@@ -1045,6 +1038,7 @@ public class TransactionEdit extends MyActivity {
         }
         if (Double.compare(sumAmount, 0d) > 0) {
             btCategory.setText(R.string.split);
+            findViewById(R.id.btTrSplitDel).setVisibility(View.VISIBLE);
             categoryID = 0;
             ((EditText) findViewById(R.id.edTrAmount)).setText(Tools.formatDecimal(sumAmount));
             findViewById(R.id.edTrAmount).setEnabled(false);

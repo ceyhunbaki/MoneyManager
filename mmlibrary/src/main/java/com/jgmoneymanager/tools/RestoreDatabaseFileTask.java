@@ -51,7 +51,8 @@ public class RestoreDatabaseFileTask extends AsyncTask<String, Void, Boolean> {
 
 		File dbFile = new File(importFilePath);
 
-		File importDir = new File(Environment.getDataDirectory() + "/data/com.jgmoneymanager.main/databases/");
+		/*File importDir = new File(Environment.getDataDirectory() + "/data/com.jgmoneymanager.pro/databases/");*/
+		File importDir = new File(Environment.getDataDirectory() + "/data/" + ctx.getPackageName() + "/databases/");
 
 		File file = new File(importDir, MoneyManagerProviderMetaData.DATABASE_NAME);
 

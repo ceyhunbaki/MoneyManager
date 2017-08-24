@@ -68,7 +68,7 @@ public class DropboxUploadService extends Service {
             // do background processing here... we'll just sleep...
             try {
                 long mOldLocalRevision = Tools.getPreferenceLong(mContext, com.jgmoneymanager.mmlibrary.R.string.dropboxBackupLocalRevisonKey);
-                File file = new File(Environment.getDataDirectory() + "/data/com.jgmoneymanager.main/databases/"
+                File file = new File(Environment.getDataDirectory() + "/data/" + mContext.getPackageName() + "/databases/"
                         + MoneyManagerProviderMetaData.DATABASE_NAME);
                 if (mOldLocalRevision == file.lastModified()) {
                     stopSelf();
@@ -90,8 +90,6 @@ public class DropboxUploadService extends Service {
                         dUpload.execute();
                     }
                 }
-                /*DropboxCheckRevisionForUpload dropboxUpload = new DropboxCheckRevisionForUpload(mContext, file);
-                dropboxUpload.execute();*/
             } catch (InterruptedException e) {
                 Log.v("ServiceWorker", "... sleep interrupted");
             }

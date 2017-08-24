@@ -129,15 +129,7 @@ public class TransactionFilter extends MyActivity {
 
 		// Create the adView
 		try {
-			if (!Tools.proVersionExists(this) /*&& (getResources().getConfiguration().orientation != Configuration.ORIENTATION_LANDSCAPE)*/) {
-//				adView = new AdView(this, AdSize.BANNER, "ca-app-pub-5995868530154544/9731982113");
-//				RelativeLayout layout = (RelativeLayout) findViewById(R.id.TrFLayoutAds);
-//				// Add the adView to it
-//				RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
-//				layoutParams.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM);
-//				layout.addView(adView, layoutParams); // Initiate a generic request to load it with an ad
-//				AdRequest adRequest = new AdRequest();
-//				adView.loadAd(adRequest);
+			/*if (!Tools.proVersionExists(this))*/ {
 				MobileAds.initialize(getApplicationContext(), "ca-app-pub-5995868530154544/9731982113");
 				adView = new AdView(this);
 				adView.setAdSize(AdSize.SMART_BANNER);
@@ -469,6 +461,7 @@ public class TransactionFilter extends MyActivity {
 					bundle.putBoolean(Constants.dontRefreshValues, false);
 				bundle.putString(Constants.query, createAccountQuery());
 				bundle.putString(Constants.paramTitle, AccountTableMetaData.NAME);
+				bundle.putString(Constants.paramWindowTitle, getString(R.string.accounts));
 				//bundle.putSerializable(Constants.paramValues, Tools.convertCheckBoxListToHashMap(accountsList));
 				intent.putExtras(bundle);
 				startActivityForResult(intent, Constants.RequestAccountForTransaction);
@@ -484,6 +477,7 @@ public class TransactionFilter extends MyActivity {
 					bundle.putBoolean(Constants.dontRefreshValues, false);
 				bundle.putString(Constants.query, createCurrencyQuery());
 				bundle.putString(Constants.paramTitle, CurrencyTableMetaData.NAME);
+				bundle.putString(Constants.paramWindowTitle, getString(R.string.currencies));
 				//bundle.putSerializable(Constants.paramValues, Tools.convertCheckBoxListToHashMap(currencyList));
 				intent.putExtras(bundle);
 				startActivityForResult(intent, Constants.RequestCurrencyForTransaction);
@@ -499,6 +493,7 @@ public class TransactionFilter extends MyActivity {
 					bundle.putBoolean(Constants.dontRefreshValues, false);
 				bundle.putString(Constants.query, createStatusQuery());
 				bundle.putString(Constants.paramTitle, TransactionStatusTableMetaData.NAME);
+				bundle.putString(Constants.paramWindowTitle, getString(R.string.transactionStatus));
 				//bundle.putSerializable(Constants.paramValues, Tools.convertCheckBoxListToHashMap(statusList));
 				intent.putExtras(bundle);
 				startActivityForResult(intent, Constants.RequestStatusForTransaction);
@@ -514,6 +509,7 @@ public class TransactionFilter extends MyActivity {
 					bundle.putBoolean(Constants.dontRefreshValues, false);
 				bundle.putString(Constants.query, createPaymentMethodQuery());
 				bundle.putString(Constants.paramTitle, PaymentMethodsTableMetaData.NAME);
+				bundle.putString(Constants.paramWindowTitle, getString(R.string.paymentMethod));
 				//bundle.putSerializable(Constants.paramValues, Tools.convertCheckBoxListToHashMap(paymentMethodList));
 				intent.putExtras(bundle);
 				startActivityForResult(intent, Constants.RequestMethodForTransaction);

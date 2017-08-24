@@ -45,6 +45,7 @@ public class TransferList extends MyActivity {
 
 	String[] repeatType = null;
 	Uri selectedUri;
+	ListView listView;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -80,7 +81,7 @@ public class TransferList extends MyActivity {
 		int[] to = new int[] { R.id.ltTfDescription, R.id.ltTfAmount,
 				R.id.ltTfType, R.id.ltTfAccounts, R.id.ltTfDate, R.id.ltTfLatest};
 		SimpleCursorAdapter notes = new MyListAdapter(cursor, this, R.layout.listtransferrow, from, to);
-		ListView listView = (ListView) findViewById(R.id.trListView);
+		listView = (ListView) findViewById(R.id.trListView);
 		listView.setAdapter(notes);
 		listView.setScrollingCacheEnabled(true);
 		listView.setCacheColorHint(00000000);
@@ -285,23 +286,29 @@ public class TransferList extends MyActivity {
 				startActivityForResult(intent, Constants.RequestNewTransferForTransfer);
 				break;
 			case R.id.btTrDeleteAll:
-				Command deleteAllCommand;
-				deleteAllCommand = new Command() {
-					public void execute() {
-						TransferEdit.deleteTransfer(TransferList.this, 0, true);
-					}};
-				AlertDialog deleteAllDialog = DialogTools.confirmDialog(TransferList.this, deleteAllCommand, R.string.msgConfirm, R.string.msgDeleteAll);
-				deleteAllDialog.show();
+				if ((listView != null) && (listView.getCount() > 0)) {
+					Command deleteAllCommand;
+					deleteAllCommand = new Command() {
+						public void execute() {
+							TransferEdit.deleteTransfer(TransferList.this, 0, true);
+						}
+					};
+					AlertDialog deleteAllDialog = DialogTools.confirmDialog(TransferList.this, deleteAllCommand, R.string.msgConfirm, R.string.msgDeleteAll);
+					deleteAllDialog.show();
+				}
 				break;
 			case R.id.btTrDeleteFinished:
-				Command deleteAllFinishedCommand;
-				deleteAllFinishedCommand = new Command() {
-					public void execute() {
-						TransferEdit.deleteAllFinished(TransferList.this);
-					}};
-				AlertDialog deleteAllFinishedDialog = DialogTools.confirmDialog(TransferList.this, deleteAllFinishedCommand, R.string.msgConfirm,
-						R.string.msgDeleteAllFinished);
-				deleteAllFinishedDialog.show();
+				if ((listView != null) && (listView.getCount() > 0)) {
+					Command deleteAllFinishedCommand;
+					deleteAllFinishedCommand = new Command() {
+						public void execute() {
+							TransferEdit.deleteAllFinished(TransferList.this);
+						}
+					};
+					AlertDialog deleteAllFinishedDialog = DialogTools.confirmDialog(TransferList.this, deleteAllFinishedCommand, R.string.msgConfirm,
+							R.string.msgDeleteAllFinished);
+					deleteAllFinishedDialog.show();
+				}
 				break;
 			case R.id.btTfEdit:
 				openContextMenu(target);

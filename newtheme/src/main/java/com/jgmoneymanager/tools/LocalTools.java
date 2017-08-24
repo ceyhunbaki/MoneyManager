@@ -1,5 +1,7 @@
 package com.jgmoneymanager.tools;
 
+import android.Manifest;
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
@@ -7,10 +9,13 @@ import android.content.SharedPreferences;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.preference.PreferenceManager;
 import android.provider.Settings;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -40,8 +45,10 @@ import com.jgmoneymanager.main.MainScreen;
 import com.jgmoneymanager.main.R;
 import com.jgmoneymanager.main.RPTransactionEdit;
 import com.jgmoneymanager.main.SettingsLanguage;
+import com.jgmoneymanager.main.SettingsMain;
 import com.jgmoneymanager.services.CurrencySrv;
 import com.jgmoneymanager.services.DebtsSrv;
+import com.jgmoneymanager.services.DropboxUploadService;
 import com.jgmoneymanager.services.PaymentMethodsSrv;
 import com.jgmoneymanager.services.RPTransactionSrv;
 import com.jgmoneymanager.services.TransferSrv;
@@ -52,7 +59,7 @@ import java.io.IOException;
 public class LocalTools {
 	
 	public static void startupActions(Context context) {
-        if (CurrencySrv.getDefaultCurrencyID(context) != 0) {
+        if (CurrencySrv.getDefaultCurrencyID(context, false) != 0) {
             CurrencySrv.refreshDefaultCurrency(context);
             LocalTools.autoBackup(context);
             TransferSrv.controlTransfers(context);
@@ -71,7 +78,7 @@ public class LocalTools {
 	        AndroidAuthSession session = new AndroidAuthSession(appKeys, Constants.dropboxAccessType);
 	        DropboxAPI<AndroidAuthSession> mDBApi = new DropboxAPI<AndroidAuthSession>(session);
 			mDBApi.getSession().setOAuth2AccessToken(Tools.getPreference(context, R.string.dropboxTokenKey));
-			File file = new File(Environment.getDataDirectory() + "/data/com.jgmoneymanager.main/databases/"
+			File file = new File(Environment.getDataDirectory() + "/data/" + context.getPackageName() + "/databases/"
 					+ MoneyManagerProviderMetaData.DATABASE_NAME);
 			MainScreen ms = null;
 			if (context.getClass() == MainScreen.class)
@@ -91,15 +98,7 @@ public class LocalTools {
     public static void showWhatsNewDialog(Context context) {
         if (!Tools.isFirstLaunch(context)) {
             {
-                int newVersionCode = 0;
-                try {
-                    PackageInfo packInfo = context.getPackageManager().getPackageInfo("com.jgmoneymanager.main", 0);
-                    newVersionCode = packInfo.versionCode;
-                } catch (PackageManager.NameNotFoundException e) {
-                    Tracker myTracker = EasyTracker.getInstance(context);
-                    myTracker.set(Fields.SCREEN_NAME, "loadSettings- Get versionCode");
-                    myTracker.send(MapBuilder.createAppView().build());
-                }
+                int newVersionCode = Tools.getVersionCode(context);
 
                 SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
                 int oldVersion = prefs.getInt(context.getResources().getString(R.string.oldversionkey), 33);
@@ -246,11 +245,40 @@ public class LocalTools {
     public static void autoBackup(final Context context) {
         if (Constants.autoBackupDate.compareTo(Tools.getCurrentDate()) < 0) {
             if (PreferenceManager.getDefaultSharedPreferences(context).getBoolean(context.getString(com.jgmoneymanager.mmlibrary.R.string.autoBackupKey), true)) {
-                File dbFile = new File(Environment.getDataDirectory() + "/data/com.jgmoneymanager.main/databases/"
+                File dbFile = new File(Environment.getDataDirectory() + "/data/" + context.getPackageName() + "/databases/"
                         + MoneyManagerProviderMetaData.DATABASE_NAME);
 
                 File exportDir = new File(Constants.backupDirectory);
-                if (!exportDir.exists()) {
+
+                int permissionCheck = ContextCompat.checkSelfPermission(context,
+                        Manifest.permission.WRITE_EXTERNAL_STORAGE);
+                if (permissionCheck == PackageManager.PERMISSION_DENIED) {
+                    if (ActivityCompat.shouldShowRequestPermissionRationale((Activity) context,
+                            Manifest.permission.WRITE_EXTERNAL_STORAGE)) {
+                        Command askPemissionCmd = new Command() {
+                            @Override
+                            public void execute() {
+                                int MY_PERMISSIONS_REQUEST_WRITE_EXTERNAL_STORAGE = PackageManager.PERMISSION_GRANTED;
+                                ActivityCompat.requestPermissions((Activity) context,
+                                        new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
+                                        MY_PERMISSIONS_REQUEST_WRITE_EXTERNAL_STORAGE);
+                            }
+                        };
+                        AlertDialog warningDialog = DialogTools.warningDialog(context, R.string.msgWarning,
+                                askPemissionCmd, context.getString(R.string.msgAppNeedsPermission));
+                        warningDialog.show();
+                        // Show an explanation to the user *asynchronously* -- don't block
+                        // this thread waiting for the user's response! After the user
+                        // sees the explanation, try again to request the permission.
+
+                    } else {
+                        int MY_PERMISSIONS_REQUEST_WRITE_EXTERNAL_STORAGE = PackageManager.PERMISSION_GRANTED;
+                        ActivityCompat.requestPermissions((Activity) context,
+                                new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
+                                MY_PERMISSIONS_REQUEST_WRITE_EXTERNAL_STORAGE);
+                    }
+                }
+                else if (!exportDir.exists()) {
                     if (!exportDir.mkdirs()) {
                         LayoutInflater li = LayoutInflater.from(context);
                         final View dialogView = li.inflate(R.layout.custom_3button_dialog, null);
@@ -285,6 +313,7 @@ public class LocalTools {
                                 bundle.putString(Constants.title, context.getResources().getString(R.string.msgChooseFolder));
                                 bundle.putInt(Constants.dialogType, FileExplorer.DialogOpenFolderID);
                                 bundle.putString(Constants.folderKey, Constants.backupDirectory);
+                                bundle.putString(FileExplorer.paramSelBackupFolder, "1");
                                 intent.putExtras(bundle);
                                 context.startActivity(intent);
                             }
@@ -349,5 +378,70 @@ public class LocalTools {
             }
         });
         return isLicensed[0];
+    }
+
+    public static void removeAds(final Context context) {
+        Command backupCommand = new Command() {
+            @Override
+            public void execute() {
+                Command backupToMemoryCmd = new Command() {
+                    @Override
+                    public void execute() {
+                        Tools.backupToMemory(context);
+                    }
+                };
+                Command backupToDropboxCmd = new Command() {
+                    @Override
+                    public void execute() {
+                        AppKeyPair appKeys = new AppKeyPair(Constants.dropboxKey, Constants.dropboxSecret);
+                        AndroidAuthSession session = new AndroidAuthSession(appKeys, Constants.dropboxAccessType);
+                        DropboxAPI<AndroidAuthSession> mDBApi = new DropboxAPI<AndroidAuthSession>(session);
+                        if (Tools.getPreference(context, R.string.dropboxTokenKey).equals("null")) {
+                            //dropboxAuthRequested = dropAuthBackupRequested;
+                            mDBApi.getSession().startOAuth2Authentication(context);
+                        }
+                        else {
+                            mDBApi.getSession().setOAuth2AccessToken(Tools.getPreference(context, R.string.dropboxTokenKey));
+                            File file = new File(Environment.getDataDirectory() + "/data/" + context.getPackageName() + "/databases/"
+                                    + MoneyManagerProviderMetaData.DATABASE_NAME);
+                            DropboxUploadTaskLocal dUpload = new DropboxUploadTaskLocal(context, mDBApi, "", file, true);
+                            dUpload.execute();
+                        }
+                    }
+                };
+                Command[] commands = new Command[] {backupToMemoryCmd, backupToDropboxCmd};
+                AlertDialog radioDialog = DialogTools.RadioListDialog(context, commands, R.string.menuBackup,
+                        R.array.backupDialogItems, true);
+                radioDialog.show();
+            }
+        };
+
+        Command uninstallCommand = new Command() {
+            @Override
+            public void execute() {
+                Uri packageUri = Uri.parse("package:com.jgmoneymanager.main");
+                Intent uninstallIntent =
+                        new Intent(Intent.ACTION_UNINSTALL_PACKAGE, packageUri);
+                context.startActivity(uninstallIntent);
+            }
+        };
+
+        Command buyProCommand = new Command() {
+            @Override
+            public void execute() {
+                try {
+                    context.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + "com.jgmoneymanager.paid")));
+                } catch (android.content.ActivityNotFoundException anfe) {
+                    Log.i("LICENSE", "checkLicense - open store error");
+                    context.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=" + "com.jgmoneymanager.paid")));
+                }
+            }
+        };
+
+        AlertDialog dialog = DialogTools.confirmWithCancelDialog(context, backupCommand, uninstallCommand,
+                buyProCommand, R.string.removeAds, context.getString(R.string.msgBuyProDialogMessage),
+                new String[] {context.getString(R.string.menuBackup), context.getString(R.string.uninstall),
+                        context.getString(R.string.buy)});
+        dialog.show();
     }
 }

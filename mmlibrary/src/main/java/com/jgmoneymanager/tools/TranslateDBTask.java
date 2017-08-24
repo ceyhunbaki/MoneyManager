@@ -53,8 +53,13 @@ public class TranslateDBTask extends AsyncTask<String, Void, Boolean> {
                 TransactionStatusTableMetaData.RESOURCEID + " is not null ", null, null);
         for (cursor.moveToFirst(); !cursor.isAfterLast(); cursor.moveToNext()) {
             int stringID = DBTools.getCursorColumnValueInt(cursor, TransactionStatusTableMetaData.RESOURCEID);
-            TransactionStatusSrv.updateStatus(context, DBTools.getCursorColumnValueLong(cursor, TransactionStatusTableMetaData._ID),
+            try {
+                TransactionStatusSrv.updateStatus(context, DBTools.getCursorColumnValueLong(cursor, TransactionStatusTableMetaData._ID),
                     context.getString(stringID), 0, false);
+            }
+            catch (Exception r) {
+
+            }
         }
 
         cursor = context.getContentResolver().query(PaymentMethodsTableMetaData.CONTENT_URI,
@@ -62,8 +67,13 @@ public class TranslateDBTask extends AsyncTask<String, Void, Boolean> {
                 PaymentMethodsTableMetaData.RESOURCEID + " is not null ", null, null);
         for (cursor.moveToFirst(); !cursor.isAfterLast(); cursor.moveToNext()) {
             int stringID = DBTools.getCursorColumnValueInt(cursor, PaymentMethodsTableMetaData.RESOURCEID);
-            PaymentMethodsSrv.updateMethod(context, DBTools.getCursorColumnValueLong(cursor, PaymentMethodsTableMetaData._ID),
+            try {
+                PaymentMethodsSrv.updateMethod(context, DBTools.getCursorColumnValueLong(cursor, PaymentMethodsTableMetaData._ID),
                     context.getString(stringID), 0, false);
+            }
+            catch (Exception r) {
+
+            }
         }
 
         cursor = context.getContentResolver().query(CurrencyTableMetaData.CONTENT_URI,
@@ -71,10 +81,15 @@ public class TranslateDBTask extends AsyncTask<String, Void, Boolean> {
                 CurrencyTableMetaData.RESOURCEID + " is not null ", null, null);
         for (cursor.moveToFirst(); !cursor.isAfterLast(); cursor.moveToNext()) {
             int stringID = DBTools.getCursorColumnValueInt(cursor, CurrencyTableMetaData.RESOURCEID);
-            CurrencySrv.updateCurrency(context, DBTools.getCursorColumnValueLong(cursor, CurrencyTableMetaData._ID),
-                    context.getString(stringID),
-                    DBTools.getCursorColumnValue(cursor, CurrencyTableMetaData.SIGN),
-                    false);
+            try {
+                CurrencySrv.updateCurrency(context, DBTools.getCursorColumnValueLong(cursor, CurrencyTableMetaData._ID),
+                        context.getString(stringID),
+                        DBTools.getCursorColumnValue(cursor, CurrencyTableMetaData.SIGN),
+                        false);
+            }
+            catch (Exception r) {
+
+            }
         }
 
         return null;

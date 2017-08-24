@@ -85,15 +85,7 @@ public class CurrencyEdit extends MyActivity {
 
 		// Create the adView
 		try {
-			if (!Tools.proVersionExists(this) /*&& (getResources().getConfiguration().orientation != Configuration.ORIENTATION_LANDSCAPE)*/) {
-//				adView = new AdView(this, AdSize.BANNER, "ca-app-pub-5995868530154544/8066458917");
-//				RelativeLayout layout = (RelativeLayout) findViewById(R.id.CurrLayoutAds);
-//				// Add the adView to it
-//				RelativeLayout.LayoutParams paramsAd = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
-//				paramsAd.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM);
-//				layout.addView(adView, paramsAd); // Initiate a generic request to load it with an ad
-//				AdRequest adRequest = new AdRequest();
-//				adView.loadAd(adRequest);
+			/*if (!Tools.proVersionExists(this) )*/ {
 				MobileAds.initialize(getApplicationContext(), "ca-app-pub-5995868530154544/8066458917");
 				adView = new AdView(this);
 				adView.setAdSize(AdSize.SMART_BANNER);
@@ -166,8 +158,10 @@ public class CurrencyEdit extends MyActivity {
 					{
 						Cursor cursor = getContentResolver().query(CurrencyTableMetaData.CONTENT_URI, null, 
 								CurrencyTableMetaData.SIGN + " = '" + sign + "' ", null, null);
-						if (cursor.getCount() > 0) 
+						if (cursor.getCount() > 0) {
 							DialogTools.toastDialog(getBaseContext(), getString(R.string.msgCurrencyExists), Toast.LENGTH_SHORT);
+							cursor.close();
+						}
 						else {  
 							ContentValues cv = new ContentValues();
 							cv.put(CurrencyTableMetaData.NAME, name);
@@ -175,24 +169,29 @@ public class CurrencyEdit extends MyActivity {
 							cv.put(CurrencyTableMetaData.ISDEFAULT, 0);
 							cv.putNull(CurrencyTableMetaData.RESOURCEID);
 							getContentResolver().insert(CurrencyTableMetaData.CONTENT_URI, cv);
+							setResult(RESULT_OK);
+							finish();
 						}
-						cursor.close();
 					}
 					else 
 					{
 						Cursor cursor = getContentResolver().query(CurrencyTableMetaData.CONTENT_URI, null, 
 								CurrencyTableMetaData.SIGN + " = '" + sign + "' and " +
 								CurrencyTableMetaData._ID + " <> " + id, null, null);
-						if (cursor.getCount() > 0) 
+						if (cursor.getCount() > 0) {
 							DialogTools.toastDialog(getBaseContext(), getString(R.string.msgCurrencyExists), Toast.LENGTH_SHORT);
-						else 
+							cursor.close();
+						}
+						else {
 							CurrencySrv.updateCurrency(CurrencyEdit.this, Long.valueOf(id), name, sign, true);
-						cursor.close();
+							setResult(RESULT_OK);
+							finish();
+						}
 					}
-					finish();
 				}
 				break;
 			case R.id.btCurrCancel:
+				setResult(RESULT_CANCELED);
 				finish();
 				break;
 			case R.id.btCurrNameEd:

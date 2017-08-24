@@ -80,7 +80,7 @@
     <string name="setStartupScreenSummary">Définir l\'écran pour le démarrage du programme</string>
     <string name="setStartupScreenDialogTitle">Écran de démarrage</string>
     <string name="backupOptions">Sauvegarde SD/mémoire du périphérique/restaurer</string>
-    <string name="btBackupSummary">Sauvegarde de la base de données activée</string>
+    <string name="btBackupSummary">"Sauvegarde de la base de données activée : "</string>
     <string name="btRestoreSummary">Restaurer la base de données</string>
     <string name="folder">Dossier</string>
     <string name="addFolder">Ajouter un Dossier</string>
@@ -94,7 +94,7 @@
     <string name="backupMaxSizeTitle">Taille totale pour la sauvegarde</string>
     <string name="backupMaxSizeSummary">Taille totale du dossier de sauvegarde en MB</string>
     <string name="autoBackupTitle">Sauvegarde automatique</string>
-    <string name="autoBackupSummary">Sauvegarde automatique quotidienne activée</string>
+    <string name="autoBackupSummary">\"Sauvegarde automatique quotidienne activée : \"</string>
     <string name="backupToDataFolderTitle">Sauvegarde activée/dossier de données</string>
     <string name="backupFolderTitle">Dossier de sauvegarde</string>
     <string name="security">Sécurité</string>
@@ -336,4 +336,12 @@
 
     <string name="setWeekFirstDay">Premier jour de la semaine</string>
     <string name="setMonthFirstDate">Première date du mois</string>
+
+    <string name="buy">Achetez</string>
+    <string name="backupToMemory">Sauvegardez vers le dossier sélectionné</string>
+    <string name="backupToDropbox">Sauvegardez vers Dropbox</string>
+    <string name="restoreFromMemory">Restaurez depuis le dossier sélectionné</string>
+    <string name="restoreFromDropbox">Restaurez depuis Dropbox</string>
+    <string name="uninstall">Désinstaller</string>
+    <string name="freshNew">Tout nouveau</string>
 </resources>

@@ -84,12 +84,7 @@ public class BudgetGoalsList extends MyActivity {
 
 
         if ((getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT)
-                && !Tools.proVersionExists(this)) {
-            /*adView = new AdView(this, AdSize.BANNER, "ca-app-pub-5995868530154544/1867118510");
-            LinearLayout layout = (LinearLayout) findViewById(R.id.GoalLayout2);
-            layout.addView(adView); // Initiate a generic request to load it with an ad
-            AdRequest adRequest = new AdRequest();
-            adView.loadAd(adRequest);*/
+                /*&& !Tools.proVersionExists(this)*/) {
             MobileAds.initialize(getApplicationContext(), "ca-app-pub-5995868530154544/1867118510");
             adView = new AdView(this);
             adView.setAdSize(AdSize.SMART_BANNER);

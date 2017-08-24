@@ -95,7 +95,7 @@
     <string name="setStartupScreenDialogTitle">Startup screen</string>
     
     <string name="backupOptions">SD/Device memory backup/restore</string>
-    <string name="btBackupSummary">Backup database on </string>
+    <string name="btBackupSummary">"Back up database on : "</string>
     <string name="btRestoreSummary">Restore database</string>
     <string name="folder">Folder</string>
     <string name="addFolder">Add folder</string>
@@ -109,8 +109,8 @@
     <string name="backupMaxSizeTitle">Total size for backup</string>
     <string name="backupMaxSizeSummary">Total size of backup folder in MB</string>
     <string name="autoBackupTitle">Auto backup</string>
-    <string name="autoBackupSummary">Daily auto backup on </string>
-    <string name="backupToDataFolderTitle">Backup on /data folder</string>
+    <string name="autoBackupSummary">\"Daily auto back up on : \"</string>
+    <string name="backupToDataFolderTitle">Back up to /data folder</string>
     <string name="backupFolderTitle">Backup folder</string>
     <string name="receiptsFolderTitle">Receipts\' folder</string>
     <string name="setResetLocalizationTitle">Reset</string>
@@ -200,7 +200,7 @@
     <string name="lent">Lent</string>
         
     <string name="backupDropbox">Dropbox Backup/Restore</string>
-    <string name="btBackupDropboxSummary">Backup database to Dropbox</string>
+    <string name="btBackupDropboxSummary">Back up database to Dropbox</string>
     <string name="btRestoreDropboxSummary">Restore database from Dropbox</string>
     <string name="uploading">Uploading</string>
     <string name="downloading">Downloading</string>
@@ -365,4 +365,12 @@
     <string name="none">None</string>
     <string name="setWeekFirstDay">First day of the week</string>
     <string name="setMonthFirstDate">First date of the month</string>
+
+    <string name="buy">Buy</string>
+    <string name="backupToMemory">Back up to selected folder</string>
+    <string name="backupToDropbox">Back up to Dropbox</string>
+    <string name="restoreFromMemory">Restore from selected folder</string>
+    <string name="restoreFromDropbox">Restore from Dropbox</string>
+    <string name="uninstall">Uninstall</string>
+    <string name="freshNew">Fresh new</string>
 </resources>

@@ -90,7 +90,7 @@ public class CategoryListForExpense extends MyActivity {
 		expandableListView.setAdapter(mAdapter);
 		
 		if ((getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT)
-				&& !Tools.proVersionExists(this)) {
+				/*&& !Tools.proVersionExists(this)*/) {
 //			// Create the adView
 //			adView = new AdView(this, AdSize.BANNER, "ca-app-pub-5995868530154544/1867118510");
 //			// Lookup your LinearLayout assuming it's been given // the attribute android:id="@+id/mainLayout"

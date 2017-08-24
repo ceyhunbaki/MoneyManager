@@ -135,15 +135,15 @@ public class ChooseFileDialog extends MyActivity {
 									.setCancelable(false).setPositiveButton(R.string.Yes,
 								new DialogInterface.OnClickListener() {
 									public void onClick(DialogInterface dialog, int id) {
-									// return the selected file's path
-										Toast.makeText(arg1.getContext(), getResources().getString(R.string.msgYouChoosedThis) 
-												+ " " + file.getPath(),
-											Toast.LENGTH_LONG).show();
-											filePath = file.getPath();
-											dialog.dismiss();
-											dialogFileInput.dismiss();
-											ChooseFileDialog.this.setResult(RESULT_OK);
-											ChooseFileDialog.this .finish();
+										// return the selected file's path
+										/*Toast.makeText(arg1.getContext(), getResources().getString(R.string.msgYouChoosedThis)
+														+ " " + file.getPath(),
+												Toast.LENGTH_LONG).show();*/
+										filePath = file.getPath();
+										dialog.dismiss();
+										dialogFileInput.dismiss();
+										ChooseFileDialog.this.setResult(RESULT_OK);
+										ChooseFileDialog.this.finish();
 									}
 								})
 								.setNegativeButton(R.string.No, new DialogInterface.OnClickListener() {

@@ -4,6 +4,7 @@ import android.accounts.Account;
 import android.accounts.AccountManager;
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -25,10 +26,14 @@ import android.preference.PreferenceManager;
 import android.util.Log;
 import android.util.Patterns;
 import android.view.Gravity;
+import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.dropbox.client2.DropboxAPI;
+import com.dropbox.client2.android.AndroidAuthSession;
+import com.dropbox.client2.session.AppKeyPair;
 import com.google.analytics.tracking.android.EasyTracker;
 import com.google.analytics.tracking.android.Fields;
 import com.google.analytics.tracking.android.MapBuilder;
@@ -81,7 +86,7 @@ public class Tools {
 
 	public static boolean existsInTable(Context ctx, Uri contentUri,
 										String columnName, String value, String condition) {
-		String selection = " upper (" + columnName + ") = upper('" + value
+		String selection = " upper (" + columnName + ") = upper('" + value.replace("'", "")
 				+ "')";
 		if (condition != null)
 			selection += " and " + condition;
@@ -642,52 +647,6 @@ public class Tools {
 		return (int) negativeToZero((double) (diffYear * 12 + endCalendar.get(Calendar.MONTH) - startCalendar.get(Calendar.MONTH)));
 	}
 
-	/*public static void fillSpinner(Spinner spinner, Activity activity,
-			Cursor cursor, String columnName) {
-		String[] from = new String[] { columnName };
-		int[] to = new int[] { R.id.spinneritem };
-		SimpleCursorAdapter mAdapter = new SimpleCursorAdapter(activity,
-				R.layout.spinner_item, cursor, from, to);
-		mAdapter.setDropDownViewResource(R.layout.spinner_item);
-		spinner.setAdapter(mAdapter);
-	}*/
-
-	/*public static Date getDateFromPicker(DatePicker dp) {
-		return new Date(dp.getYear() - 1900, dp.getMonth(), dp.getDayOfMonth());
-	}*/
-
-	/*public static String getWeekDayName(Context context, int weekDay) {
-		String result = "";
-		switch (weekDay) {
-		case 1:
-			return context.getString(R.string.Monday);
-		case 2:
-			return context.getString(R.string.Tuesday);
-		case 3:
-			return context.getString(R.string.Wednesday);
-		case 4:
-			return context.getString(R.string.Thursday);
-		case 5:
-			return context.getString(R.string.Friday);
-		case 6:
-			return context.getString(R.string.Saturday);
-		case 7:
-			return context.getString(R.string.Sunday);
-		default:
-			return result;
-		}
-	}*/
-
-	/*public static String getWeekDayName(Context context, int year,
-			int monthOfYear, int dayOfMonth) {
-		Date date = new Date(year, monthOfYear, dayOfMonth);
-		return getWeekDayName(context, date.getDay());
-	}*/
-
-	/*public static boolean stringNotEmpty(String s) {
-		return (s != null && s.length() > 0);
-	}*/
-
 	public static void importExpenceManagerCSV(Context context, String filePath) {
 		//CurrencyEdit.controlCurrencies(context);
 		try {
@@ -961,11 +920,21 @@ public class Tools {
 	}
 
 	public static void loadSettings(Context context) {
+		loadSettings(context, true);
+	}
+
+    /**
+     *
+     * @param context
+     * @param doFirstLaunchActions if true then inserts initial database values
+     */
+	public static void loadSettings(Context context, boolean doFirstLaunchActions) {
 
 		SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
 
 		if (prefs.getBoolean(context.getString(R.string.backupToDataFolderKey), false))
-			Constants.backupDirectory = Environment.getDataDirectory() + "/data/com.jgmoneymanager.main/";
+            //Constants.backupDirectory = Environment.getDataDirectory() + "/data/com.jgmoneymanager.paid/";
+            Constants.backupDirectory = Environment.getDataDirectory() + "/data/" + context.getPackageName() + "/";
 		else
 			Constants.backupDirectory = prefs.getString(context.getResources().getString(R.string.backupFolderKey),
 					context.getResources().getString(R.string.backupFolderDefaultValue));
@@ -979,7 +948,7 @@ public class Tools {
 		decimalCountUser = Integer.parseInt(getPreference(context, R.string.setDecimalDigitsCountKey, R.string.setDecimalDigitsCountDefaultKey));
 		Constants.rateDecimalCount = getPreference(context, R.string.setDecimalDigitsCountCurrencyKey, R.string.setDecimalDigitsCountCurrencyDefaultKey);
 		Constants.decimalCount = String.valueOf(decimalCountUser);
-		if (getPreference(context, R.string.setDigitsGroupingSymbolKey, R.string.setNoneKey).equals(context.getString(R.string.setNoneKey)))
+		if (getPreference(context, R.string.setDigitsGroupingSymbolKey, R.string.setNoneKey).toUpperCase().equals(context.getString(R.string.setNoneKey).toUpperCase()))
 			digitGropingSymbol = Character.MIN_VALUE;
 		else
 			digitGropingSymbol = getPreference(context, R.string.setDigitsGroupingSymbolKey, R.string.setNoneKey).charAt(0);
@@ -989,14 +958,15 @@ public class Tools {
 
 		int newVersionCode = 0;
 		try {
-			PackageInfo packInfo = context.getPackageManager().getPackageInfo("com.jgmoneymanager.main", 0);
+			PackageInfo packInfo = context.getPackageManager().getPackageInfo("com.jgmoneymanager.paid", 0);
 			newVersionCode = packInfo.versionCode;
 		} catch (NameNotFoundException e) {
 			Tracker myTracker = EasyTracker.getInstance(context);
 			myTracker.set(Fields.SCREEN_NAME, "loadSettings- Get versionCode");
 			myTracker.send(MapBuilder.createAppView().build());
 		}
-		if (isFirstLaunch(context)) {
+
+		if (isFirstLaunch(context) && doFirstLaunchActions) {
 			loadLanguage(context, null);
 			DBTools.insertFirstItems(context);
 			Editor editor = prefs.edit();
@@ -1015,14 +985,10 @@ public class Tools {
 			editor.commit();
 		}*/
 
-		int index = Integer.parseInt(prefs.getString(
-				context.getResources().getString(R.string.backupMaxDateKey),
-				context.getResources().getString(R.string.backupMaxDateDefValue)));
+		int index = Integer.parseInt(prefs.getString(context.getResources().getString(R.string.backupMaxDateKey),context.getResources().getString(R.string.backupMaxDateDefValue)));
 		Constants.backupDaysCount = Constants.BackupMaxDaysValues.getValue(index);
 
-		index = Integer.parseInt(prefs.getString(
-				context.getResources().getString(R.string.backupMaxSizeKey),
-				context.getResources().getString(R.string.backupMaxSizeDefValue)));
+		index = Integer.parseInt(prefs.getString(context.getResources().getString(R.string.backupMaxSizeKey),context.getResources().getString(R.string.backupMaxSizeDefValue)));
 		Constants.backupMaxSizeMB = Constants.BackupMaxSizeValues.getValue(index);
 	}
 
@@ -1134,12 +1100,12 @@ public class Tools {
 	}
 
 	/**
-	 * Show rate dialog after 50 times open
+	 * Show rate dialog after 15 times open
 	 * @param context
 	 * @return
      */
 	public static boolean rateDialogMustShow(final Context context) {
-		int rateDefaultAppOpenCount = 2;
+		int rateDefaultAppOpenCount = 15;
 		SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
 		int controlValue = prefs.getInt(context.getResources().getString(R.string.rateShouldControlKey), Constants.RateShouldControlValues.Control.index());
 		if (controlValue == Constants.RateShouldControlValues.Control.index()) {
@@ -1599,7 +1565,7 @@ public class Tools {
 			List<ApplicationInfo> packages = pm.getInstalledApplications(PackageManager.GET_META_DATA);
 
 			for (ApplicationInfo packageInfo : packages) {
-				if (packageInfo.packageName.equals("com.jgmoneymanager.pro")) {
+				if (packageInfo.packageName.equals("com.jgmoneymanager.paid")) {
 					Tools.setPreference(context, R.string.proInstalledKey, true);
 					result = true;
 				}
@@ -1608,54 +1574,6 @@ public class Tools {
 			return result;
 		//}
 	}
-
-	/*public static boolean proVersionExists(Context context) {
-		*//*if (Tools.isPreferenceAvialable(context, R.string.proInstalledKey))
-				return Tools.getPreferenceBool(context, R.string.proInstalledKey, false);
-		else*//* {
-			try {
-		*//* + bura bir defe allowed mesaji verdise settingse yazmaq olar ki bir daha kontrol elemesin,
-		* iki duyme qoymaq olar:
-		* -remove ads - ilk olaraq burani yoxlasin, eger false gelse play store acilsin ve settingsden bu gosterici silinsin ki novbeti defe proqram acilanda pro versiyanin olmasini yoxlasin
-		* PS. ilk defe lisenziya allowed verib, settingse yazilandan novbeti gun yene lisenziyani yoxlasin, ola biler proqrami geri qaytarib*//*
-				final String BASE64_PUBLIC_KEY = "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAqlSyNTRCtyl6JXAGIiq9Jk2alsptajp7Rtyn1Lchqqx1N18ZkQdh2qgmgd1XAk2Llf0i//3YI4XImbOFQqc3CNtIAlm24auEz2ak23q/BTs2Wvd5DK6BQ51Ks8w/QUtUgVpLSOKSWKBWLUXjuGq6st2ockzQ94okfj6zk+BaVMNADJL2qgVpgIN5huHcgGExLMwOQCz/cjqiL7uENNPSP/TWnEOa3SmqXNwxsAiEii2201l16+28IMBnAXxvUtwfrQxrBf7FZ6V2cTzPwO05ASt6Wpf4qs9VA/uX8C7Miv6KdSmwwpIB9WQ0vWBb8JoEqDNMrHQfieJG7TcOsvYGtwIDAQAB";
-				final byte[] SALT = new byte[]{-46, 65, 30, -23, -103, -57, 74, -64, 51, 21, -95, -45, 77, -117, -55, -105, -11, 32, -64, 89};
-				Log.i("LICENSE", "checkLicense");
-				Handler mHandler = new Handler();
-				final boolean[] result = new boolean[1];
-				LicenseCheckerCallback mLicenseCheckerCallback = new LicenseCheckerCallback() {
-					@Override
-					public void allow(int reason) {
-						result[0] = true;
-						Log.i("LICENSE", "checkLicense - allowed");
-					}
-
-					@Override
-					public void dontAllow(int reason) {
-						result[0] = false;
-						Log.i("LICENSE", "checkLicense - dont allowed");
-					}
-
-					@Override
-					public void applicationError(int errorCode) {
-						result[0] = false;
-						Log.i("LICENSE", "checkLicense - error");
-					}
-				};
-				final String deviceId = Settings.Secure.getString(context.getContentResolver(), Settings.Secure.ANDROID_ID);
-				LicenseChecker mChecker = new LicenseChecker(
-						context, new ServerManagedPolicy(context,
-						new AESObfuscator(SALT, "com.jgmoneymanager.pro", deviceId)),
-						BASE64_PUBLIC_KEY);
-				mChecker.checkAccess(mLicenseCheckerCallback);
-				Tools.setPreference(context, R.string.proInstalledKey, result[0]);
-				return result[0];
-			}
-			catch (Exception e) {
-				return false;
-			}
-		}
-	};*/
 
 	public static double negativeToZero(Double value) {
 		if (value.compareTo(0d) < 0)
@@ -1704,63 +1622,10 @@ public class Tools {
 				mContext.getString(R.string.rateDialogTitle),
 				new String[] {mContext.getString(R.string. neverAsk), mContext.getString(R.string.later), mContext.getString(R.string.appRate)});
 		dialog.show();
-		/*final Dialog dialog = new Dialog(mContext);
-		SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(mContext);
-		final Editor editor = prefs.edit();
-		String APP_TITLE = Constants.emailSubject;
-		dialog.setTitle("Rate " + APP_TITLE);
-
-		LinearLayout ll = new LinearLayout(mContext);
-		ll.setOrientation(LinearLayout.VERTICAL);
-
-		TextView tv = new TextView(mContext);
-		tv.setText("If you enjoy using " + APP_TITLE + ", please take a moment to rate it and write your review. Thanks for your support!");
-		tv.setWidth(240);
-		tv.setPadding(4, 0, 4, 10);
-		ll.addView(tv);
-
-		Button b1 = new Button(mContext);
-		b1.setText("Rate " + APP_TITLE);
-		b1.setOnClickListener(new View.OnClickListener() {
-			public void onClick(View v) {
-				editor.putInt(mContext.getResources().getString(R.string.rateShouldControlKey), Constants.RateShouldControlValues.Never.index());
-				editor.commit();
-				mContext.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://play.google.com/store/apps/details?id=" + mContext.getPackageName())));
-				dialog.dismiss();
-			}
-		});
-		ll.addView(b1);
-
-		Button b2 = new Button(mContext);
-		b2.setText("Remind me later");
-		b2.setOnClickListener(new View.OnClickListener() {
-			public void onClick(View v) {
-				editor.putInt(mContext.getResources().getString(R.string.rateAppDefaultOpenCountKey), Tools.getPreferenceInt(mContext, R.string.rateAppDefaultOpenCountKey) + 10);
-				editor.commit();
-				dialog.dismiss();
-			}
-		});
-		ll.addView(b2);
-
-		Button b3 = new Button(mContext);
-		b3.setText("No, thanks");
-		b3.setOnClickListener(new View.OnClickListener() {
-			public void onClick(View v) {
-				if (editor != null) {
-					editor.putInt(mContext.getResources().getString(R.string.rateShouldControlKey), Constants.RateShouldControlValues.Never.index());
-					editor.commit();
-				}
-				dialog.dismiss();
-			}
-		});
-		ll.addView(b3);
-
-		dialog.setContentView(ll);
-		dialog.show();*/
 	}
 
-	public static void showAboutDialog(Context context) {
-		String aboutMessage = context.getResources().getString(R.string.app_name) + " " + Tools.getApplicationVersion(context);
+	public static void showAboutDialog(Context context, int appNameID) {
+		String aboutMessage = context.getResources().getString(appNameID) + " " + Tools.getApplicationVersion(context);
 		aboutMessage += "\n MM Group";
 		aboutMessage += "\n 2013";
 		AlertDialog dialog = DialogTools.informationDialog(context, R.string.about, aboutMessage);
@@ -1779,46 +1644,6 @@ public class Tools {
 			position++;
 		}
 	}
-
-	public static void removeAds(Context context) {
-				/*1.Settingsden silek
-				* 2.lisenziyani yoxlayaq
-				* 3.Eger lisenziya yoxdursa, pronun sehifesini acaq getsin alsin*/
-		try {
-			Tools.removePreferense(context, R.string.proInstalledKey);
-		} catch (Exception e) {
-		}
-		if (!Tools.proVersionExists(context)) {
-			try {
-				Tools.removePreferense(context, R.string.proInstalledKey);
-			} catch (Exception e) {
-			}
-			try {
-				context.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + "com.jgmoneymanager.pro")));
-			} catch (android.content.ActivityNotFoundException anfe) {
-				Log.i("LICENSE", "checkLicense - open store error");
-				context.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=" + "com.jgmoneymanager.pro")));
-			}
-		}
-		else
-			DialogTools.toastDialog(context, R.string.adsRemoveSummaryRemoved, Toast.LENGTH_SHORT);
-	}
-
-	/*public static Date getDbFileModifiedDate() {
-		Date modDate = Tools.getCurrentDate();
-		try {
-			File dbFile = new File(Environment.getDataDirectory()
-					+ "/data/com.jgmoneymanager.main/databases/"
-					+ MoneyManagerProviderMetaData.DATABASE_NAME);
-			Long longModDate = dbFile.lastModified();
-			modDate = new Date(longModDate);
-			Log.i("ModDate", Tools.DateToString(modDate, Constants.DateFormatDropboxRevision));
-		}
-		catch (Exception e) {
-
-		}
-		return modDate;
-	}*/
 
 	public static String getFullAmountText(double amount, String currencySign, boolean addSpace) {
 		String spaceSymbol = addSpace?" ":"";
@@ -1839,10 +1664,67 @@ public class Tools {
 		}
 	}
 
-	/*public static int getDecimalCount(String text) {
-		if (text.indexOf(decimalSeparatorSymbol) == -1)
-			return 0;
+	public static void removeAds(final Context context) {
+				/*1.Settingsden silek
+				* 2.lisenziyani yoxlayaq
+				* 3.Eger lisenziya yoxdursa, pronun sehifesini acaq getsin alsin*/
+		try {
+			Tools.removePreferense(context, R.string.proInstalledKey);
+		} catch (Exception e) {
+		}
+		if (!Tools.proVersionExists(context)) {
+			try {
+				Tools.removePreferense(context, R.string.proInstalledKey);
+			} catch (Exception e) {
+			}
+			try {
+				context.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + "com.jgmoneymanager.paid")));
+			} catch (android.content.ActivityNotFoundException anfe) {
+				Log.i("LICENSE", "checkLicense - open store error");
+				context.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=" + "com.jgmoneymanager.paid")));
+			}
+		}
 		else
-			return text.length() - text.indexOf(decimalSeparatorSymbol) - 1;
-	}*/
+			DialogTools.toastDialog(context, R.string.adsRemoveSummaryRemoved, Toast.LENGTH_SHORT);
+	}
+
+	public static void backupToMemory(final Context context) {
+		File file = new File(Constants.backupDirectory);
+		if (!file.exists())
+			if (!file.mkdirs()) {
+				AlertDialog warning = DialogTools.warningDialog(context, R.string.msgWarning, context.getString(R.string.msgChooseBackupFolder));
+				warning.show();
+				return;
+			}
+		final EditText input = new EditText(context);
+		input.setText(Tools.DateToString(Tools.getCurrentDateTime(), Constants.DateFormatBackup));
+		Command cmd = new Command() {
+			@Override
+			public void execute() {
+				BackupDatabaseFileTask backupDBTask = new BackupDatabaseFileTask(context, input.getText().toString());
+				backupDBTask.execute("");
+			}
+		};
+		AlertDialog inputDialog = DialogTools.InputDialog(context, cmd, R.string.msgBckFileName, input, R.drawable.ic_menu_manage);
+		inputDialog.show();
+		inputDialog.getButton(Dialog.BUTTON_POSITIVE).setEnabled(input.getText().toString().trim().length() != 0);
+	}
+
+	public static String getApplicationName(Context context) {
+		ApplicationInfo applicationInfo = context.getApplicationInfo();
+		int stringId = applicationInfo.labelRes;
+		return stringId == 0 ? applicationInfo.nonLocalizedLabel.toString() : context.getString(stringId);
+	}
+
+	public static int getVersionCode(Context context) {
+		try {
+			PackageInfo packInfo = context.getPackageManager().getPackageInfo("com.jgmoneymanager.main", 0);
+			return packInfo.versionCode;
+		} catch (PackageManager.NameNotFoundException e) {
+			Tracker myTracker = EasyTracker.getInstance(context);
+			myTracker.set(Fields.SCREEN_NAME, "loadSettings- Get versionCode");
+			myTracker.send(MapBuilder.createAppView().build());
+			return 0;
+		}
+	}
 }

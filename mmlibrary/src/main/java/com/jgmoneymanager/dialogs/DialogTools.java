@@ -241,7 +241,7 @@ public class DialogTools {
 	}
 
 	public static AlertDialog RadioListDialog(final Context context,
-			final Command command, int title, final Cursor cursor, final String labelColumn, boolean cancelable, boolean closeCursorOnDialogClose) {
+											  final Command command, int title, final Cursor cursor, final String labelColumn, boolean cancelable, boolean closeCursorOnDialogClose) {
 
 		AlertDialog.Builder builder = new AlertDialog.Builder(context);
 		builder.setCancelable(cancelable);
@@ -277,6 +277,30 @@ public class DialogTools {
 			});
 		}
 
+		return dialog;
+	}
+
+	public static AlertDialog RadioListDialog(final Context context,
+											  final Command[] commands, int title, int itemsArrayResID, boolean cancelable) {
+
+		AlertDialog.Builder builder = new AlertDialog.Builder(context);
+		builder.setCancelable(cancelable);
+		builder.setIcon(R.drawable.ic_menu_edit);
+		builder.setTitle(title);
+		builder.setSingleChoiceItems(itemsArrayResID, -1,
+				new DialogInterface.OnClickListener() {
+					public void onClick(DialogInterface dialog, int item) {
+						CommandWrapper cmd = new CommandWrapper(commands[item]);
+						cmd.execute();
+						dialog.dismiss();
+					}
+				});
+
+		//builder.setPositiveButton(R.string.ok, new CommandWrapper(command));
+		if (cancelable)
+			builder.setNegativeButton(R.string.Cancel, DISMISS);
+
+		AlertDialog dialog = builder.create();
 		return dialog;
 	}
 

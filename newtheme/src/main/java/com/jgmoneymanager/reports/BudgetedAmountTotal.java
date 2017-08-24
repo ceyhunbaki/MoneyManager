@@ -360,6 +360,7 @@ public class BudgetedAmountTotal extends AbstractDemoChart {
         CheckBoxDialog.itemsList = categoriesList;
         bundle.putString(Constants.query, CategorySrv.mainCategoriesQueryForReports);
         bundle.putString(Constants.paramTitle, CategoryTableMetaData.NAME);
+        bundle.putString(Constants.paramWindowTitle, getString(R.string.categories));
         //bundle.putSerializable(Constants.paramValues, Tools.convertCheckBoxListToHashMap(categoriesList));
         Intent intent = new Intent(BudgetedAmountTotal.this, CheckBoxDialog.class);
         intent.putExtras(bundle);

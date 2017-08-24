@@ -18,7 +18,7 @@
     <string name="menuImport">Import</string>
     <string name="menuExport">Export</string>
     <string name="menuClear">Reset all</string>
-    <string name="menuBackup">Backup</string>
+    <string name="menuBackup">Back up</string>
     <string name="menuRestore">Restore</string>
     <string name="menuRenew">Renew list</string>
     <string name="menuAddTransfer">Add transfer</string>

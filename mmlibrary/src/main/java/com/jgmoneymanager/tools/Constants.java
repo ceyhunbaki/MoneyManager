@@ -172,6 +172,7 @@ public class Constants {
 	public static String paramTransferID = "transferID";
 	public static String paramCategory = "category";
 	public static String paramTitle = "title";
+	public static String paramWindowTitle = "windowTitle";
 	public static String paramFilterType = "filterType";
 	public static String paramValues = "values";
 	public static String paramTransactionType = "transactionType";

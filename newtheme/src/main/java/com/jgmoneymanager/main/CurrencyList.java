@@ -89,12 +89,7 @@ public class CurrencyList extends MyActivity
 		});
 		
 		// Create the adView 
-		if (!Tools.proVersionExists(this)) {
-//			adView = new AdView(this, AdSize.BANNER, "ca-app-pub-5995868530154544/3468276114");
-//			LinearLayout layout = (LinearLayout)findViewById(R.id.onlyListAdsLayout);
-//			layout.addView(adView);
-//			AdRequest adRequest = new AdRequest();
-//			adView.loadAd(adRequest);
+		/*if (!Tools.proVersionExists(this))*/ {
 			MobileAds.initialize(getApplicationContext(), "ca-app-pub-5995868530154544/3468276114");
 			adView = new AdView(this);
 			adView.setAdSize(AdSize.SMART_BANNER);
@@ -114,6 +109,13 @@ public class CurrencyList extends MyActivity
 		int[] to = new int[] { R.id.l2column1, R.id.l2column2 };
 		SimpleCursorAdapter notes = new MyListAdapter(cursor, context, R.layout.currency_list_row, from, to);
 		listView.setAdapter(notes);
+	}
+
+	@Override
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+		super.onActivityResult(requestCode, resultCode, data);
+		if (resultCode == RESULT_OK)
+			refreshList(this, listView);
 	}
 
 	private void initializeViews() {
@@ -166,6 +168,7 @@ public class CurrencyList extends MyActivity
 					@Override
 					public void execute() {
 						CurrencyEdit.deleteCurrency(CurrencyList.this, 0);
+						refreshList(CurrencyList.this, listView);
 					}
 				};
 				AlertDialog deleteAllDialog = DialogTools.confirmDialog(CurrencyList.this, cmd, R.string.msgConfirm, R.string.msgDeleteAll);
@@ -257,7 +260,8 @@ public class CurrencyList extends MyActivity
 				Command cmd = new Command() {					
 					@Override
 					public void execute() {
-						CurrencyEdit.deleteCurrency(CurrencyList.this, info.id); 
+						CurrencyEdit.deleteCurrency(CurrencyList.this, info.id);
+						refreshList(CurrencyList.this, listView);
 					}
 				};
 				AlertDialog deleteDialog = DialogTools.confirmDialog(CurrencyList.this, cmd, R.string.msgConfirm, R.string.msgDeleteItem);

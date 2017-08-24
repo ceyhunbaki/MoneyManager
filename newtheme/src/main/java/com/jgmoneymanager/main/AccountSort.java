@@ -110,12 +110,7 @@ public class AccountSort extends MyActivity {
         refreshList();
 
 		// Create the adView
-		if (!Tools.proVersionExists(this)) {
-			/*adView = new AdView(this, AdSize.BANNER, "ca-app-pub-5995868530154544/3468276114");
-			LinearLayout layout = (LinearLayout)findViewById(R.id.onlyListAdsLayout);
-			layout.addView(adView);
-			AdRequest adRequest = new AdRequest();
-			adView.loadAd(adRequest);*/
+		/*if (!Tools.proVersionExists(this))*/ {
 			MobileAds.initialize(getApplicationContext(), "ca-app-pub-5995868530154544/3468276114");
 			adView = new AdView(this);
 			adView.setAdSize(AdSize.SMART_BANNER);
@@ -255,7 +250,8 @@ public class AccountSort extends MyActivity {
 	}
 	
 	private void sortAZ() {
-		Cursor cursor = getContentResolver().query(AccountTableMetaData.CONTENT_URI, null, null, null, AccountTableMetaData.NAME);
+		Cursor cursor = getContentResolver().query(AccountTableMetaData.CONTENT_URI, null, null, null,
+				AccountTableMetaData.ISDEFAULT + " desc, " + AccountTableMetaData.STATUS + " desc, " + AccountTableMetaData.NAME);
         content = new ArrayList<String>(cursor.getCount());
         for (cursor.moveToFirst(); !cursor.isAfterLast(); cursor.moveToNext()) {
         	content.add(DBTools.getCursorColumnValue(cursor, AccountTableMetaData.NAME));

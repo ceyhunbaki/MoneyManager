@@ -78,14 +78,8 @@ public class CategoryListForIncome extends MyActivity {
 		
 		
 		if ((getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT)
-				&& !Tools.proVersionExists(this)) {
-			// Create the adView 
-//			adView = new AdView(this, AdSize.BANNER, "ca-app-pub-5995868530154544/1867118510");
-//			// Lookup your LinearLayout assuming it's been given // the attribute android:id="@+id/mainLayout"
-//			LinearLayout layout = (LinearLayout)findViewById(R.id.CatLayout2);
-//			layout.addView(adView); // Initiate a generic request to load it with an ad
-//			AdRequest adRequest = new AdRequest();
-//			adView.loadAd(adRequest);
+				/*&& !Tools.proVersionExists(this)*/) {
+			// Create the adView
 			MobileAds.initialize(getApplicationContext(), "ca-app-pub-5995868530154544/1867118510");
 			adView = new AdView(this);
 			adView.setAdSize(AdSize.SMART_BANNER);

@@ -388,7 +388,7 @@ public class MainScreen extends MyActivity{
             menuOut = false;
         }
         else if (target.getTag() == btAboutTag) {
-            Tools.showAboutDialog(MainScreen.this);
+            Tools.showAboutDialog(MainScreen.this, R.string.app_name);
         }
         else {
             switch (target.getId()) {

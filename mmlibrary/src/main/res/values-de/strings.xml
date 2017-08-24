@@ -80,7 +80,7 @@
     <string name="setStartupScreenSummary">Maske für Programmstart setzen</string>
     <string name="setStartupScreenDialogTitle">Startmaske; Startfenster; Startdialog</string>
     <string name="backupOptions">Speichergerät/Geratespeicherplatzsicherungskopie/Wiederherstellen</string>
-    <string name="btBackupSummary">Sicherungsdatenbank aktiviert</string>
+    <string name="btBackupSummary">"Sicherungsdatenbank aktiviert : "</string>
     <string name="btRestoreSummary">Datenbank wiederherstellen</string>
     <string name="folder">Ordner</string>
     <string name="addFolder">Ordner hinzufügen</string>
@@ -94,7 +94,7 @@
     <string name="backupMaxSizeTitle">Gesamtgröße der Sicherung</string>
     <string name="backupMaxSizeSummary">Gesamtgröße des Sicherungsordners</string>
     <string name="autoBackupTitle">Automatische Sicherung</string>
-    <string name="autoBackupSummary">Tägliche automatische Sicherung aktiviert</string>
+    <string name="autoBackupSummary">\"Tägliche automatische Sicherung aktiviert : \"</string>
     <string name="backupToDataFolderTitle">Sicherung aktiviert /Datenordner</string>
     <string name="backupFolderTitle">Ordner für Sicherheitskopien</string>
     <string name="security">Sicherheit</string>
@@ -333,4 +333,12 @@
     <string name="none">Keines</string>
     <string name="setWeekFirstDay">Erster Tag der Woche</string>
     <string name="setMonthFirstDate">Erstes Datum des Monats</string>
+
+    <string name="buy">Kaufen</string>
+    <string name="backupToMemory">In den ausgewählten Ordner sichern</string>
+    <string name="backupToDropbox">Nach Dropbox sichern</string>
+    <string name="restoreFromMemory">Aus dem ausgewählten Ordner wiederherstellen</string>
+    <string name="restoreFromDropbox">Von Dropbox wiederherstellen</string>
+    <string name="uninstall">Deinstallieren</string>
+    <string name="freshNew">Ganz neu</string>
 </resources>

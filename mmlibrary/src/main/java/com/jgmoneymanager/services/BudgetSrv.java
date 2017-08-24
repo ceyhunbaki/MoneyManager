@@ -316,7 +316,7 @@ public class BudgetSrv {
 
 	/**
 	 * {@link BudgetCategoriesTableMetaData.BUDGET} + {@link BudgetCategoriesTableMetaData.REMAINING}
-	 * 	- {@link BudgetCategoriesTableMetaData.USED_AMOUNT} for fiven parametres
+	 * 	- {@link BudgetCategoriesTableMetaData.USED_AMOUNT} for given parametres
 	 * @param context
 	 * @param categoryId {@link CategoryTableMetaData._ID}
 	 * @param inDate
@@ -343,7 +343,8 @@ public class BudgetSrv {
 						BudgetCategoriesTableMetaData.REMAINING}, 
 					BudgetCategoriesTableMetaData.BUDGET_ID + " = " 
 						+ DBTools.getCursorColumnValue(cursorBudget, BudgetTableMetaData._ID)
-						+ " and " + BudgetCategoriesTableMetaData.CATEGORY_ID + " = " + String.valueOf(categoryId), 
+						+ " and (" + BudgetCategoriesTableMetaData.CATEGORY_ID + " = " + String.valueOf(categoryId)
+						+ " or " + BudgetCategoriesTableMetaData.CATEGORY_ID + " = " + CategorySrv.getMainCategoryID(context, categoryId) + ")",
 					null, null);
 			if (cursor.moveToFirst()) {
 				for (cursor.moveToFirst(); !cursor.isAfterLast(); cursor.moveToNext()) {
@@ -356,7 +357,7 @@ public class BudgetSrv {
 				}
 				hasBudget = true;
 			}
-			if (result.compareTo(0d) == 0) {
+			/*if (result.compareTo(0d) == 0) {
 				String remainingColumn = "remainingColumn";
 				cursor = generateGroupCursor(remainingColumn, 
 						Tools.truncDate(context, inDate, Constants.DateTruncTypes.dateTruncMonth), context,
@@ -370,7 +371,7 @@ public class BudgetSrv {
 					}
 					hasBudget = true;
 				}
-			}
+			}*/
 		}
 		if ((resultValue != null) && (hasBudget)) {
 			resultValue.append(Tools.formatDecimalInUserFormat(result)).append(currencySign);

@@ -75,12 +75,7 @@ public class CurrRatesList extends MyActivity {
 		}
 
 		// Create the adView
-		if (!Tools.proVersionExists(this)) {
-//			adView = new AdView(this, AdSize.BANNER, "ca-app-pub-5995868530154544/3468276114");
-//			LinearLayout layout = (LinearLayout)findViewById(R.id.onlyListAdsLayout);
-//			layout.addView(adView);
-//			AdRequest adRequest = new AdRequest();
-//			adView.loadAd(adRequest);
+		/*if (!Tools.proVersionExists(this))*/ {
 			MobileAds.initialize(getApplicationContext(), "ca-app-pub-5995868530154544/3468276114");
 			adView = new AdView(this);
 			adView.setAdSize(AdSize.SMART_BANNER);

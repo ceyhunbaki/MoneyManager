@@ -131,13 +131,7 @@ public class TransactionList extends MyActivity {
 
 		
 		// Create the adView 
-		if (!Tools.proVersionExists(this) && (getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT)) {
-//			 adView = new AdView(this, AdSize.BANNER, "ca-app-pub-5995868530154544/6273212514");
-//			 if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) {
-//				 LinearLayout layout = (LinearLayout)findViewById(R.id.layTrList);
-//				 layout.addView(adView);
-//				 AdRequest adRequest = new AdRequest();
-//				 adView.loadAd(adRequest);
+		if (/*!Tools.proVersionExists(this) &&*/ (getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT)) {
 			MobileAds.initialize(getApplicationContext(), "ca-app-pub-5995868530154544/6273212514");
 			adView = new AdView(this);
 			adView.setAdSize(AdSize.SMART_BANNER);

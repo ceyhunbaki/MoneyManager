@@ -147,13 +147,17 @@ public class CurrencySrv {
 	}
 
 	public static String getDefaultCurrencySign(Context context) {
+		return getDefaultCurrencySign(context, false);
+	}
+
+	public static String getDefaultCurrencySign(Context context, boolean showToastError) {
 		String currSign = "";
 		Cursor cursor = context.getContentResolver().query(CurrencyTableMetaData.CONTENT_URI, 
 				new String[] {CurrencyTableMetaData.SIGN}, 
 				CurrencyTableMetaData.ISDEFAULT + " = 1 ", null, null);
 		if (cursor.moveToFirst())
 			currSign = DBTools.getCursorColumnValue(cursor, CurrencyTableMetaData.SIGN);
-		else
+		else if (showToastError)
 		{
 			DialogTools.toastDialog(context, context.getResources().getString(R.string.msgSetDefaultCurrency), Toast.LENGTH_LONG);
 		}

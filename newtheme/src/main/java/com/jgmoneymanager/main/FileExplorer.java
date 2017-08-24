@@ -1,13 +1,19 @@
 package com.jgmoneymanager.main;
 
+import android.*;
+import android.Manifest;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
+import android.content.pm.PackageManager;
 import android.content.res.Configuration;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.os.Environment;
+import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -48,6 +54,7 @@ public class FileExplorer extends MyActivity /*implements NavigationView.OnNavig
 	public static final int DialogOpenFileID = 1000;
 	public static final int DialogOpenFolderID = 1100;
 	private static int dialogType = DialogOpenFileID;
+	public static final String paramSelBackupFolder = "paramSelectBackupFolder";
 
 	private final int menuDelete = Menu.FIRST;
 	private final int menuEdit = menuDelete + 1;
@@ -64,8 +71,12 @@ public class FileExplorer extends MyActivity /*implements NavigationView.OnNavig
 	static ArrayList<String> arrayPath = new ArrayList<String>();
 	public static String filePath = strRoot;
 
+	boolean selectBackupFolder = false;
+
 	ListView listviewT;
 	TextView textviewPathCurrent;
+
+	final int MY_PERMISSIONS_REQUEST_WRITE_EXTERNAL_STORAGE = PackageManager.PERMISSION_GRANTED;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -78,6 +89,8 @@ public class FileExplorer extends MyActivity /*implements NavigationView.OnNavig
 			this.setTitle(bundle.getString(Constants.title));
 		if (bundle.containsKey(Constants.dialogType))
 			dialogType = bundle.getInt(Constants.dialogType);
+		if (bundle.containsKey(paramSelBackupFolder))
+			selectBackupFolder = bundle.getString(paramSelBackupFolder).equals("1");
 
 		if (savedInstanceState != null) {
 			currentDir = new StringBuffer(Tools.getStringFromBundle(savedInstanceState, "currentDir"));
@@ -248,13 +261,48 @@ public class FileExplorer extends MyActivity /*implements NavigationView.OnNavig
 		Command cmd = new Command() {
 			@Override
 			public void execute() {
-				Tools.addFolder(path, inputText.getText().toString());
-				refreshDir(path, listviewT, arrayPath, arrayItem, context);
+				int permissionCheck = ContextCompat.checkSelfPermission(context,
+						Manifest.permission.WRITE_EXTERNAL_STORAGE);
+				if (permissionCheck == PackageManager.PERMISSION_GRANTED) {
+					Tools.addFolder(path, inputText.getText().toString());
+					refreshDir(path, listviewT, arrayPath, arrayItem, context);
+				}
+				else {
+					ActivityCompat.requestPermissions(FileExplorer.this,
+							new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
+							MY_PERMISSIONS_REQUEST_WRITE_EXTERNAL_STORAGE);
+				}
 			}
 		};
 		AlertDialog fileNameDialog = DialogTools.InputDialog(FileExplorer.this, cmd, R.string.addFolder, inputText, R.drawable.ic_menu_add);
 		fileNameDialog.show();
 		fileNameDialog.getButton(Dialog.BUTTON_POSITIVE).setEnabled(inputText.getText().toString().trim().length() != 0);
+	}
+
+	@Override
+	public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+		switch (requestCode) {
+			case MY_PERMISSIONS_REQUEST_WRITE_EXTERNAL_STORAGE: {
+				// If request is cancelled, the result arrays are empty.
+				if (grantResults.length > 0
+						&& grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+
+					// permission was granted, yay! Do the
+					// contacts-related task you need to do.
+					addFolder(FileExplorer.this, currentDir.toString());
+
+				} else {
+
+					// permission denied, boo! Disable the
+					// functionality that depends on this permission.
+					DialogTools.toastDialog(FileExplorer.this, R.string.error, Toast.LENGTH_SHORT);
+				}
+				return;
+			}
+
+			// other 'case' lines to check for other
+			// permissions this app might request
+		}
 	}
 
 	private void editFolder(final String path, final String name) {
@@ -318,6 +366,11 @@ public class FileExplorer extends MyActivity /*implements NavigationView.OnNavig
 			@Override
 			public void execute() {
 				filePath = fileName;
+
+				if (selectBackupFolder) {
+					Tools.setPreference(FileExplorer.this, R.string.backupFolderKey, filePath, false);
+				}
+
 				FileExplorer.this.setResult(RESULT_OK);
 				FileExplorer.this.finish();
 			}

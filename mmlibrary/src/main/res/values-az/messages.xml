@@ -93,7 +93,7 @@
     <string name="msgYouHaveUnpaidDebts">Sizin ödəniləcək borcunuz var</string>    
     <string name="msgDropboxVersionConflict">Dropboxda bazanın daha yeni versiyası var. İşə başlamazdan əvvəl Dropboxdan bazanı yeniləmək yaxşı olardı</string>
     <string name="msgAttention">Diqqər</string>
-    <string name="msgDropBoxAttention">Bu AVTOMATİK olaraq Dropboxa arxivləşdirməyəcək. Əgər sən bir Dropbox hesabı ilə birdən çox qurğu işlədirsənsə, əllə arxivləşdir</string>       
+    <!--string name="msgDropBoxAttention">Bu AVTOMATİK olaraq Dropboxa arxivləşdirməyəcək. Əgər sən bir Dropbox hesabı ilə birdən çox qurğu işlədirsənsə, əllə arxivləşdir</string-->
     <string name="msgDropboxBackupDeleted">Sizin arxiv faylınız Dropboxdan silinib</string>    
     <string name="msgSetDefaultInvisibleAccount">Siz gizli hesabı cari hesabınız olaraq təyin edə bilməzsiniz</string>
     <string name="msgSetPasswordAgain">Təhlükəsizliyin təkmilləşdirilməsi üçün, zəhmət olmasa, parol və gizli sualı yenidən təyin edin</string>    
@@ -118,4 +118,12 @@
 
     <string name="rateDialogTitle">Əgər Money Manager-dən məmnunsunuzsa, zəhmət olmasa öz fikir və rəylərinizi bildirin. Dəstəyiniz üçün təşəkkürlər!</string>
     <string name="msgSameDecimalAndDigitSymbol">Onluq və minlik rəqəmləri ayıran simvol eyni ola bilməz</string>
+
+    <string name="msgBuyProDialogMessage">Əgər siz Money Manager-i cari məlumat bazası ilə reklamsız istifadə etmək
+        istəyirsinizsə, məlumatları yaddaşa və ya Dropboxa arxivləşdirin, cari versiyanı silin, pro versiyanı alın və
+        məlumatları bərpa edin. Əgər cari məlumat bazasını istifadə etmək istəmirsinizsə, sadəcə
+        cari versiyanı silin və pro versiyanı yükləyin</string>
+    <string name="msgRestoreFreshNew">Siz köhnə məlumat bazasını bərpa etmək istəyirsiniz?</string>
+    <string name="msgAppNeedsPermission">Əgər siz məlumatların gündəlik arxivlənməsini istəyirsinizsə hüquq verməlisiniz.
+        Əks halda parametrlərdən avtomatik arxivlənməni söndürə bilərsiniz.</string>
 </resources>

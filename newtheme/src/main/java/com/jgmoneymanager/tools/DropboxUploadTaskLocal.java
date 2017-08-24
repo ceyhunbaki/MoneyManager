@@ -46,7 +46,7 @@ public class DropboxUploadTaskLocal extends AsyncTask<Void, Long, Boolean> {
 
         if (mShowProgressDialog) {
             mDialog = new ProgressDialog(context);
-            mDialog.getWindow().setType(WindowManager.LayoutParams.TYPE_SYSTEM_ALERT);
+            //mDialog.getWindow().setType(WindowManager.LayoutParams.TYPE_SYSTEM_ALERT);
 	        mDialog.setMax(100);
 	        mDialog.setMessage(context.getString(R.string.uploading));
 	        mDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
