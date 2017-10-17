@@ -2,8 +2,6 @@ package com.jgmoneymanager.tools;
 
 import java.util.Date;
 
-import com.dropbox.client2.session.Session.AccessType;
-
 public class Constants {
 
 	public static final String emailSubject = "Money Manager";
@@ -179,8 +177,8 @@ public class Constants {
 	public static String paramSplitTransactionIndex = "splitTransactionIndex";
 	public static String dontRefreshValues = "dontRefreshValues";
 	public static String disableMultiSelect = "disableMultiSelect";
-	
-	public final static AccessType dropboxAccessType = AccessType.APP_FOLDER;
+
+	public final static String dropboxAppKey = "59d5deaac8b6755b445f6d00";
 	public final static String dropboxKey = "9dn8ox451k4vbsg";
 	public final static String dropboxSecret = "l3ca4gir0jom8ul";
 	

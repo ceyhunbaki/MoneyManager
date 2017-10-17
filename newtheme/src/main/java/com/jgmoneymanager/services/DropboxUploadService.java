@@ -10,9 +10,6 @@ import android.os.IBinder;
 import android.support.v4.app.NotificationCompat;
 import android.util.Log;
 
-import com.dropbox.client2.DropboxAPI;
-import com.dropbox.client2.android.AndroidAuthSession;
-import com.dropbox.client2.session.AppKeyPair;
 import com.jgmoneymanager.database.MoneyManagerProviderMetaData;
 import com.jgmoneymanager.main.MainScreen;
 import com.jgmoneymanager.main.R;
@@ -80,14 +77,15 @@ public class DropboxUploadService extends Service {
                             && Tools.isInternetAvailable(mContext)) {
                         displayNotificationMessage(getResources().getString(R.string.msgDropboxSnycing), mContext);
 
-                        DropboxAPI<AndroidAuthSession> mApi;
+                        // TODO dropbox comment
+			            /*DropboxAPI<AndroidAuthSession> mApi;
                         AppKeyPair appKeys = new AppKeyPair(Constants.dropboxKey, Constants.dropboxSecret);
                         AndroidAuthSession session = new AndroidAuthSession(appKeys, Constants.dropboxAccessType);
                         mApi = new DropboxAPI<AndroidAuthSession>(session);
 
                         mApi.getSession().setOAuth2AccessToken(Tools.getPreference(mContext, com.jgmoneymanager.main.R.string.dropboxTokenKey));
                         DropboxUploadTaskLocal dUpload = new DropboxUploadTaskLocal(mContext, mApi, "", file, false);
-                        dUpload.execute();
+                        dUpload.execute();*/
                     }
                 }
             } catch (InterruptedException e) {

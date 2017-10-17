@@ -31,9 +31,9 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.dropbox.client2.DropboxAPI;
-import com.dropbox.client2.android.AndroidAuthSession;
-import com.dropbox.client2.session.AppKeyPair;
+import com.cloudrail.si.CloudRail;
+import com.cloudrail.si.interfaces.CloudStorage;
+import com.cloudrail.si.services.Dropbox;
 import com.google.analytics.tracking.android.EasyTracker;
 import com.google.analytics.tracking.android.Fields;
 import com.google.analytics.tracking.android.MapBuilder;
@@ -75,6 +75,7 @@ import java.util.GregorianCalendar;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
+import java.util.concurrent.atomic.AtomicReference;
 import java.util.regex.Pattern;
 
 import static com.jgmoneymanager.services.CurrencySrv.getCurrencySymbol;
@@ -1726,5 +1727,62 @@ public class Tools {
 			myTracker.send(MapBuilder.createAppView().build());
 			return 0;
 		}
+	}
+
+	public static CloudStorage getDropboxService(Context context) {/*
+		AtomicReference<CloudStorage> dropbox = new AtomicReference<>();
+		CloudRail.setAppKey(Constants.dropboxAppKey);
+
+		dropbox.set(new Dropbox(
+				context,
+				Constants.dropboxKey,
+				Constants.dropboxSecret,
+				"https://db-" + Constants.dropboxKey,
+				""));
+
+		if (Tools.getPreference(context, R.string.dropboxTokenKey).equals("null"))
+			Tools.setPreference(context, R.string.dropboxTokenKey, dropbox.get().saveAsString(), false);
+		else
+			try {
+				dropbox.get().loadAsString(Tools.getPreference(context, R.string.dropboxTokenKey));
+			} catch (com.cloudrail.si.exceptions.ParseException e) {
+				e.printStackTrace();
+			}
+		return dropbox.get();*/
+
+
+		//AtomicReference<CloudStorage> dropbox = new AtomicReference<>();
+		CloudRail.setAppKey(Constants.dropboxAppKey);
+
+		final Dropbox dropbox = new Dropbox(
+				context,
+				Constants.dropboxKey,
+				Constants.dropboxSecret,
+				"https://auth.cloudrail.com/com.jgmoneymanager.main",
+				"someState");
+
+		/*dropbox.useAdvancedAuthentication();
+		final Runnable r = new Runnable() {
+			public void run() {
+				dropbox.login();
+			}
+		};
+		r.run();*/
+
+		//dropbox.login();
+		if (Tools.getPreference(context, R.string.dropboxTokenKey).equals("null"))
+			Tools.setPreference(context, R.string.dropboxTokenKey, dropbox.saveAsString(), false);
+		else
+			try {
+				dropbox.loadAsString(Tools.getPreference(context, R.string.dropboxTokenKey));
+			} catch (com.cloudrail.si.exceptions.ParseException e) {
+				e.printStackTrace();
+			}
+		return dropbox;
+	}
+
+	public static File getDatabaseFile(Context context) {
+		return new File(Environment.getDataDirectory() + "/data/" + context.getPackageName() + "/databases/"
+				+ MoneyManagerProviderMetaData.DATABASE_NAME);
 	}
 }

@@ -30,9 +30,6 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.os.AsyncTask;
 
-import com.dropbox.client2.DropboxAPI;
-import com.dropbox.client2.android.AndroidAuthSession;
-import com.dropbox.client2.session.AppKeyPair;
 import com.jgmoneymanager.dialogs.DialogTools;
 import com.jgmoneymanager.mmlibrary.R;
 
@@ -40,7 +37,8 @@ import java.io.File;
 
 public class DropboxCheckRevisionForUpload extends AsyncTask<Void, Long, Boolean> {
 
-    private DropboxAPI<AndroidAuthSession> mApi;
+    // TODO dropbox comment
+    //private DropboxAPI<AndroidAuthSession> mApi;
     private File mFile;
 
     private Context mContext;
@@ -55,17 +53,19 @@ public class DropboxCheckRevisionForUpload extends AsyncTask<Void, Long, Boolean
 
         mFile = file;
 
-        AppKeyPair appKeys = new AppKeyPair(Constants.dropboxKey, Constants.dropboxSecret);
+        // TODO dropbox comment
+        /*AppKeyPair appKeys = new AppKeyPair(Constants.dropboxKey, Constants.dropboxSecret);
         AndroidAuthSession session = new AndroidAuthSession(appKeys, Constants.dropboxAccessType);
-        mApi = new DropboxAPI<AndroidAuthSession>(session);
+        mApi = new DropboxAPI<AndroidAuthSession>(session);*/
 
         Command cmd = new Command() {
             @Override
             public void execute() {
                 if (!Tools.getPreference(mContext, com.jgmoneymanager.main.R.string.dropboxTokenKey).equals("null")) {
-                    mApi.getSession().setOAuth2AccessToken(Tools.getPreference(mContext, com.jgmoneymanager.main.R.string.dropboxTokenKey));
+                    // TODO dropbox comment
+			        /*mApi.getSession().setOAuth2AccessToken(Tools.getPreference(mContext, com.jgmoneymanager.main.R.string.dropboxTokenKey));
                     DropboxUploadTaskLocal dUpload = new DropboxUploadTaskLocal(mContext, mApi, "", mFile, true);
-                    dUpload.execute();
+                    dUpload.execute();*/
 
                     Tools.setPreference(mContext, R.string.dropboxBackupLocalRevisonKey, mFile.lastModified());
                 }

@@ -3,11 +3,10 @@ package com.jgmoneymanager.tools;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.AsyncTask;
-import android.view.WindowManager;
 import android.widget.Toast;
 
-import com.dropbox.client2.DropboxAPI;
-import com.dropbox.client2.ProgressListener;
+import com.cloudrail.si.interfaces.CloudStorage;
+import com.cloudrail.si.services.Dropbox;
 import com.jgmoneymanager.dialogs.DialogTools;
 import com.jgmoneymanager.mmlibrary.R;
 import com.jgmoneymanager.services.DropboxSrvLocal;
@@ -21,7 +20,7 @@ import java.io.File;
  */
 public class DropboxUploadTaskLocal extends AsyncTask<Void, Long, Boolean> {
 
-    private DropboxAPI<?> mApi;
+    private CloudStorage mService;
     private String mPath;
     private File mFile;
     private boolean mShowProgressDialog;
@@ -34,15 +33,18 @@ public class DropboxUploadTaskLocal extends AsyncTask<Void, Long, Boolean> {
     private String mErrorMsg;
     private StringBuilder revision = new StringBuilder();
 
-    public DropboxUploadTaskLocal(Context context, DropboxAPI<?> api, String dropboxPath, File file, Boolean showProgressDialog) {
+    private ProgressInputStream.ProgressListener mProgressListener;
+
+    public DropboxUploadTaskLocal(Context context, CloudStorage service, String dropboxPath, File file, Boolean showProgressDialog) {
         // We set the context this way so we don't accidentally leak activities
         mContext = context.getApplicationContext();
 
         mFileLen = file.length();
-        mApi = api;
+        mService = service;
         mPath = dropboxPath;
         mFile = file;
         mShowProgressDialog = showProgressDialog;
+
 
         if (mShowProgressDialog) {
             mDialog = new ProgressDialog(context);
@@ -52,35 +54,24 @@ public class DropboxUploadTaskLocal extends AsyncTask<Void, Long, Boolean> {
 	        mDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
 	        mDialog.setProgress(0);
 	        mDialog.show();
+            mProgressListener = new ProgressInputStream.ProgressListener() {
+                @Override
+                public void onProgressChanged(long bytes) {
+                    int percent = (int)(100.0*(double)bytes/mFileLen + 0.5);
+                    if (mShowProgressDialog)
+                        mDialog.setProgress(percent);
+                }
+            };
         }
     }
 
     @Override
     protected Boolean doInBackground(Void... params) {
-    	ProgressListener progressListener = new ProgressListener() {
-            @Override
-            public long progressInterval() {
-                // Update the progress bar every half-second or so
-                return 500;
-            }
-
-            @Override
-            public void onProgress(long bytes, long total) {
-                publishProgress(bytes);
-            }
-        };
         if (Tools.isInternetAvailable(mContext/*, Tools.getPreferenceBool(mContext, R.string.dropboxAutoSyncWiFiKey, false)*/))
-        	mErrorMsg = DropboxSrvLocal.Upload(mContext, mPath, mFile, revision, mApi, progressListener);
+        	mErrorMsg = DropboxSrvLocal.Upload(mContext, mPath, mFile, revision, mService, mProgressListener);
         else
         	return false;
         return mErrorMsg.length() == 0;
-    }
-
-    @Override
-    protected void onProgressUpdate(Long... progress) {
-        int percent = (int)(100.0*(double)progress[0]/mFileLen + 0.5);
-        if (mShowProgressDialog) 
-        	mDialog.setProgress(percent);
     }
 
     @Override

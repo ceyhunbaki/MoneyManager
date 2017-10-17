@@ -30,15 +30,6 @@ import android.content.Context;
 import android.os.AsyncTask;
 import android.widget.Toast;
 
-import com.dropbox.client2.DropboxAPI;
-import com.dropbox.client2.DropboxAPI.Entry;
-import com.dropbox.client2.exception.DropboxException;
-import com.dropbox.client2.exception.DropboxFileSizeException;
-import com.dropbox.client2.exception.DropboxIOException;
-import com.dropbox.client2.exception.DropboxParseException;
-import com.dropbox.client2.exception.DropboxPartialFileException;
-import com.dropbox.client2.exception.DropboxServerException;
-import com.dropbox.client2.exception.DropboxUnlinkedException;
 import com.jgmoneymanager.dialogs.DialogTools;
 import com.jgmoneymanager.main.MainScreen;
 import com.jgmoneymanager.mmlibrary.R;
@@ -52,7 +43,6 @@ import java.io.File;
  */
 public class DropboxCheckRevisionForDownload extends AsyncTask<Void, Long, Boolean> {
 
-    private DropboxAPI<?> mApi;
     private String mPath;
     private String mCurrRevision;
     private File mFile;
@@ -67,13 +57,14 @@ public class DropboxCheckRevisionForDownload extends AsyncTask<Void, Long, Boole
     
     MainScreen mMainScreen;
 
-    public DropboxCheckRevisionForDownload(Context context, DropboxAPI<?> api, String dropboxPath, File file, String currRevision, MainScreen mainScreen) {
+    public DropboxCheckRevisionForDownload(Context context, /*DropboxAPI<?> api, */String dropboxPath, File file, String currRevision, MainScreen mainScreen) {
         // We set the context this way so we don't accidentally leak activities
         mContext = context.getApplicationContext();
         mGivenContext = context;
 
         mCurrRevision = currRevision;
-        mApi = api;
+        // TODO dropbox comment
+        //mApi = api;
         mPath = dropboxPath;
         mFile = file;
         
@@ -82,7 +73,8 @@ public class DropboxCheckRevisionForDownload extends AsyncTask<Void, Long, Boole
 
     @Override
     protected Boolean doInBackground(Void... params) {
-        try {            
+        // TODO dropbox comment
+			/*try {
             String path = mPath + mFile.getName();
             Entry existingEntry = mApi.metadata(path, 1, null, false, null);
             if ((existingEntry.bytes == 0) || (existingEntry.isDeleted)) {
@@ -134,7 +126,7 @@ public class DropboxCheckRevisionForDownload extends AsyncTask<Void, Long, Boole
         } catch (DropboxException e) {
             // Unknown error
             mErrorMsg = mContext.getString(R.string.unknownError);
-        } 
+        } */
         return false;
     }
 
@@ -142,7 +134,7 @@ public class DropboxCheckRevisionForDownload extends AsyncTask<Void, Long, Boole
     protected void onPostExecute(Boolean result) {
         if (result) {
             try {
-                DropboxDownload dDownload = new DropboxDownload(mGivenContext, mApi, "", mFile, mMainScreen);
+                DropboxDownload dDownload = new DropboxDownload(mGivenContext, Tools.getDropboxService(mContext), "", mFile, mMainScreen);
                 dDownload.execute();
             }
             catch (Exception e) {

@@ -139,7 +139,7 @@ public class MainScreen extends MyActivity
         	selectedAccountID = AccountSrv.getDefultAccountID(MainScreen.this, null);
         setActiveAccountButton(Integer.parseInt(String.valueOf(selectedAccountID)));
         refreshAccountDetails();
-        
+
 
     }
 
@@ -286,7 +286,7 @@ public class MainScreen extends MyActivity
                     @Override
                     public void execute() {
                         Cursor cursorInt = getContentResolver().query(VTransAccountViewMetaData.CONTENT_URI,
-                                new String[]{VTransAccountViewMetaData._ID}, VTransAccountViewMetaData.STATUS + " =1 ",
+                                new String[]{VTransAccountViewMetaData._ID}, VTransAccountViewMetaData.STATUS + " =1 and ",
                                 null, null);
                         cursorInt.moveToPosition(Constants.cursorPosition);
                         setActiveAccountButton(DBTools.getCursorColumnValueInt(cursorInt, VTransAccountViewMetaData._ID));
