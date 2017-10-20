@@ -1,0 +1,15 @@
+<!-- [ Mirror metadata ] generatedAt: 1459238185326 -->
+<!-- Generated screen file. Fill the id tags below with content with
+which to populate your previewed layout. For a complete specification
+of sample data, please see http://jimulabs.com/sample-data-specifications/ 
+
+Valid attributes on <screen> tag: theme="@style/someTheme" inEditMode="false" overlay="@drawable/mockup" -->
+<screen>
+    <_content layout="@layout/currency_list_row">
+        <!-- TextView Examples:
+        <l2column1 text="@string/string_resource" />
+        <l2column1 text="Text literal" textSize="14sp" /> -->
+        <l2column1 />
+        <l2column2 />
+    </_content>
+</screen>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/White">
+
+    <TextView
+        android:id="@+id/row2_name"
+        style="@style/ThemeNew.BudgetGroupTextSize.Left"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@+id/row2_value"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/category_child_row_left_pad"
+        android:text="text"
+        android:textColor="@drawable/color_selector" />
+
+    <TextView
+        android:id="@+id/row2_value"
+        style="@style/ThemeNew.BudgetGroupTextSize.Right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@+id/bt_group_edit"
+        android:gravity="right|center_vertical"
+        android:text="21"
+        android:textColor="@drawable/color_selector" />
+
+    <RelativeLayout
+        android:id="@+id/layBudgetGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/row2_name"
+        android:layout_marginLeft="@dimen/category_child_row_left_pad"
+        android:layout_toLeftOf="@+id/bt_group_edit" >
+
+        <ProgressBar
+            android:id="@+id/progressBar1"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:max="100"
+            android:visibility="visible"
+            android:progressDrawable="@drawable/greenprogress" />
+
+        <!--TextView
+            android:id="@+id/tvProgressText"
+            style="@style/CombinedListLabelNew.Small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="15/50"
+            android:textColor="@drawable/color_selector"/-->
+    </RelativeLayout>
+
+    <ImageButton
+        android:id="@+id/bt_group_edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/layBudgetGroup"
+        android:layout_alignTop="@id/row2_name"
+        android:layout_gravity="center_vertical"
+        android:layout_alignParentRight="true"
+        android:background="@color/transparent"
+        android:focusable="false"
+        android:onClick="myClickHandler"
+        android:src="@drawable/edit_new"
+        android:textColor="@drawable/color_selector" />
+
+</RelativeLayout>

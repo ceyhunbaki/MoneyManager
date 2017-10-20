@@ -1,0 +1,23 @@
+<!-- [ Mirror metadata ] generatedAt: 1459238185954 -->
+<!-- Generated screen file. Fill the id tags below with content with
+which to populate your previewed layout. For a complete specification
+of sample data, please see http://jimulabs.com/sample-data-specifications/ 
+
+Valid attributes on <screen> tag: theme="@style/someTheme" inEditMode="false" overlay="@drawable/mockup" -->
+<screen>
+    <_content layout="@layout/convertor">
+        <!-- TextView Examples:
+        <tvATTitle text="@string/string_resource" />
+        <tvATTitle text="Text literal" textSize="14sp" /> -->
+        <tvATTitle />
+        <lbConFrom />
+        <lbConTo />
+        <!-- ImageView Examples:
+        <imConRefresh src="@drawable/image_resource" />
+        <imConRefresh src="relative_path/image.jpg" /> -->
+        <imConRefresh />
+        <lbConRate />
+        <lbConValue />
+        <lbConResult />
+    </_content>
+</screen>

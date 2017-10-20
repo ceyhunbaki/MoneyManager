@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scrollView1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_alignParentLeft="true"
+    android:layout_alignParentTop="true"
+    android:background="@color/White">
+
+    <RelativeLayout
+        android:id="@+id/RelativeLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="fill">
+
+        <TextView
+            android:id="@+id/lbCurrName"
+            style="@style/ThemeNew.LabelText.First"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/edCurrName"
+            android:text="@string/name" />
+
+        <EditText
+            android:id="@+id/edCurrName"
+            style="@style/ThemeNew.ButtonText.NewMain.First"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:layout_alignParentTop="true"
+            android:layout_toLeftOf="@+id/btCurrNameEd"
+            android:layout_toRightOf="@id/lbCurrName"
+            android:hint="@string/name"/>
+
+        <ImageButton
+            android:id="@+id/btCurrNameEd"
+            style="@style/ThemeNew.TransImageButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/edCurrName"
+            android:layout_alignTop="@+id/edCurrName"
+            android:layout_alignParentRight="true"
+            android:background="@color/transparent"
+            android:onClick="myClickHandler"
+            android:src="@drawable/edit_new" />
+
+        <TextView
+            android:id="@+id/lbCurrSign"
+            style="@style/ThemeNew.LabelText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/edCurrSign"
+            android:layout_alignLeft="@+id/lbCurrName"
+            android:text="@string/sign" />
+
+        <EditText
+            android:id="@+id/edCurrSign"
+            style="@style/ThemeNew.ButtonText.First"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/edCurrName"
+            android:layout_toLeftOf="@+id/btCurrSignEd"
+            android:layout_below="@+id/edCurrName"
+            android:inputType="text"
+            android:hint="@string/sign"/>
+
+        <ImageButton
+            android:id="@+id/btCurrSignEd"
+            style="@style/ThemeNew.TransImageButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/edCurrSign"
+            android:layout_alignTop="@+id/edCurrSign"
+            android:layout_alignParentRight="true"
+            android:background="@color/transparent"
+            android:onClick="myClickHandler"
+            android:src="@drawable/edit_new" />
+
+        <Button
+            android:id="@+id/btCurrCancel"
+            style="@style/ThemeNew.ButtonText.OKButton.Left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/lbCurrName"
+            android:layout_below="@+id/edCurrSign"
+            android:onClick="myClickHandler"
+            android:text="@string/Cancel" />
+
+        <Button
+            android:id="@+id/btCurrOk"
+            style="@style/ThemeNew.ButtonText.OKButton.Right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/edCurrSign"
+            android:layout_alignBottom="@+id/btCurrCancel"
+            android:layout_alignRight="@+id/btCurrNameEd"
+            android:onClick="myClickHandler"
+            android:text="@string/ok" />
+
+    </RelativeLayout>
+</ScrollView>

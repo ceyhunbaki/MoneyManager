@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/acSortMain"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/White">
+
+    <RelativeLayout
+        android:id="@+id/relDrList"
+        android:layout_width="fill_parent"
+        android:layout_alignParentTop="true"
+        android:layout_above="@+id/relDRButtons"
+        android:layout_height="fill_parent"
+        android:background="@color/White">
+
+        <com.ericharlow.DragNDrop.DragNDropListView
+            android:id="@+id/drListView"
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:cacheColorHint="#00000000"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="@dimen/combined_list_label_left_margin"
+            android:layout_marginRight="@dimen/combined_list_label_right_margin"
+            android:scrollingCache="true" >
+        </com.ericharlow.DragNDrop.DragNDropListView>
+
+        <!--RelativeLayout
+            android:id="@+id/DrLayoutAds"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true">
+
+        </RelativeLayout-->
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relDRButtons"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/White">
+
+        <Button
+            android:id="@+id/btDRAZ"
+            style="@style/ThemeNew.ButtonText.OKButton.Center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="@dimen/combined_list_label_left_margin"
+            android:layout_marginRight="@dimen/combined_list_label_right_margin"
+            android:text="@string/sortAtoZ"
+            android:onClick="myClickHandler" />
+
+        <Button
+            android:id="@+id/btDRAddNew"
+            style="@style/ThemeNew.ButtonText.OKButton.Center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="@dimen/combined_list_label_left_margin"
+            android:layout_marginRight="@dimen/combined_list_label_right_margin"
+            android:layout_below="@id/btDRAZ"
+            android:text="@string/addNew"
+            android:onClick="myClickHandler" />
+    </RelativeLayout>
+
+</RelativeLayout>

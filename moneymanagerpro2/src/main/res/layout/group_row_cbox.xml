@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content">
+    <!-- 
+    android:background="@color/White" -->
+    
+    <TextView
+        android:id="@+id/grp_main_name"
+        style="@style/CombinedListLabelNew.Medium"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_toLeftOf="@+id/grp_main_check"
+        android:paddingLeft="@dimen/category_child_row_left_pad"
+        android:gravity="center_vertical"
+        android:textColor="@drawable/color_selector" /> 
+
+    <CheckBox 
+        android:id="@+id/grp_main_check"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/grp_main_name"
+        android:layout_alignTop="@id/grp_main_name"
+        android:layout_gravity="center_vertical"
+        android:layout_alignParentRight="true"/>
+
+</RelativeLayout>

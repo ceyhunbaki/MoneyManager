@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/onlyListLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/White">
+
+    <ListView
+        android:id="@+id/curList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btCurrRatesAdd"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="@dimen/combined_list_label_left_margin"
+        android:layout_marginRight="@dimen/combined_list_label_right_margin"
+        android:divider="@color/newThemeBlue"
+        android:dividerHeight="@dimen/main_round_button_side"/>
+
+    <Button
+        android:id="@+id/btCurrRatesAdd"
+        style="@style/ThemeNew.ButtonText.OKButton.Third"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:minHeight="@dimen/button_text_min_height"
+        android:layout_marginLeft="@dimen/combined_list_label_left_margin"
+        android:layout_marginRight="@dimen/combined_list_label_right_margin"
+        android:onClick="myClickHandler"
+        android:text="@string/menuAdd" />
+
+</RelativeLayout>

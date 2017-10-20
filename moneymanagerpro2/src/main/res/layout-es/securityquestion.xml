@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <EditText
+        android:id="@+id/edSQQuestion"
+        style="@style/ThemeNew.ButtonText.First"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignLeft="@+id/edSQAnswer"
+        android:layout_alignRight="@+id/edSQAnswer"
+        android:hint="@string/securityQuestionTitle" >
+
+        <requestFocus />
+    </EditText>
+
+    <TextView
+        android:id="@+id/lbSQAnswer"
+        style="@style/ThemeNew.LabelText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/edSQAnswer"
+        android:layout_alignLeft="@+id/lbSQQuestion"
+        android:maxLines="1"
+        android:text="@string/answer" />
+
+    <EditText
+        android:id="@+id/edSQAnswer"
+        style="@style/ThemeNew.ButtonText.Main"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_toRightOf="@+id/lbSQAnswer"
+        android:layout_below="@+id/edSQQuestion"
+        android:hint="@string/securityanswer" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/edSQAnswer"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/btSQCancel"
+            style="@style/ThemeNew.Dialog.OKButton.Left"
+            android:layout_width="0px"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="@string/Cancel" />
+
+        <Button
+            android:id="@+id/btSQOk"
+            style="@style/ThemeNew.Dialog.OKButton.Right"
+            android:layout_width="0px"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="@string/ok" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/lbSQQuestion"
+        style="@style/ThemeNew.LabelText.First"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/question"
+        android:layout_alignBaseline="@+id/edSQQuestion"
+        android:layout_alignBottom="@+id/edSQQuestion"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+</RelativeLayout>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="ThemeNew.MainBalanceLabel" parent="android:Theme">
+        <item name="android:textSize">@dimen/main_balance_text_size</item>
+        <item name="android:background">@color/Black</item>
+    </style>
+
+    <style name="ThemeNew.MainBalanceValueLabel" parent="android:Theme">
+        <item name="android:textSize">@dimen/main_balance_value_text_size</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:background">@color/Black</item>
+    </style>
+
+    <style name="ThemeNew.MainBalanceValueLabel.Left" parent="ThemeNew.MainBalanceValueLabel">
+        <item name="android:layout_marginRight">@dimen/main_balance_value_margin</item>
+    </style>
+
+    <style name="ThemeNew.MainBalanceValueLabel.Right" parent="ThemeNew.MainBalanceValueLabel">
+        <item name="android:layout_marginLeft">@dimen/main_balance_value_margin</item>
+    </style>
+
+    <style name="ThemeNew.Main.CircleButton" parent="android:Theme">
+        <item name="android:minHeight">@dimen/main_circle_button_radius</item>
+        <item name="android:minWidth">@dimen/main_circle_button_radius</item>
+        <item name="android:layout_centerInParent">true</item>
+        <item name="android:background">@drawable/circle_image_button</item>
+    </style>
+
+    <style name="ThemeNew.Main.RoundButtons" parent="android:Theme">
+        <item name="android:textSize">@dimen/main_round_button_text_size</item>
+        <item name="android:layout_marginTop">@dimen/main_round_button_top_margin</item>
+        <item name="android:minHeight">@dimen/main_round_button_min_height</item>
+    </style>
+
+    <style name="ThemeNew.Main.RoundButtons.Blue" parent="ThemeNew.Main.RoundButtons">
+        <item name="android:background">@drawable/round_button_blue</item>
+        <item name="android:layout_marginRight">@dimen/main_round_button_left_right_margin</item>
+        <item name="android:layout_marginLeft">@dimen/main_round_button_middle_margin</item>
+        <item name="android:textColor">@color/White</item>
+    </style>
+
+    <style name="ThemeNew.Main.RoundButtons.White" parent="ThemeNew.Main.RoundButtons">
+        <item name="android:background">@drawable/round_button_white</item>
+        <item name="android:layout_marginLeft">@dimen/main_round_button_left_right_margin</item>
+        <item name="android:layout_marginRight">@dimen/main_round_button_middle_margin</item>
+        <item name="android:minHeight">@dimen/main_round_button_min_height</item>
+        <item name="android:textColor">@color/newThemeBlue</item>
+    </style>
+</resources>

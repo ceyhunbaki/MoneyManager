@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="whatsnew">Was gibt es Neues?</string>
+	<string name="v1_0_1">-Behobene Fehler.</string>
+</resources>

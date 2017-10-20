@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ConLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/White"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_bar_height"
+        android:background="@color/Black"
+        android:baselineAligned="false"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:layout_weight="5"
+            android:baselineAligned="false">
+
+            <LinearLayout
+                android:layout_width="0px"
+                android:layout_height="fill_parent"
+                android:layout_weight="1.4">
+
+                <TextView
+                    android:id="@+id/lbConFrom"
+                    style="@style/ThemeNew.Converter.Button.ComboBox"
+                    android:layout_width="0px"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.2"
+                    android:text="@string/from" />
+
+                <ImageButton
+                    android:id="@+id/btConFrom"
+                    style="@style/ThemeNew.ButtonText"
+                    android:layout_width="0px"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:background="@color/Black"
+                    android:onClick="myClickHandler"
+                    android:src="@drawable/ic_menu_more" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0px"
+                android:layout_height="fill_parent"
+                android:layout_weight="0.9" />
+
+            <LinearLayout
+                android:layout_width="0px"
+                android:layout_height="fill_parent"
+                android:layout_weight="1.4">
+
+                <TextView
+                    android:id="@+id/lbConTo"
+                    style="@style/ThemeNew.Converter.Button.ComboBox"
+                    android:layout_width="0px"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.2"
+                    android:text="@string/to" />
+
+                <ImageButton
+                    android:id="@+id/btConTo"
+                    style="@style/ThemeNew.ButtonText"
+                    android:layout_width="0px"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:background="@color/Black"
+                    android:onClick="myClickHandler"
+                    android:src="@drawable/ic_menu_more" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:layout_weight="4" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:baselineAligned="false"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:layout_weight="5"
+            android:baselineAligned="false"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0px"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/btConvFrom1"
+                    style="@style/ThemeNew.Converter.Button"
+                    android:layout_width="match_parent"
+                    android:layout_height="0px"
+                    android:layout_marginTop="@dimen/converter_button_land_first_margin"
+                    android:layout_weight="1"
+                    android:text="AZN"
+                    android:onClick="myClickHandler" />
+
+                <Button
+                    android:id="@+id/btConvFrom2"
+                    style="@style/ThemeNew.Converter.Button"
+                    android:layout_width="match_parent"
+                    android:layout_height="0px"
+                    android:layout_weight="1"
+                    android:onClick="myClickHandler" />
+
+                <Button
+                    android:id="@+id/btConvFrom3"
+                    style="@style/ThemeNew.Converter.Button"
+                    android:layout_width="match_parent"
+                    android:layout_height="0px"
+                    android:layout_weight="1"
+                    android:onClick="myClickHandler" />
+
+                <EditText
+                    android:id="@+id/edConvFrom"
+                    style="@style/ThemeNew.Converter.Button.Filter"
+                    android:layout_width="match_parent"
+                    android:layout_height="0px"
+                    android:layout_marginBottom="@dimen/converter_button_land_first_margin"
+                    android:layout_weight="1"
+                    android:hint="@string/filter" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="0px"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/btConvTo1"
+                    style="@style/ThemeNew.Converter.Button"
+                    android:layout_width="match_parent"
+                    android:layout_height="0px"
+                    android:layout_marginTop="@dimen/converter_button_land_first_margin"
+                    android:layout_weight="1"
+                    android:onClick="myClickHandler" />
+
+                <Button
+                    android:id="@+id/btConvTo2"
+                    style="@style/ThemeNew.Converter.Button"
+                    android:layout_width="match_parent"
+                    android:layout_height="0px"
+                    android:layout_weight="1"
+                    android:onClick="myClickHandler" />
+
+                <Button
+                    android:id="@+id/btConvTo3"
+                    style="@style/ThemeNew.Converter.Button"
+                    android:layout_width="match_parent"
+                    android:layout_height="0px"
+                    android:layout_weight="1"
+                    android:onClick="myClickHandler" />
+
+                <EditText
+                    android:id="@+id/edConvTo"
+                    style="@style/ThemeNew.Converter.Button.Filter"
+                    android:layout_width="match_parent"
+                    android:layout_height="0px"
+                    android:layout_marginBottom="@dimen/converter_button_land_first_margin"
+                    android:layout_weight="1"
+                    android:hint="@string/filter" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:layout_weight="4"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0px"
+                android:layout_weight="1"
+                android:baselineAligned="false"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0px"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/lbConRate"
+                        style="@style/ThemeNew.Converter.Label.Big"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/converter_button_land_first_margin"
+                        android:gravity="center"
+                        android:text="@string/rate"
+                        android:textColor="@color/newThemeBlue" />
+
+                    <EditText
+                        android:id="@+id/edConRate"
+                        style="@style/ThemeNew.Converter.Button.Values"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="numberDecimal"
+                        android:text="1.00" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0px"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/lbConValue"
+                        style="@style/ThemeNew.Converter.Label.Big"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/converter_button_land_first_margin"
+                        android:gravity="center"
+                        android:text="@string/value"
+                        android:textColor="@color/newThemeBlue" />
+
+                    <EditText
+                        android:id="@+id/edConValue"
+                        style="@style/ThemeNew.Converter.Button.Values"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="numberDecimal">
+
+                        <requestFocus />
+                    </EditText>
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0px"
+                android:layout_marginTop="@dimen/converter_result_layout_margin_top"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/lbConResult"
+                    style="@style/ThemeNew.Converter.Label.Big"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/result" />
+
+                <EditText
+                    android:id="@+id/edConResult"
+                    style="@style/ThemeNew.Converter.Button.Result"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="none"
+                    android:layout_marginBottom="@dimen/converter_button_land_first_margin"
+                    android:text="0.00" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

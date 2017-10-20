@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scrollView1"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:minWidth="@dimen/dialog_min_width">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:minWidth="@dimen/dialog_min_width"
+        android:orientation="vertical"
+        android:background="@color/White">
+
+        <TextView
+            android:id="@+id/dmTvTitle"
+            style="@style/ThemeNew.Dialog.Title"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:textSize="@dimen/title_text_size"
+            android:text="@string/msgSelectPeriod" />
+
+        <TextView
+            android:id="@+id/dmTvFromPeriod"
+            style="@style/ThemeNew.Converter.Label.Small"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="@string/dateFrom"
+            android:textColor="@color/Black" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/dmDateFrom"
+                style="@style/ThemeNew.ButtonText.Dialog"
+                android:layout_width="0px"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="myClickHandler"/>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/dmTvToPeriod"
+            style="@style/ThemeNew.Converter.Label.Small"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dialog_items_margin_top"
+            android:gravity="center_horizontal"
+            android:text="@string/dateTo"
+            android:textColor="@color/Black" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/dmDateTo"
+                style="@style/ThemeNew.ButtonText.Dialog"
+                android:layout_width="0px"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="myClickHandler" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dialog_title_margin_bottom"
+            android:layout_marginTop="@dimen/dialog_items_margin_top">
+
+            <Button
+                android:id="@+id/dmBtCancel"
+                style="@style/ThemeNew.Converter.Button.Filter"
+                android:layout_width="0px"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="@dimen/dialog_ok_text_size"
+                android:text="@string/Cancel" />
+
+            <Button
+                android:id="@+id/dmBtOK"
+                style="@style/ThemeNew.Converter.Button.Filter"
+                android:layout_width="0px"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="@dimen/dialog_ok_text_size"
+                android:text="@string/ok" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/White">
+
+    <LinearLayout
+        android:id="@+id/layFeButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btFEUp"
+            style="@style/ThemeNew.ButtonText.Main"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/up" />
+
+        <TextView
+            android:id="@+id/tvFEPath"
+            style="@style/ThemeNew.LabelText.First"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="path"
+            android:textColor="@color/Black" />
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/lvFe"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_above="@id/btFeSelectThis"
+        android:layout_below="@+id/layFeButton"/>
+
+    <Button
+        android:id="@+id/btFeSelectThis"
+        style="@style/ThemeNew.ButtonText.OKButton.Center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btFeAddFolder"
+        android:layout_alignRight="@+id/catExListView"
+        android:layout_alignLeft="@+id/catExListView"
+        android:layout_marginLeft="@dimen/ok_button_margin_side"
+        android:layout_marginRight="@dimen/ok_button_margin_side"
+        android:minWidth="@dimen/category_button_min_width"
+        android:onClick="myClickHandler"
+        android:text="@string/menuSelectFolder" />
+
+    <Button
+        android:id="@+id/btFeAddFolder"
+        style="@style/ThemeNew.ButtonText.OKButton.Center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/catExListView"
+        android:layout_alignLeft="@+id/catExListView"
+        android:layout_marginLeft="@dimen/ok_button_margin_side"
+        android:layout_marginRight="@dimen/ok_button_margin_side"
+        android:minWidth="@dimen/category_button_min_width"
+        android:onClick="myClickHandler"
+        android:text="@string/menuAddFolder" />
+
+</RelativeLayout>

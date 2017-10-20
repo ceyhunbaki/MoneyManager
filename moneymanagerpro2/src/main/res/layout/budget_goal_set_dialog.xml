@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/White">
+
+    <TextView
+        android:id="@+id/bgsTitle"
+        style="@style/ThemeNew.Dialog.Title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center_horizontal"
+        android:text="@string/addGoal"
+        android:textSize="@dimen/title_text_size" />
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dialog_items_margin_top"
+        android:layout_marginLeft="@dimen/dialog_items_margin"
+        android:layout_marginRight="@dimen/dialog_items_margin">
+
+        <TextView
+            android:id="@+id/bgsTargetDescriptionLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:text="@string/description"
+            android:textColor="@color/newThemeBlue"
+            android:textAlignment="center"
+            style="@style/ThemeNew.LabelText" />
+
+        <EditText
+            android:id="@+id/bgsTargetDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/bgsTargetDescriptionLabel"
+            android:hint="@string/description"
+            android:minWidth="@dimen/ok_button_min_width"
+            style="@style/ThemeNew.ButtonText" />
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dialog_items_margin_top"
+        android:layout_marginLeft="@dimen/dialog_items_margin"
+        android:layout_marginRight="@dimen/dialog_items_margin">
+
+        <TextView
+            android:id="@+id/bgsTargetMonthName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/bgsTargetMonth"
+            android:layout_alignParentLeft="true"
+            android:text="@string/targetMonth"
+            android:layout_alignBaseline="@+id/bgsTargetMonth"
+            android:textColor="@color/newThemeBlue"
+            style="@style/ThemeNew.LabelText" />
+
+        <Button
+            android:id="@+id/bgsTargetMonth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:minWidth="@dimen/ok_button_min_width"
+            android:maxWidth="@dimen/ok_button_min_width"
+            style="@style/ThemeNew.ButtonText" />
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dialog_items_margin_top"
+        android:layout_marginLeft="@dimen/dialog_items_margin"
+        android:layout_marginRight="@dimen/dialog_items_margin">
+
+        <TextView
+            android:id="@+id/bgsTargetAmountName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/bgsTargetAmount"
+            android:layout_alignParentLeft="true"
+            android:layout_alignBaseline="@+id/bgsTargetAmount"
+            android:text="@string/targetAmount"
+            android:textColor="@color/newThemeBlue"
+            style="@style/ThemeNew.LabelText" />
+
+        <EditText
+            android:id="@+id/bgsTargetAmount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:minWidth="@dimen/ok_button_min_width"
+            android:inputType="numberDecimal"
+            style="@style/ThemeNew.ButtonText" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dialog_title_margin_bottom"
+        android:layout_marginTop="@dimen/dialog_items_margin_top"
+        android:layout_marginLeft="@dimen/dialog_items_margin"
+        android:layout_marginRight="@dimen/dialog_items_margin">
+
+        <Button
+            android:id="@+id/bgsCancel"
+            style="@style/ThemeNew.Converter.Button.Filter"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/Cancel"
+            android:textSize="@dimen/dialog_ok_text_size" />
+
+        <Button
+            android:id="@+id/bgsSave"
+            style="@style/ThemeNew.Converter.Button.Filter"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/menuSave"
+            android:textSize="@dimen/dialog_ok_text_size"/>
+
+    </LinearLayout>
+</LinearLayout>

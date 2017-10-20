@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/scrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:background="@color/White">
+
+<RelativeLayout 
+    android:id="@+id/RelativeLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="fill">
+
+    <TextView
+        android:id="@+id/lbAccName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/edAccName"
+        android:text="@string/name"
+        style="@style/ThemeNew.LabelText.First" />
+
+    <EditText
+        android:id="@+id/edAccName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/lbAccName"
+        android:layout_alignLeft="@+id/edAccInitBalance"
+        android:layout_toLeftOf="@+id/btAccNameEd"
+        android:inputType="text"
+        android:hint="@string/name"
+        style="@style/ThemeNew.ButtonText.First">
+        <requestFocus />
+    </EditText>
+
+    <ImageButton
+        android:id="@+id/btAccNameEd"
+        style="@style/ThemeNew.TransImageButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/edAccName"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/edAccName"
+        android:background="@color/transparent"
+        android:onClick="myClickHandler"
+        android:src="@drawable/edit_new" />
+
+    <TextView
+        android:id="@+id/lbAccSign"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/lbAccName"
+        android:layout_alignBaseline="@+id/btAccCurrSign"
+        android:text="@string/currency"
+        style="@style/ThemeNew.LabelText" />
+
+    <Button
+        android:id="@+id/btAccCurrSign"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/edAccInitBalance"
+        android:layout_toLeftOf="@+id/btAccCurrSignEd"
+        android:layout_below="@id/edAccName"
+        android:gravity="center"
+        style="@style/ThemeNew.ButtonText"
+        android:hint="@string/currency"
+        android:onClick="myClickHandler"/>
+
+    <ImageButton
+        android:id="@+id/btAccCurrSignEd"
+        style="@style/ThemeNew.TransImageButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/btAccCurrSign"
+        android:layout_alignTop="@+id/btAccCurrSign"
+        android:layout_alignParentRight="true"
+        android:background="@color/transparent"
+        android:onClick="myClickHandler"
+        android:src="@drawable/edit_new" />
+
+    <TextView
+        android:id="@+id/lbAccInitBalance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/lbAccSign"
+        android:layout_alignBaseline="@+id/edAccInitBalance"
+        android:text="@string/initialBalance"
+        style="@style/ThemeNew.LabelText"
+        android:maxLines="2" />
+
+    <EditText
+        android:id="@+id/edAccInitBalance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@+id/btAccInitBalanceEd"
+        android:layout_below="@+id/btAccCurrSign"
+        android:layout_toRightOf="@+id/lbAccInitBalance"
+        android:inputType="number|numberSigned|numberDecimal"
+        android:text="@string/zeroValue"
+        style="@style/ThemeNew.ButtonText.NewMain"/>
+
+    <ImageButton
+        android:id="@+id/btAccInitBalanceEd"
+        style="@style/ThemeNew.TransImageButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/edAccInitBalance"
+        android:layout_alignTop="@+id/edAccInitBalance"
+        android:layout_alignParentRight="true"
+        android:background="@color/transparent"
+        android:onClick="myClickHandler"
+        android:src="@drawable/edit_new" />
+
+    <TextView
+        android:id="@+id/lbAccDesc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/lbAccInitBalance"
+        android:layout_alignBaseline="@+id/edAccDesc"
+        android:text="@string/description"
+        style="@style/ThemeNew.LabelText"/>
+
+    <EditText
+        android:id="@+id/edAccDesc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/edAccInitBalance"
+        android:layout_toLeftOf="@+id/btAccDescEd"
+        android:layout_below="@+id/edAccInitBalance"
+        android:inputType="text"
+        android:minWidth="180dp"
+        android:maxWidth="180dp"
+        android:hint="@string/description"
+        style="@style/ThemeNew.ButtonText"/>
+
+    <ImageButton
+        android:id="@+id/btAccDescEd"
+        style="@style/ThemeNew.TransImageButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/edAccDesc"
+        android:layout_alignTop="@+id/edAccDesc"
+        android:layout_alignParentRight="true"
+        android:background="@color/transparent"
+        android:onClick="myClickHandler"
+        android:src="@drawable/edit_new" />
+
+    <TextView
+        android:id="@+id/lbAccStatus"
+        style="@style/ThemeNew.LabelText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/lbAccDesc"
+        android:layout_alignTop="@+id/spAccStatus"
+        android:layout_alignBottom="@+id/spAccStatus"
+        android:gravity="center_vertical"
+        android:text="@string/status" />
+    
+    <Spinner
+        android:id="@+id/spAccStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/edAccInitBalance"
+        android:layout_toLeftOf="@+id/btAccStatusEd"
+        android:layout_below="@+id/edAccDesc"
+        style="@style/ThemeNew.Spinner"/>
+
+    <ImageButton
+        android:id="@+id/btAccStatusEd"
+        style="@style/ThemeNew.TransImageButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/spAccStatus"
+        android:layout_alignTop="@+id/spAccStatus"
+        android:layout_alignParentRight="true"
+        android:background="@color/transparent"
+        android:onClick="myClickHandler"
+        android:src="@drawable/edit_new" />
+
+    <TextView
+        android:id="@+id/lbAccIsDefault"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/lbAccDesc"
+		android:layout_alignBaseline="@+id/cbAccIsDefault"
+        android:text="@string/isDefault"
+        style="@style/ThemeNew.LabelText"/>
+
+    <CheckBox
+        android:id="@+id/cbAccIsDefault"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"        
+        android:layout_alignRight="@+id/edAccInitBalance"
+        android:layout_below="@+id/spAccStatus"
+		style="@style/ThemeNew.ButtonText" />
+    
+    <TextView
+        android:id="@+id/lbAccAddedDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/lbAccDesc"
+		android:layout_alignBaseline="@+id/lbAccAddedDateValue"
+        android:text="@string/addedDate"
+        style="@style/ThemeNew.LabelText" />
+    
+    <TextView
+        android:id="@+id/lbAccAddedDateValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/edAccInitBalance"
+        android:layout_below="@+id/cbAccIsDefault"
+        android:text="10.05.2015"
+        style="@style/ThemeNew.LabelText"/>
+    
+    <Button
+        android:id="@+id/btAccCancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/lbAccName"
+        android:layout_below="@+id/lbAccAddedDateValue"
+        android:text="@string/Cancel"
+        style="@style/ThemeNew.ButtonText.OKButton.Left"
+        android:onClick="myClickHandler" />
+
+    <Button
+        android:id="@+id/btAccOk"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lbAccAddedDateValue"
+        android:layout_alignBottom="@+id/btAccCancel"
+        android:layout_alignRight="@+id/btAccStatusEd"
+        android:text="@string/ok"
+        style="@style/ThemeNew.ButtonText.OKButton.Right"
+        android:onClick="myClickHandler" />
+
+</RelativeLayout>
+</ScrollView>

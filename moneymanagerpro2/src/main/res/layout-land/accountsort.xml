@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/White">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_above="@+id/layAcSort"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="@dimen/status_list_side_margin"
+        android:layout_marginLeft="@dimen/status_list_side_margin">
+
+        <com.ericharlow.DragNDrop.DragNDropListView
+            android:id="@+id/drListView"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:cacheColorHint="#00000000"
+            android:scrollingCache="true" >
+        </com.ericharlow.DragNDrop.DragNDropListView>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/layAcSort"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="@dimen/status_list_side_margin"
+        android:layout_marginLeft="@dimen/status_list_side_margin"
+        android:minHeight="@dimen/button_text_min_height">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0px"
+                android:layout_weight="1"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:id="@+id/btDRAZ"
+                    style="@style/ThemeNew.ButtonText.OKButton.Center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="myClickHandler"
+                    android:text="@string/sortAtoZ"
+                    android:minLines="2"
+                    android:textColor="@color/White" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0px"
+                android:layout_weight="1"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:id="@+id/btDRAddNew"
+                    style="@style/ThemeNew.ButtonText.OKButton.Center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="myClickHandler"
+                    android:text="@string/addNew"
+                    android:minLines="2"
+                    android:textColor="@color/White" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>

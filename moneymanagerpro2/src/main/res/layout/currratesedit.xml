@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scrollView1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_alignParentLeft="true"
+    android:layout_alignParentTop="true"
+    android:background="@color/White"
+    android:configChanges="orientation">
+
+    <RelativeLayout
+        android:id="@+id/RelativeLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="fill">
+
+        <TextView
+            android:id="@+id/lbCurrRatesFrom"
+            style="@style/ThemeNew.LabelText.First"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/btCurrRatesFrom"
+            android:layout_alignParentLeft="true"
+            android:text="@string/from" />
+
+        <Button
+            android:id="@+id/btCurrRatesFrom"
+            style="@style/ThemeNew.ButtonText.NewMain.First"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/btBtCurrRatesFromEd"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/lbCurrRatesFrom"
+            android:onClick="myClickHandler"
+            android:hint="@string/from" />
+
+        <ImageButton
+            android:id="@+id/btBtCurrRatesFromEd"
+            style="@style/ThemeNew.TransImageButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/btCurrRatesFrom"
+            android:layout_alignTop="@id/btCurrRatesFrom"
+            android:layout_alignParentRight="true"
+            android:background="@color/transparent"
+            android:onClick="myClickHandler"
+            android:src="@drawable/edit_new" />
+
+        <TextView
+            android:id="@+id/lbCurrRatesTo"
+            style="@style/ThemeNew.LabelText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/btCurrRatesTo"
+            android:layout_alignLeft="@+id/lbCurrRatesFrom"
+            android:text="@string/to" />
+
+        <Button
+            android:id="@+id/btCurrRatesTo"
+            style="@style/ThemeNew.ButtonText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/btCurrRatesFrom"
+            android:layout_toLeftOf="@+id/btBtCurrRatesToEd"
+            android:layout_below="@+id/btCurrRatesFrom"
+            android:layout_centerHorizontal="true"
+            android:onClick="myClickHandler"
+            android:hint="@string/to" />
+
+        <ImageButton
+            android:id="@+id/btBtCurrRatesToEd"
+            style="@style/ThemeNew.TransImageButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/btCurrRatesTo"
+            android:layout_alignTop="@id/btCurrRatesTo"
+            android:layout_alignParentRight="true"
+            android:background="@color/transparent"
+            android:onClick="myClickHandler"
+            android:src="@drawable/edit_new" />
+
+        <TextView
+            android:id="@+id/lbCurrRatesRate"
+            style="@style/ThemeNew.LabelText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/edCurrRatesRate"
+            android:layout_alignLeft="@+id/lbCurrRatesFrom"
+            android:text="@string/rate" />
+
+        <EditText
+            android:id="@+id/edCurrRatesRate"
+            style="@style/ThemeNew.ButtonText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/btCurrRatesFrom"
+            android:layout_toLeftOf="@+id/btCurrRatesRateEd"
+            android:layout_below="@+id/btCurrRatesTo"
+            android:ems="10"
+            android:hint="@string/rate"
+            android:inputType="numberDecimal"/>
+
+        <ImageButton
+            android:id="@+id/btCurrRatesRateEd"
+            style="@style/ThemeNew.TransImageButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/edCurrRatesRate"
+            android:layout_alignTop="@id/edCurrRatesRate"
+            android:layout_alignParentRight="true"
+            android:background="@color/transparent"
+            android:onClick="myClickHandler"
+            android:src="@drawable/edit_new" />
+
+        <TextView
+            android:id="@+id/lbCurrRatesDate"
+            style="@style/ThemeNew.LabelText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/btCurrRatesDate"
+            android:layout_alignLeft="@+id/lbCurrRatesFrom"
+            android:text="@string/date" />
+
+        <Button
+            android:id="@+id/btCurrRatesDate"
+            style="@style/ThemeNew.ButtonText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/btCurrRatesFrom"
+            android:layout_toLeftOf="@+id/btCurrRatesDateEd"
+            android:layout_below="@+id/edCurrRatesRate"
+            android:layout_centerHorizontal="true"
+            android:onClick="myClickHandler"
+            android:hint="@string/date" />
+
+        <ImageButton
+            android:id="@+id/btCurrRatesDateEd"
+            style="@style/ThemeNew.TransImageButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/btCurrRatesDate"
+            android:layout_alignTop="@id/btCurrRatesDate"
+            android:layout_alignParentRight="true"
+            android:background="@color/transparent"
+            android:onClick="myClickHandler"
+            android:src="@drawable/edit_new" />
+
+        <Button
+            android:id="@+id/btCurrRatesCancel"
+            style="@style/ThemeNew.ButtonText.OKButton.Left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/lbCurrRatesFrom"
+            android:layout_below="@+id/btCurrRatesDate"
+            android:onClick="myClickHandler"
+            android:text="@string/Cancel" />
+
+        <Button
+            android:id="@+id/btCurrRatesOk"
+            style="@style/ThemeNew.ButtonText.OKButton.Right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/btCurrRatesCancel"
+            android:layout_alignRight="@+id/btCurrRatesDateEd"
+            android:layout_below="@+id/btCurrRatesDate"
+            android:onClick="myClickHandler"
+            android:text="@string/ok" />
+
+    </RelativeLayout>
+</ScrollView>

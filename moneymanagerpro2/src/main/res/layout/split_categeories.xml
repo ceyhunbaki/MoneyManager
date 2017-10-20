@@ -1,0 +1,508 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/relSplitMain"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:id="@+id/relSplitRow1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/split_row_background">
+
+                <Button
+                    android:id="@+id/btSplitCat1"
+                    style="@style/SplitTransaction.CategoryButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="myClickHandler"
+                    android:textColor="@color/Black" />
+
+                <EditText
+                    android:id="@+id/edSplitAmount1"
+                    style="@style/SplitTransaction.EditTextAmount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@id/btSplitCat1"
+                    android:layout_toLeftOf="@+id/ibSplitCalc1"
+                    android:hint="@string/amount"/>
+
+                <ImageButton
+                    android:id="@+id/ibSplitCalc1"
+                    style="@style/ThemeNew.TransImageButton.SplitTransaction"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/btSplitCat1"
+                    android:layout_toLeftOf="@+id/ibSplitDel1"
+                    android:onClick="myClickHandler"
+                    android:src="@drawable/edit_new" />
+
+                <ImageButton
+                    android:id="@+id/ibSplitDel1"
+                    style="@style/ThemeNew.TransImageButton.SplitTransaction"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@id/btSplitCat1"
+                    android:onClick="myClickHandler"
+                    android:src="@drawable/split_collapse" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/relSplitRow2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/relSplitRow1"
+                android:background="@drawable/split_row_background">
+
+                <Button
+                    android:id="@+id/btSplitCat2"
+                    style="@style/SplitTransaction.CategoryButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="myClickHandler"/>
+
+                <EditText
+                    android:id="@+id/edSplitAmount2"
+                    style="@style/SplitTransaction.EditTextAmount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@id/btSplitCat2"
+                    android:layout_toLeftOf="@+id/ibSplitCalc2"
+                    android:hint="@string/amount"/>
+
+                <ImageButton
+                    android:id="@+id/ibSplitCalc2"
+                    style="@style/ThemeNew.TransImageButton.SplitTransaction"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/btSplitCat2"
+                    android:layout_toLeftOf="@+id/ibSplitDel2"
+                    android:onClick="myClickHandler"
+                    android:src="@drawable/edit_new" />
+
+                <ImageButton
+                    android:id="@+id/ibSplitDel2"
+                    style="@style/ThemeNew.TransImageButton.SplitTransaction"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@id/btSplitCat2"
+                    android:onClick="myClickHandler"
+                    android:src="@drawable/split_collapse" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/relSplitRow3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/relSplitRow2"
+                android:visibility="gone"
+                android:background="@drawable/split_row_background">
+
+                <Button
+                    android:id="@+id/btSplitCat3"
+                    style="@style/SplitTransaction.CategoryButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="myClickHandler"/>
+
+                <EditText
+                    android:id="@+id/edSplitAmount3"
+                    style="@style/SplitTransaction.EditTextAmount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@id/btSplitCat3"
+                    android:layout_toLeftOf="@+id/ibSplitCalc3"
+                    android:hint="@string/amount"/>
+
+                <ImageButton
+                    android:id="@+id/ibSplitCalc3"
+                    style="@style/ThemeNew.TransImageButton.SplitTransaction"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/btSplitCat3"
+                    android:layout_toLeftOf="@+id/ibSplitDel3"
+                    android:onClick="myClickHandler"
+                    android:src="@drawable/edit_new" />
+
+                <ImageButton
+                    android:id="@+id/ibSplitDel3"
+                    style="@style/ThemeNew.TransImageButton.SplitTransaction"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@id/btSplitCat3"
+                    android:onClick="myClickHandler"
+                    android:src="@drawable/split_collapse" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/relSplitRow4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/relSplitRow3"
+                android:visibility="gone"
+                android:background="@drawable/split_row_background">
+
+                <Button
+                    android:id="@+id/btSplitCat4"
+                    style="@style/SplitTransaction.CategoryButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="myClickHandler"/>
+
+                <EditText
+                    android:id="@+id/edSplitAmount4"
+                    style="@style/SplitTransaction.EditTextAmount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@id/btSplitCat4"
+                    android:layout_toLeftOf="@+id/ibSplitCalc4"
+                    android:hint="@string/amount"/>
+
+                <ImageButton
+                    android:id="@+id/ibSplitCalc4"
+                    style="@style/ThemeNew.TransImageButton.SplitTransaction"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/btSplitCat4"
+                    android:layout_toLeftOf="@+id/ibSplitDel4"
+                    android:onClick="myClickHandler"
+                    android:src="@drawable/edit_new" />
+
+                <ImageButton
+                    android:id="@+id/ibSplitDel4"
+                    style="@style/ThemeNew.TransImageButton.SplitTransaction"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@id/btSplitCat4"
+                    android:onClick="myClickHandler"
+                    android:src="@drawable/split_collapse" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/relSplitRow5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/relSplitRow4"
+                android:visibility="gone"
+                android:background="@drawable/split_row_background">
+
+                <Button
+                    android:id="@+id/btSplitCat5"
+                    style="@style/SplitTransaction.CategoryButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="myClickHandler"/>
+
+                <EditText
+                    android:id="@+id/edSplitAmount5"
+                    style="@style/SplitTransaction.EditTextAmount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@id/btSplitCat5"
+                    android:layout_toLeftOf="@+id/ibSplitCalc5"
+                    android:hint="@string/amount"/>
+
+                <ImageButton
+                    android:id="@+id/ibSplitCalc5"
+                    style="@style/ThemeNew.TransImageButton.SplitTransaction"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/btSplitCat5"
+                    android:layout_toLeftOf="@+id/ibSplitDel5"
+                    android:onClick="myClickHandler"
+                    android:src="@drawable/edit_new" />
+
+                <ImageButton
+                    android:id="@+id/ibSplitDel5"
+                    style="@style/ThemeNew.TransImageButton.SplitTransaction"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@id/btSplitCat5"
+                    android:onClick="myClickHandler"
+                    android:src="@drawable/split_collapse" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/relSplitRow6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/relSplitRow5"
+                android:visibility="gone"
+                android:background="@drawable/split_row_background">
+
+                <Button
+                    android:id="@+id/btSplitCat6"
+                    style="@style/SplitTransaction.CategoryButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="myClickHandler"/>
+
+                <EditText
+                    android:id="@+id/edSplitAmount6"
+                    style="@style/SplitTransaction.EditTextAmount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@id/btSplitCat6"
+                    android:layout_toLeftOf="@+id/ibSplitCalc6"
+                    android:hint="@string/amount"/>
+
+                <ImageButton
+                    android:id="@+id/ibSplitCalc6"
+                    style="@style/ThemeNew.TransImageButton.SplitTransaction"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/btSplitCat6"
+                    android:layout_toLeftOf="@+id/ibSplitDel6"
+                    android:onClick="myClickHandler"
+                    android:src="@drawable/edit_new" />
+
+                <ImageButton
+                    android:id="@+id/ibSplitDel6"
+                    style="@style/ThemeNew.TransImageButton.SplitTransaction"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@id/btSplitCat6"
+                    android:onClick="myClickHandler"
+                    android:src="@drawable/split_collapse" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/relSplitRow7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/relSplitRow6"
+                android:visibility="gone"
+                android:background="@drawable/split_row_background">
+
+                <Button
+                    android:id="@+id/btSplitCat7"
+                    style="@style/SplitTransaction.CategoryButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="myClickHandler"/>
+
+                <EditText
+                    android:id="@+id/edSplitAmount7"
+                    style="@style/SplitTransaction.EditTextAmount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@id/btSplitCat7"
+                    android:layout_toLeftOf="@+id/ibSplitCalc7"
+                    android:hint="@string/amount"/>
+
+                <ImageButton
+                    android:id="@+id/ibSplitCalc7"
+                    style="@style/ThemeNew.TransImageButton.SplitTransaction"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/btSplitCat7"
+                    android:layout_toLeftOf="@+id/ibSplitDel7"
+                    android:onClick="myClickHandler"
+                    android:src="@drawable/edit_new" />
+
+                <ImageButton
+                    android:id="@+id/ibSplitDel7"
+                    style="@style/ThemeNew.TransImageButton.SplitTransaction"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@id/btSplitCat7"
+                    android:onClick="myClickHandler"
+                    android:src="@drawable/split_collapse" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/relSplitRow8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/relSplitRow7"
+                android:visibility="gone"
+                android:background="@drawable/split_row_background">
+
+                <Button
+                    android:id="@+id/btSplitCat8"
+                    style="@style/SplitTransaction.CategoryButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="myClickHandler"/>
+
+                <EditText
+                    android:id="@+id/edSplitAmount8"
+                    style="@style/SplitTransaction.EditTextAmount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@id/btSplitCat8"
+                    android:layout_toLeftOf="@+id/ibSplitCalc8"
+                    android:hint="@string/amount"/>
+
+                <ImageButton
+                    android:id="@+id/ibSplitCalc8"
+                    style="@style/ThemeNew.TransImageButton.SplitTransaction"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/btSplitCat8"
+                    android:layout_toLeftOf="@+id/ibSplitDel8"
+                    android:onClick="myClickHandler"
+                    android:src="@drawable/edit_new" />
+
+                <ImageButton
+                    android:id="@+id/ibSplitDel8"
+                    style="@style/ThemeNew.TransImageButton.SplitTransaction"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@id/btSplitCat8"
+                    android:onClick="myClickHandler"
+                    android:src="@drawable/split_collapse" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/relSplitRow9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/relSplitRow8"
+                android:visibility="gone"
+                android:background="@drawable/split_row_background">
+
+                <Button
+                    android:id="@+id/btSplitCat9"
+                    style="@style/SplitTransaction.CategoryButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="myClickHandler"/>
+
+                <EditText
+                    android:id="@+id/edSplitAmount9"
+                    style="@style/SplitTransaction.EditTextAmount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@id/btSplitCat9"
+                    android:layout_toLeftOf="@+id/ibSplitCalc9"
+                    android:hint="@string/amount" />
+
+                <ImageButton
+                    android:id="@+id/ibSplitCalc9"
+                    style="@style/ThemeNew.TransImageButton.SplitTransaction"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/btSplitCat9"
+                    android:layout_toLeftOf="@+id/ibSplitDel9"
+                    android:onClick="myClickHandler"
+                    android:src="@drawable/edit_new" />
+
+                <ImageButton
+                    android:id="@+id/ibSplitDel9"
+                    style="@style/ThemeNew.TransImageButton.SplitTransaction"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@id/btSplitCat9"
+                    android:onClick="myClickHandler"
+                    android:src="@drawable/split_collapse" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/relSplitRow10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/relSplitRow9"
+                android:visibility="gone"
+                android:background="@drawable/split_row_background">
+
+                <Button
+                    android:id="@+id/btSplitCat10"
+                    style="@style/SplitTransaction.CategoryButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="myClickHandler" />
+
+                <EditText
+                    android:id="@+id/edSplitAmount10"
+                    style="@style/SplitTransaction.EditTextAmount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@id/btSplitCat10"
+                    android:layout_toLeftOf="@+id/ibSplitCalc10"
+                    android:hint="@string/amount"/>
+
+                <ImageButton
+                    android:id="@+id/ibSplitCalc10"
+                    style="@style/ThemeNew.TransImageButton.SplitTransaction"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/btSplitCat10"
+                    android:layout_toLeftOf="@+id/ibSplitDel10"
+                    android:onClick="myClickHandler"
+                    android:src="@drawable/edit_new" />
+
+                <ImageButton
+                    android:id="@+id/ibSplitDel10"
+                    style="@style/ThemeNew.TransImageButton.SplitTransaction"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@id/btSplitCat10"
+                    android:onClick="myClickHandler"
+                    android:src="@drawable/split_collapse" />
+            </RelativeLayout>
+
+            <Button
+                android:id="@+id/btSplitAdd"
+                style="@style/ThemeNew.ButtonText.OKButton.Third"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/relSplitRow10"
+                android:layout_marginLeft="@dimen/ok_button_dialog_margin_side"
+                android:layout_marginRight="@dimen/ok_button_dialog_margin_side"
+                android:onClick="myClickHandler"
+                android:text="@string/addSubTransaction" />
+
+            <Button
+                android:id="@+id/btSplitCancel"
+                style="@style/ThemeNew.ButtonText.OKButton.Left"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@id/btSplitAdd"
+                android:layout_below="@+id/btSplitAdd"
+                android:layout_marginLeft="0dp"
+                android:onClick="myClickHandler"
+                android:text="@string/Cancel" />
+
+            <Button
+                android:id="@+id/btSplitOk"
+                style="@style/ThemeNew.ButtonText.OKButton.Right"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignRight="@id/btSplitAdd"
+                android:layout_below="@+id/btSplitAdd"
+                android:layout_marginRight="0dp"
+                android:onClick="myClickHandler"
+                android:text="@string/ok" />
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>

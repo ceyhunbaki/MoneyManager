@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:key="@string/settings"
+    android:summary="@string/settingsSummary"
+    android:title="@string/settings">
+
+    <ListPreference
+        android:defaultValue="@string/setLanguageDefaultValue"
+        android:dialogTitle="@string/setLanguageDialogTitle"
+        android:entries="@array/Languages"
+        android:key="@string/setLanguageKey"
+        android:summary="@string/setLanguageSummary"
+        android:title="@string/setLanguage" />
+
+    <Preference
+        android:key="@string/setResetLocalizationKey"
+        android:title="@string/setResetLocalizationTitle"
+        android:summary="@string/setResetLocalizationSummary"/>
+
+    <PreferenceCategory xmlns:android="http://schemas.android.com/apk/res/android"
+        android:key="@string/date"
+        android:title="@string/date">
+        <ListPreference
+            android:defaultValue="@string/dfk_ddmmyyyy_pointKey"
+            android:dialogTitle="@string/msgSelect"
+            android:entries="@array/dateFormatTypeArray"
+            android:entryValues="@array/dateFormatTypeKeysArray"
+            android:key="@string/setDateFormatKey"
+            android:summary="@string/dfk_ddmmyyyy_point"
+            android:title="@string/setDateFormat" />
+
+        <ListPreference
+            android:defaultValue="@string/setMondayKey"
+            android:dialogTitle="@string/msgSelect"
+            android:entries="@array/weeksArray"
+            android:entryValues="@array/weeksArrayKey"
+            android:key="@string/setWeekFirstDayKey"
+            android:summary="@string/setMondayKey"
+            android:title="@string/setWeekFirstDay" />
+
+        <ListPreference
+            android:defaultValue="@string/digitCountValueKey1"
+            android:dialogTitle="@string/msgSelect"
+            android:entries="@array/monthValueArray"
+            android:entryValues="@array/monthValueArray"
+            android:key="@string/setMonthFirstDateKey"
+            android:summary="1"
+            android:title="@string/setMonthFirstDate" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="@string/currency"
+        android:title="@string/currency">
+        <ListPreference
+            android:defaultValue="@string/setCurSignRightKey"
+            android:dialogTitle="@string/msgSelect"
+            android:entries="@array/curSignPositionArray"
+            android:entryValues="@array/curSignPositionKeysArray"
+            android:key="@string/setCurSignKey"
+            android:summary="@string/setCurSignRightKey"
+            android:title="@string/setCurSignPosition" />
+
+        <ListPreference
+            android:defaultValue="@string/setDotKey"
+            android:dialogTitle="@string/msgSelect"
+            android:entries="@array/decimalSymbolArray"
+            android:entryValues="@array/decimalSymbolArray"
+            android:key="@string/setDecimalSymbolKey"
+            android:summary="@string/setDotKey"
+            android:title="@string/setDecimalSymbol" />
+
+        <ListPreference
+            android:defaultValue="2"
+            android:dialogTitle="@string/msgSelect"
+            android:entries="@array/decimalDigitsCountArray"
+            android:entryValues="@array/decimalDigitsCountKeyArray"
+            android:key="@string/setDecimalDigitsCountKey"
+            android:summary="2"
+            android:title="@string/setDecimalDigitsCount" />
+
+        <ListPreference
+            android:defaultValue="4"
+            android:dialogTitle="@string/msgSelect"
+            android:entries="@array/decimalDigitsCountArray"
+            android:entryValues="@array/decimalDigitsCountKeyArray"
+            android:key="@string/setDecimalDigitsCountCurrencyKey"
+            android:summary="4"
+            android:title="@string/setDecimalDigitsCountCurrency" />
+
+        <ListPreference
+            android:defaultValue="@string/none"
+            android:dialogTitle="@string/msgSelect"
+            android:entries="@array/digitsGroupingSymbolArray"
+            android:entryValues="@array/digitsGroupingSymbolKeyArray"
+            android:key="@string/setDigitsGroupingSymbolKey"
+            android:title="@string/setDigitsGroupingSymbol" />
+    </PreferenceCategory>
+
+</PreferenceScreen>
