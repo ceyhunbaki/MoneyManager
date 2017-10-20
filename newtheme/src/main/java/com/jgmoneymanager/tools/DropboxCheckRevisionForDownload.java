@@ -30,6 +30,9 @@ import android.content.Context;
 import android.os.AsyncTask;
 import android.widget.Toast;
 
+import com.dropbox.core.DbxException;
+import com.dropbox.core.v2.DbxClientV2;
+import com.dropbox.core.v2.files.FileMetadata;
 import com.jgmoneymanager.dialogs.DialogTools;
 import com.jgmoneymanager.main.MainScreen;
 import com.jgmoneymanager.mmlibrary.R;
@@ -43,7 +46,6 @@ import java.io.File;
  */
 public class DropboxCheckRevisionForDownload extends AsyncTask<Void, Long, Boolean> {
 
-    private String mPath;
     private String mCurrRevision;
     private File mFile;
 
@@ -56,16 +58,15 @@ public class DropboxCheckRevisionForDownload extends AsyncTask<Void, Long, Boole
     private boolean backupDeleted = false;
     
     MainScreen mMainScreen;
+    DbxClientV2 mDropboxClient;
 
-    public DropboxCheckRevisionForDownload(Context context, /*DropboxAPI<?> api, */String dropboxPath, File file, String currRevision, MainScreen mainScreen) {
+    public DropboxCheckRevisionForDownload(Context context, DbxClientV2 dropboxClient, File file, String currRevision, MainScreen mainScreen) {
         // We set the context this way so we don't accidentally leak activities
         mContext = context.getApplicationContext();
         mGivenContext = context;
 
         mCurrRevision = currRevision;
-        // TODO dropbox comment
-        //mApi = api;
-        mPath = dropboxPath;
+        mDropboxClient = dropboxClient;
         mFile = file;
         
         mMainScreen = mainScreen;
@@ -73,60 +74,19 @@ public class DropboxCheckRevisionForDownload extends AsyncTask<Void, Long, Boole
 
     @Override
     protected Boolean doInBackground(Void... params) {
-        // TODO dropbox comment
-			/*try {
-            String path = mPath + mFile.getName();
-            Entry existingEntry = mApi.metadata(path, 1, null, false, null);
-            if ((existingEntry.bytes == 0) || (existingEntry.isDeleted)) {
-            	backupDeleted = true;
-            	return false;
+        try {
+            StringBuilder revision = new StringBuilder();
+            backupDeleted = !Tools.getDropboxRevision(mDropboxClient, mFile, revision);
+            if (backupDeleted) {
+                return false;
             }
             else {
-            	//Date tt = Tools.StringToDate(existingEntry.modified, Constants.DateFormatDropboxRevision);
-            	newRevision = existingEntry.modified;
-            	return (!mCurrRevision.equals(newRevision));
+                newRevision = revision.toString();
+                return (!mCurrRevision.equals(newRevision));
             }
-
-        } catch (DropboxUnlinkedException e) {
-            // This session wasn't authenticated properly or user unlinked
-            mErrorMsg = mContext.getString(R.string.autentificateError);
-        } catch (DropboxFileSizeException e) {
-            // File size too big to upload via the API
-            mErrorMsg = mContext.getString(R.string.fileBigError);
-        } catch (DropboxPartialFileException e) {
-            // We canceled the operation
-            mErrorMsg = mContext.getString(R.string.canceled);
-        } catch (DropboxServerException e) {
-            // Server-side exception.  These are examples of what could happen,
-            // but we don't do anything special with them here.
-            if (e.error == DropboxServerException._401_UNAUTHORIZED) {
-                // Unauthorized, so we should unlink them.  You may want to
-                // automatically log the user out in this case.
-            } else if (e.error == DropboxServerException._403_FORBIDDEN) {
-                // Not allowed to access this
-            } else if (e.error == DropboxServerException._404_NOT_FOUND) {
-                // path not found (or if it was the thumbnail, can't be
-                // thumbnailed)
-            } else if (e.error == DropboxServerException._507_INSUFFICIENT_STORAGE) {
-                // user is over quota
-            } else {
-                // Something else
-            }
-            // This gets the Dropbox error, translated into the user's language
-            mErrorMsg = e.body.userError;
-            if (mErrorMsg == null) {
-                mErrorMsg = e.body.error;
-            }
-        } catch (DropboxIOException e) {
-            // Happens all the time, probably want to retry automatically.
-            mErrorMsg = mContext.getString(R.string.canceled);
-        } catch (DropboxParseException e) {
-            // Probably due to Dropbox server restarting, should retry
-            mErrorMsg = mContext.getString(R.string.dropboxError);
-        } catch (DropboxException e) {
-            // Unknown error
-            mErrorMsg = mContext.getString(R.string.unknownError);
-        } */
+        } catch (DbxException e) {
+            mErrorMsg = e.getMessage();
+        }
         return false;
     }
 
@@ -134,7 +94,7 @@ public class DropboxCheckRevisionForDownload extends AsyncTask<Void, Long, Boole
     protected void onPostExecute(Boolean result) {
         if (result) {
             try {
-                DropboxDownload dDownload = new DropboxDownload(mGivenContext, Tools.getDropboxService(mContext), "", mFile, mMainScreen);
+                DropboxDownload dDownload = new DropboxDownload(mGivenContext, mDropboxClient, mFile, mMainScreen);
                 dDownload.execute();
             }
             catch (Exception e) {

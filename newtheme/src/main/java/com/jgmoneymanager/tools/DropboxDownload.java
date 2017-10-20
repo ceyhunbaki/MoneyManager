@@ -11,16 +11,19 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
 import android.os.AsyncTask;
+import android.util.Log;
 import android.widget.Toast;
 
-import com.cloudrail.si.interfaces.CloudStorage;
+//import com.cloudrail.si.interfaces.CloudStorage;
+import com.dropbox.core.DbxDownloader;
+import com.dropbox.core.DbxException;
+import com.dropbox.core.v2.DbxClientV2;
+import com.dropbox.core.v2.files.FileMetadata;
 import com.jgmoneymanager.database.MoneyManagerProviderMetaData.AccountTableMetaData;
 import com.jgmoneymanager.dialogs.DialogTools;
 import com.jgmoneymanager.main.MainScreen;
 import com.jgmoneymanager.main.SettingsMain;
 import com.jgmoneymanager.mmlibrary.R;
-
-import org.jcodec.common.IOUtils;
 
 /**
  * Here we show getting metadata for a directory and downloading a file in a
@@ -33,8 +36,7 @@ public class DropboxDownload extends AsyncTask<Void, Long, Boolean> {
 
     private Context mContext;
     private final ProgressDialog mDialog;
-    private CloudStorage mDropbox;
-    private String mPath;
+    private DbxClientV2 mDropbox;
     private File mFile;
     private long mFileLen;
 
@@ -46,18 +48,11 @@ public class DropboxDownload extends AsyncTask<Void, Long, Boolean> {
     FileOutputStream fos;
 
     String revision;
-    private ProgressInputStream.ProgressListener mProgressListener;
 
-    // Note that, since we use a single file name here for simplicity, you
-    // won't be able to use this code for two simultaneous downloads.
-    //private final static String fileName = MoneyManagerProviderMetaData.DATABASE_NAME;
-
-    public DropboxDownload(Context context, CloudStorage dropbox, String dropboxPath, File file, MainScreen mainScreen) {
-        // We set the context this way so we don't accidentally leak activities
+    public DropboxDownload(Context context, DbxClientV2 dropbox, File file, MainScreen mainScreen) {
         mContext = context.getApplicationContext();
         mFileLen = file.length();
 
-        mPath = dropboxPath;
         mFile = file;
         mDropbox = dropbox;
 
@@ -68,13 +63,6 @@ public class DropboxDownload extends AsyncTask<Void, Long, Boolean> {
         mDialog.setMessage(context.getString(R.string.msgDropboxSnycing));
         mDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
         mDialog.setProgress(0);
-        mProgressListener = new ProgressInputStream.ProgressListener() {
-            @Override
-            public void onProgressChanged(long bytes) {
-                int percent = (int)(100.0*(double)bytes/mFileLen + 0.5);
-                mDialog.setProgress(percent);
-            }
-        };
         mDialog.show();
     }
 
@@ -98,13 +86,26 @@ public class DropboxDownload extends AsyncTask<Void, Long, Boolean> {
                 e.printStackTrace();
             }
         }
-        mDropbox.login();
-        ProgressInputStream result = new ProgressInputStream(mDropbox.download("/" + mFile.getName()), mProgressListener);
+
+        DbxDownloader<FileMetadata> dbxDownloader = null;
+        long size = 0;
         try {
-            IOUtils.copy(result, fos);
-            fos.close();
-        } catch (IOException e) {
+            dbxDownloader = mDropbox.files().download("/"+mFile.getName());
+            size = dbxDownloader.getResult().getSize();
+        } catch (DbxException e) {
             e.printStackTrace();
+        }
+
+        try {
+            dbxDownloader.download(new ProgressOutputStream(size, fos, new ProgressOutputStream.ProgressOutputListener() {
+                public void progress(long completed, long totalSize) {
+                    mDialog.setProgress(Math.round((100*completed)/totalSize));
+                }
+            }));
+            revision = dbxDownloader.getResult().getRev();
+        } catch (DbxException | IOException e) {
+            e.printStackTrace();
+            mErrorMsg = e.getMessage();
         }
 
         if (tempFound) {
@@ -118,21 +119,21 @@ public class DropboxDownload extends AsyncTask<Void, Long, Boolean> {
                 return false;
             }
 
+            Log.i("DropboxDownload", "Before Copy");
             try {
                 Tools.copyFile(tempFile, mFile);
             } catch (IOException e) {
+                mErrorMsg = e.getMessage();
                 return false;
             }
+            Log.i("DropboxDownload", "After copy");
         }
 
-        if (result == null) {
-            mErrorMsg = mContext.getString(R.string.noBackup);
-            return false;
-        }
+//        if (result == null) {
+//            mErrorMsg = mContext.getString(R.string.noBackup);
+//            return false;
+//        }
 
-        // TODO dropbox comment
-        //revision = mDropbox.get;
-        // We must have a legitimate picture
         return true;
     }
 
@@ -146,8 +147,10 @@ public class DropboxDownload extends AsyncTask<Void, Long, Boolean> {
     protected void onPostExecute(Boolean result) {
         mDialog.dismiss();
         if (result) {
+            Log.i("DropboxDownload", "True Result");
             //DialogTools.toastDialog(mContext, "The downloaded file's rev is: " + revision, Toast.LENGTH_LONG);
             Tools.setPreference(mContext, R.string.dropboxBackupRevisonKey, revision, false);
+            Tools.setPreference(mContext, R.string.dropboxBackupLocalRevisonKey, mFile.lastModified());
 
             //DialogTools.toastDialog(mContext, R.string.msgRestoreSuccessful, Toast.LENGTH_LONG);
             try {

@@ -512,17 +512,13 @@
         </activity>
         <activity
             android:name=".SettingsMain"
-            android:launchMode="singleTask"
             android:label="@string/settings"
             android:theme="@style/AppTheme.NoActionBar" >
             <intent-filter>
-                <data android:scheme="com.cloudrail.fileviewer" />
+
                 <action android:name="com.jgmoneymanager.intent.action.SETTINGSSCREEN" />
 
                 <category android:name="android.intent.category.PREFERENCE" />
-                <category android:name="android.intent.category.BROWSABLE" />
-
-                <data android:scheme="com.jgmoneymanager.main" />
             </intent-filter>
         </activity>
         <activity
@@ -538,8 +534,8 @@
         <activity
             android:name="com.google.ads.AdActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize" />
-        <!--activity
-            android:name="com.dropbox.client2.android.AuthActivity"
+        <activity
+            android:name="com.dropbox.core.android.AuthActivity"
             android:configChanges="orientation|keyboard"
             android:launchMode="singleTask" >
             <intent-filter>
@@ -550,7 +546,7 @@
                 <category android:name="android.intent.category.BROWSABLE" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
-        </activity-->
+        </activity>
 
         <!--android:theme="@android:style/Theme.Translucent.NoTitleBar"-->
 

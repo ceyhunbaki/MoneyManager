@@ -3,10 +3,7 @@ package com.jgmoneymanager.entity;
 import android.content.Context;
 import android.content.Intent;
 import android.support.multidex.MultiDex;
-import android.util.Log;
 
-import com.instabug.library.Instabug;
-import com.instabug.library.invocation.InstabugInvocationEvent;
 import com.jgmoneymanager.main.R;
 import com.jgmoneymanager.services.DropboxUploadService;
 import com.jgmoneymanager.tools.Tools;
@@ -16,7 +13,6 @@ public class MyApplicationLocal extends MyApplication {
 	@Override
 	public void setAskPassword(boolean askPassword) {
 		super.askPassword = askPassword;
-		Log.i("setAskPassword", String.valueOf(askPassword));
 
 		if (Tools.getPreferenceBool(this, R.string.dropboxAutoSyncKey, false)) {
 			try {
@@ -24,12 +20,10 @@ public class MyApplicationLocal extends MyApplication {
 				if (askPassword && super.getPreviousActionIsPause()) {
 					if (Tools.isInternetAvailable(this, Tools.getPreferenceBool(this, com.jgmoneymanager.mmlibrary.R.string.dropboxAutoSyncWiFiKey, false)))
 						try {
-							Log.i("DropboxUploadService", "STARTED");
 							startService(intent);
 						} catch (Exception e) {
 						}
 				} else {
-					Log.i("DropboxUploadService", "STOPPED");
 					stopService(intent);
 				}
 			} catch (Exception e) {

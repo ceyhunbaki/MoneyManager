@@ -286,7 +286,7 @@ public class MainScreen extends MyActivity
                     @Override
                     public void execute() {
                         Cursor cursorInt = getContentResolver().query(VTransAccountViewMetaData.CONTENT_URI,
-                                new String[]{VTransAccountViewMetaData._ID}, VTransAccountViewMetaData.STATUS + " =1 and ",
+                                new String[]{VTransAccountViewMetaData._ID}, VTransAccountViewMetaData.STATUS + " =1 ",
                                 null, null);
                         cursorInt.moveToPosition(Constants.cursorPosition);
                         setActiveAccountButton(DBTools.getCursorColumnValueInt(cursorInt, VTransAccountViewMetaData._ID));

@@ -33,9 +33,9 @@ import com.jgmoneymanager.database.MoneyManagerProvider;
 import com.jgmoneymanager.database.MoneyManagerProviderMetaData;
 import com.jgmoneymanager.dialogs.DialogTools;
 import com.jgmoneymanager.main.FileExplorer;
+import com.jgmoneymanager.main.MainScreen;
 import com.jgmoneymanager.main.R;
 import com.jgmoneymanager.main.RPTransactionEdit;
-import com.jgmoneymanager.main.SettingsMain;
 import com.jgmoneymanager.services.CurrencySrv;
 import com.jgmoneymanager.services.DebtsSrv;
 import com.jgmoneymanager.services.PaymentMethodsSrv;
@@ -63,18 +63,13 @@ public class LocalTools {
 	
 	public static void controlDropBoxRevision(Context context) {
 		if (!Tools.getPreference(context, R.string.dropboxTokenKey).equals("null") && Tools.isInternetAvailable(context)) {
-            // TODO dropbox comment
-			/*AppKeyPair appKeys = new AppKeyPair(Constants.dropboxKey, Constants.dropboxSecret);
-	        AndroidAuthSession session = new AndroidAuthSession(appKeys, Constants.dropboxAccessType);
-	        DropboxAPI<AndroidAuthSession> mDBApi = new DropboxAPI<AndroidAuthSession>(session);
-			mDBApi.getSession().setOAuth2AccessToken(Tools.getPreference(context, R.string.dropboxTokenKey));
-			File file = new File(Environment.getDataDirectory() + "/data/" + context.getPackageName() + "/databases/"
-					+ MoneyManagerProviderMetaData.DATABASE_NAME);
-			MainScreen ms = null;
-			if (context.getClass() == MainScreen.class)
-				ms = (MainScreen) context;
-			DropboxCheckRevisionForDownload dUpload = new DropboxCheckRevisionForDownload(context, mDBApi, "/", file, Tools.getPreference(context, R.string.dropboxBackupRevisonKey), ms);
-			dUpload.execute();*/
+            File file = new File(Environment.getDataDirectory() + "/data/" + context.getPackageName() + "/databases/"
+                    + MoneyManagerProviderMetaData.DATABASE_NAME);
+            MainScreen ms = null;
+            if (context.getClass() == MainScreen.class)
+                ms = (MainScreen) context;
+            DropboxCheckRevisionForDownload dUpload = new DropboxCheckRevisionForDownload(context, Tools.getDropboxClient(context), file, Tools.getPreference(context, R.string.dropboxBackupRevisonKey), ms);
+            dUpload.execute();
 		}
 	}
 
@@ -208,6 +203,9 @@ public class LocalTools {
                                 DBTools.execQuery(context,
                                         MoneyManagerProvider.DatabaseHelper.DATABASE_CREATE_VIEW_VTRANSACCOUNTS.replace("'ALL'",
                                                 "'" + context.getResources().getString(R.string.totalAccount) + "'"));
+                                break;
+                            case 83:
+                                message += "\n v 3.6.6 \n" + context.getResources().getString(R.string.v3_6_6);
                                 break;
                             default:
                                 break;
@@ -383,7 +381,7 @@ public class LocalTools {
                 Command backupToDropboxCmd = new Command() {
                     @Override
                     public void execute() {
-                        DropboxUploadTask dUpload = new DropboxUploadTask(context, Tools.getDropboxService(context), Tools.getDatabaseFile(context), true);
+                        DropboxUploadTask dUpload = new DropboxUploadTask(context, Tools.getDropboxClient(context), Tools.getDatabaseFile(context), true, null);
                         dUpload.execute();
                     }
                 };

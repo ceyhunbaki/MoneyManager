@@ -11,10 +11,11 @@ import android.preference.Preference;
 import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.Preference.OnPreferenceClickListener;
 import android.preference.PreferenceManager;
+import android.util.Log;
 import android.widget.Toast;
 
-import com.cloudrail.si.CloudRail;
-import com.jgmoneymanager.database.MoneyManagerProviderMetaData;
+//import com.cloudrail.si.CloudRail;
+import com.dropbox.core.android.Auth;
 import com.jgmoneymanager.dialogs.ChooseFileDialog;
 import com.jgmoneymanager.dialogs.DialogTools;
 import com.jgmoneymanager.dialogs.SecurityQuestion;
@@ -490,36 +491,22 @@ public class SettingsMain extends MyPreferenceActivity {
 	@Override
 	protected void onResume() {
 		super.onResume();
-		// TODO dropbox comment
-		/*if (mDbxAcctMgr.hasLinkedAccount() && (dropboxAuthRequested != dropAuthNotRequested)) {
-	        try {
-	            //mDBApi.getSession().finishAuthentication();
-	            //String accessToken = mDbxAcctMgr.;
-	            //Tools.setPreference(SettingsMain.this, R.string.dropboxTokenKey, accessToken, false);
-	            dropBoxBackupRestore(dropboxAuthRequested);
-	        } catch (IllegalStateException e) {
-	            Log.i("DbAuthLog", "Error authenticating", e);
-	        }
-	    }*/
-	}
-
-	@Override
-	protected void onNewIntent(Intent intent) {
-		if(intent.getCategories().contains("android.intent.category.BROWSABLE")) {
-			// Here we pass the response to the SDK which will automatically
-			// complete the authentication process
-			CloudRail.setAuthenticationResponse(intent);
+		if (Auth.getOAuth2Token() != null)
+		{
+			Log.i("SettingsMain-OnRESUME", "Girdi");
+			Tools.setPreference(SettingsMain.this, R.string.dropboxTokenKey, Auth.getOAuth2Token().toString(), false);
+			dropBoxBackupRestore(dropboxAuthRequested);
 		}
-		super.onNewIntent(intent);
 	}
 
 	void dropBoxBackupRestore(int type) {
 		if (type == dropAuthBackupRequested) {
-			DropboxUploadTask dUpload = new DropboxUploadTask(SettingsMain.this, Tools.getDropboxService(SettingsMain.this), Tools.getDatabaseFile(SettingsMain.this), true);
+			DropboxUploadTask dUpload = new DropboxUploadTask(SettingsMain.this, Tools.getDropboxClient(SettingsMain.this), Tools.getDatabaseFile(SettingsMain.this), true, null);
 			dUpload.execute();
+			//Tools.getDropboxClient(SettingsMain.this);
 		}
 		else if (type == dropAuthRestoreRequested) {
-			DropboxDownload dDownload = new DropboxDownload(SettingsMain.this, Tools.getDropboxService(SettingsMain.this), "", Tools.getDatabaseFile(SettingsMain.this), null);
+			DropboxDownload dDownload = new DropboxDownload(SettingsMain.this, Tools.getDropboxClient(SettingsMain.this), Tools.getDatabaseFile(SettingsMain.this), null);
 			dDownload.execute();
 		}
 		dropboxAuthRequested = dropAuthNotRequested;
@@ -533,8 +520,14 @@ public class SettingsMain extends MyPreferenceActivity {
 			Command cmdBackupConfirm = new Command() {
 				@Override
 				public void execute() {
+					if (Tools.getPreference(SettingsMain.this, R.string.dropboxTokenKey).equals("null")) {
+						dropboxAuthRequested = dropAuthBackupRequested;
+						Auth.startOAuth2Authentication(SettingsMain.this, Constants.dropboxKey);
+					}
+					else {
 						dropboxAuthRequested = dropAuthBackupRequested;
 						dropBoxBackupRestore(dropAuthBackupRequested);
+					}
 				}
 			};
 			AlertDialog confirmBackupDialog = new DialogTools().confirmDialog(SettingsMain.this, cmdBackupConfirm, R.string.msgConfirm, R.string.btBackupDropboxSummary);
@@ -550,15 +543,13 @@ public class SettingsMain extends MyPreferenceActivity {
 			final Command cmdRestoreConfirm = new Command() {
 				@Override
 				public void execute() {
-					/*if (Tools.getPreference(SettingsMain.this, R.string.dropboxTokenKey).equals("null")) {
-								dropboxAuthRequested = dropAuthRestoreRequested;
-								mDBApi.getSession().startOAuth2Authentication(SettingsMain.this);
+					dropboxAuthRequested = dropAuthRestoreRequested;
+					if (Tools.getPreference(SettingsMain.this, R.string.dropboxTokenKey).equals("null")) {
+						Auth.startOAuth2Authentication(SettingsMain.this, Constants.dropboxKey);
 					}
 					else {
-						mDBApi.getSession().setOAuth2AccessToken(Tools.getPreference(SettingsMain.this, R.string.dropboxTokenKey));
-						dropBoxBackupRestore(dropAuthRestoreRequested);
-					}*/
-					dropBoxBackupRestore(dropAuthRestoreRequested);
+						dropBoxBackupRestore(dropboxAuthRequested);
+					}
 				}
 			};
 			String[] buttonNames = new String[] {getString(R.string.Continue), getString(R.string.Cancel)};
@@ -570,6 +561,16 @@ public class SettingsMain extends MyPreferenceActivity {
 
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+
+		Log.i("SettingsMain-onResult", "Before");
+		Log.i("SettingsMain-onResult", "Token-"+Auth.getOAuth2Token());
+		if (Auth.getOAuth2Token() != null)
+		{
+			Log.i("SettingsMain-onResult", "Girdi");
+			Tools.setPreference(SettingsMain.this, R.string.dropboxTokenKey, Auth.getOAuth2Token().toString(), false);
+			dropBoxBackupRestore(dropboxAuthRequested);
+		}
+
 		super.onActivityResult(requestCode, resultCode, data); 
 		if (resultCode == RESULT_OK) {
 			if (requestCode == Constants.RequestDialogForRestore)

@@ -13,8 +13,7 @@ import android.util.Log;
 import com.jgmoneymanager.database.MoneyManagerProviderMetaData;
 import com.jgmoneymanager.main.MainScreen;
 import com.jgmoneymanager.main.R;
-import com.jgmoneymanager.tools.Constants;
-import com.jgmoneymanager.tools.DropboxUploadTaskLocal;
+import com.jgmoneymanager.tools.DropboxUploadTask;
 import com.jgmoneymanager.tools.Tools;
 
 import java.io.File;
@@ -62,6 +61,7 @@ public class DropboxUploadService extends Service {
         }
 
         public void run() {
+            Log.i("DropboxUploadService", "Run start");
             // do background processing here... we'll just sleep...
             try {
                 long mOldLocalRevision = Tools.getPreferenceLong(mContext, com.jgmoneymanager.mmlibrary.R.string.dropboxBackupLocalRevisonKey);
@@ -75,9 +75,8 @@ public class DropboxUploadService extends Service {
 
                     if (!Tools.getPreference(mContext, com.jgmoneymanager.main.R.string.dropboxTokenKey).equals("null")
                             && Tools.isInternetAvailable(mContext)) {
-                        displayNotificationMessage(getResources().getString(R.string.msgDropboxSnycing), mContext);
+                        NotificationManager notificationManager = displayNotificationMessage(getResources().getString(R.string.msgDropboxSnycing), mContext);
 
-                        // TODO dropbox comment
 			            /*DropboxAPI<AndroidAuthSession> mApi;
                         AppKeyPair appKeys = new AppKeyPair(Constants.dropboxKey, Constants.dropboxSecret);
                         AndroidAuthSession session = new AndroidAuthSession(appKeys, Constants.dropboxAccessType);
@@ -86,6 +85,8 @@ public class DropboxUploadService extends Service {
                         mApi.getSession().setOAuth2AccessToken(Tools.getPreference(mContext, com.jgmoneymanager.main.R.string.dropboxTokenKey));
                         DropboxUploadTaskLocal dUpload = new DropboxUploadTaskLocal(mContext, mApi, "", file, false);
                         dUpload.execute();*/
+                        DropboxUploadTask dropboxUploadTask = new DropboxUploadTask(mContext, Tools.getDropboxClient(mContext), file, false, notificationManager);
+                        dropboxUploadTask.execute();
                     }
                 }
             } catch (InterruptedException e) {
@@ -95,7 +96,7 @@ public class DropboxUploadService extends Service {
     }
 
 
-    private void displayNotificationMessage(String message, Context context)
+    private NotificationManager displayNotificationMessage(String message, Context context)
     {
         NotificationCompat.Builder notification = new NotificationCompat.Builder(context);
         notification.setSmallIcon(R.drawable.icon)
@@ -106,6 +107,7 @@ public class DropboxUploadService extends Service {
                 .setAutoCancel(false);
         NotificationManager mgr= (NotificationManager)getSystemService(NOTIFICATION_SERVICE);
         mgr.notify(1, notification.build());
+        return mgr;
         /*Notification notification = new Notification(R.drawable.icon, message, System.currentTimeMillis());
 
         notification.flags = Notification.FLAG_NO_CLEAR;
