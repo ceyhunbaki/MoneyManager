@@ -31,9 +31,17 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.cloudrail.si.CloudRail;
-import com.cloudrail.si.interfaces.CloudStorage;
-import com.cloudrail.si.services.Dropbox;
+//import com.cloudrail.si.CloudRail;
+//import com.cloudrail.si.interfaces.CloudStorage;
+//import com.cloudrail.si.services.Dropbox;
+import com.dropbox.core.DbxException;
+import com.dropbox.core.DbxRequestConfig;
+import com.dropbox.core.android.Auth;
+import com.dropbox.core.http.OkHttp3Requestor;
+import com.dropbox.core.http.OkHttpRequestor;
+import com.dropbox.core.http.StandardHttpRequestor;
+import com.dropbox.core.v2.DbxClientV2;
+import com.dropbox.core.v2.files.FileMetadata;
 import com.google.analytics.tracking.android.EasyTracker;
 import com.google.analytics.tracking.android.Fields;
 import com.google.analytics.tracking.android.MapBuilder;
@@ -1729,29 +1737,7 @@ public class Tools {
 		}
 	}
 
-	public static CloudStorage getDropboxService(Context context) {/*
-		AtomicReference<CloudStorage> dropbox = new AtomicReference<>();
-		CloudRail.setAppKey(Constants.dropboxAppKey);
-
-		dropbox.set(new Dropbox(
-				context,
-				Constants.dropboxKey,
-				Constants.dropboxSecret,
-				"https://db-" + Constants.dropboxKey,
-				""));
-
-		if (Tools.getPreference(context, R.string.dropboxTokenKey).equals("null"))
-			Tools.setPreference(context, R.string.dropboxTokenKey, dropbox.get().saveAsString(), false);
-		else
-			try {
-				dropbox.get().loadAsString(Tools.getPreference(context, R.string.dropboxTokenKey));
-			} catch (com.cloudrail.si.exceptions.ParseException e) {
-				e.printStackTrace();
-			}
-		return dropbox.get();*/
-
-
-		//AtomicReference<CloudStorage> dropbox = new AtomicReference<>();
+	/*public static CloudStorage getDropboxService(Context context) {
 		CloudRail.setAppKey(Constants.dropboxAppKey);
 
 		final Dropbox dropbox = new Dropbox(
@@ -1760,16 +1746,6 @@ public class Tools {
 				Constants.dropboxSecret,
 				"https://auth.cloudrail.com/com.jgmoneymanager.main",
 				"someState");
-
-		/*dropbox.useAdvancedAuthentication();
-		final Runnable r = new Runnable() {
-			public void run() {
-				dropbox.login();
-			}
-		};
-		r.run();*/
-
-		//dropbox.login();
 		if (Tools.getPreference(context, R.string.dropboxTokenKey).equals("null"))
 			Tools.setPreference(context, R.string.dropboxTokenKey, dropbox.saveAsString(), false);
 		else
@@ -1779,10 +1755,30 @@ public class Tools {
 				e.printStackTrace();
 			}
 		return dropbox;
+	}*/
+
+	public static DbxClientV2 getDropboxClient(Context context) {
+		StandardHttpRequestor requestor = new StandardHttpRequestor(StandardHttpRequestor.Config.DEFAULT_INSTANCE);
+		DbxRequestConfig requestConfig = DbxRequestConfig.newBuilder("Money-Expense Manager")
+				.withHttpRequestor(requestor)
+				.build();
+
+		DbxClientV2 sDbxClient = new DbxClientV2(requestConfig, Tools.getPreference(context, R.string.dropboxTokenKey));
+		return sDbxClient;
 	}
 
 	public static File getDatabaseFile(Context context) {
 		return new File(Environment.getDataDirectory() + "/data/" + context.getPackageName() + "/databases/"
 				+ MoneyManagerProviderMetaData.DATABASE_NAME);
+	}
+
+	public static boolean getDropboxRevision(DbxClientV2 dropbox, File file, StringBuilder revision) throws DbxException {
+		FileMetadata metadata = (FileMetadata) dropbox.files().getMetadata("/" + file.getName());
+		if (metadata.getSize() == 0) {
+			return false;
+		} else {
+			revision.append(metadata.getRev());
+			return true;
+		}
 	}
 }

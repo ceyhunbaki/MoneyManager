@@ -1,12 +1,14 @@
 package com.jgmoneymanager.tools;
 
+import android.app.NotificationManager;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.widget.Toast;
 
-import com.cloudrail.si.interfaces.CloudStorage;
-import com.cloudrail.si.services.Dropbox;
+//import com.cloudrail.si.interfaces.CloudStorage;
+//import com.cloudrail.si.services.Dropbox;
+import com.dropbox.core.v2.DbxClientV2;
 import com.jgmoneymanager.dialogs.DialogTools;
 import com.jgmoneymanager.mmlibrary.R;
 import com.jgmoneymanager.services.DropboxSrv;
@@ -20,7 +22,7 @@ import java.io.File;
  */
 public class DropboxUploadTask extends AsyncTask<Void, Long, Boolean> {
 
-    private CloudStorage mService;
+    private DbxClientV2 mService;
     private File mFile;
     private boolean mShowProgressDialog;
 
@@ -32,9 +34,9 @@ public class DropboxUploadTask extends AsyncTask<Void, Long, Boolean> {
     private String mErrorMsg;
     private StringBuilder revision = new StringBuilder();
 
-    private ProgressInputStream.ProgressListener mProgressListener;
+    private NotificationManager mNotificationManager;
 
-    public DropboxUploadTask(Context context, CloudStorage service, File file, Boolean showProgressDialog) {
+    public DropboxUploadTask(Context context, DbxClientV2 service, File file, Boolean showProgressDialog, NotificationManager notificationManager) {
         // We set the context this way so we don't accidentally leak activities
         mContext = context.getApplicationContext();
 
@@ -42,31 +44,22 @@ public class DropboxUploadTask extends AsyncTask<Void, Long, Boolean> {
         mService = service;
         mFile = file;
         mShowProgressDialog = showProgressDialog;
-
+        mNotificationManager = notificationManager;
 
         if (mShowProgressDialog) {
             mDialog = new ProgressDialog(context);
-            //mDialog.getWindow().setType(WindowManager.LayoutParams.TYPE_SYSTEM_ALERT);
             mDialog.setMax(100);
             mDialog.setMessage(context.getString(R.string.uploading));
             mDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
             mDialog.setProgress(0);
             mDialog.show();
-            mProgressListener = new ProgressInputStream.ProgressListener() {
-                @Override
-                public void onProgressChanged(long bytes) {
-                    int percent = (int)(100.0*(double)bytes/mFileLen + 0.5);
-                    if (mShowProgressDialog)
-                        mDialog.setProgress(percent);
-                }
-            };
         }
     }
 
     @Override
     protected Boolean doInBackground(Void... params) {
         if (Tools.isInternetAvailable(mContext/*, Tools.getPreferenceBool(mContext, R.string.dropboxAutoSyncWiFiKey, false)*/))
-            mErrorMsg = DropboxSrv.Upload(mContext, mFile, revision, mService, mProgressListener);
+            mErrorMsg = DropboxSrv.Upload(mContext, mFile, revision, mService, mDialog);
         else
             return false;
         return mErrorMsg.length() == 0;
@@ -80,8 +73,14 @@ public class DropboxUploadTask extends AsyncTask<Void, Long, Boolean> {
         catch (Exception e) {
 
         }
+        try {
+            if (mNotificationManager != null)
+                mNotificationManager.cancelAll();
+        }
+        catch (Exception e) {
+
+        }
         if (result) {
-            //DialogTools.toastDialog(mContext, "The uploaded file's rev is: " + revision, Toast.LENGTH_LONG);
             Tools.setPreference(mContext, R.string.dropboxBackupRevisonKey, revision.toString(), false);
             Tools.setPreference(mContext, com.jgmoneymanager.mmlibrary.R.string.dropboxBackupLocalRevisonKey, mFile.lastModified());
             if (mShowProgressDialog)

@@ -10,10 +10,10 @@ import java.io.InputStream;
 public class ProgressInputStream extends InputStream {
 
     private InputStream stream;
-    private ProgressListener progressListener;
+    private ProgressInputListener progressListener;
     private long offset = 0;
 
-    public ProgressInputStream(InputStream stream, ProgressListener  progressListener) {
+    public ProgressInputStream(InputStream stream, ProgressInputListener  progressListener) {
         this.stream = stream;
         this.progressListener = progressListener;
     }
@@ -38,7 +38,7 @@ public class ProgressInputStream extends InputStream {
     // You might need to override additional methods but you can just
     // call the corresponding method on the stream property
 
-    public interface ProgressListener {
+    public interface ProgressInputListener {
         void onProgressChanged(long bytes);
     }
 }
