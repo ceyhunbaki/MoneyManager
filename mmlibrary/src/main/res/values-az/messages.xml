@@ -126,4 +126,5 @@
     <string name="msgRestoreFreshNew">Siz köhnə məlumat bazasını bərpa etmək istəyirsiniz?</string>
     <string name="msgAppNeedsPermission">Əgər siz məlumatların gündəlik arxivlənməsini istəyirsinizsə hüquq verməlisiniz.
         Əks halda parametrlərdən avtomatik arxivlənməni söndürə bilərsiniz.</string>
+    <string name="msgNoTransactionAvailable">Bu dövr üçün heç bir əməliyyat yoxdur</string>
 </resources>

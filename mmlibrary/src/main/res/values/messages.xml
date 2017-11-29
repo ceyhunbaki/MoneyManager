@@ -144,4 +144,5 @@
         and install pro version.</string>
     <string name="msgRestoreFreshNew">Do you want to restore old database or create new one?</string>
     <string name="msgAppNeedsPermission">If you need daily back up data to sd card memory you should give permission. Otherwise, disable auto backup in the application settings</string>
+    <string name="msgNoTransactionAvailable">No transaction available for this period</string>
 </resources>

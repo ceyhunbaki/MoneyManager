@@ -21,6 +21,7 @@ public class RefreshTransactionListTotalTask extends AsyncTask<String, Void, Boo
     private final String sql;
     private String text;
     private Double balance;
+	private boolean showWarning = false;
 	
 	public RefreshTransactionListTotalTask(Context context, /*Cursor cursor,*/String sql, TextView tvTotal, long selectedAccountID) {
 		ctx = context;
@@ -40,8 +41,8 @@ public class RefreshTransactionListTotalTask extends AsyncTask<String, Void, Boo
     	try {
     		cursor = ctx.getContentResolver().query(VTransactionViewMetaData.CONTENT_URI, null,
     				sql, null, null);
-    		//if (cursor != null)
-    		//{
+    		if (cursor.getCount() != 0)
+    		{
     			if (selectedAccountID == 0) {
     				for (cursor.moveToFirst(); !cursor.isAfterLast(); cursor.moveToNext())
     				{			
@@ -82,7 +83,11 @@ public class RefreshTransactionListTotalTask extends AsyncTask<String, Void, Boo
     					text = ctx.getString(R.string.total) + " " + Tools.formatDecimalInUserFormat(balance) + CurrencySrv.getCurrencySignByID(ctx, accountCurrencyID);*/
 					text = ctx.getString(R.string.total) + " " + Tools.getFullAmountText(balance, CurrencySrv.getCurrencySignByID(ctx, accountCurrencyID), true);
     			}
-    		//}
+    		}
+    		else {
+				text = ctx.getString(R.string.msgNoTransactionAvailable);
+				showWarning = true;
+			}
     		return true;
     	}
     	catch (Exception e) {
@@ -95,6 +100,8 @@ public class RefreshTransactionListTotalTask extends AsyncTask<String, Void, Boo
        if (success) {
     	   try {
     		   tvTotal.setText(text);
+			   if (showWarning)
+			   	tvTotal.setBackgroundColor(ctx.getResources().getColor(R.color.Red));
     	   }
     	   catch (Exception e) {
     		   

@@ -133,4 +133,5 @@
     <string name="msgBuyProDialogMessage">Se deseja usar o Money Manager sem anúncios com a base de dados atual, você precisa fazer o backup dos seus dados num dispositivo de memória ou no Dropbox, desinstalar este aplicativo, comprar a versão pro e depois restaurar. Se você não deseja usar os dados atuais, você só precisa desinstalar este aplicativo e instalar a versão pro.</string>
     <string name="msgRestoreFreshNew">Deseja restaurar a base de dados antiga ou criar uma nova?</string>
     <string name="msgAppNeedsPermission">Se for necessário fazer back up dos dados do seu cartão de memória sd diariamente você deve permitir. Caso contrário, desabilite o backup automático nas configurações do aplicativo</string>
+    <string name="msgNoTransactionAvailable">Nenhuma transação disponível para esse período</string>
 </resources>

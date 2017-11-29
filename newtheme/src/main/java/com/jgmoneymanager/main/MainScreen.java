@@ -113,7 +113,7 @@ public class MainScreen extends MyActivity
             bundle.putString(Constants.query, query);
             bundle.putString(Constants.queryPart2, queryPart2);
             bundle.putString(Constants.paramTitle, CurrencyTableMetaData.NAME);
-            bundle.putString(Constants.paramWindowTitle, getString(R.string.currencies));
+            bundle.putString(Constants.paramWindowTitle, getString(R.string.msgSetDefaultCurrency));
             bundle.putString(Constants.paramFilterType, CurrencyTableMetaData.TABLE_NAME);
             intent.putExtras(bundle);
 

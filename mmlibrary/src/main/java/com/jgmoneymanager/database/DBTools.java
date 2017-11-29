@@ -207,7 +207,7 @@ public class DBTools {
 		CurrencySrv.insertCurrency(context, context.getString(R.string.bsd), "BSD", 0, R.string.bsd);
 		CurrencySrv.insertCurrency(context, context.getString(R.string.btn), "BTN", 0, R.string.btn);
 		CurrencySrv.insertCurrency(context, context.getString(R.string.bwp), "BWP", 0, R.string.bwp);
-		CurrencySrv.insertCurrency(context, context.getString(R.string.byr), "BYR", 0, R.string.byr);
+		CurrencySrv.insertCurrency(context, context.getString(R.string.byr), "BYN", 0, R.string.byr);
 		CurrencySrv.insertCurrency(context, context.getString(R.string.bzd), "BZD", 0, R.string.bzd);
 		CurrencySrv.insertCurrency(context, context.getString(R.string.cad), "CAD", 0, R.string.cad);
 		CurrencySrv.insertCurrency(context, context.getString(R.string.cdf), "CDF", 0, R.string.cdf);
