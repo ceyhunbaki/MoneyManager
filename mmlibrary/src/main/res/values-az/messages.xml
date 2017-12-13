@@ -127,4 +127,5 @@
     <string name="msgAppNeedsPermission">Əgər siz məlumatların gündəlik arxivlənməsini istəyirsinizsə hüquq verməlisiniz.
         Əks halda parametrlərdən avtomatik arxivlənməni söndürə bilərsiniz.</string>
     <string name="msgNoTransactionAvailable">Bu dövr üçün heç bir əməliyyat yoxdur</string>
+    <string name="msgUsdDefaultSet">"Amerika Birləşmiş Ştatları dolları" susmaya görə valyuta kimi təyin edildi. Daha sonra bunu "Menyu" > "Valyutalar"dan dəyişə bilərsən</string>
 </resources>

@@ -134,4 +134,5 @@
     <string name="msgRestoreFreshNew">Deseja restaurar a base de dados antiga ou criar uma nova?</string>
     <string name="msgAppNeedsPermission">Se for necessário fazer back up dos dados do seu cartão de memória sd diariamente você deve permitir. Caso contrário, desabilite o backup automático nas configurações do aplicativo</string>
     <string name="msgNoTransactionAvailable">Nenhuma transação disponível para esse período</string>
+    <string name="msgUsdDefaultSet">“Dolar dos Estados Unidos” foi definida como a moeda padrão. Você pode mudar em “Menu navegação > Moedas”</string>
 </resources>

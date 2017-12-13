@@ -4,8 +4,8 @@ android {
     buildToolsVersion '26.0.2'
     defaultConfig {
         applicationId "com.jgmoneymanager.main"
-        versionCode 85
-        versionName "3.6.7"
+        versionCode 86
+        versionName "3.6.8"
         minSdkVersion 15
         compileSdkVersion 25
         vectorDrawables.useSupportLibrary = true
