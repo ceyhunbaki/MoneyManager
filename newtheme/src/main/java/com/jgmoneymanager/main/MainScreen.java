@@ -22,6 +22,7 @@ import android.widget.HorizontalScrollView;
 import android.widget.LinearLayout;
 import android.widget.LinearLayout.LayoutParams;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.analytics.tracking.android.EasyTracker;
 import com.jgmoneymanager.budget.BudgetGoalsList;
@@ -475,19 +476,20 @@ public class MainScreen extends MyActivity
 
         if ((requestCode == Constants.RequestCurrencyForTransaction)) {
             if (resultCode == RESULT_CANCELED) {
-                finish();
+                //finish();
+                try {
+                    CurrencySrv.changeDefaultCurrency(MainScreen.this, CurrencySrv.getCurrencyIDBySign(MainScreen.this, "USD"), null);
+                    defaultCurrencyChangedAction(true);
+                }catch (Exception e) {
+                    finish();
+                }
             }
             else {
                 ArrayList<CheckBoxItem> currencyList = CheckBoxDialog.itemsList;
                 if ((currencyList != null) && (Tools.getIDsFromCheckBoxList(currencyList).length() != 0)) {
                     try {
                         CurrencySrv.changeDefaultCurrency(MainScreen.this, Tools.getIDFromCheckBoxList(currencyList), null);
-                        if (AccountSrv.getAccountCount(MainScreen.this) == 0) {
-                            long accoundID = AccountSrv.insertAccount(MainScreen.this, getBaseContext().getString(R.string.cash), "0", "1");
-                            AccountSrv.insertAccount(MainScreen.this, getBaseContext().getString(R.string.bank), "0", "0");
-                            selectedAccountID = accoundID;
-                            restartActivity();
-                        }
+                        defaultCurrencyChangedAction(false);
                     }catch (Exception e) {
                         finish();
                     }
@@ -512,6 +514,26 @@ public class MainScreen extends MyActivity
             }
         }
 	}
+
+	void defaultCurrencyChangedAction(boolean showNotification) {
+        if (AccountSrv.getAccountCount(MainScreen.this) == 0) {
+            long accoundID = AccountSrv.insertAccount(MainScreen.this, getBaseContext().getString(R.string.cash), "0", "1");
+            AccountSrv.insertAccount(MainScreen.this, getBaseContext().getString(R.string.bank), "0", "0");
+            selectedAccountID = accoundID;
+            if (!showNotification)
+                restartActivity();
+            else {
+                Command cmdRestart = new Command() {
+                    @Override
+                    public void execute() {
+                        restartActivity();
+                    }
+                };
+                AlertDialog dialog = DialogTools.informationDialog(MainScreen.this, R.string.information, R.string.msgUsdDefaultSet, cmdRestart);
+                dialog.show();
+            }
+        }
+    }
 	
 	private void restartActivity() {
 	    Intent intent = getIntent();
