@@ -178,9 +178,7 @@ public class Constants {
 	public static String dontRefreshValues = "dontRefreshValues";
 	public static String disableMultiSelect = "disableMultiSelect";
 
-	public final static String dropboxAppKey = "59d5deaac8b6755b445f6d00";
-	public final static String dropboxKey = "9dn8ox451k4vbsg";
-	public final static String dropboxSecret = "l3ca4gir0jom8ul";
+	public final static String dropboxKey = "";
 	
 	public static class DateTruncTypes {
 		public static final String dateTruncWeek = "dateTruncWeek";
